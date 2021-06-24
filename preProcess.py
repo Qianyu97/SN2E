@@ -1,0 +1,60 @@
+from mcode.utils.configUtils import attrDict
+from mcode.utils.utils import savepickle
+from config import Config
+
+attrDict = {
+            'entity'        : {'thing', attrDict('can be_touch'), attrDict('real')},
+            'organism'      : {'entity', attrDict('living'), attrDict('can move'), },
+            'unorganism'    : {'entity', attrDict('television'), attrDict('cup')},
+            'nature_thing'  : {'entity', attrDict('cloud'), attrDict('river'), attrDict('mountain')},
+            'plankton'      : {'organism', attrDict('small'), attrDict('aggregateof'), },
+            'hybrid'        : {'organism', attrDict('offspring'), attrDict('stock'), }, 
+            'animal'        : {'organism', attrDict('can breathes'), attrDict('has live'), attrDict('can eat'), }, \
+            'fish'          : {'animal', attrDict('has gill'),attrDict('live_in water')}, \
+            'bird'          : {'animal', attrDict('can fly'), attrDict('has feather'), attrDict('has egg')},\
+            'mammal'        : {'animal', attrDict('has stable_tempurature'), attrDict('can milk')},\
+            'salmon'        : {'fish', attrDict('yellow'), attrDict('small')},\
+            'shark'         : {'fish', attrDict('has big_gill'), attrDict('can meat'), attrDict('good')},\
+            'canary'        : {'bird', attrDict('yellow'), attrDict('can sing'), attrDict('small')},\
+            'dog'           : {'mammal', attrDict('live_in land'), attrDict('can meat'), attrDict('smart')},\
+            'dolphin'       : {'mammal', attrDict('smart'), attrDict('live_in water'), attrDict('fat')},
+            'penguin'       : {'bird', attrDict('has gill'),attrDict('fat')}}
+
+trunkDict = {
+    #'entity'        : 'thing',
+    'organism'      : 'entity',
+    'unorganism'    : 'entity',
+    'nature_thing'  : 'entity',
+    'plankton'      : 'organism',
+    'hybrid'        : 'organism', 
+    'animal'        : 'organism', 
+    'fish'          : 'animal', 
+    'bird'          : 'animal',
+    'mammal'        : 'animal',
+    'salmon'        :'fish',
+    'shark'         :'fish',
+    'canary'        :'bird',
+    'dog'           : 'mammal',
+    'dolphin'       : 'mammal',
+    'penguin'       : 'bird'
+}
+
+trunkOrderList = ['entity', 'organism', 'unorganism', 'nature_thing', 'plankton', 'hybrid', 'animal', 'fish', 'bird', 'mammal', 'salmon', 'shark', 'canary', 'dog', 'dolphin', 'penguin',] #
+'''
+showSample = [
+    ['entity', attrDict('thing'), attrDict('can be_touch'), attrDict('real')], 
+    ['entity', 'organism', 'unorganism', 'nature_thing'],
+    ['animal', attrDict('can breathes'), attrDict('has live'), attrDict('can eat'), 'organism'], 
+    ['animal', 'fish', 'bird', 'mammal'], 
+    ['dog', 'mammal', attrDict('live_in land'), attrDict('can meat'), attrDict('smart')],
+    ['dog', 'dolphin', attrDict('smart'), attrDict('live_in water'), attrDict('can meat')]]
+'''
+
+
+
+if __name__ == '__main__':
+    configs = Config()
+    savepickle(attrDict, configs.attrDictPath)
+    savepickle(trunkDict, configs.trunkDictPath)
+    savepickle(trunkOrderList, configs.trunkOrderListPath)
+    
