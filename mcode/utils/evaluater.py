@@ -12,8 +12,8 @@ class Evaluater():
     def __init__(self, configs:Config, dataset:attrDataset.attrDataset) -> None:
         self.configs = configs
         self.dataset = dataset
-        self.sourceData = dataset.defiConcepts
-        self.targetData = dataset.conceptList
+        self.sourceData = dataset.strData.defiConcepts
+        self.targetData = dataset.strData.conceptList
         self.sourceLen = len(self.sourceData)
         self.targetLen = len(self.targetData)
 

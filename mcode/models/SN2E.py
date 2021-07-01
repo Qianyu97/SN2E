@@ -1,5 +1,3 @@
-from unicodedata import name
-from numpy.core.fromnumeric import var
 import torch
 from torch.autograd.variable import Variable
 import torch
@@ -9,38 +7,35 @@ import numpy as np
 from mcode.models.base import Module
 
 class SN2E(Module):
-    def __init__(self, config): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
+    def __init__(self, config, defiConNum, primConNum): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
         super(SN2E, self).__init__()
         self.modelName  = config.name
         self.dim        = config.Dim
-        self.lambdaMax  = nn.Parameter(torch.Tensor([config.LambdaMax]))
-        self.gapMax     = nn.Parameter(torch.Tensor([config.GapMax]))
+        self.defiConNum, self.primConNum = defiConNum, primConNum
+        self.lambdaMax  = nn.Parameter(torch.Tensor([config.LambdaMax]), requires_grad = False)
+        self.gapMax     = nn.Parameter(torch.Tensor([config.GapMax]), requires_grad = False)
         self.invmax     = 1/config.Vmin
         self.invmin     = 1/config.Vmax
         self.alpha      = config.Alpha
-        self.NoneIndex  = config.conceptNum
+        self.NoneIndex  = defiConNum
         self.isCuda     = False
-
-        self.conceptMeanEmbedding = nn.Embedding(num_embeddings=config.conceptNum + 1,
-                                            embedding_dim=self.dim)
-        self.conceptVariEmbedding = nn.Embedding(num_embeddings=config.conceptNum + 1,
-                                            embedding_dim=self.dim)
-
-        self.lambdaMax.requires_grad    = False
-        self.gapMax.requires_grad       = False
+        self.primConMeanEmbedding = torch.nn.Parameter(torch.empty([primConNum, self.dim]))
+        self.primConVariEmbedding = torch.nn.Parameter(torch.empty([primConNum, self.dim]))
+        self.defiConMeanEmbedding = torch.nn.Parameter(torch.empty([defiConNum + 1, self.dim]), requires_grad = False)
+        self.defiConVariEmbedding = torch.nn.Parameter(torch.empty([defiConNum + 1, self.dim]), requires_grad = False)
+        self.catTogether()
         
 
     def lookupEmbedding(self, index, detach = False):
         '''
         index:  (index)[BatchNum, indexNum]
-
         mean:   (torch.tensor)[BatchNum, indexNum, dim]
         varInv: (torch.tensor)[BatchNum, indexNum, dim]
         '''
         index = self.variable(index)
-        mean, varInv = self.conceptMeanEmbedding(index), self.conceptVariEmbedding(index)
-        if detach:
-            mean, varInv = mean.detach(), varInv.detach()
+        mean, varInv = self.conceptMeanEmbedding[index], self.conceptVariEmbedding[index]
+        #if detach:
+        #    mean, varInv = mean.detach(), varInv.detach()
         return [mean, varInv]
 
     def calcIntersection(self, embeddingA):
@@ -127,10 +122,13 @@ class SN2E(Module):
         return loss
     
     def initEmbedding(self, varInitMode = 'const'):
-        nn.init.uniform_(self.conceptMeanEmbedding.weight.data, -1, 1)
-        if varInitMode == 'const':
-            nn.init.constant_(self.conceptVariEmbedding.weight.data, 1)
+        nn.init.uniform_(self.primConMeanEmbedding, -5, 5) 
+        nn.init.constant_(self.defiConMeanEmbedding, 0) 
+        nn.init.constant_(self.primConVariEmbedding, 0.1)
+        nn.init.constant_(self.defiConVariEmbedding, 0.1)
         self.tailingWorks()
+        self.catTogether()
+        
     
     def variable(self, data):
         if self.isCuda:
@@ -140,29 +138,42 @@ class SN2E(Module):
     
     def tailingWorks(self):
         def resetNoneEmbedding():
-            self.conceptMeanEmbedding.weight.data[self.NoneIndex][:] = 0
-            self.conceptVariEmbedding.weight.data[self.NoneIndex][:] = 0
+            self.defiConMeanEmbedding[self.NoneIndex][:] = 0
+            self.defiConVariEmbedding[self.NoneIndex][:] = 0
         def limitVarRange():
-            self.conceptVariEmbedding.weight.data.copy_(torch.clamp(input=self.conceptVariEmbedding.weight.detach(),
+            self.primConVariEmbedding.data.copy_(torch.clamp(input=self.primConVariEmbedding.detach(),
                                                        min=self.invmin,
                                                        max=self.invmax))
         limitVarRange()
-        resetNoneEmbedding()
+        #resetNoneEmbedding()
+    
+    def tempProcess(self, homoDF):
+        self.catTogether()
+        self.setDefiConceptEmbedding(homoDF)
 
-        return
-        
     def evaluate(self, index1, index2):
         embedding1 = self.lookupEmbedding(index1)
         embedding2 = self.lookupEmbedding(index2)
         return self.calcSbProb(embedding1, embedding2)
     
-    def setDefiConceptEmbedding(self, defiNumConcept, homoDF):
+    def setDefiConceptEmbedding(self, homoDF):
         homoTensor = self.variable(torch.tensor(np.asarray(homoDF).T))
         homoEmbedding = self.lookupEmbedding(homoTensor)
         [defiMean, defiVari] = self.calcIntersection(homoEmbedding)
-        self.conceptMeanEmbedding.weight.data[defiNumConcept] = defiMean
-        self.conceptVariEmbedding.weight.data[defiNumConcept] = defiVari
+        self.conceptMeanEmbedding[self.primConNum : -1] = defiMean
+        self.conceptVariEmbedding[self.primConNum : -1] = defiVari
+    
+    def catTogether(self):
+        self.conceptMeanEmbedding = torch.cat([self.primConMeanEmbedding, self.defiConMeanEmbedding], 0)
+        self.conceptVariEmbedding = torch.cat([self.primConVariEmbedding, self.defiConVariEmbedding], 0)
+        
+    def cudaModel(self):
+        self.cuda()
+        self.isCuda = True
 
+    def cpuModel(self):
+        self.cpu()
+        self.isCuda = False
     
     
             

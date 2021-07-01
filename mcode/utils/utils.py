@@ -1,5 +1,8 @@
 import pickle
+import copy
 import pandas as pd
+
+from mcode.utils.configUtils import attrDict
 
 def loadpickle(filePath):
     try:
@@ -22,15 +25,24 @@ def savepickle(data, filePath):
     except Exception as e:
         print(e)
 
-def translateIndex(source, conceptIndex):
-    if type(source) == pd.DataFrame:
-        newSource = source.applymap(lambda x: conceptIndex[x])
-        newSource.columns = source.columns.map(lambda x: conceptIndex[x])
+def translate(source, Index):
+    if type(source) == dict:
+        return {translate(k, Index): translate(v, Index) for k, v in source.items()}
+    elif type(source) == pd.DataFrame:
+        newSource = source.applymap(lambda x: Index[x])
+        newSource.columns = source.columns.map(lambda x: Index[x])
         return newSource
-    elif type(source) == list or set:
-        return type(source)([conceptIndex[item] for item in source])
+    elif type(source) == list or type(source) == set:
+        return type(source)([Index[item] for item in source])
+    elif type(source) == str or type(source) == int or type(source) == attrDict:
+        return Index[source]
     else:
-        return conceptIndex[source]
+        newSource = copy.deepcopy(source)
+        for k, v in vars(newSource).items():
+            if k == 'conceptDict':
+                continue
+            setattr(newSource, k, translate(v, Index))
+        return newSource
 
 
     
