@@ -1,9 +1,19 @@
-
-# -*- coding: utf-8 -*-
-
-import torch
-
 class Config():
+    class SN2E():
+        name       = 'SN2E'
+        epochs     = 1000
+        learningrate = 0.075
+        Dim        = 8
+        LambdaMax  = 1.0
+        GapMax     = -5
+        Vmax       = 10
+        Vmin       = 0.1
+        Alpha      = 0.1
+        posCheckTurn = 2
+        negCheckTurn = 2
+        NoneIndex = None
+            
+    # Data arguments
     origname = 'animal'
     depth = 8
     path_wntree = 'source/data/wntree.pkl'
@@ -11,56 +21,29 @@ class Config():
     path_model     = 'source/model/'
     path_picture   = 'source/picture/'
     path_finedata  = 'source/data/fineData.pkl'
-    def __init__(self):
-        # Data arguments
+    # Dataloader arguments
+    batchsize = 2
+    shuffle = True
+    numworkers = 0
+    droplast = False
+    negsampleNum = 10
+    # Model and training general arguments
+    model = SN2E
+    path_model = path_model + model.name
+    ifLoadModel = False
+    usegpu = True
+    gpunum = 0
+    evalepoch = 1
+    optimizer = "SGD"
+    evalmethod = "MR"
+    simmeasure = "L2"
+    # Other arguments
         
-        
-        # Dataloader arguments
-        self.batchsize = 2
-        self.shuffle = True
-        self.numworkers = 0
-        self.droplast = False
-        self.repproba = 0.5
-        self.exproba = 0.5
-        self.negsampleNum = 10
-
-        self.model = SN2E()
-        self.path_model = self.path_model + self.model.name
-        self.ifLoadModel = False
-
-        # Model and training general arguments
-        self.usegpu = torch.cuda.is_available()
-        self.gpunum = 0
-        self.lrdecay = 1
-        self.lrdecayepoch = 5
-        self.weightdecay = 0
-        self.lrDecay = 0
-        self.weightDecay = 0
-        self.evalepoch = 1
-        self.optimizer = "SGD"
-        self.evalmethod = "MR"
-        self.simmeasure = "L2"
-        self.loadembed = False
-        # Other arguments
-
 class Optimizer():
     def __init__(self) -> None:
         pass
 
-class SN2E():
-    def __init__(self) -> None:
-        self.name       = 'SN2E'
-        self.epochs     = 1000
-        self.learningrate = 0.075
-        self.Dim        = 8
-        self.LambdaMax  = 1.0
-        self.GapMax     = -5
-        self.Vmax       = 10
-        self.Vmin       = 0.1
-        self.Alpha      = 0.1
-        self.posCheckTurn = 2
-        self.negCheckTurn = 2
-        self.NoneIndex = None
+
 
 class TransE():
     def __init__(self) -> None:
