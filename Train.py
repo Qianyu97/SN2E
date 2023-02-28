@@ -117,9 +117,6 @@ if __name__ == "__main__":
     #lprofiler.print_stats()
     mtrainer.run()
 
-    #mtester = Tester(configs, mdataset, mevaluater, model = mtrainer.model)
-    #mtester.run()
-
 
                 
 
