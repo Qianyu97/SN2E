@@ -3,6 +3,7 @@ import torch
 from config import Config
 from mcode.utils import utils, prepare, evaluater
 from mcode.utils.gaussianDrawer import GaussianDrawer
+from generateSource import fineData
 class Tester():
     def __init__(self, configs, dataset, model, drawer:GaussianDrawer, evaluater = None, ifLoadModel = True) -> None:
         self.configs = configs
@@ -21,6 +22,7 @@ if __name__ == "__main__":
     configs     = Config()
     mDataset    = prepare.prepareDataSet(configs)
     mModel      = prepare.prepareModel(configs, ifLoadModel=True)
+    mModel.tempProcess(mDataset.numData.homoDF)
     mDrawer     = GaussianDrawer(configs, mDataset, mModel)
     mEvaluater = evaluater.Evaluater(configs, mDataset)
     mtest = Tester(configs, mDataset, mModel, mDrawer, mEvaluater)

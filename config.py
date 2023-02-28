@@ -4,23 +4,17 @@
 import torch
 
 class Config():
+    origname = 'animal'
+    depth = 8
+    path_wntree = 'source/data/wntree.pkl'
+    path_rawdata   = 'source/data/preData.pkl'
+    path_model     = 'source/model/'
+    path_picture   = 'source/picture/'
+    path_finedata  = 'source/data/fineData.pkl'
     def __init__(self):
         # Data arguments
-        self.dataPath = 'source/data/'
-        self.modelPath = 'source/model/'
-        self.picturePath = 'source/picture/'
-        self.attrDictPath       = self.dataPath + 'attrDict.pkl'
-        self.homoDictPath       = self.dataPath  + 'homoDict.pkl'
-        self.attrDFPath         = self.dataPath  + 'attrDF.csv'
-        self.homoDFPath         = self.dataPath  + 'homoDF.csv'
-        self.conceptIndexPath   = self.dataPath  + 'conceptIndex.pkl'
-        self.defiConceptsPath   = self.dataPath  + 'defiConcepts.pkl'
-        self.primConceptsPath   = self.dataPath  + 'primConcepts.pkl'
-        self.sonDictPath        = self.dataPath  + 'sonDict.pkl'
-        self.trunkDictPath      = self.dataPath  + 'trunkDict.pkl'
-        self.trunkOrderListPath = self.dataPath  + 'trunkOrderList.pkl'
         
-
+        
         # Dataloader arguments
         self.batchsize = 2
         self.shuffle = True
@@ -31,7 +25,7 @@ class Config():
         self.negsampleNum = 10
 
         self.model = SN2E()
-        self.modelPath = self.modelPath + self.model.name
+        self.path_model = self.path_model + self.model.name
         self.ifLoadModel = False
 
         # Model and training general arguments
@@ -47,49 +41,8 @@ class Config():
         self.evalmethod = "MR"
         self.simmeasure = "L2"
         self.loadembed = False
-        self.entityfile = "./source/embed/entityEmbedding.txt"
-        self.relationfile = "./source/embed/relationEmbedding.txt"
-        self.premodel = "./source/model/TransE_ent128_rel128.param"
-
         # Other arguments
-        self.summarydir = "./source/summary/KG2E_EL/"
 
-        # Check Path
-        #self.CheckPath()
-
-        # self.usePaperConfig()
-'''
-    def usePaperConfig(self):
-        # Paper best params
-        if self.modelname == "TransE":
-            self.embeddingdim = 50
-            self.learningrate = 0.01
-            self.margin = 1.0
-            self.distance = 1
-            self.simmeasure = "L1"
-        elif self.modelname == "TransH":
-            self.batchsize = 1200
-            self.embeddingdim = 50
-            self.learningrate = 0.005
-            self.margin = 0.5
-            self.C = 0.015625
-        elif self.modelname == "TransD":
-            self.batchsize = 4800
-            self.entitydim = 100
-            self.relationdim = 100
-            self.margin = 2.0
-
-    def CheckPath(self):
-        # Check files
-        CheckPath(self.pospath)
-        CheckPath(self.validpath)
-
-        # Check dirs
-        CheckPath(self.modelpath, raise_error=False)
-        CheckPath(self.summarydir, raise_error=False)
-        CheckPath(self.logpath, raise_error=False)
-        CheckPath(self.embedpath, raise_error=False)
-        '''
 class Optimizer():
     def __init__(self) -> None:
         pass
@@ -98,9 +51,9 @@ class SN2E():
     def __init__(self) -> None:
         self.name       = 'SN2E'
         self.epochs     = 1000
-        self.learningrate = 0.01
+        self.learningrate = 0.075
         self.Dim        = 8
-        self.LambdaMax  = 0
+        self.LambdaMax  = 1.0
         self.GapMax     = -5
         self.Vmax       = 10
         self.Vmin       = 0.1

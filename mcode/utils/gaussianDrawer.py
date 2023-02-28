@@ -11,32 +11,29 @@ class GaussianDrawer():
         self.configs = configs
         self.dataset = dataset
         self.model = model
-        self.showSamples = self.geneShowSamples(dataset.attrDict, dataset.sonDict)
+        self.showSamples = self.geneShowSamples(dataset.strData.attrDict, dataset.strData.sonsDict)
         self.reduceDim = 2
     
-    def geneShowSamples(self, attrDict, sonDict):
+    def geneShowSamples(self, attrDict, sonsDict):
         showsamples = list()
         for concept in attrDict.keys():
             items = attrDict.get(concept)
             items.add(concept)
             showsamples.append(list(items))
-        
-        for concept in  sonDict.keys():
-            items = sonDict.get(concept)
+        for concept in sonsDict.keys():  
+            items = sonsDict.get(concept)
             items.add(concept)
             showsamples.append(list(items))
-            
-        showsamples.append(list(self.dataset.primConcepts))
+        #showsamples.append(list(self.dataset.primConcepts))
         return showsamples
 
     def drawSamples(self):
         for i, sample in enumerate(self.showSamples):
             self.drawOneSample(sample, str(i+1))
 
-    
     def drawOneSample(self, concepts, label):
         plt.switch_backend('agg')
-        indexConcepts = utils.translateIndex(concepts, self.dataset.conceptDict)
+        indexConcepts = utils.translate(concepts, self.dataset.strData.conceptDict)
         embedding = self.model.lookupEmbedding(torch.tensor(indexConcepts), detach = True)
         reducedMeans, reducedVariances = self.PCA_Gaussians(embedding)
         figure , ax = plt.subplots()

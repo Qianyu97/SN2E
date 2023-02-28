@@ -1,4 +1,5 @@
 import torch
+from mcode import models
 
 from mcode.models import SN2E
 from mcode.datasets.attrDataset import attrDataset
@@ -18,7 +19,7 @@ def prepareModel(configs,  ifLoadModel):
     elif configs.model.name == "KG2E":
         model = KG2E.KG2E(configs.model)
     elif configs.model.name == "SN2E":
-        model = SN2E.SN2E(configs.model)
+        model = SN2E.SN2E(configs.model, configs.defiConNum, configs.primConNum)
     else:
         print("ERROR : No model named %s"%configs.model.name)
         raise Exception("Model Setting Error")
@@ -27,6 +28,7 @@ def prepareModel(configs,  ifLoadModel):
         model.isCuda = True
     if ifLoadModel:
         model.loadCheckpoint(configs.modelPath)
+        model.catTogether()
     else:
         model.initEmbedding()
     return model
