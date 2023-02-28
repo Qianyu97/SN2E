@@ -1,5 +1,5 @@
-from mcode.utils.treeunit import NodeUnit
-from mcode.utils.utils import savepickle, loadpickle
+from mycode.utils.treeunit import NodeUnit
+from mycode.utils.utils import savepickle, loadpickle
 from config import Config
 
 class RawData():

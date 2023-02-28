@@ -1,8 +1,8 @@
 from code import datasets
 import torch
 from config import Config
-from mcode.utils import utils, prepare, evaluater
-from mcode.utils.gaussianDrawer import GaussianDrawer
+from mycode.utils import utils, prepare, evaluater
+from mycode.utils.gaussianDrawer import GaussianDrawer
 from generateSource import fineData
 class Tester():
     def __init__(self, configs, dataset, model, drawer:GaussianDrawer, evaluater = None, ifLoadModel = True) -> None:

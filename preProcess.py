@@ -1,5 +1,5 @@
-from mcode.utils.configUtils import attrDict
-from mcode.utils.utils import savepickle
+from mycode.utils.configUtils import attrDict
+from mycode.utils.utils import savepickle
 from config import Config
 class preData():
     def __init__(self) -> None:    

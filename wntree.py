@@ -1,8 +1,8 @@
 
 from nltk.corpus import wordnet as wn
 
-from mcode.utils.treeunit import NodeUnit
-from mcode.utils.utils import savepickle
+from mycode.utils.treeunit import NodeUnit
+from mycode.utils.utils import savepickle
 from config import Config
 
 def creat_wntree(origname, maxdepth = 8):

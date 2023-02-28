@@ -1,8 +1,8 @@
 import collections
 
 from rawdata import RawData
-from mcode.utils import utils
-from mcode.utils.treeunit import NodeUnit
+from mycode.utils import utils
+from mycode.utils.treeunit import NodeUnit
 from config import Config
 
 class FineData():
