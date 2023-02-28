@@ -1,5 +1,0 @@
-	entity	organism	unorganism	nature_thing	plankton	hybrid	animal	fish	bird	mammal	salmon	shark	canary	dog	dolphin	penguin
-0	IsA real	IsA living	IsA television	IsA cloud	IsA aggregateof	IsA offspring	can eat	has gill	has egg	can milk	fish	fish	can sing	live_in land	IsA fat	has gill
-1	can be_touch	can move	IsA cup	IsA mountain	organism	organism	organism	animal	has feather	has stable_tempurature	IsA yellow	can meat	bird	mammal	mammal	bird
-2	IsA thing	entity	entity	IsA river	IsA small	IsA stock	has live	live_in water	animal	animal	IsA small	has big_gill	IsA yellow	IsA smart	IsA smart	IsA fat
-3				entity			can breathes		can fly				IsA small	can meat	live_in water	
