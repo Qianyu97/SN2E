@@ -1,4 +1,4 @@
-from mcode import datasets
+from code import datasets
 import torch
 from config import Config
 from mcode.utils import utils, prepare, evaluater

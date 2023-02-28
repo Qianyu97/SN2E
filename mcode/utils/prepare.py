@@ -1,5 +1,5 @@
 import torch
-from mcode import models
+from code import models
 
 from mcode.models import SN2E
 from mcode.datasets.attrDataset import attrDataset

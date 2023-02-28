@@ -1,21 +1,12 @@
-
-import os
-import json
-import torch
-import codecs
-import pickle
-import argparse
-import numpy as np
-from torch.utils.data import DataLoader
-from generateSource import fineData
-from tqdm import tqdm
-from config import Config
-from mcode.utils import utils, prepare
-from mcode.models import SN2E#TransE, TransH, TransA, TransD, KG2E
-from mcode.utils.evaluater import Evaluater
-from Tester import Tester
 from tensorboardX import SummaryWriter
 from line_profiler import LineProfiler
+from torch.utils.data import DataLoader
+from 
+from tqdm import tqdm
+
+from config import Config
+from mcode.utils import prepare
+from mcode.utils.evaluater import Evaluater
 
 
 
@@ -102,15 +93,13 @@ class Trainer():
         a = 0
 
 if __name__ == "__main__":
-    
-    configs = Config()
-    mdataset = prepare.prepareDataset(configs)
-    mdataloader = DataLoader(mdataset,
+    dataset = attr
+    mdataloader = DataLoader(dataset,
                              batch_size=configs.batchsize,
                              shuffle=configs.shuffle,
                              num_workers=configs.numworkers,
                              drop_last=configs.droplast)
-    mevaluater = Evaluater(configs, mdataset)
+    mevaluater = Evaluater(configs, dataset)
     mtrainer = Trainer(configs, mdataloader, mevaluater)
     #lprofiler = LineProfiler(Trainer.run)
     #lprofiler.run('mtrainer.run()')
