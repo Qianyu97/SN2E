@@ -1,10 +1,7 @@
-import collections
 from preProcess import preData
 import pandas as pd
 import numpy as np
-import copy
 
-from pandas.core.arrays.integer import safe_cast
 from mycode.utils import utils
 from config import Config
 class fineData():
