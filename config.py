@@ -1,88 +1,88 @@
-class Config():
-    class SN2E():
-        name       = 'SN2E'
-        epochs     = 1000
-        learningrate = 0.075
-        Dim        = 8
-        LambdaMax  = 1.0
-        GapMax     = -5
-        Vmax       = 10
-        Vmin       = 0.1
-        Alpha      = 0.1
-        posCheckTurn = 2
-        negCheckTurn = 2
-        NoneIndex = None
-            
+
+class DatapathArg():
     # Data arguments
-    origname = 'animal'
-    depth = 8
-    path_wntree = 'source/data/wntree.pkl'
-    path_rawdata   = 'source/data/preData.pkl'
-    path_model     = 'source/model/'
-    path_picture   = 'source/picture/'
-    path_finedata  = 'source/data/fineData.pkl'
+    path_wntree     = 'source/data/wntree.pkl'
+    path_rawdata    = 'source/data/preData.pkl'
+    path_picture    = 'source/picture/'
+    path_finedata   = 'source/data/fineData.pkl'
+
+class DataloaderArg():
     # Dataloader arguments
-    batchsize = 2
-    shuffle = True
-    numworkers = 0
-    droplast = False
+    batchsize   = 2
+    shuffle     = True
+    numworkers  = 0
+    droplast    = False
     negsampleNum = 10
+    
+class ModelArg():
     # Model and training general arguments
+    class SN2E():
+        name            = 'SN2E'
+        learningrate    = 0.075
+        weightdecay     = 0
+        lrdecay         = 1
+        Dim             = 8
+        LambdaMax       = 1.0
+        GapMax          = -5
+        Vmax            = 10
+        Vmin            = 0.1
+        Alpha           = 0.1
+        posCheckTurn    = 2
+        negCheckTurn    = 2
+        NoneIndex       = None
+    class TransE():
+        name   = 'TransE'
+        Dim    = 100,
+        Margin = 1.0,
+        L      = 2
+    class TransH():
+        name   = 'TransH'
+        Dim    = 100,
+        Margin = 1.0,
+        L      = 2,
+        C      = 0.01,
+        Eps    = 0.001
+    class TransD():
+        name   = 'TransD'
+        EntDim =  100,
+        RelDim =  100,
+        Margin =  2.0,
+        L      =  2
+    class TransA():
+        name   = 'TransA'
+        Dim    =  100,
+        Margin =  3.2,
+        L      =  2,
+        Lamb   =  0.01,
+        C      =  0.2
+    class KG2E():
+        name   = 'KG2E'
+        Dim    = 100,
+        Margin = 4.0,
+        Sim    = "EL",
+        Vmin   = 0.03,
+        Vmax   = 3.0
     model = SN2E
-    path_model = path_model + model.name
+    path_model = 'source/model/' + model.name
+    
+class TrainArg():
+    # Training arguments
+    epochs          = 1000
     ifLoadModel = False
-    usegpu = True
-    gpunum = 0
-    evalepoch = 1
-    optimizer = "SGD"
-    evalmethod = "MR"
-    simmeasure = "L2"
+    usegpu      = True
+    gpunum      = 0
+    evalepoch   = 1
+    optimizer   = "SGD"
+    evalmethod  = "MR"
+    simmeasure  = "L2"
+    
+    
+class OtherArg():
     # Other arguments
+    wordnet_depth = 8
+    originWord = 'animal'
+    
         
-class Optimizer():
-    def __init__(self) -> None:
-        pass
 
 
 
-class TransE():
-    def __init__(self) -> None:
-        self.name   = 'TransE'
-        self.Dim    = 100,
-        self.Margin = 1.0,
-        self.L      = 2
-
-class TransH():
-    def __init__(self) -> None:
-        self.name   = 'TransH'
-        self.Dim    = 100,
-        self.Margin = 1.0,
-        self.L      = 2,
-        self.C      = 0.01,
-        self.Eps    = 0.001
-
-class TransD():
-    def __init__(self) -> None:
-        self.name   = 'TransD'
-        self.EntDim =  100,
-        self.RelDim =  100,
-        self.Margin =  2.0,
-        self.L      =  2
-
-class TransA():
-    def __init__(self) -> None:
-        self.name   = 'TransA'
-        self.Dim    =  100,
-        self.Margin =  3.2,
-        self.L      =  2,
-        self.Lamb   =  0.01,
-        self.C      =  0.2
-
-class KG2E():
-    def __init__(self) -> None:
-        self.name   = 'KG2E'
-        self.Dim    = 100,
-        self.Margin = 4.0,
-        self.Sim    = "EL",
-        self.Vmin   = 0.03,
-        self.Vmax   = 3.0

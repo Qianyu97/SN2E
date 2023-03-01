@@ -2,7 +2,7 @@ from preProcess import preData
 import pandas as pd
 import numpy as np
 
-from mycode.utils import utils
+import utils
 from config import Config
 class fineData():
     def __init__(self, preDataPath) -> None:

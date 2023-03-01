@@ -1,34 +1,31 @@
-from config import Config
 from random import sample
 import numpy as np
 import pandas as pd
-from generateSource import fineData
+
+from config import ModelArg, DataloaderArg
+from refine import FineData
 from torch.utils.data import Dataset
-from mycode.utils.utils import *
+from utils import *
 
 class attrDataset(Dataset):
-    def __init__(self, configs:Config) -> None:
+    def __init__(self, indexdata:FineData) -> None:
         super(Dataset, self).__init__()
-        self.strData = loadpickle(configs.fineDataPath)
-        self.numData = translate(self.strData, self.strData.conceptDict)
-        
-        configs.conceptNum = len(self.numData.conceptList)
-        configs.primConNum = len(self.numData.primConcepts)
-        configs.defiConNum = len(self.numData.defiConcepts)
-        self.negsampleNum = configs.negsampleNum
-        self.trainList = self.numData.conceptList
+        ModelArg.__setattr__('fullnum', len(indexdata.fulllist))
+        ModelArg.__setattr__('primnum', len(indexdata.primlist))
+        ModelArg.__setattr__('definum', len(indexdata.defilist))
+        self.trainList = indexdata.fulllist
         self.loaderFlag = False
+        self.indexdata = indexdata
     
     def __len__(self):
         return len(self.trainList)
-
     def __getitem__(self, items):
         if self.loaderFlag:
-            index = self.numData.defiConcepts[items]
-            return np.array(self.numData.attrDF.get(index))
+            index = self.indexdata.defilist[items]
+            return np.array(self.indexdata.attrdict.get(index))
         else:
             index = items
-            return [np.array(index), np.array(sample(self.numData.negtDict.get(index), self.negsampleNum))]
+            return [np.array(index), np.array(sample(self.indexdata.negtdict[index], DataloaderArg.negtnum))]
     
     def transformLoader(self):
         self.loaderFlag = not self.loaderFlag

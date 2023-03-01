@@ -1,10 +1,10 @@
 class NodeUnit(object):
     name = ' '
     def __init__(self, name = ' '):
-        self.name = name
-        self.fathers = set()
-        self.sons = set()
-        self.attributes = set()
+        self.name:str               = name
+        self.fathers:set[NodeUnit]  = set() 
+        self.sons:set[NodeUnit]     = set()
+        self.attributes:set[str]    = set()
     
     def addFather(self, father):
         self.fathers.add(father)

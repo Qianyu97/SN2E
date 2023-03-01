@@ -3,8 +3,9 @@ import torch
 from matplotlib.patches import Ellipse, Circle
 import matplotlib.pyplot as plt
 from matplotlib import transforms
-from mycode.utils import utils, prepare
+from mycode.utils import prepare
 from config import Config
+from . import utils
 
 class GaussianDrawer():
     def __init__(self, configs:Config, dataset, model):

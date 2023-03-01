@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import json
 from torch.utils.data import Dataset
-from mycode.utils.utils import *
+from utils import *
 
 class tripleDataset(Dataset):
     def __init__(self, entityDictPath, relationDictPath, posDataPath):

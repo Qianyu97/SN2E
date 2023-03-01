@@ -13,8 +13,6 @@ def loadpickle(filePath):
     except Exception as e:
         print(e)
         return None
-    finally:
-        pass
 
 def savepickle(data, filePath):
     try:

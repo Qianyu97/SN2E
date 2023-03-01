@@ -1,19 +1,15 @@
-from numpy.core.fromnumeric import sort
-import torch
 import numpy as np
-from torch.utils import data
-from torch.utils.data import dataset
+import torch
+
 from mycode.models.base import Module
-from config import Config
-from mycode.datasets import attrDataset, tripleDataset
+from finaldata import FinalData
 
 
 class Evaluater():
-    def __init__(self, configs:Config, dataset:attrDataset.attrDataset) -> None:
-        self.configs = configs
+    def __init__(self, dataset:FinalData) -> None:
         self.dataset = dataset
-        self.sourceData = dataset.strData.defiConcepts
-        self.targetData = dataset.strData.conceptList
+        self.sourceData = dataset.indexdata.defilist
+        self.targetData = dataset.indexdata.fulllist
         self.sourceLen = len(self.sourceData)
         self.targetLen = len(self.targetData)
 

@@ -3,19 +3,21 @@ from line_profiler import LineProfiler
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from config import Config
+from config import DatapathArg, DataloaderArg, TrainArg, ModelArg
+from finaldata import FinalData
 from mycode.utils import prepare
 from mycode.utils.evaluater import Evaluater
+from mycode.datasets.attrDataset import attrDataset
+from mycode.datasets.tripleDataset import tripleDataset
 
 
 
 class Trainer():
-    def __init__(self, configs:Config, dataLoader:DataLoader, evaluater:Evaluater, ifLoadModel = False) -> None:
+    def __init__(self, dataLoader:DataLoader, evaluater:Evaluater) -> None:
         self.dataLoader = dataLoader
         self.evaluater  = evaluater
-        self.configs    = configs
-        self.model      = prepare.prepareModel(configs, ifLoadModel)
-        self.optimizer  = prepare.prepareOptimizer(configs, self.model)
+        self.model      = prepare.prepareModel()
+        self.optimizer  = prepare.prepareOptimizer(self.model)
     
     def train_one_batch(self, batchData, trainMode):
         self.optimizer.zero_grad()
@@ -32,8 +34,7 @@ class Trainer():
         loss = self.model(batchData, trainMode)
         loss.backward()
         self.optimizer.step()
-        self.model.tailingWorks()
-        
+        self.model.tailingWorks()       
         return loss.item()
     
     def train_one_batch_pos(self, batchData, trainMode):
@@ -46,22 +47,21 @@ class Trainer():
         return loss.item() 
     
     def run(self):
-        EPOCHS = self.configs.model.epochs
+        EPOCHS = TrainArg.epochs
         EPOCHS_ITER = tqdm(range(EPOCHS))
         posMinLoss, negMinLoss = float("inf"), float("inf") 
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
             posSumLoss, negSumLoss = 0, 0
             posCheckLoss, negCheckLoss = 0, 0
-            i, j = 0, 0
+            count_i, count_j = 0, 0
             #self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
             for primBatchData in self.dataLoader:
                 negLoss = self.train_one_batch_neg(primBatchData, 'negMode')
                 negCheckLoss += negLoss
                 negSumLoss += negLoss
-                j += 1
-            if negMinLoss > negSumLoss / j /self.configs.model.Alpha:
-                negMinLoss = negSumLoss / j /self.configs.model.Alpha
+                count_j += 1
+            negMinLoss = min(negMinLoss, negSumLoss / count_j)
             
             self.dataLoader.dataset.transformLoader()
             #self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
@@ -69,14 +69,14 @@ class Trainer():
                 posLoss = self.train_one_batch_pos(defiBatchData, 'posMode')
                 posCheckLoss += posLoss
                 posSumLoss += posLoss
-                i += 1 
-            if posMinLoss > posSumLoss / i:
-                posMinLoss = posSumLoss / i
+                count_i += 1 
+            if posMinLoss > posSumLoss / count_i:
+                posMinLoss = posSumLoss / count_i
             
             self.dataLoader.dataset.transformLoader()
 
             EPOCHS_ITER.set_description("Epoch %d | postive loss : %f, negtive loss : %f, min positive loss: %f, min negtive loss %f" \
-                        % (epoch, posSumLoss/i, negSumLoss/j/self.configs.model.Alpha, posMinLoss, negMinLoss))
+                        % (epoch, posSumLoss/count_i, negSumLoss/count_j/self.configs.model.Alpha, posMinLoss, negMinLoss))
             '''
             if epoch % self.configs.evalepoch == 0:
                 HR = self.evaluater.HREvaluate(self.model)
@@ -92,14 +92,15 @@ class Trainer():
         a = 0
 
 if __name__ == "__main__":
-    dataset = attr
-    mdataloader = DataLoader(dataset,
-                             batch_size=configs.batchsize,
-                             shuffle=configs.shuffle,
-                             num_workers=configs.numworkers,
-                             drop_last=configs.droplast)
-    mevaluater = Evaluater(configs, dataset)
-    mtrainer = Trainer(configs, mdataloader, mevaluater)
+    finedata = FinalData(DatapathArg.path_rawdata)
+    dataset = attrDataset(finedata.indexdata) 
+    mdataloader = DataLoader(dataset    = dataset,
+                             batch_size =DataloaderArg.batchsize,
+                             shuffle    =DataloaderArg.shuffle,
+                             num_workers=DataloaderArg.numworkers,
+                             drop_last  =DataloaderArg.droplast)
+    mevaluater = Evaluater(finedata)
+    mtrainer = Trainer(mdataloader, mevaluater)
     #lprofiler = LineProfiler(Trainer.run)
     #lprofiler.run('mtrainer.run()')
     #lprofiler.print_stats()

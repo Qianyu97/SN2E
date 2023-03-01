@@ -1,9 +1,10 @@
 from code import datasets
 import torch
 from config import Config
-from mycode.utils import utils, prepare, evaluater
+from mycode.utils import prepare, evaluater
 from mycode.utils.gaussianDrawer import GaussianDrawer
 from generateSource import fineData
+from . import utils
 class Tester():
     def __init__(self, configs, dataset, model, drawer:GaussianDrawer, evaluater = None, ifLoadModel = True) -> None:
         self.configs = configs

@@ -1,11 +1,11 @@
 from mycode.utils.treeunit import NodeUnit
-from mycode.utils.utils import savepickle, loadpickle
-from config import Config
+from utils import savepickle, loadpickle
+from config import DatapathArg
 
 class RawData():
     def __init__(self, path_wntree = None) -> None: 
         try:   
-            basetree = loadpickle(path_wntree)
+            basetree:NodeUnit = loadpickle(path_wntree) # type: ignore 
         except:
             basetree = NodeUnit()
             print('load wntree error, keep a empty TreeData')
@@ -41,7 +41,6 @@ class RawData():
         return basedict
 
 if __name__ == '__main__':
-    configs = Config()
-    rawdata = RawData(configs.path_wntree) 
-    savepickle(rawdata, configs.path_rawdata)
+    rawdata = RawData(DatapathArg.path_wntree) 
+    savepickle(rawdata, DatapathArg.path_rawdata)
     

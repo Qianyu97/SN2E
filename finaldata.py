@@ -1,11 +1,11 @@
 
 from refine import *
-from config import Config
+from config import DatapathArg
 class FinalData():
     def __init__(self, path_rawdata):
         finedata = FineData(path_rawdata)
         dictionary = self.creat_index(finedata.fulllist)
-        indexdata = self.indexconvert(finedata, dictionary)
+        indexdata = self.indexconvert(finedata, dictionary) 
         self.finedata   = finedata
         self.indexdata  = indexdata
         
@@ -36,10 +36,11 @@ class FinalData():
                 raise Exception('input type not accessable')
         assert arrow == 'str2num' or arrow == 'num2str'
         dictionary = dictionary['str'] if arrow == 'str2num' else dictionary['num']
-        return translate(data)
+        output:data = translate(data)
+        return output
 
 if __name__ == '__main__':
-    finaldata = FinalData(Config.path_rawdata)
+    finaldata = FinalData(DatapathArg.path_rawdata)
     a = 0
     
             

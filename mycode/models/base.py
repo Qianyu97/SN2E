@@ -1,5 +1,4 @@
 import os
-from typing import overload
 import torch
 class Module(torch.nn.Module):
     def __init__(self):
@@ -11,8 +10,9 @@ class Module(torch.nn.Module):
     def saveCheckpoint(self, path):
         torch.save(self.state_dict(), path)
     
-    def evaluate(self):
-        return None
+    def evaluate(self, a, b) -> torch.Tensor: 
+        output:torch.Tensor = None
+        return output
     
     def lookupEmbedding(self):
         return None
