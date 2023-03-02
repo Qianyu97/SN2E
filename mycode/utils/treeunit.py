@@ -26,3 +26,10 @@ class NodeUnit(object):
     
     def __hash__(self):
         return hash(self.name)
+    
+    def __eq__(self, __o: object) -> bool:
+        if type(__o) == str:
+            return __o == self.name
+        else:
+            return __o is self
+    

@@ -1,4 +1,3 @@
-from code import datasets
 import torch
 from config import Config
 from mycode.utils import prepare, evaluater

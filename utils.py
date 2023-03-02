@@ -2,8 +2,6 @@ import pickle
 import copy
 import pandas as pd
 
-from mycode.utils.configUtils import attrDict
-
 def loadpickle(filePath):
     try:
         with open(filePath, 'rb') as f:

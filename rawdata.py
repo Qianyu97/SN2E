@@ -1,20 +1,61 @@
-from mycode.utils.treeunit import NodeUnit
-from utils import savepickle, loadpickle
-from config import DatapathArg
 
-class RawData():
-    def __init__(self, path_wntree = None) -> None: 
-        try:   
-            basetree:NodeUnit = loadpickle(path_wntree) # type: ignore 
-        except:
-            basetree = NodeUnit()
-            print('load wntree error, keep a empty TreeData')
+from nltk.corpus import wordnet as wn
+
+from mycode.utils.treeunit import NodeUnit
+from config import DatapathArg, OtherArg
+
+class BaseData():
+    def load(self, filePath):
+        import pickle
+        try:
+            with open(filePath, 'rb') as f:
+                pickledata = pickle.load(f)
+                f.close()
+                return pickledata
+        except Exception as e:
+            print(e)
+            return None
+    def save(self, filePath, data = None):
+        import pickle
+        try:
+            with open(filePath, 'wb') as f:
+                if not data:
+                    data = self
+                elif type(data) == str:
+                    data = self.__getattribute__(data)  # type: ignore
+                pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
+                f.close()
+        except Exception as e:
+            print(e)
+
+class RawData(BaseData):
+    def __init__(self, origword, maxdepth) -> None:
+        basetree, basedict = self.creat_basetree(origword, maxdepth)
         basetree = self.enrichAttribute(basetree)
-        basedict = self.creat_basedict(basetree)
         self.basetree = basetree
         self.basedict = basedict
-    
-    def enrichAttribute(self, basetree:NodeUnit):
+        
+    def creat_basetree(self, origword, maxdepth):
+        def iter(node_father:NodeUnit, syns_father, depth):
+            if depth < 0:
+                return
+            for syns_son in syns_father.hyponyms():
+                name_son = syns_son.name()[:-5]
+                while name_son in basedict:
+                    name_son = name_son + '+'
+                node_son = NodeUnit(name_son)  
+                node_father.addSon(node_son)
+                node_son.addFather(node_father)
+                basedict[name_son] = node_son
+                iter(node_son, syns_son, depth - 1)
+        
+        orignode = NodeUnit(origword)
+        origsyns = wn.synsets(origword)[0] # type: ignore
+        basedict = {origword: orignode}
+        iter(orignode, origsyns, maxdepth)
+        return orignode, basedict
+            
+    def enrichAttribute(self, basetree):
         import random
         startmark = 'a'
         def iter(node:NodeUnit, id):
@@ -27,20 +68,12 @@ class RawData():
             return id
         maxAttrnum = 4
         minAttrnum = 2
-        self.attrstage = dict()
         iter(basetree, 0)
         return basetree
-    
-    def creat_basedict(self, basetree):
-        def iter(node:NodeUnit):
-            basedict[node.name] = node
-            for son in node.sons:
-                iter(son)
-        basedict = dict()
-        iter(basetree)
-        return basedict
 
-if __name__ == '__main__':
-    rawdata = RawData(DatapathArg.path_wntree) 
-    savepickle(rawdata, DatapathArg.path_rawdata)
-    
+
+
+if __name__ == "__main__":
+    rawdata = RawData(OtherArg.originWord, OtherArg.wordnet_depth)
+    rawdata.save(DatapathArg.path_rawdata)
+

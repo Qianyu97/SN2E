@@ -19,32 +19,12 @@ class Trainer():
         self.model      = prepare.prepareModel()
         self.optimizer  = prepare.prepareOptimizer(self.model)
     
-    def train_one_batch(self, batchData, trainMode):
+    def train_one_batch(self, batchdata):
         self.optimizer.zero_grad()
-        self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
-        loss = self.model(batchData, trainMode)
+        loss = self.model(batchdata)
         loss.backward()
         self.optimizer.step()
-        self.model.tailingWorks()
         return loss.item()
-
-    def train_one_batch_neg(self, batchData, trainMode):
-        self.optimizer.zero_grad()
-        self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
-        loss = self.model(batchData, trainMode)
-        loss.backward()
-        self.optimizer.step()
-        self.model.tailingWorks()       
-        return loss.item()
-    
-    def train_one_batch_pos(self, batchData, trainMode):
-        self.optimizer.zero_grad()
-        self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
-        loss = self.model(batchData, trainMode)
-        loss.backward()
-        self.optimizer.step()
-        self.model.tailingWorks()
-        return loss.item() 
     
     def run(self):
         EPOCHS = TrainArg.epochs
@@ -55,29 +35,13 @@ class Trainer():
             posSumLoss, negSumLoss = 0, 0
             posCheckLoss, negCheckLoss = 0, 0
             count_i, count_j = 0, 0
-            #self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
-            for primBatchData in self.dataLoader:
-                negLoss = self.train_one_batch_neg(primBatchData, 'negMode')
-                negCheckLoss += negLoss
-                negSumLoss += negLoss
-                count_j += 1
-            negMinLoss = min(negMinLoss, negSumLoss / count_j)
+            for batchdata in self.dataLoader:
+                loss = self.train_one_batch(batchdata)
             
-            self.dataLoader.dataset.transformLoader()
-            #self.model.tempProcess(self.evaluater.dataset.numData.homoDF)
-            for defiBatchData in self.dataLoader:
-                posLoss = self.train_one_batch_pos(defiBatchData, 'posMode')
-                posCheckLoss += posLoss
-                posSumLoss += posLoss
-                count_i += 1 
-            if posMinLoss > posSumLoss / count_i:
-                posMinLoss = posSumLoss / count_i
-            
-            self.dataLoader.dataset.transformLoader()
-
+            '''
             EPOCHS_ITER.set_description("Epoch %d | postive loss : %f, negtive loss : %f, min positive loss: %f, min negtive loss %f" \
                         % (epoch, posSumLoss/count_i, negSumLoss/count_j/self.configs.model.Alpha, posMinLoss, negMinLoss))
-            '''
+            
             if epoch % self.configs.evalepoch == 0:
                 HR = self.evaluater.HREvaluate(self.model)
                 #CR = self.evaluater.CREvaluate(self.model)
@@ -87,8 +51,8 @@ class Trainer():
                     bestHR = HR
                     self.model.saveCheckpoint(self.configs.modelPath)
             '''
-        self.model.setDefiConceptEmbedding(self.dataLoader.dataset.numData.homoDF)
-        self.model.saveCheckpoint(self.configs.modelPath)
+        #self.model.setDefiConceptEmbedding(self.dataLoader.dataset.numData.homoDF)
+        #self.model.saveCheckpoint(self.configs.modelPath)
         a = 0
 
 if __name__ == "__main__":

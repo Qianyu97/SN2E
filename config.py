@@ -1,10 +1,9 @@
 
 class DatapathArg():
     # Data arguments
-    path_wntree     = 'source/data/wntree.pkl'
-    path_rawdata    = 'source/data/preData.pkl'
+    path_rawdata    = 'source/data/rawdata.pkl'
+    path_finedata   = 'source/data/finedata.pkl'
     path_picture    = 'source/picture/'
-    path_finedata   = 'source/data/fineData.pkl'
 
 class DataloaderArg():
     # Dataloader arguments
@@ -12,7 +11,7 @@ class DataloaderArg():
     shuffle     = True
     numworkers  = 0
     droplast    = False
-    negsampleNum = 10
+    negtnum = 10
     
 class ModelArg():
     # Model and training general arguments
@@ -21,15 +20,17 @@ class ModelArg():
         learningrate    = 0.075
         weightdecay     = 0
         lrdecay         = 1
-        Dim             = 8
-        LambdaMax       = 1.0
-        GapMax          = -5
-        Vmax            = 10
-        Vmin            = 0.1
-        Alpha           = 0.1
+        dim             = 8
+        lambdaMax       = 1.0
+        gapMax          = -5
+        vmax            = 10
+        vmin            = 0.1
+        alpha           = 0.1
         posCheckTurn    = 2
         negCheckTurn    = 2
         NoneIndex       = None
+        num_defi    = 0
+        num_prim    = 0
     class TransE():
         name   = 'TransE'
         Dim    = 100,

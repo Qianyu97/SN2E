@@ -1,28 +1,28 @@
 import torch
-from torch.autograd.variable import Variable
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.parameter as pm
 import numpy as np
 from mycode.models.base import Module
+from config import ModelArg
 
 class SN2E(Module):
-    def __init__(self, config, defiConNum, primConNum): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
+    def __init__(self, config:ModelArg.model): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
         super(SN2E, self).__init__()
         self.modelName  = config.name
-        self.dim        = config.Dim
-        self.defiConNum, self.primConNum = defiConNum, primConNum
-        self.lambdaMax  = nn.Parameter(torch.Tensor([config.LambdaMax]), requires_grad = False)
-        self.gapMax     = nn.Parameter(torch.Tensor([config.GapMax]), requires_grad = False)
-        self.invmax     = 1/config.Vmin
-        self.invmin     = 1/config.Vmax
-        self.alpha      = config.Alpha
-        self.NoneIndex  = defiConNum
+        self.dim        = config.dim
+        self.num_defi, self.num_prim = config.num_defi, config.num_prim
+        self.lambdaMax  = pm.Parameter(torch.Tensor([config.lambdaMax]), requires_grad = False)
+        self.gapMax     = pm.Parameter(torch.Tensor([config.gapMax]), requires_grad = False)
+        self.invmax     = 1/config.vmin
+        self.invmin     = 1/config.vmax
+        self.alpha      = config.alpha
+        self.NoneIndex  = 0
         self.isCuda     = False
-        self.primConMeanEmbedding = torch.nn.Parameter(torch.empty([primConNum, self.dim]))
-        self.primConVariEmbedding = torch.nn.Parameter(torch.empty([primConNum, self.dim]))
-        self.defiConMeanEmbedding = torch.nn.Parameter(torch.empty([defiConNum + 1, self.dim]), requires_grad = False)
-        self.defiConVariEmbedding = torch.nn.Parameter(torch.empty([defiConNum + 1, self.dim]), requires_grad = False)
+        self.primMeanEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
+        self.primVariEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
+        self.defiMeanEmbedding = pm.Parameter(torch.empty([self.num_defi + 1, self.dim]), requires_grad = False)
+        self.defiVariEmbedding = pm.Parameter(torch.empty([self.num_defi + 1, self.dim]), requires_grad = False)
         self.catTogether()
         
 
@@ -111,21 +111,26 @@ class SN2E(Module):
 
         loss      :(torch.scale)
         '''
-        if trainMode == 'posMode':
-            indexA  = data
+        loss = torch.Tensor(0)
+        if trainMode == 'defimode':
+            [index0, indexA, indexN]  = data
             lambd   = self.scorePos(indexA)
-            loss    = torch.max(lambd, self.lambdaMax).sum()
-        elif trainMode == 'negMode':
+            gap     = self.scoreNeg(index0, indexN)
+            posloss = torch.max(lambd, self.lambdaMax).sum() 
+            negloss = - (self.alpha / torch.max(gap, self.gapMax)).sum()
+            loss = posloss + negloss
+        elif trainMode == 'primmode':
             [index0, indexN] = data
             gap     = self.scoreNeg(index0, indexN)
-            loss    = - (1 / torch.max(gap, self.gapMax)).sum() * self.alpha
+            negloss    = - (1 / torch.max(gap, self.gapMax)).sum() * self.alpha
+            loss = negloss
         return loss
     
     def initEmbedding(self, varInitMode = 'const'):
-        nn.init.uniform_(self.primConMeanEmbedding, -5, 5) 
-        nn.init.constant_(self.defiConMeanEmbedding, 0) 
-        nn.init.constant_(self.primConVariEmbedding, 0.1)
-        nn.init.constant_(self.defiConVariEmbedding, 0.1)
+        nn.init.uniform_(self.primMeanEmbedding, -5, 5) 
+        nn.init.constant_(self.defiMeanEmbedding, 0) 
+        nn.init.constant_(self.primVariEmbedding, 0.1)
+        nn.init.constant_(self.defiVariEmbedding, 0.1)
         self.tailingWorks()
         self.catTogether()
         
@@ -138,10 +143,10 @@ class SN2E(Module):
     
     def tailingWorks(self):
         def resetNoneEmbedding():
-            self.defiConMeanEmbedding[self.NoneIndex][:] = 0
-            self.defiConVariEmbedding[self.NoneIndex][:] = 0
+            self.primMeanEmbedding[self.NoneIndex][:] = 0
+            self.primVariEmbedding[self.NoneIndex][:] = 0
         def limitVarRange():
-            self.primConVariEmbedding.data.copy_(torch.clamp(input=self.primConVariEmbedding.detach(),
+            self.primVariEmbedding.data.copy_(torch.clamp(input=self.primVariEmbedding.detach(),
                                                        min=self.invmin,
                                                        max=self.invmax))
         limitVarRange()
@@ -160,12 +165,12 @@ class SN2E(Module):
         homoTensor = self.variable(torch.tensor(np.asarray(homoDF).T))
         homoEmbedding = self.lookupEmbedding(homoTensor)
         [defiMean, defiVari] = self.calcIntersection(homoEmbedding)
-        self.conceptMeanEmbedding[self.primConNum : -1] = defiMean
-        self.conceptVariEmbedding[self.primConNum : -1] = defiVari
+        self.conceptMeanEmbedding[self.num_prim : -1] = defiMean
+        self.conceptVariEmbedding[self.num_prim : -1] = defiVari
     
     def catTogether(self):
-        self.conceptMeanEmbedding = torch.cat([self.primConMeanEmbedding, self.defiConMeanEmbedding], 0)
-        self.conceptVariEmbedding = torch.cat([self.primConVariEmbedding, self.defiConVariEmbedding], 0)
+        self.conceptMeanEmbedding = torch.cat([self.primMeanEmbedding, self.defiMeanEmbedding], 0)
+        self.conceptVariEmbedding = torch.cat([self.primVariEmbedding, self.defiVariEmbedding], 0)
         
     def cudaModel(self):
         self.cuda()
