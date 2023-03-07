@@ -2,7 +2,7 @@
 from nltk.corpus import wordnet as wn
 
 from mycode.utils.treeunit import NodeUnit
-from config import DatapathArg, OtherArg
+from config import DatapathArg, WordnetArg
 
 class BaseData():
     def load(self, filePath):
@@ -15,7 +15,7 @@ class BaseData():
         except Exception as e:
             print(e)
             return None
-    def save(self, filePath, data = None):
+    def save(self, filePath, data = ''):
         import pickle
         try:
             with open(filePath, 'wb') as f:
@@ -25,6 +25,7 @@ class BaseData():
                     data = self.__getattribute__(data)  # type: ignore
                 pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
                 f.close()
+                print('Info : save sucessfully')
         except Exception as e:
             print(e)
 
@@ -51,7 +52,7 @@ class RawData(BaseData):
         
         orignode = NodeUnit(origword)
         origsyns = wn.synsets(origword)[0] # type: ignore
-        basedict = {origword: orignode}
+        basedict:dict[str, NodeUnit] = {origword: orignode}
         iter(orignode, origsyns, maxdepth)
         return orignode, basedict
             
@@ -74,6 +75,6 @@ class RawData(BaseData):
 
 
 if __name__ == "__main__":
-    rawdata = RawData(OtherArg.originWord, OtherArg.wordnet_depth)
+    rawdata = RawData(WordnetArg.originWord, WordnetArg.wordnet_depth)
     rawdata.save(DatapathArg.path_rawdata)
 

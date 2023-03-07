@@ -3,47 +3,49 @@ import torch
 from matplotlib.patches import Ellipse, Circle
 import matplotlib.pyplot as plt
 from matplotlib import transforms
+from random import sample
+
+from mycode.models.base import Module 
 from mycode.utils import prepare
-from config import Config
-from . import utils
+from finaldata import FinalData
+from config import DatapathArg, TestArg
+from mycode.utils.treeunit import NodeUnit
 
 class GaussianDrawer():
-    def __init__(self, configs:Config, dataset, model):
-        self.configs = configs
+    def __init__(self, dataset:FinalData, model:Module):
         self.dataset = dataset
         self.model = model
-        self.showSamples = self.geneShowSamples(dataset.strData.attrDict, dataset.strData.sonsDict)
+        self.showSamples = self.geneShowSamples(
+            dataset.finedata.rawdata.basedict,
+            TestArg.num_showpicture)
         self.reduceDim = 2
     
-    def geneShowSamples(self, attrDict, sonsDict):
+    def geneShowSamples(self, basedict:dict, shownum = 10):
         showsamples = list()
-        for concept in attrDict.keys():
-            items = attrDict.get(concept)
-            items.add(concept)
-            showsamples.append(list(items))
-        for concept in sonsDict.keys():  
-            items = sonsDict.get(concept)
-            items.add(concept)
-            showsamples.append(list(items))
-        #showsamples.append(list(self.dataset.primConcepts))
+        for conceptname in sample(basedict.keys(), shownum):
+            concept:NodeUnit = basedict[conceptname]
+            showson     = [concept.name] + list(concept.sons)
+            showattr    = [concept.name] + list(concept.attributes)
+            showsamples.append(showson)
+            showsamples.append(showattr)
         return showsamples
 
     def drawSamples(self):
         for i, sample in enumerate(self.showSamples):
-            self.drawOneSample(sample, str(i+1))
+            self.drawOneSample(sample, sample[0] + str(i+1))
 
-    def drawOneSample(self, concepts, label):
+    def drawOneSample(self, conceptlist, label = 'default'):
         plt.switch_backend('agg')
-        indexConcepts = utils.translate(concepts, self.dataset.strData.conceptDict)
-        embedding = self.model.lookupEmbedding(torch.tensor(indexConcepts), detach = True)
+        indexConcepts = self.dataset.indexconvert(conceptlist)
+        embedding = self.model.lookupEmbedding(torch.tensor(indexConcepts))
         reducedMeans, reducedVariances = self.PCA_Gaussians(embedding)
         figure , ax = plt.subplots()
-        self.gaussians_ellipse(concepts, reducedMeans, reducedVariances, ax, facecolor = 'blue')
+        self.gaussians_ellipse(indexConcepts, reducedMeans, reducedVariances, ax, facecolor = 'blue')
         plt.axis('scaled')
         plt.axis('equal')   #changes limits of x or y axis so that equal increments of x and y have the same length
         plt.xlabel('x')
         plt.ylabel('y')
-        plt.savefig(self.configs.picturePath + label + ".jpg")
+        plt.savefig(DatapathArg.path_picture + label + ".jpg")
     
     def PCA_Gaussians(self, embedding):
         [means, inVariances] = embedding
@@ -111,16 +113,15 @@ class GaussianDrawer():
                 .translate(mean_x, mean_y)
             ellipse.set_transform(transf + ax.transData)
             ax.add_patch(ellipse)
-            showinfo = conceptlist[i]
+            showinfo = self.dataset.indexconvert(conceptlist[i], 'num2str')
             ax.annotate(showinfo, xytext = (mean_x, mean_y), xy = (mean_x, mean_y ) )
         return ax
 
 
 
 if __name__ == "__main__":
-    configs     = Config()
-    mdataset    = prepare.prepareDataSet(configs)
-    mModel      = prepare.prepareModel(configs, ifLoadModel=True)
-    mdrawer     = GaussianDrawer(configs, mdataset, mModel)
-    mdrawer.drawSamples()
+    dataset    = FinalData(DatapathArg.path_rawdata, DatapathArg.path_indexdict)
+    model      = prepare.prepareModel(ifLoadModel=True)
+    drawer     = GaussianDrawer(dataset, model)
+    drawer.drawSamples()
     

@@ -17,25 +17,27 @@ class SN2E(Module):
         self.invmax     = 1/config.vmin
         self.invmin     = 1/config.vmax
         self.alpha      = config.alpha
-        self.NoneIndex  = 0
-        self.isCuda     = False
+        self.defaultNoneMean   = 0
+        self.defaultNoneInvar  = 0.00000001
         self.primMeanEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
         self.primVariEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
-        self.defiMeanEmbedding = pm.Parameter(torch.empty([self.num_defi + 1, self.dim]), requires_grad = False)
-        self.defiVariEmbedding = pm.Parameter(torch.empty([self.num_defi + 1, self.dim]), requires_grad = False)
-        self.catTogether()
+        self.NoneMeanEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
+        self.NoneVariEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
+        self.isCuda     = False
         
+    def initEmbedding(self, varInitMode = 'const'):
+        nn.init.constant_(self.NoneMeanEmbedding, self.defaultNoneMean)
+        nn.init.constant_(self.NoneVariEmbedding, self.defaultNoneInvar)
+        nn.init.uniform_(self.primMeanEmbedding, -5, 5) 
+        nn.init.constant_(self.primVariEmbedding, 0.1)
 
-    def lookupEmbedding(self, index, detach = False):
+    def lookupEmbedding(self, index):
         '''
-        index:  (index)[BatchNum, indexNum]
-        mean:   (torch.tensor)[BatchNum, indexNum, dim]
-        varInv: (torch.tensor)[BatchNum, indexNum, dim]
+        index:  (index)[batchNum, indexNum]
+        mean:   (torch.tensor)[batchNum, indexNum, dim]
+        varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
-        index = self.variable(index)
         mean, varInv = self.conceptMeanEmbedding[index], self.conceptVariEmbedding[index]
-        #if detach:
-        #    mean, varInv = mean.detach(), varInv.detach()
         return [mean, varInv]
 
     def calcIntersection(self, embeddingA):
@@ -76,7 +78,7 @@ class SN2E(Module):
         '''
         [mean0, varInv0] = embedding0
         [meanN, varInvN] = embeddingN
-        [mean0, varInv0] = [mean0.unsqueeze(1), varInv0.unsqueeze(1)]
+        [mean0, varInv0] = [mean0.unsqueeze(-2), varInv0.unsqueeze(-2)]
         gap = 1/2 * ( - (mean0 - meanN).pow(2) * (varInv0 * varInvN) / (varInv0 + varInvN) ).sum(-1)
         return gap
     
@@ -86,7 +88,7 @@ class SN2E(Module):
         sbProb = 1/2 * ( (varInv1 / (varInv1 + varInv2)).log() -  (mean1 - mean2).pow(2) * varInv1 * varInv2 * (varInv1 + varInv2)).sum(-1)
         return sbProb
 
-    def scorePos(self, indexA):
+    def scorePos(self, indexA) -> torch.Tensor:
         '''
         indexA    : (index)[num0, numA]
         '''
@@ -94,7 +96,7 @@ class SN2E(Module):
         embeddingU = self.calcIntersection(embeddingA)
         return self.calcLambda(embeddingA, embeddingU)
 
-    def scoreNeg(self, index0, indexN):
+    def scoreNeg(self, index0, indexN) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
@@ -103,7 +105,7 @@ class SN2E(Module):
         embeddingN = self.lookupEmbedding(indexN)
         return self.calcGap(embedding0, embeddingN)
     
-    def forward(self, data, trainMode):
+    def forward(self, data):
         '''
         index0    :(index)[num0]
         indexA    :(index)[num0, numA]
@@ -111,70 +113,52 @@ class SN2E(Module):
 
         loss      :(torch.scale)
         '''
-        loss = torch.Tensor(0)
-        if trainMode == 'defimode':
-            [index0, indexA, indexN]  = data
-            lambd   = self.scorePos(indexA)
-            gap     = self.scoreNeg(index0, indexN)
-            posloss = torch.max(lambd, self.lambdaMax).sum() 
-            negloss = - (self.alpha / torch.max(gap, self.gapMax)).sum()
-            loss = posloss + negloss
-        elif trainMode == 'primmode':
-            [index0, indexN] = data
-            gap     = self.scoreNeg(index0, indexN)
-            negloss    = - (1 / torch.max(gap, self.gapMax)).sum() * self.alpha
-            loss = negloss
-        return loss
-    
-    def initEmbedding(self, varInitMode = 'const'):
-        nn.init.uniform_(self.primMeanEmbedding, -5, 5) 
-        nn.init.constant_(self.defiMeanEmbedding, 0) 
-        nn.init.constant_(self.primVariEmbedding, 0.1)
-        nn.init.constant_(self.defiVariEmbedding, 0.1)
-        self.tailingWorks()
-        self.catTogether()
+        [index0, indexA, indexN]  = data
+        lambd   = self.scorePos(indexA)
+        gap     = self.scoreNeg(index0, indexN)
+        posloss = torch.max(lambd, self.lambdaMax).sum() 
+        negloss = - (self.alpha / torch.max(gap, self.gapMax)).sum()
+        loss = posloss + negloss
+        return loss, posloss, negloss
         
-    
     def variable(self, data):
         if self.isCuda:
-            return data.cuda()
+            return data.cuda(self.gpunum)
         else:
             return data
     
     def tailingWorks(self):
-        def resetNoneEmbedding():
-            self.primMeanEmbedding[self.NoneIndex][:] = 0
-            self.primVariEmbedding[self.NoneIndex][:] = 0
-        def limitVarRange():
-            self.primVariEmbedding.data.copy_(torch.clamp(input=self.primVariEmbedding.detach(),
-                                                       min=self.invmin,
-                                                       max=self.invmax))
-        limitVarRange()
-        #resetNoneEmbedding()
-    
-    def tempProcess(self, homoDF):
-        self.catTogether()
-        self.setDefiConceptEmbedding(homoDF)
+        self.primVariEmbedding.data.copy_(
+            torch.clamp(
+                input=self.primVariEmbedding.detach(),
+                min=self.invmin,
+                max=self.invmax))
+        self.catEmbeddding()
+        self.setDefiConceptEmbedding()
 
     def evaluate(self, index1, index2):
         embedding1 = self.lookupEmbedding(index1)
         embedding2 = self.lookupEmbedding(index2)
         return self.calcSbProb(embedding1, embedding2)
     
-    def setDefiConceptEmbedding(self, homoDF):
-        homoTensor = self.variable(torch.tensor(np.asarray(homoDF).T))
-        homoEmbedding = self.lookupEmbedding(homoTensor)
+    def setDefiConceptEmbedding(self):
+        homoEmbedding = self.lookupEmbedding(self.homoIndex)
         [defiMean, defiVari] = self.calcIntersection(homoEmbedding)
-        self.conceptMeanEmbedding[self.num_prim : -1] = defiMean
-        self.conceptVariEmbedding[self.num_prim : -1] = defiVari
+        self.conceptMeanEmbedding = torch.cat([self.conceptMeanEmbedding, defiMean], 0)
+        self.conceptVariEmbedding = torch.cat([self.conceptVariEmbedding, defiVari], 0)
+
     
-    def catTogether(self):
-        self.conceptMeanEmbedding = torch.cat([self.primMeanEmbedding, self.defiMeanEmbedding], 0)
-        self.conceptVariEmbedding = torch.cat([self.primVariEmbedding, self.defiVariEmbedding], 0)
+    def catEmbeddding(self):
+        self.conceptMeanEmbedding = torch.cat([self.NoneMeanEmbedding, self.primMeanEmbedding], 0)
+        self.conceptVariEmbedding = torch.cat([self.NoneVariEmbedding, self.primVariEmbedding], 0)
+    
+    def sethomoIndex(self, homoDF):
+        self.homoIndex = self.variable(torch.tensor(np.asarray(homoDF).T))
         
-    def cudaModel(self):
-        self.cuda()
+    def cudaModel(self, gpunum):
+        self.cuda(gpunum)
         self.isCuda = True
+        self.gpunum = gpunum
 
     def cpuModel(self):
         self.cpu()

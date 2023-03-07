@@ -1,7 +1,10 @@
 import collections
 import pandas as pd
 
-from rawdata import *
+from config import DatapathArg, ModelArg
+from mycode.utils.treeunit import NodeUnit
+
+from rawdata import RawData, BaseData
 
 class FineData(BaseData):
     def __init__(self, path_rawdata = None):
@@ -9,9 +12,10 @@ class FineData(BaseData):
             rawdata:RawData = self.load(path_rawdata) # type: ignore 
             fulllist, defilist, primlist = self.creat_baselist(rawdata.basetree)
             attrdict, homodict = self.creat_attrhomodict(rawdata.basetree)
-            negtdict = dict()#self.creat_negtdict(fulllist, rawdata.basetree)
+            negtdict = self.creat_negtdict(fulllist, rawdata.basetree)
             self.rawdata = rawdata
             self.fulllist = fulllist
+            self.fullset  = set(fulllist)
             self.defilist = defilist
             self.primlist = primlist
             self.attrdict = attrdict
@@ -19,8 +23,12 @@ class FineData(BaseData):
             self.negtdict = negtdict
             self.attrDF = self.creat_DataFrame(attrdict)
             self.homoDF = self.creat_DataFrame(homodict)
+            ModelArg.SN2E.num_defi = len(defilist)
+            ModelArg.SN2E.num_prim = len(primlist)
+            #self.negtDF = self.creat_DataFrame(negtdict)
+            a = 0
     
-    def creat_baselist(self, basetree):
+    def creat_baselist(self, basetree:NodeUnit):
         def iter(node:NodeUnit):
             primset.update(node.attributes)
             defiset.add(node.name)
@@ -30,11 +38,12 @@ class FineData(BaseData):
         defiset, primset = set(), set()
         iter(basetree)
         defilist, primlist = list(defiset), list(primset)
-        fulllist = defilist + primlist
+        fulllist = primlist + defilist
         return fulllist, defilist, primlist
 
     def creat_attrhomodict(self, basetree):
         def iter(node:NodeUnit):
+            attrdict[node.name].update(node.fathers)
             attrdict[node.name].update(node.attributes)
             homodict[node.name].update(node.attributes)
             for son in node.sons:
@@ -42,7 +51,7 @@ class FineData(BaseData):
                 iter(son) 
             for attribute in node.attributes:
                 attrdict[attribute] = set()
-                homodict[attribute] = set()
+                #homodict[attribute] = set()
             return
         attrdict = collections.defaultdict(set)
         homodict = collections.defaultdict(set)
@@ -61,6 +70,7 @@ class FineData(BaseData):
                     descdict[node.name].update(descdict[son.name]) 
                 cogndict[node.name].update(descdict[node.name]|homodict[node.name])
                 for attribute in node.attributes:
+                    cogndict[attribute].add(attribute)
                     cogndict[attribute].add(node.name)
                     cogndict[attribute].update(descdict[node.name])
                 a = 0

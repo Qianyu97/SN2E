@@ -1,19 +1,23 @@
-from refine import *
+from refine import FineData, RawData, BaseData, pd
+from config import DatapathArg
+
 class FinalData(BaseData):
-    def __init__(self, path_rawdata):
+    def __init__(self, path_rawdata, path_dictionary = None):
         finedata = FineData(path_rawdata)
-        dictionary = self.creat_index(finedata.fulllist)
-        indexdata:FineData = self.indexconvert(finedata, dictionary) 
+        if not path_dictionary:
+            self.dictionary = self.creat_index(finedata.fulllist) 
+        else: 
+            self.dictionary:dict = self.load(path_dictionary)   # type: ignore
+        indexdata:FineData = self.indexconvert(finedata)              
         self.finedata   = finedata
         self.indexdata  = indexdata
-    
     
     def creat_index(self, fulllist):
         num2strList = [None] + fulllist
         str2numdict = {item: idx for idx, item in enumerate(num2strList)}
         return {'str' : str2numdict, 'num': num2strList}
     
-    def indexconvert(self, data, dictionary, arrow = 'str2num'):
+    def indexconvert(self, data, arrow = 'str2num'):
         def translate(source):
             sourcetype = type(source)
             if sourcetype == FineData:
@@ -28,25 +32,20 @@ class FinalData(BaseData):
                 newDataFrame.columns = source.columns.map(lambda x: dictionary[x])
                 return newDataFrame
             elif sourcetype == dict:
-                return  {translate(key) : translate(value) for key, value in source.items()}
+                return  {dictionary[key] : translate(value) for key, value in source.items()}
             elif sourcetype == list:
-                return [translate(i) for i in source]
+                return [dictionary[i] for i in source]
             elif sourcetype == set:
-                return {translate(i) for i in source}
+                return {dictionary[i] for i in source}
             elif sourcetype == str or sourcetype == int:
                 return dictionary[source]
             else:
                 return source
         assert arrow == 'str2num' or arrow == 'num2str'
-        dictionary = dictionary['str'] if arrow == 'str2num' else dictionary['num']
+        dictionary = self.dictionary['str'] if arrow == 'str2num' else self.dictionary['num'] 
         output:data = translate(data)
         return output
 
 if __name__ == '__main__':
     finaldata = FinalData(DatapathArg.path_rawdata)
     a = 0
-    
-            
-    
-        
-        
