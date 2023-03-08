@@ -2,7 +2,7 @@ import torch
 from mycode.utils import evaluate, prepare
 from mycode.utils.gaussianDrawer import GaussianDrawer
 from finaldata import FinalData, RawData
-from config import DatapathArg
+from config import DatapathArg, TrainArg
 from mycode.models.SN2E import SN2E
 class Tester():
     def __init__(self,
@@ -18,7 +18,7 @@ class Tester():
             
 
     def run(self):
-        #self.evaluater.Hf1Evaluate()
+        print('F1scpre: %.2f'%self.evaluater.calcF1score())
         self.drawer.drawOneSample(['tiger'] + list(self.finaldata.finedata.attrdict['tiger']), 'tiger')
         print('Lambd: %.2f' % self.checklambd('tiger').item())
         print('Gap: ' + str(self.checkgap('a0', ['a1', 'a2']).tolist()))
@@ -38,6 +38,7 @@ class Tester():
         
 
 if __name__ == "__main__":
+    TrainArg.usegpu = False
     finaldata    = FinalData(DatapathArg.path_rawdata, DatapathArg.path_indexdict)
     model      = prepare.prepareModel(finaldata.indexdata.homoDF, ifLoadModel=True)
     drawer     = GaussianDrawer(finaldata, model)

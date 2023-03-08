@@ -1,11 +1,10 @@
-import torch
+
 import torch
 import torch.nn as nn
 import torch.nn.parameter as pm
 import numpy as np
 from mycode.models.base import Module
 from config import ModelArg
-
 class SN2E(Module):
     def __init__(self, config:ModelArg.model): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
         super(SN2E, self).__init__()
@@ -23,6 +22,8 @@ class SN2E(Module):
         self.primVariEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
         self.NoneMeanEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
         self.NoneVariEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
+        self.conceptMeanEmbedding = torch.empty([self.num_prim + self.num_defi + 1, self.dim])
+        self.conceptVariEmbedding = torch.empty([self.num_prim + self.num_defi + 1, self.dim])
         self.isCuda     = False
         
     def initEmbedding(self, varInitMode = 'const'):
@@ -38,7 +39,7 @@ class SN2E(Module):
         varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
         mean, varInv = self.conceptMeanEmbedding[index], self.conceptVariEmbedding[index]
-        return [mean, varInv]
+        return mean, varInv
 
     def calcIntersection(self, embeddingA):
         '''
@@ -48,10 +49,10 @@ class SN2E(Module):
         meanU      : (torch.tensor)[num0, dim]
         varInvU    : (torch.tensor)[num0, dim]
         '''
-        [meanA, varInvA] = embeddingA
+        meanA, varInvA = embeddingA
         varInvU = varInvA.sum(-2)
         meanU = (varInvA * meanA).sum(-2) / varInvU
-        return [meanU, varInvU]
+        return meanU, varInvU
 
     def calcLambda(self, embeddingA, embeddingU):
         '''
@@ -62,8 +63,8 @@ class SN2E(Module):
 
         lambd      : (torch.tensor)[num0]
         '''
-        [meanA, varInvA] = embeddingA
-        [meanU, varInvU] = embeddingU
+        meanA, varInvA = embeddingA
+        meanU, varInvU = embeddingU
         lambd = - 1/2 * ( - (meanA.pow(2) * varInvA).sum(-2) + meanU.pow(2) * varInvU).sum(-1)
         return lambd
 
@@ -76,17 +77,19 @@ class SN2E(Module):
 
         gap        : (torch.tensor)[num0, numN]
         '''
-        [mean0, varInv0] = embedding0
-        [meanN, varInvN] = embeddingN
-        [mean0, varInv0] = [mean0.unsqueeze(-2), varInv0.unsqueeze(-2)]
+        mean0, varInv0 = embedding0
+        meanN, varInvN = embeddingN
+        mean0, varInv0 = [mean0.unsqueeze(-2), varInv0.unsqueeze(-2)]
         gap = 1/2 * ( - (mean0 - meanN).pow(2) * (varInv0 * varInvN) / (varInv0 + varInvN) ).sum(-1)
         return gap
     
-    def calcSbProb(self, embedding1, embedding2):
-        [mean1, varInv1] = embedding1
-        [mean2, varInv2] = embedding2
-        sbProb = 1/2 * ( (varInv1 / (varInv1 + varInv2)).log() -  (mean1 - mean2).pow(2) * varInv1 * varInv2 * (varInv1 + varInv2)).sum(-1)
-        return sbProb
+    def calcEntailProb(self, embedding1, embedding2):
+        mean1, varInv1 = embedding1
+        mean2, varInv2 = embedding2
+        mean1, varInv1 = mean1.unsqueeze(-2), varInv1.unsqueeze(-2)
+        mean2, varInv2 = mean2.unsqueeze(-3), varInv2.unsqueeze(-3)
+        EntailProb = 1/2 * ( (varInv1 / (varInv1 + varInv2)).log() -  (mean1 - mean2).pow(2) * varInv1 * varInv2 * (varInv1 + varInv2)).sum(-1)
+        return EntailProb.squeeze()
 
     def scorePos(self, indexA) -> torch.Tensor:
         '''
@@ -119,7 +122,7 @@ class SN2E(Module):
         posloss = torch.max(lambd, self.lambdaMax).sum() 
         negloss = - (self.alpha / torch.max(gap, self.gapMax)).sum()
         loss = posloss + negloss
-        return loss, posloss, negloss
+        return loss, posloss.item(), negloss.item(), lambd.max().item(), -gap.max().item()
         
     def variable(self, data):
         if self.isCuda:
@@ -139,7 +142,7 @@ class SN2E(Module):
     def evaluate(self, index1, index2):
         embedding1 = self.lookupEmbedding(index1)
         embedding2 = self.lookupEmbedding(index2)
-        return self.calcSbProb(embedding1, embedding2)
+        return self.calcEntailProb(embedding1, embedding2)
     
     def setDefiConceptEmbedding(self):
         homoEmbedding = self.lookupEmbedding(self.homoIndex)

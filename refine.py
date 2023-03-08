@@ -25,6 +25,7 @@ class FineData(BaseData):
             self.homoDF = self.creat_DataFrame(homodict)
             ModelArg.SN2E.num_defi = len(defilist)
             ModelArg.SN2E.num_prim = len(primlist)
+            ModelArg.SN2E.num_full = len(fulllist)
             #self.negtDF = self.creat_DataFrame(negtdict)
             a = 0
     

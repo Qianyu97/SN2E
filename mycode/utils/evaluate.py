@@ -1,5 +1,6 @@
 import numpy as np
 import torch
+from random import sample
 
 from mycode.models.SN2E import SN2E
 from finaldata import FinalData
@@ -13,21 +14,22 @@ class Evaluater():
         self.targetData = finaldata.indexdata.fulllist
         self.sourceLen = len(self.sourceData)
         self.targetLen = len(self.targetData)
+        self.redundlen = self.targetLen - self.sourceLen + 1
         self.model = model
-        threshold = np.arange(
+        self.threshold = torch.arange(
             TestArg.threshold_lower, 
             TestArg.threshold_Upper, 
             TestArg.step)
-        groundtruth = self.creatGroundTruth(finaldata.indexdata.homodict) 
+        self.groundtruth = self.creatGroundTruth(finaldata.indexdata.homodict) 
         a = 0
         
     
     def creatGroundTruth(self, truthdict:dict):
-        GT = np.zeros((self.sourceLen, self.targetLen), dtype = bool)
+        groundtruth = torch.zeros([self.sourceLen, self.targetLen], dtype = bool)
         for row, columns in truthdict.items():
-            GT[row - self.targetLen + self.sourceLen - 1, list(columns)] = True
-        GTflatIndex = list(GT.reshape(-1,1).nonzero())[0]
-        return GT
+            groundtruth[row - self.redundlen, list(columns)] = True
+        #groundtruth_flat = list(groundtruth.reshape(-1,1).nonzero())[0]
+        return groundtruth
 
 
     def HrankEvaluate(self,  groundtruth_flat):
@@ -37,15 +39,20 @@ class Evaluater():
         GTRank = rank[groundtruth_flat]
         return GTRank.mean().item()
     
-    def Hf1Evaluate(self, groundtruth, threshold):
-        evalResult = self.model.evaluate(self.sourceData, self.targetData)
-        judgement = evalResult > threshold
-        tp = (   groundtruth *   judgement).sum(1).sum(2).item()
-        fp = (   groundtruth * ~ judgement).sum(1).sum(2).item()
-        fn = ( ~ groundtruth *   judgement).sum(1).sum(2).item()
+    def calcF1score(self):
+        evalResult = torch.Tensor()
+        chunknum = 2
+        chunklen = int(self.sourceLen / chunknum)
+        chunkdata = sample(self.sourceData, chunklen) 
+        evalResult = self.model.evaluate(chunkdata, self.targetData)
+        judgement = evalResult > self.threshold.unsqueeze(-1).unsqueeze(-1)
+        groundtruth = self.groundtruth[[i - self.redundlen for i in chunkdata]]
+        tp = (   groundtruth *   judgement).sum(-1).sum(-1)
+        fp = (   groundtruth * ~ judgement).sum(-1).sum(-1)
+        fn = ( ~ groundtruth *   judgement).sum(-1).sum(-1)
         precision   = (tp + 1) / ( tp + fp + 1)
         recall      = (tp + 1) / ( tp + fn + 1) 
-        F1score = 2 * precision * recall / (precision + recall)
+        F1score = (2 * precision * recall / (precision + recall)).tolist()
         print(F1score)
         return F1score
 

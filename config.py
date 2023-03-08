@@ -13,27 +13,26 @@ class DataloaderArg():
     shuffle     = True
     numworkers  = 0
     droplast    = False
-    negtnum = 100
+    negtsamplenum = 100
     
 class ModelArg():
     # Model and training general arguments
     class SN2E():
-        name            = 'SN2E'
-        dim             = 64
-        lambdaMax       = 0.5
-        gapMax          = -5
-        vmax            = 10
-        vmin            = 0.1
-        alpha           = 0.1
-        posCheckTurn    = 2
-        negCheckTurn    = 2
-        NoneIndex       = None
-        num_defi        = 0
-        num_prim        = 0
+        name        = 'SN2E'
+        dim         = 64
+        lambdaMax   = 0.5
+        gapMax      = -5
+        vmax        = 10
+        vmin        = 0.1
+        alpha       = 0.1
+        NoneIndex   = None
+        num_defi    = 0
+        num_prim    = 0
+        num_full    = 0
         
         learningrate    = 0.075
         weightdecay     = 0
-        lrdecay         = 0
+        lrdecay         = 1
         lrdecayEpoch    = 250
         momentum        = 0
     class TransE():
@@ -73,21 +72,20 @@ class ModelArg():
     
 class TrainArg():
     # Training arguments
-    epochs      = 1000
+    epochs      = 500
     ifLoadModel = False
     usegpu      = True
-    gpunum      = 0
+    gpunum      = 1
     evalepoch   = 1
-    optimizer   = "SGD"
+    optimizer   = "Adam"
     evalmethod  = "MR"
     simmeasure  = "L2"
-    measuretime = True
-    measurefunc = 'trainer.run()'
+    timemeasure= True
     
 
 class TestArg():
     threshold_lower = 0
-    threshold_Upper = 2
+    threshold_Upper = 1
     step = 0.1
     num_showpicture = 10
     
@@ -98,9 +96,27 @@ class WordnetArg():
     a = TrainArg.epochs
 
 class validateArg():
-    field = TrainArg
-    name = 'optimizer'
-    candidate = ["SGD", "Adam", "Adadelta", "Adagrad"]
+    field = ModelArg.model
+    name = 'learningrate'
+    candidate = [0.001, 0.01, 0.25, 0.05]
+
+class displayArg():
+    epoch           = TrainArg.epochs
+    optimizer       = TrainArg.optimizer
+    batchsize       = DataloaderArg.batchsize
+    negtsamplenum   = DataloaderArg.negtsamplenum
+    modelname       = ModelArg.model.name
+    dim             = ModelArg.model.dim
+    lambdaMax       = ModelArg.model.lambdaMax
+    gapMax          = ModelArg.model.gapMax
+    vmax            = ModelArg.model.vmax
+    vmin            = ModelArg.model.vmin
+    alpha           = ModelArg.model.alpha
+    learningrate    = ModelArg.model.learningrate
+    weightdecay     = ModelArg.model.weightdecay
+    lrdecay         = ModelArg.model.lrdecay
+    lrdecayEpoch    = ModelArg.model.lrdecayEpoch
+    momentum        = ModelArg.model.momentum
     
 if __name__ == '__main__':
     WordnetArg.a = 5
