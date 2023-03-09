@@ -52,8 +52,37 @@ class Trainer():
             self.scheduler.step()
         print('Info : finish model training')
         self.model.saveCheckpoint(ModelArg.path_model)
+        self.evaluater.findworstlambd()
         print('Info : save model sucessfully')
         a = 0
+
+
+
+def main():
+    dataloader = DataLoader(
+            dataset     = dataset,                
+            batch_size  = DataloaderArg.batchsize,
+            shuffle     = DataloaderArg.shuffle,
+            num_workers = DataloaderArg.numworkers,
+            drop_last   = DataloaderArg.droplast,
+            #collate_fn  = my_collate
+            )
+    model      = prepare.prepareModel(finaldata.indexdata.homoDF)
+    evaluater = Evaluater(finaldata, model)
+    trainer = Trainer(dataloader, model, evaluater)
+    trainer.run()
+    finaldata.save(DatapathArg.path_indexdict, 'dictionary')
+
+def displayArgs():
+    showstring = str()
+    args = [i for i in dir(displayArg) if not i.startswith('__')]
+    args.sort()
+    for argname in args:
+        if not argname.startswith('__'):
+            arg = getattr(displayArg, argname)
+            showstring += (argname + ': ' + str(arg))
+            showstring += '    '
+    print(showstring)
 
 def my_collate(batch):
     elem = batch[0]
@@ -101,32 +130,6 @@ def my_collate(batch):
         return a
 
     raise TypeError(default_collate_err_msg_format.format(elem_type))
-
-def main():
-    dataloader = DataLoader(
-            dataset     = dataset,                
-            batch_size  = DataloaderArg.batchsize,
-            shuffle     = DataloaderArg.shuffle,
-            num_workers = DataloaderArg.numworkers,
-            drop_last   = DataloaderArg.droplast,
-            #collate_fn  = my_collate
-            )
-    model      = prepare.prepareModel(finaldata.indexdata.homoDF)
-    evaluater = Evaluater(finaldata, model)
-    trainer = Trainer(dataloader, model, evaluater)
-    trainer.run()
-    finaldata.save(DatapathArg.path_indexdict, 'dictionary')
-
-def displayArgs():
-    showstring = str()
-    args = [i for i in dir(displayArg) if not i.startswith('__')]
-    args.sort()
-    for argname in args:
-        if not argname.startswith('__'):
-            arg = getattr(displayArg, argname)
-            showstring += (argname + ': ' + str(arg))
-            showstring += '    '
-    print(showstring)
 
 if __name__ == "__main__":
     displayArgs()
