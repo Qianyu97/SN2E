@@ -72,7 +72,7 @@ class ModelArg():
     
 class TrainArg():
     # Training arguments
-    epochs      = 500
+    epochs      = 5
     ifLoadModel = False
     usegpu      = True
     gpunum      = 0
@@ -101,7 +101,7 @@ class validateArg():
     candidate = [0.00025, 0.0005, 0.001, 0.002, 0.004]
 
 class displayArg():
-    timemeasure = True
+    timemeasure     = True
     epoch           = TrainArg.epochs
     optimizer       = TrainArg.optimizer
     batchsize       = DataloaderArg.batchsize

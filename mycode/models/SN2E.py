@@ -18,19 +18,25 @@ class SN2E(Module):
         self.alpha      = config.alpha
         self.defaultNoneMean   = 0
         self.defaultNoneInvar  = 0.00000001
+        
         self.primMeanEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
         self.primVariEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
         self.NoneMeanEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
         self.NoneVariEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
-        self.conceptMeanEmbedding = torch.empty([self.num_prim + self.num_defi + 1, self.dim])
-        self.conceptVariEmbedding = torch.empty([self.num_prim + self.num_defi + 1, self.dim])
+        self.conceptMeanEmbedding = torch.nn.Embedding(1 + config.num_full, config.dim, padding_idx = 0)
+        self.conceptVariEmbedding = torch.nn.Embedding(1 + config.num_full, config.dim, padding_idx = 0)
         self.isCuda     = False
         
     def initEmbedding(self, varInitMode = 'const'):
-        nn.init.constant_(self.NoneMeanEmbedding, self.defaultNoneMean)
+        nn.init.uniform_(self.conceptMeanEmbedding.weight, -5, 5)
+        nn.init.uniform_(self.conceptVariEmbedding.weight, 0.1, 10)
+        self.conceptMeanEmbedding.weight.data[0] = self.defaultNoneMean
+        self.conceptVariEmbedding.weight.data[0] = self.defaultNoneInvar
+        '''nn.init.constant_(self.NoneMeanEmbedding, self.defaultNoneMean)
         nn.init.constant_(self.NoneVariEmbedding, self.defaultNoneInvar)
         nn.init.uniform_(self.primMeanEmbedding, -5, 5) 
-        nn.init.uniform_(self.primMeanEmbedding, 0.1, 10) 
+        nn.init.uniform_(self.primMeanEmbedding, 0.1, 10) '''
+        
 
     def lookupEmbedding(self, index):
         '''
@@ -38,7 +44,8 @@ class SN2E(Module):
         mean:   (torch.tensor)[batchNum, indexNum, dim]
         varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
-        return self.conceptMeanEmbedding[index], self.conceptVariEmbedding[index]
+        index = self.variable(index)
+        return self.conceptMeanEmbedding(index), self.conceptVariEmbedding(index)
 
     def calcIntersection(self, embeddingA):
         '''
@@ -130,20 +137,19 @@ class SN2E(Module):
             return data
     
     def tailingWorks(self):
-        self.primVariEmbedding.data.copy_(
+        self.conceptVariEmbedding.weight.data.copy_(
             torch.clamp(
-                input=self.primVariEmbedding.detach(),
+                input=self.conceptVariEmbedding.weight.data,
                 min=self.invmin,
                 max=self.invmax))
-        self.catEmbeddding()
-        self.setDefiConceptEmbedding()
+        #self.catEmbeddding()
+        #self.setDefiConceptEmbedding()
 
     def evaluate(self, index1, index2):
         embedding1 = self.lookupEmbedding(index1)
         embedding2 = self.lookupEmbedding(index2)
         return self.calcEntailProb(embedding1, embedding2)
-    
-    def setDefiConceptEmbedding(self):
+    '''def setDefiConceptEmbedding(self):
         homoEmbedding = self.lookupEmbedding(self.homoIndex)
         [defiMean, defiVari] = self.calcIntersection(homoEmbedding)
         self.conceptMeanEmbedding = torch.cat([self.conceptMeanEmbedding, defiMean], 0)
@@ -152,7 +158,8 @@ class SN2E(Module):
     
     def catEmbeddding(self):
         self.conceptMeanEmbedding = torch.cat([self.NoneMeanEmbedding, self.primMeanEmbedding], 0)
-        self.conceptVariEmbedding = torch.cat([self.NoneVariEmbedding, self.primVariEmbedding], 0)
+        self.conceptVariEmbedding = torch.cat([self.NoneVariEmbedding, self.primVariEmbedding], 0)'''
+    
     
     def sethomoIndex(self, homoDF):
         self.homoIndex = self.variable(torch.tensor(np.asarray(homoDF).T))
