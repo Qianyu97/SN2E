@@ -25,7 +25,7 @@ class Evaluater():
         
     
     def creatGroundTruth(self, truthdict:dict):
-        groundtruth = torch.zeros([self.sourceLen, self.targetLen], dtype = bool)
+        groundtruth = torch.zeros([self.sourceLen, self.targetLen], dtype = bool)  # type: ignore
         for row, columns in truthdict.items():
             groundtruth[row - self.redundlen, list(columns)] = True
         #groundtruth_flat = list(groundtruth.reshape(-1,1).nonzero())[0]
@@ -52,8 +52,8 @@ class Evaluater():
         fn = ( ~ groundtruth *   judgement).sum(-1).sum(-1)
         precision   = (tp + 1) / ( tp + fp + 1)
         recall      = (tp + 1) / ( tp + fn + 1) 
-        F1score = (2 * precision * recall / (precision + recall)).tolist()
-        print(F1score)
+        F1score = (2 * precision * recall / (precision + recall)).max().item()
+        print('F1score: %.2f '%F1score)
         return F1score
 
     def checklambd(self, concept):
@@ -67,3 +67,12 @@ class Evaluater():
         indexN  = self.model.variable(self.finaldata.indexconvert(conceptN))
         gap     = self.model.scoreNeg(index0, indexN)
         return gap
+
+    def findworstlambd(self):
+        attrDF = self.finaldata.indexdata.attrDF.sort_index(axis = 1)
+        lambd = self.model.scorePos(np.asarray(attrDF).T)
+        index = torch.argmax(lambd)
+        worstlambd = lambd[index]
+        name = self.finaldata.indexconvert(index.item() + 1, 'num2str')
+        print(name + ' has worst lambd %.2f' % worstlambd.item() )
+        

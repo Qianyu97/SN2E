@@ -19,8 +19,8 @@ class attrDataset(Dataset):
         items += 1
         posdata = self.indexdata.attrDF[items]
         negdata = sample(self.indexdata.negtdict[items], DataloaderArg.negtsamplenum)
-        return [np.array(items), np.array(posdata), np.array(negdata)]
-    
+        return [np.asarray(items), np.asarray(negdata), np.asarray(posdata)] # type: ignore  
+        
 
 
 

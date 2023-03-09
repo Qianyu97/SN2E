@@ -18,10 +18,13 @@ class Tester():
             
 
     def run(self):
-        print('F1scpre: %.2f'%self.evaluater.calcF1score())
-        self.drawer.drawOneSample(['tiger'] + list(self.finaldata.finedata.attrdict['tiger']), 'tiger')
-        print('Lambd: %.2f' % self.checklambd('tiger').item())
-        print('Gap: ' + str(self.checkgap('a0', ['a1', 'a2']).tolist()))
+        #self.evaluater.calcF1score()
+        #self.drawer.drawOneSample(['tiger'] + list(self.finaldata.finedata.attrdict['tiger']), 'tiger')
+        #print('Lambd: %.2f' % self.checklambd('tiger').item())
+        #print('Gap: ' + str(self.checkgap('a0', ['a1', 'a2']).tolist()))
+        self.drawpicture('animal')
+        m, v = self.lookupEmbedding(['a0', 'a1'])
+        self.evaluater.findworstlambd()
         a = 0
     
     def checklambd(self, concept):
@@ -35,6 +38,18 @@ class Tester():
         indexN  = list(self.finaldata.indexconvert(conceptN))
         gap     = self.model.scoreNeg(index0, indexN)
         return gap
+    
+    def drawpicture(self, name, partner = 'attr'):
+        if partner == 'attr':
+            self.drawer.drawOneSample([name] + list(self.finaldata.finedata.attrdict[name]), name + '-attr')
+        elif partner == 'sons':
+            self.drawer.drawOneSample([name] + list(self.finaldata.finedata.rawdata.basedict[name].sons), name + '-attr')
+        
+    def lookupEmbedding(self, name):
+        index = self.finaldata.indexconvert(name)
+        m, v  = self.model.lookupEmbedding(index)
+        return m, v
+
         
 
 if __name__ == "__main__":

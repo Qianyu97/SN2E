@@ -30,7 +30,7 @@ class ModelArg():
         num_prim    = 0
         num_full    = 0
         
-        learningrate    = 0.075
+        learningrate    = 0.002
         weightdecay     = 0
         lrdecay         = 1
         lrdecayEpoch    = 250
@@ -75,12 +75,12 @@ class TrainArg():
     epochs      = 500
     ifLoadModel = False
     usegpu      = True
-    gpunum      = 1
+    gpunum      = 0
     evalepoch   = 1
     optimizer   = "Adam"
     evalmethod  = "MR"
     simmeasure  = "L2"
-    timemeasure= True
+    
     
 
 class TestArg():
@@ -98,9 +98,10 @@ class WordnetArg():
 class validateArg():
     field = ModelArg.model
     name = 'learningrate'
-    candidate = [0.001, 0.01, 0.25, 0.05]
+    candidate = [0.00025, 0.0005, 0.001, 0.002, 0.004]
 
 class displayArg():
+    timemeasure = True
     epoch           = TrainArg.epochs
     optimizer       = TrainArg.optimizer
     batchsize       = DataloaderArg.batchsize

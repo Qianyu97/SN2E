@@ -1,0 +1,28 @@
+
+alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax: -5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 100    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 1
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+  0%|          | 0/500 [00:00<?, ?it/s]Epoch 1 | postive loss : 77.93, negtive loss : 2531.12, worst lambd: 137.35, worst gap: 1.05:   0%|          | 0/500 [00:19<?, ?it/s]Epoch 19 | postive loss : 61.46, negtive loss : 2011.19, worst lambd: 137.70, worst gap: 0.81:   4%|▍         | 20/500 [02:06<50:24,  6.30s/it]Epoch 39 | postive loss : 46.71, negtive loss : 1551.92, worst lambd: 137.70, worst gap: 0.70:   8%|▊         | 40/500 [04:10<47:57,  6.25s/it]Epoch 59 | postive loss : 34.70, negtive loss : 1182.81, worst lambd: 137.70, worst gap: 0.46:  12%|█▏        | 60/500 [06:15<45:47,  6.24s/it]Epoch 79 | postive loss : 25.05, negtive loss : 889.57, worst lambd: 137.70, worst gap: 0.40:  16%|█▌        | 80/500 [08:19<43:40,  6.24s/it] Epoch 99 | postive loss : 17.48, negtive loss : 673.12, worst lambd: 137.70, worst gap: 0.26:  20%|██        | 100/500 [10:24<41:34,  6.24s/it]Epoch 119 | postive loss : 12.09, negtive loss : 575.72, worst lambd: 137.70, worst gap: 0.21:  24%|██▍       | 120/500 [12:29<39:29,  6.24s/it]Epoch 139 | postive loss : 8.51, negtive loss : 630.18, worst lambd: 137.70, worst gap: 0.15:  28%|██▊       | 140/500 [14:33<37:24,  6.23s/it] Epoch 159 | postive loss : 5.88, negtive loss : 816.87, worst lambd: 137.70, worst gap: 0.07:  32%|███▏      | 160/500 [16:38<35:19,  6.23s/it]Epoch 179 | postive loss : 3.85, negtive loss : 1046.05, worst lambd: 137.70, worst gap: 0.04:  36%|███▌      | 180/500 [18:42<33:14,  6.23s/it]Epoch 199 | postive loss : 2.43, negtive loss : 1253.26, worst lambd: 137.70, worst gap: 0.02:  40%|████      | 200/500 [20:47<31:09,  6.23s/it]Epoch 219 | postive loss : 1.58, negtive loss : 1430.50, worst lambd: 137.70, worst gap: 0.01:  44%|████▍     | 220/500 [22:52<29:04,  6.23s/it]Epoch 239 | postive loss : 1.17, negtive loss : 1579.00, worst lambd: 137.70, worst gap: 0.01:  48%|████▊     | 240/500 [24:56<26:59,  6.23s/it]Epoch 259 | postive loss : 1.01, negtive loss : 1709.76, worst lambd: 137.70, worst gap: 0.01:  52%|█████▏    | 260/500 [27:01<24:55,  6.23s/it]Epoch 279 | postive loss : 0.93, negtive loss : 1814.65, worst lambd: 137.70, worst gap: 0.01:  56%|█████▌    | 280/500 [29:05<22:50,  6.23s/it]Epoch 299 | postive loss : 0.89, negtive loss : 1902.60, worst lambd: 137.70, worst gap: 0.01:  60%|██████    | 300/500 [31:10<20:46,  6.23s/it]Epoch 319 | postive loss : 0.86, negtive loss : 1985.54, worst lambd: 137.70, worst gap: 0.01:  64%|██████▍   | 320/500 [33:15<18:41,  6.23s/it]Epoch 339 | postive loss : 0.84, negtive loss : 2057.29, worst lambd: 137.70, worst gap: 0.00:  68%|██████▊   | 340/500 [35:19<16:36,  6.23s/it]Epoch 359 | postive loss : 0.82, negtive loss : 2125.10, worst lambd: 137.70, worst gap: 0.00:  72%|███████▏  | 360/500 [37:24<14:32,  6.23s/it]Epoch 379 | postive loss : 0.81, negtive loss : 2187.04, worst lambd: 137.70, worst gap: 0.00:  76%|███████▌  | 380/500 [39:28<12:27,  6.23s/it]Epoch 399 | postive loss : 0.80, negtive loss : 2244.30, worst lambd: 137.70, worst gap: 0.00:  80%|████████  | 400/500 [41:33<10:22,  6.23s/it]Epoch 419 | postive loss : 0.79, negtive loss : 2293.87, worst lambd: 137.70, worst gap: 0.00:  84%|████████▍ | 420/500 [43:38<08:18,  6.23s/it]Epoch 439 | postive loss : 0.78, negtive loss : 2343.33, worst lambd: 137.70, worst gap: 0.00:  88%|████████▊ | 440/500 [45:42<06:13,  6.23s/it]Epoch 459 | postive loss : 0.78, negtive loss : 2388.35, worst lambd: 137.70, worst gap: 0.00:  92%|█████████▏| 460/500 [47:47<04:09,  6.23s/it]Epoch 479 | postive loss : 0.77, negtive loss : 2429.61, worst lambd: 137.70, worst gap: 0.00:  96%|█████████▌| 480/500 [49:52<02:04,  6.23s/it]Epoch 499 | postive loss : 0.77, negtive loss : 2471.13, worst lambd: 137.70, worst gap: 0.00: 100%|██████████| 500/500 [51:56<00:00,  6.23s/it]Epoch 499 | postive loss : 0.77, negtive loss : 2471.13, worst lambd: 137.70, worst gap: 0.00: 100%|██████████| 500/500 [51:56<00:00,  6.23s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+Timer unit: 1e-09 s
+
+Total time: 2175.58 s
+File: Train.py
+Function: train_one_batch at line 21
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    21                                               def train_one_batch(self, batchdata):
+    22     57500 2043446607147.0 35538201.9     93.9          loss, posloss, negloss, maxlambd, mingap = self.model(batchdata)
+    23     57500 108063652678.0 1879367.9      5.0          loss.backward()
+    24     57500 11036431984.0 191937.9      0.5          self.optimizer.step()
+    25     57500 2053933775.0  35720.6      0.1          self.optimizer.zero_grad()
+    26     57500 10964939877.0 190694.6      0.5          self.model.tailingWorks()
+    27     57500   17483874.0    304.1      0.0          return posloss, negloss, maxlambd, mingap
+

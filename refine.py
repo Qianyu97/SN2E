@@ -53,6 +53,7 @@ class FineData(BaseData):
             for attribute in node.attributes:
                 attrdict[attribute] = set()
                 #homodict[attribute] = set()
+                pass
             return
         attrdict = collections.defaultdict(set)
         homodict = collections.defaultdict(set)

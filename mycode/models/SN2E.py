@@ -30,7 +30,7 @@ class SN2E(Module):
         nn.init.constant_(self.NoneMeanEmbedding, self.defaultNoneMean)
         nn.init.constant_(self.NoneVariEmbedding, self.defaultNoneInvar)
         nn.init.uniform_(self.primMeanEmbedding, -5, 5) 
-        nn.init.constant_(self.primVariEmbedding, 0.1)
+        nn.init.uniform_(self.primMeanEmbedding, 0.1, 10) 
 
     def lookupEmbedding(self, index):
         '''
@@ -38,8 +38,7 @@ class SN2E(Module):
         mean:   (torch.tensor)[batchNum, indexNum, dim]
         varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
-        mean, varInv = self.conceptMeanEmbedding[index], self.conceptVariEmbedding[index]
-        return mean, varInv
+        return self.conceptMeanEmbedding[index], self.conceptVariEmbedding[index]
 
     def calcIntersection(self, embeddingA):
         '''
@@ -116,13 +115,13 @@ class SN2E(Module):
 
         loss      :(torch.scale)
         '''
-        [index0, indexA, indexN]  = data
+        [index0, indexN, indexA]  = data
         lambd   = self.scorePos(indexA)
         gap     = self.scoreNeg(index0, indexN)
         posloss = torch.max(lambd, self.lambdaMax).sum() 
         negloss = - (self.alpha / torch.max(gap, self.gapMax)).sum()
         loss = posloss + negloss
-        return loss, posloss.item(), negloss.item(), lambd.max().item(), -gap.max().item()
+        return loss, lambd.sum().item(), - gap.sum().item(), lambd.max().item(), - gap.max().item()
         
     def variable(self, data):
         if self.isCuda:
