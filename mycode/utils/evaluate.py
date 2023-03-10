@@ -71,8 +71,9 @@ class Evaluater():
     def findworstlambd(self):
         attrDF = self.finaldata.indexdata.attrDF.sort_index(axis = 1)
         lambd = self.model.scorePos(np.asarray(attrDF).T)
-        index = torch.argmax(lambd)
-        worstlambd = lambd[index]
-        name = self.finaldata.indexconvert(index.item() + 1, 'num2str')
-        print(name + ' has worst lambd %.2f' % worstlambd.item() )
-        
+        worstlambd, indexes = lambd.sort(descending=True)
+        showname    = self.finaldata.indexconvert((indexes +  1).tolist()[:5], 'num2str')
+        showvalue  = worstlambd.tolist()[:5]
+        namestring  = '{}, {}, {}, {}, {} have the worst lambd, which are '.format(*showname)
+        valuestring = '{:%.2f}, {:%.2f}, {:%.2f}, {:%.2f}, {:%.2f} '.format(*showvalue)
+        print(namestring + valuestring)

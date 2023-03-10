@@ -1,8 +1,0 @@
-alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax: -5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 100    optimizer: Adam    timemeasure: True    vmax: 10    vmin: 0.1    weightdecay: 0    
-INFO -- prepare : Init model SN2E
-INFO -- prepare : set model cuda: 0
-INFO -- prepare : Model initialization complete
-INFO -- prepare : Init optimizer
-INFO -- prepare : Finish preparing Optimizer...
-Info -- : start model training
-  0%|          | 0/500 [00:00<?, ?it/s]Epoch 1 | postive loss : 76.53, negtive loss : 2479.85, worst lambd: 137.68, worst gap: 1.32:   0%|          | 0/500 [00:19<?, ?it/s]Epoch 9 | postive loss : 68.70, negtive loss : 2230.99, worst lambd: 133.22, worst gap: 1.15:   2%|▏         | 10/500 [01:04<52:16,  6.40s/it]Epoch 19 | postive loss : 60.13, negtive loss : 1965.79, worst lambd: 117.43, worst gap: 1.16:   4%|▍         | 20/500 [02:05<50:15,  6.28s/it]Epoch 29 | postive loss : 52.44, negtive loss : 1727.27, worst lambd: 102.79, worst gap: 0.81:   6%|▌         | 30/500 [03:07<48:54,  6.24s/it]Epoch 39 | postive loss : 45.54, negtive loss : 1514.02, worst lambd: 90.90, worst gap: 0.85:   8%|▊         | 40/500 [04:09<47:44,  6.23s/it] Epoch 49 | postive loss : 39.32, negtive loss : 1322.78, worst lambd: 81.56, worst gap: 0.82:  10%|█         | 50/500 [05:11<46:37,  6.22s/it]

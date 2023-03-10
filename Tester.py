@@ -10,7 +10,9 @@ class Tester():
                  model:SN2E, 
                  drawer:GaussianDrawer, 
                  evaluater:evaluate.Evaluater) -> None:
-        self.finaldata = finaldata
+        self.finaldata  = finaldata
+        self.finedata   = finaldata.finedata
+        self.rawdata    = finaldata.finedata.rawdata
         self.model = model
         self.drawer = drawer
         self.evaluater = evaluater
@@ -22,8 +24,8 @@ class Tester():
         #self.drawer.drawOneSample(['tiger'] + list(self.finaldata.finedata.attrdict['tiger']), 'tiger')
         #print('Lambd: %.2f' % self.checklambd('tiger').item())
         #print('Gap: ' + str(self.checkgap('a0', ['a1', 'a2']).tolist()))
-        self.drawpicture('animal')
-        m, v = self.lookupEmbedding(['a0', 'a1'])
+        #self.drawpicture('animal')
+        #m, v = self.lookupEmbedding(['a0', 'a1'])
         self.evaluater.findworstlambd()
         a = 0
     
@@ -49,6 +51,10 @@ class Tester():
         index = self.finaldata.indexconvert(name)
         m, v  = self.model.lookupEmbedding(index)
         return m, v
+
+    def findmostson(self):
+        a = sorted(self.rawdata.basedict.keys(), key=lambda x:len(self.rawdata.basedict[x].sons), reverse=True)
+        print(*a)
 
         
 
