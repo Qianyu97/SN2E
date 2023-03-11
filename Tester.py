@@ -39,13 +39,15 @@ class Tester():
         index0  = self.finaldata.indexconvert(concept0)
         indexN  = list(self.finaldata.indexconvert(conceptN))
         gap     = self.model.scoreNeg(index0, indexN)
-        return gap
+        return - gap
     
-    def drawpicture(self, name, partner = 'attr'):
+    def draw(self, name, partner = 'default'):
         if partner == 'attr':
             self.drawer.drawOneSample([name] + list(self.finaldata.finedata.attrdict[name]), name + '-attr')
         elif partner == 'sons':
             self.drawer.drawOneSample([name] + list(self.finaldata.finedata.rawdata.basedict[name].sons), name + '-attr')
+        elif partner == 'default':
+            self.drawer.drawOneSample(name, 'default')
         
     def lookupEmbedding(self, name):
         index = self.finaldata.indexconvert(name)
