@@ -94,7 +94,7 @@ class SN2E(Module):
         mean2, varInv2 = embedding2
         mean1, varInv1 = mean1.unsqueeze(-2), varInv1.unsqueeze(-2)
         mean2, varInv2 = mean2.unsqueeze(-3), varInv2.unsqueeze(-3)
-        EntailProb = 1/2 * ( (varInv1 / (varInv1 + varInv2)).log() -  (mean1 - mean2).pow(2) * varInv1 * varInv2 * (varInv1 + varInv2)).sum(-1)
+        EntailProb = 1/2 * ( (1 + varInv2 / varInv1).log() + (mean1 - mean2).pow(2) * varInv1 * varInv2 / (varInv1 + varInv2)).sum(-1)
         return EntailProb.squeeze()
 
     def scorePos(self, indexA) -> torch.Tensor:

@@ -6,6 +6,7 @@ import torch
 import re
 import collections
 from torch._six import string_classes
+import time
 
 from config import DatapathArg, DataloaderArg, TrainArg, ModelArg, validateArg, displayArg
 from finaldata import FinalData, RawData
@@ -33,7 +34,7 @@ class Trainer():
     def run(self):
         print('Info -- : start model training')
         EPOCHS = TrainArg.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS))#, mininterval=60, miniters=10)
+        EPOCHS_ITER = tqdm(range(EPOCHS), mininterval=66, miniters=10)
         
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
@@ -46,31 +47,15 @@ class Trainer():
                 worstlambd = max(maxlambd, worstlambd)
                 worstgap   = min(mingap, worstgap)
             aveposloss = sumposloss / ModelArg.model.num_defi
-            avenegloss = sumnegloss / ModelArg.model.num_full
+            avenegloss = sumnegloss / ModelArg.model.num_full/DataloaderArg.negtsamplenum
             EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst lambd: %.2f, worst gap: %.2f" \
                             % (epoch, aveposloss, avenegloss, worstlambd, worstgap), refresh=None)
             self.scheduler.step()
         print('Info : finish model training')
-        #self.model.saveCheckpoint(ModelArg.path_model)
+        self.model.saveCheckpoint(ModelArg.path_model)
+        #self.evaluater.findworstlambd()
         print('Info : save model sucessfully')
         a = 0
-
-
-
-def main():
-    dataloader = DataLoader(
-            dataset     = dataset,                
-            batch_size  = DataloaderArg.batchsize,
-            shuffle     = DataloaderArg.shuffle,
-            num_workers = DataloaderArg.numworkers,
-            drop_last   = DataloaderArg.droplast,
-            #collate_fn  = my_collate
-            )
-    model      = prepare.prepareModel(finaldata.indexdata.homoDF)
-    evaluater = Evaluater(finaldata, model)
-    trainer = Trainer(dataloader, model, evaluater)
-    trainer.run()
-    #finaldata.save(DatapathArg.path_indexdict, 'dictionary')
 
 def displayArgs():
     showstring = str()
@@ -127,10 +112,26 @@ def my_collate(batch):
         transposed = zip(*batch)
         a = [my_collate(samples) for samples in transposed]
         return a
-
     raise TypeError(default_collate_err_msg_format.format(elem_type))
 
+
+def main():
+    dataloader = DataLoader(
+            dataset     = dataset,                
+            batch_size  = DataloaderArg.batchsize,
+            shuffle     = DataloaderArg.shuffle,
+            num_workers = DataloaderArg.numworkers,
+            drop_last   = DataloaderArg.droplast,
+            #collate_fn  = my_collate
+            )
+    model      = prepare.prepareModel(finaldata.indexdata.homoDF)
+    evaluater = Evaluater(finaldata, model)
+    trainer = Trainer(dataloader, model, evaluater)
+    trainer.run()
+    finaldata.save(DatapathArg.path_indexdict, 'dictionary')
+
 if __name__ == "__main__":
+    print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     displayArgs()
     VALIDATE = False
     finaldata = FinalData(DatapathArg.path_rawdata)
@@ -145,7 +146,7 @@ if __name__ == "__main__":
             print('\n\n\n')
     else:
         if displayArg.timemeasure:
-            lprofiler = LineProfiler(Trainer.train_one_batch)
+            lprofiler = LineProfiler(SN2E.scorePos)
             lprofiler.run('main()')
             lprofiler.print_stats()
             lprofiler.dump_stats(DatapathArg.path_profiler)

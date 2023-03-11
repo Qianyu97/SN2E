@@ -1,7 +1,7 @@
 import collections
 import pandas as pd
 
-from config import DatapathArg, ModelArg
+from config import DatapathArg, ModelArg, DataloaderArg
 from mycode.utils.treeunit import NodeUnit
 
 from rawdata import RawData, BaseData
@@ -26,6 +26,7 @@ class FineData(BaseData):
             ModelArg.SN2E.num_defi = len(defilist)
             ModelArg.SN2E.num_prim = len(primlist)
             ModelArg.SN2E.num_full = len(fulllist)
+            DataloaderArg.len_attr = self.homoDF.shape[0]
             #self.negtDF = self.creat_DataFrame(negtdict)
             a = 0
     

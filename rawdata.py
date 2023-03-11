@@ -37,8 +37,9 @@ class RawData(BaseData):
         self.basedict = basedict
         
     def creat_basetree(self, origword, maxdepth):
-        def iter(node_father:NodeUnit, syns_father, depth):
-            if depth < 0:
+        def iter(node_father:NodeUnit, syns_father, depth):  
+            node_father.depth = maxdepth - depth
+            if depth <= 0:
                 return
             for syns_son in syns_father.hyponyms():
                 name_son = syns_son.name()[:-5]
@@ -49,7 +50,6 @@ class RawData(BaseData):
                 node_son.addFather(node_father)
                 basedict[name_son] = node_son
                 iter(node_son, syns_son, depth - 1)
-        
         orignode = NodeUnit(origword)
         origsyns = wn.synsets(origword)[0] # type: ignore
         basedict:dict[str, NodeUnit] = {origword: orignode}
@@ -71,6 +71,19 @@ class RawData(BaseData):
         minAttrnum = 2
         iter(basetree, 0)
         return basetree
+    
+    def printree(self, startconcept = None, targetdepth = 1):
+        def iter(node:NodeUnit, depth):
+            if depth <= 0:
+                return
+            print('----' * node.depth + node.name)
+            for son in node.sons:
+                iter(son, depth - 1)
+        if startconcept is None:
+            startconcept = self.basetree
+        if type(startconcept) == str:
+            startconcept = self.basedict[startconcept] # type: ignore
+        iter(startconcept, targetdepth) # type: ignore
 
 
 

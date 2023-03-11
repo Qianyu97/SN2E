@@ -16,10 +16,11 @@ class Evaluater():
         self.targetLen = len(self.targetData)
         self.redundlen = self.targetLen - self.sourceLen + 1
         self.model = model
-        self.threshold = torch.arange(
+        self.threshold = 0.5
+        '''torch.arange(
             TestArg.threshold_lower, 
             TestArg.threshold_Upper, 
-            TestArg.step)
+            TestArg.step)'''
         self.groundtruth = self.creatGroundTruth(finaldata.indexdata.homodict) 
         a = 0
         
@@ -45,7 +46,7 @@ class Evaluater():
         chunklen = int(self.sourceLen / chunknum)
         chunkdata = sample(self.sourceData, chunklen) 
         evalResult = self.model.evaluate(chunkdata, self.targetData)
-        judgement = evalResult > self.threshold.unsqueeze(-1).unsqueeze(-1)
+        judgement = evalResult < self.threshold #.unsqueeze(-1).unsqueeze(-1)
         groundtruth = self.groundtruth[[i - self.redundlen for i in chunkdata]]
         tp = (   groundtruth *   judgement).sum(-1).sum(-1)
         fp = (   groundtruth * ~ judgement).sum(-1).sum(-1)
@@ -53,7 +54,7 @@ class Evaluater():
         precision   = (tp + 1) / ( tp + fp + 1)
         recall      = (tp + 1) / ( tp + fn + 1) 
         F1score = (2 * precision * recall / (precision + recall)).max().item()
-        print('F1score: %.2f '%F1score)
+        print('F1score: %.2f ' % F1score)
         return F1score
 
     def checklambd(self, concept):
@@ -71,8 +72,9 @@ class Evaluater():
     def findworstlambd(self):
         attrDF = self.finaldata.indexdata.attrDF.sort_index(axis = 1)
         lambd = self.model.scorePos(np.asarray(attrDF).T)
-        index = torch.argmax(lambd)
-        worstlambd = lambd[index]
-        name = self.finaldata.indexconvert(index.item() + 1, 'num2str')
-        print(name + ' has worst lambd %.2f' % worstlambd.item() )
-        
+        worstlambd, indexes = lambd.sort(descending=True)
+        showname    = self.finaldata.indexconvert((indexes +  1).tolist()[:5], 'num2str')
+        showvalue  = worstlambd.tolist()[:5]
+        namestring  = '{}, {}, {}, {}, {} have the worst lambd, which are '.format(*showname)
+        valuestring = '{:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f} '.format(*showvalue)
+        print(namestring + valuestring)

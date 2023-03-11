@@ -14,6 +14,7 @@ class DataloaderArg():
     numworkers  = 0
     droplast    = False
     negtsamplenum = 100
+    len_attr    = 0
     
 class ModelArg():
     # Model and training general arguments
@@ -21,14 +22,15 @@ class ModelArg():
         name        = 'SN2E'
         dim         = 64
         lambdaMax   = 0.5
-        gapMax      = -5
-        vmax        = 10
-        vmin        = 0.1
+        gapMax      = -1
+        vmax        = 100
+        vmin        = 0.01
         alpha       = 0.1
         NoneIndex   = None
         num_defi    = 0
         num_prim    = 0
         num_full    = 0
+        
         
         learningrate    = 0.002
         weightdecay     = 0
@@ -91,7 +93,7 @@ class TestArg():
     
 class WordnetArg():
     # Other arguments
-    wordnet_depth = 8
+    wordnet_depth = 9
     originWord = 'animal'
     a = TrainArg.epochs
 
@@ -101,7 +103,7 @@ class validateArg():
     candidate = [0.00025, 0.0005, 0.001, 0.002, 0.004]
 
 class displayArg():
-    timemeasure     = True
+    timemeasure     = False
     epoch           = TrainArg.epochs
     optimizer       = TrainArg.optimizer
     batchsize       = DataloaderArg.batchsize
