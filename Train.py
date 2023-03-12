@@ -34,8 +34,7 @@ class Trainer():
     def run(self):
         print('Info -- : start model training')
         EPOCHS = TrainArg.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS), mininterval=66, miniters=10)
-        
+        EPOCHS_ITER = tqdm(range(EPOCHS), miniters=10)
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
             worstlambd, worstgap = 0, float("inf") 
@@ -105,11 +104,11 @@ def my_collate(batch):
         return elem_type(*(my_collate(samples) for samples in zip(*batch)))
     elif isinstance(elem, collections.abc.Sequence):
         # check to make sure that the elements in batch have consistent size
-        it = iter(batch)
+        '''it = iter(batch)
         elem_size = len(next(it))
         if not all(len(elem) == elem_size for elem in it):
-            raise RuntimeError('each element in list of batch should be of equal size')
-        transposed = zip(*batch)
+            raise RuntimeError('each element in list of batch should be of equal size')'''
+        transposed = zip(*sorted(batch, key=lambda x:x[0]))
         a = [my_collate(samples) for samples in transposed]
         return a
     raise TypeError(default_collate_err_msg_format.format(elem_type))
@@ -122,7 +121,7 @@ def main():
             shuffle     = DataloaderArg.shuffle,
             num_workers = DataloaderArg.numworkers,
             drop_last   = DataloaderArg.droplast,
-            #collate_fn  = my_collate
+            collate_fn  = my_collate
             )
     model      = prepare.prepareModel(finaldata.indexdata.homoDF)
     evaluater = Evaluater(finaldata, model)
@@ -133,10 +132,9 @@ def main():
 if __name__ == "__main__":
     print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     displayArgs()
-    VALIDATE = False
     finaldata = FinalData(DatapathArg.path_rawdata)
     dataset = attrDataset(finaldata.indexdata) 
-    if VALIDATE:
+    if False:
         print('the validation begin')
         for paramter in validateArg.candidate: 
             print('set ' + validateArg.name + ' with ' + str(paramter) \
@@ -145,7 +143,7 @@ if __name__ == "__main__":
             main()
             print('\n\n\n')
     else:
-        if displayArg.timemeasure:
+        if False:
             lprofiler = LineProfiler(SN2E.scorePos)
             lprofiler.run('main()')
             lprofiler.print_stats()

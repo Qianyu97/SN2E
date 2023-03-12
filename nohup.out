@@ -97,3 +97,26 @@ Info : finish model training
 Info : save model sucessfully
 Info : save sucessfully
 >>>>>>> origin/newtry
+2023-03-12 09:02:04
+alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax: -1    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 100    optimizer: Adam    vmax: 100    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+Traceback (most recent call last):
+  File "Train.py", line 153, in <module>
+    main()
+  File "Train.py", line 127, in main
+    model      = prepare.prepareModel(finaldata.indexdata.homoDF)
+  File "/home1/cqy2020/SN2E/mycode/utils/prepare.py", line 27, in prepareModel
+    model.cudaModel(TrainArg.gpunum)
+  File "/home1/cqy2020/SN2E/mycode/models/SN2E.py", line 160, in cudaModel
+    self.cuda(gpunum)
+  File "/home1/cqy2020/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 680, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home1/cqy2020/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home1/cqy2020/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 593, in _apply
+    param_applied = fn(param)
+  File "/home1/cqy2020/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 680, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
