@@ -23,8 +23,8 @@ class SN2E(Module):
         self.primVariEmbedding = pm.Parameter(torch.empty([self.num_prim, self.dim]))
         self.NoneMeanEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
         self.NoneVariEmbedding = pm.Parameter(torch.empty([1, self.dim]), requires_grad=False)
-        self.conceptMeanEmbedding = torch.nn.Embedding(1 + config.num_full, config.dim, padding_idx = 0)
-        self.conceptVariEmbedding = torch.nn.Embedding(1 + config.num_full, config.dim, padding_idx = 0)
+        self.conceptMeanEmbedding = torch.nn.Embedding(1 + config.num_prim, config.dim, padding_idx = 0)
+        self.conceptVariEmbedding = torch.nn.Embedding(1 + config.num_prim, config.dim, padding_idx = 0)
         self.isCuda     = False
         
     def initEmbedding(self, varInitMode = 'const'):

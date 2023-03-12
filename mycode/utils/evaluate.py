@@ -71,7 +71,7 @@ class Evaluater():
 
     def findworstlambd(self):
         attrDF = self.finaldata.indexdata.attrDF.sort_index(axis = 1)
-        lambd = self.model.scorePos(np.asarray(attrDF).T)
+        lambd = self.model.scorePos(np.asarray(attrDF).T) # type: ignore
         worstlambd, indexes = lambd.sort(descending=True)
         showname    = self.finaldata.indexconvert((indexes +  1).tolist()[:5], 'num2str')
         showvalue  = worstlambd.tolist()[:5]
