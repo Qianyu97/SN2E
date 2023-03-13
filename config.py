@@ -26,7 +26,7 @@ class ModelArg():
         gapMax_defi = -1
         vmax        = 100
         vmin        = 0.01
-        alpha       = 0.1
+        alpha       = 0.5
         NoneIndex   = None
         num_defi    = 0
         num_prim    = 0
@@ -78,7 +78,7 @@ class TrainArg():
     epochs      = 500
     ifLoadModel = False
     usegpu      = True
-    gpunum      = 0
+    gpunum      = 1
     evalepoch   = 1
     optimizer   = "Adam"
     evalmethod  = "MR"

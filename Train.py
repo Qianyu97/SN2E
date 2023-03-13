@@ -7,6 +7,8 @@ import re
 import collections
 from torch._six import string_classes
 import time
+import os
+os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
 from config import DatapathArg, DataloaderArg, TrainArg, ModelArg, validateArg, displayArg
 from finaldata import FinalData, RawData
@@ -94,7 +96,7 @@ def my_collate(batch):
             # array of string classes and object
             if np_str_obj_array_pattern.search(elem.dtype.str) is not None:
                 raise TypeError(default_collate_err_msg_format.format(elem.dtype))
-            return my_collate([torch.as_tensor(b) for b in batch if b.any()])
+            return my_collate([torch.as_tensor(b) for b in batch])
         elif elem.shape == ():  # scalars
             return torch.as_tensor(batch)
     elif isinstance(elem, float):

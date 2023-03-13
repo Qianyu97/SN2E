@@ -18,7 +18,7 @@ class attrDataset(Dataset):
     
     def __getitem__(self, items):
         items += 1
-        posdata = self.indexdata.attrDF.get(items, self.padAttrs)
+        posdata = self.indexdata.homoDF.get(items, self.padAttrs)
         negdata = sample(self.indexdata.negtdict[items], DataloaderArg.negtsamplenum)
         return [np.asarray(items), np.asarray(negdata), np.asarray(posdata)] # type: ignore  
         

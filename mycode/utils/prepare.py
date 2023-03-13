@@ -35,6 +35,7 @@ def prepareModel(homoDF:pd.DataFrame,ifLoadModel = False):
         model.loadCheckpoint(ModelArg.path_model, device)
         model.sethomoIndex(homoDF.sort_index(axis = 1))
         model.tailingWorks()
+        model.generateWholeEmbedding()
         print("INFO -- prepare : Model loading complete")
     else:
         model.initEmbedding()

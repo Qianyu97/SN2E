@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 from matplotlib import transforms
 from random import sample
 
-from mycode.models.base import Module 
+from mycode.models.SN2E import SN2E
 from mycode.utils import prepare
 from finaldata import FinalData
 from config import DatapathArg, TestArg
 from mycode.utils.treeunit import NodeUnit
 
 class GaussianDrawer():
-    def __init__(self, dataset:FinalData, model:Module):
+    def __init__(self, dataset:FinalData, model:SN2E):
         self.dataset = dataset
         self.model = model
         self.showSamples = self.geneShowSamples(
@@ -37,7 +37,7 @@ class GaussianDrawer():
     def drawOneSample(self, conceptlist, label = 'default'):
         plt.switch_backend('agg')
         indexConcepts = self.dataset.indexconvert(conceptlist)
-        embedding = self.model.lookupEmbedding(torch.tensor(indexConcepts))
+        embedding = self.model.lookupEmbedding_whole(indexConcepts)
         reducedMeans, reducedVariances = self.PCA_Gaussians(embedding)
         figure , ax = plt.subplots()
         self.gaussians_ellipse(indexConcepts, reducedMeans, reducedVariances, ax, facecolor = 'blue')

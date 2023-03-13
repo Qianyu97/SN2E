@@ -26,6 +26,8 @@ class Tester():
         #print('Gap: ' + str(self.checkgap('a0', ['a1', 'a2']).tolist()))
         #self.drawpicture('animal')
         #m, v = self.lookupEmbedding(['a0', 'a1'])
+        #self.draw('animal', 'attr')
+        self.checkgap('a4', ['a5'])
         self.evaluater.findworstlambd()
         a = 0
     
