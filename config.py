@@ -22,7 +22,8 @@ class ModelArg():
         name        = 'SN2E'
         dim         = 64
         lambdaMax   = 0.5
-        gapMax      = -1
+        gapMax_prim = -0.5
+        gapMax_defi = -1
         vmax        = 100
         vmin        = 0.01
         alpha       = 0.1
@@ -82,8 +83,6 @@ class TrainArg():
     optimizer   = "Adam"
     evalmethod  = "MR"
     simmeasure  = "L2"
-    
-    
 
 class TestArg():
     threshold_lower = 0
@@ -110,7 +109,8 @@ class displayArg():
     modelname       = ModelArg.model.name
     dim             = ModelArg.model.dim
     lambdaMax       = ModelArg.model.lambdaMax
-    gapMax          = ModelArg.model.gapMax
+    gapMax_prim     = ModelArg.model.gapMax_prim
+    gapMax_defi     = ModelArg.model.gapMax_defi
     vmax            = ModelArg.model.vmax
     vmin            = ModelArg.model.vmin
     alpha           = ModelArg.model.alpha

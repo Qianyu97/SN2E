@@ -12,7 +12,7 @@ class FineData(BaseData):
             rawdata:RawData = self.load(path_rawdata) # type: ignore 
             fulllist, defilist, primlist = self.creat_baselist(rawdata.basetree)
             attrdict, homodict = self.creat_attrhomodict(rawdata.basetree)
-            negtdict = self.creat_negtdict(fulllist, rawdata.basetree)
+            negtdict = self.creat_negtdict(fulllist, primlist, rawdata.basetree)
             self.rawdata = rawdata
             self.fulllist = fulllist
             self.fullset  = set(fulllist)
@@ -61,7 +61,7 @@ class FineData(BaseData):
         iter(basetree)
         return dict(attrdict), dict(homodict)
 
-    def creat_negtdict(self, fulllist, basetree:NodeUnit):
+    def creat_negtdict(self, fulllist, primlist, basetree:NodeUnit):
         def creat_cogndict():
             def iter(node:NodeUnit):
                 homodict[node.name].add(node.name)
@@ -83,8 +83,7 @@ class FineData(BaseData):
             iter(basetree)
             return cogndict
         cogndict = creat_cogndict()
-        fullset = set(fulllist)
-        negtdict = {concept: list(fullset - cogndict[concept]) for concept in fullset}
+        negtdict = {concept: list(set(primlist) - cogndict[concept]) for concept in fulllist}
         return negtdict
     
     def creat_DataFrame(self, sourcedict):

@@ -24,12 +24,12 @@ class Trainer():
         self.optimizer, self.scheduler  = prepare.prepareOptimizer(self.model)
     
     def train_one_batch(self, batchdata):
-        loss, posloss, negloss, maxlambd, mingap = self.model(batchdata)
+        loss, posloss, negloss, lambd_max, gap_min = self.model(batchdata)
         loss.backward()
         self.optimizer.step()
         self.optimizer.zero_grad()
         self.model.tailingWorks()
-        return posloss, negloss, maxlambd, mingap
+        return posloss, negloss, lambd_max, gap_min
     
     def run(self):
         print('Info -- : start model training')
@@ -37,18 +37,23 @@ class Trainer():
         EPOCHS_ITER = tqdm(range(EPOCHS), miniters=10)
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
-            worstlambd, worstgap = 0, float("inf") 
-            sumposloss, sumnegloss = 0, 0
+            worstlambd, worstgap_prim, worstgap_defi = 0, float("inf"), float("inf") 
+            posloss_sum, negloss_prim_sum, negloss_defi_sum = 0, 0, 0
             for batchdata in self.dataLoader:
-                posloss, negloss, maxlambd, mingap = self.train_one_batch(batchdata)
-                sumposloss  += posloss
-                sumnegloss  += negloss
-                worstlambd = max(maxlambd, worstlambd)
-                worstgap   = min(mingap, worstgap)
-            aveposloss = sumposloss / ModelArg.model.num_defi
-            avenegloss = sumnegloss / ModelArg.model.num_full/DataloaderArg.negtsamplenum
-            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst lambd: %.2f, worst gap: %.2f" \
-                            % (epoch, aveposloss, avenegloss, worstlambd, worstgap), refresh=None)
+                posloss, negloss, lambd_max, gap_min = self.train_one_batch(batchdata)
+                negloss_prim, negloss_defi = negloss
+                gap_prim_min, gap_defi_min = gap_min
+                posloss_sum         += posloss
+                negloss_prim_sum    += negloss_prim
+                negloss_defi_sum    += negloss_defi
+                worstlambd      = max(lambd_max, worstlambd)
+                worstgap_prim   = min(gap_prim_min, worstgap_prim)
+                worstgap_defi   = min(gap_defi_min, worstgap_defi)
+            aveposloss      = posloss_sum / ModelArg.model.num_defi
+            avenegloss_prim = negloss_prim_sum / ModelArg.model.num_prim/DataloaderArg.negtsamplenum
+            avenegloss_defi = negloss_defi_sum / ModelArg.model.num_defi/DataloaderArg.negtsamplenum
+            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive prim loss : %.2f, negtive defi loss : %.2f, worst lambd: %.2f, worst prim gap: %.2f, worst defi gap: %.2f" \
+                            % (epoch, aveposloss, avenegloss_prim, avenegloss_defi, worstlambd, worstgap_prim, worstgap_defi), refresh=None)
             self.scheduler.step()
         print('Info : finish model training')
         self.model.saveCheckpoint(ModelArg.path_model)

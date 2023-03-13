@@ -13,7 +13,8 @@ class SN2E(Module):
         self.num_defi, self.num_prim = config.num_defi, config.num_prim
         self.num_nodefi = self.num_prim + 1
         self.lambdaMax  = pm.Parameter(torch.Tensor([config.lambdaMax]), requires_grad = False)
-        self.gapMax     = pm.Parameter(torch.Tensor([config.gapMax]), requires_grad = False)
+        self.gapMax_prim = pm.Parameter(torch.Tensor([config.gapMax_prim]), requires_grad = False)
+        self.gapMax_defi = pm.Parameter(torch.Tensor([config.gapMax_defi]), requires_grad = False)
         self.invmax     = 1/config.vmin
         self.invmin     = 1/config.vmax
         self.alpha      = config.alpha
@@ -28,11 +29,6 @@ class SN2E(Module):
         nn.init.uniform_(self.conceptVariEmbedding.weight, 0.1, 10)
         self.conceptMeanEmbedding.weight.data[0] = self.defaultNoneMean
         self.conceptVariEmbedding.weight.data[0] = self.defaultNoneInvar
-        '''nn.init.constant_(self.NoneMeanEmbedding, self.defaultNoneMean)
-        nn.init.constant_(self.NoneVariEmbedding, self.defaultNoneInvar)
-        nn.init.uniform_(self.primMeanEmbedding, -5, 5) 
-        nn.init.uniform_(self.primMeanEmbedding, 0.1, 10) '''
-        
 
     def lookupEmbedding(self, index):
         '''
@@ -106,12 +102,21 @@ class SN2E(Module):
         embeddingU = self.calcIntersection(embeddingA)
         return self.calcLambda(embeddingA, embeddingU)
 
-    def scoreNeg(self, index0, indexN) ->torch.Tensor:
+    def scoreNeg_prim(self, index0, indexN) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
         '''
-        embedding0 = self.sepEmbedding(index0)
+        embedding0 = self.lookupEmbedding(index0)
+        embeddingN = self.lookupEmbedding(indexN)
+        return self.calcGap(embedding0, embeddingN)
+    
+    def scoreNeg_defi(self, index0, indexN) ->torch.Tensor:
+        '''
+        index0    :(index)[num0]
+        indexN    :(index)[num0, numN]
+        '''
+        embedding0 = self.loaddefiEmbedding(index0)
         embeddingN = self.lookupEmbedding(indexN)
         return self.calcGap(embedding0, embeddingN)
     
@@ -124,18 +129,16 @@ class SN2E(Module):
         loss      :(torch.scale)
         '''
         [index0, indexN, indexA]  = data
-        lambd   = self.scorePos(indexA)
-        gap     = self.scoreNeg(index0, indexN)
+        seppoint = (index0 <= self.num_nodefi).sum()
+        lambd   = self.scorePos(indexA[seppoint:])
+        gap_prim     = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
+        gap_defi     = self.scoreNeg_defi(index0[seppoint:], indexN[seppoint:])
         posloss = torch.max(lambd, self.lambdaMax).sum() 
-        negloss = - (self.alpha / torch.max(gap, self.gapMax)).sum()
-        loss = posloss + negloss
-        return loss, lambd.sum().item(), - gap.sum().item(), lambd.max().item(), - gap.max().item()
-
-    def sepEmbedding(self, index):
-        seppoint = (index <= self.num_nodefi).sum()
-        m_prim, v_prim = self.lookupEmbedding(index[:seppoint])
-        m_defi, v_defi = self.loaddefiEmbedding(index[seppoint:])
-        return torch.cat([m_prim, m_defi]), torch.cat([v_prim, v_defi])
+        negloss_prim = - (self.alpha / torch.max(gap_prim, self.gapMax_prim)).sum()
+        negloss_defi = - (self.alpha / torch.max(gap_defi, self.gapMax_defi)).sum()
+        loss = posloss + negloss_prim + negloss_defi
+        return loss, lambd.sum().item(), (- gap_prim.sum().item(), - gap_defi.sum().item()), \
+            lambd.max().item(), (- gap_prim.max().item(), -gap_defi.max().item())
         
     def variable(self, data):
         if self.isCuda:
