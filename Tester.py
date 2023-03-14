@@ -27,33 +27,47 @@ class Tester():
         #self.drawpicture('animal')
         #m, v = self.lookupEmbedding(['a0', 'a1'])
         #self.draw('animal', 'attr')
-        self.checkgap('a4', ['a5'])
+        
+        self.draw('animal', 'attr')
+        self.draw('mammal', 'attr')
+        self.draw('vertebrate', 'attr')
+        self.draw('critter', 'attr')
+        self.draw('lava', 'attr')
+        self.draw('tiger', 'attr')
+        self.draw(['vertebrate', 'reptile', 'bird'])
         self.evaluater.findworstlambd()
         a = 0
     
-    def checklambd(self, concept):
-        attributes  = self.finaldata.finedata.attrdict[concept]
+    def checklambd(self, concept, mode = 'attr'):
+        if mode == 'attr':
+            attributes  = self.finaldata.finedata.attrdict[concept]
+        elif mode == 'homo':
+            attributes  = self.finaldata.finedata.homodict[concept]
+        else:
+            raise Exception('lambd mode should be \'attr\' or \'homo\'')
         attrIndex   = [list(self.finaldata.indexconvert(attributes))]
-        lambd       = self.model.scorePos(attrIndex)
+        lambd       = self.model.scorePos_test(attrIndex)
         return lambd
     
     def checkgap(self, concept0, conceptN):
         index0  = self.finaldata.indexconvert(concept0)
         indexN  = list(self.finaldata.indexconvert(conceptN))
-        gap     = self.model.scoreNeg(index0, indexN)
+        gap     = self.model.scoreNeg_test(index0, indexN)
         return - gap
     
     def draw(self, name, partner = 'default'):
         if partner == 'attr':
             self.drawer.drawOneSample([name] + list(self.finaldata.finedata.attrdict[name]), name + '-attr')
         elif partner == 'sons':
-            self.drawer.drawOneSample([name] + list(self.finaldata.finedata.rawdata.basedict[name].sons), name + '-attr')
+            self.drawer.drawOneSample([name] + list(self.finaldata.finedata.rawdata.basedict[name].sons), name + '-son')
         elif partner == 'default':
             self.drawer.drawOneSample(name, 'default')
+        else:
+            self.drawer.drawOneSample(name, partner)
         
     def lookupEmbedding(self, name):
         index = self.finaldata.indexconvert(name)
-        m, v  = self.model.lookupEmbedding(index)
+        m, v  = self.model.lookupEmbedding_whole(index)
         return m, v
 
     def findmostson(self):

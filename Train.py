@@ -36,7 +36,7 @@ class Trainer():
     def run(self):
         print('Info -- : start model training')
         EPOCHS = TrainArg.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS), miniters=10)
+        EPOCHS_ITER = tqdm(range(EPOCHS), mininterval=30, miniters=10)
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
             worstlambd, worstgap_prim, worstgap_defi = 0, float("inf"), float("inf") 

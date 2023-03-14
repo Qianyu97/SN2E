@@ -13,7 +13,7 @@ class DataloaderArg():
     shuffle     = True
     numworkers  = 0
     droplast    = False
-    negtsamplenum = 100
+    negtsamplenum = 128
     len_attr    = 0
     
 class ModelArg():
@@ -21,12 +21,12 @@ class ModelArg():
     class SN2E():
         name        = 'SN2E'
         dim         = 64
-        lambdaMax   = 0.5
+        lambdaMax   = 2
         gapMax_prim = -0.5
         gapMax_defi = -1
         vmax        = 100
         vmin        = 0.01
-        alpha       = 0.5
+        alpha       = 1
         NoneIndex   = None
         num_defi    = 0
         num_prim    = 0
@@ -78,7 +78,7 @@ class TrainArg():
     epochs      = 500
     ifLoadModel = False
     usegpu      = True
-    gpunum      = 1
+    gpunum      = 0
     evalepoch   = 1
     optimizer   = "Adam"
     evalmethod  = "MR"

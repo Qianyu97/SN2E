@@ -120,15 +120,6 @@ class SN2E(Module):
         embeddingN = self.lookupEmbedding(indexN)
         return self.calcGap(embedding0, embeddingN)
     
-    def scoreNeg(self, index0, indexN) ->torch.Tensor:
-        '''
-        index0    :(index)[num0]
-        indexN    :(index)[num0, numN]
-        '''
-        embedding0 = self.lookupEmbedding_whole(index0)
-        embeddingN = self.lookupEmbedding_whole(indexN)
-        return self.calcGap(embedding0, embeddingN)
-    
     def forward(self, data):
         '''
         index0    :(index)[num0]
@@ -166,6 +157,24 @@ class SN2E(Module):
                 input=self.conceptVariEmbedding.weight.data,
                 min=self.invmin,
                 max=self.invmax))
+    
+    def scorePos_test(self, indexA) -> torch.Tensor:
+        '''
+        indexA    : (index)[num0, numA]
+        '''
+        embeddingA = self.lookupEmbedding_whole(indexA)
+        embeddingU = self.calcIntersection(embeddingA)
+        return self.calcLambda(embeddingA, embeddingU)
+
+    
+    def scoreNeg_test(self, index0, indexN) ->torch.Tensor:
+        '''
+        index0    :(index)[num0]
+        indexN    :(index)[num0, numN]
+        '''
+        embedding0 = self.lookupEmbedding_whole(index0)
+        embeddingN = self.lookupEmbedding_whole(indexN)
+        return self.calcGap(embedding0, embeddingN)
     
     def generateWholeEmbedding(self):
         homoEmbedding = self.lookupEmbedding(self.homoIndex)
