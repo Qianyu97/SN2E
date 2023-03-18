@@ -3,32 +3,40 @@ import torch
 import torch.nn as nn
 import torch.nn.parameter as pm
 import numpy as np
+
+from mycode.utils.treeunit import Embedding
 from mycode.models.base import Module
 from config import ModelArg
+
+
+        
+
 class SN2E(Module):
-    def __init__(self, config:ModelArg.model): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
+    def __init__(self): #conceptNum, dim, lambdaMax, gapMax, vmax, vmin, alpha):
         super(SN2E, self).__init__()
-        self.modelName  = config.name
-        self.dim        = config.dim
-        self.num_defi, self.num_prim = config.num_defi, config.num_prim
-        self.num_nodefi = self.num_prim + 1
-        self.lambdaMax  = pm.Parameter(torch.Tensor([config.lambdaMax]), requires_grad = False)
-        self.gapMax_prim = pm.Parameter(torch.Tensor([config.gapMax_prim]), requires_grad = False)
-        self.gapMax_defi = pm.Parameter(torch.Tensor([config.gapMax_defi]), requires_grad = False)
-        self.invmax     = 1/config.vmin
-        self.invmin     = 1/config.vmax
-        self.alpha      = config.alpha
+        self.modelName  = ModelArg.model.name
+        self.dim        = ModelArg.model.dim
+        #self.num_defi, self.num_prim = ModelArg.model.num_defi, ModelArg.model.num_prim
+        self.num_nodefi = ModelArg.model.num_nodefi
+        self.lambdaMax  = pm.Parameter(torch.Tensor([ModelArg.model.lambdaMax]), requires_grad = False)
+        self.gapMax_prim = pm.Parameter(torch.Tensor([ModelArg.model.gapMax_prim]), requires_grad = False)
+        self.gapMax_defi = pm.Parameter(torch.Tensor([ModelArg.model.gapMax_defi]), requires_grad = False)
+        self.invmax     = 1/ModelArg.model.vmin
+        self.invmin     = 1/ModelArg.model.vmax
+        self.alpha      = ModelArg.model.alpha
         self.defaultNonemean   = 0
         self.defaultNoneInvar  = 0.00000001
-        self.conceptMeanEmbedding = torch.nn.Embedding(self.num_nodefi, config.dim, padding_idx = 0)
-        self.conceptVariEmbedding = torch.nn.Embedding(self.num_nodefi, config.dim, padding_idx = 0)
+        self.conceptMeanEmbedding = torch.nn.Embedding(self.num_nodefi, ModelArg.model.dim, padding_idx = 0)
+        self.conceptVariEmbedding = torch.nn.Embedding(self.num_nodefi, ModelArg.model.dim, padding_idx = 0)
         self.isCuda     = False
         
     def initEmbedding(self, varInitMode = 'const'):
-        nn.init.uniform_(self.conceptMeanEmbedding.weight, -5, 5)
+        nn.init.uniform_(self.conceptMeanEmbedding.weight, -1, 1)
         nn.init.uniform_(self.conceptVariEmbedding.weight, 0.1, 10)
         self.conceptMeanEmbedding.weight.data[0] = self.defaultNonemean
         self.conceptVariEmbedding.weight.data[0] = self.defaultNoneInvar
+        self.conceptMeanEmbedding.weight.data[1] = 1000
+        self.conceptVariEmbedding.weight.data[1] = 1000
 
     def lookupEmbedding(self, index):
         '''
@@ -37,14 +45,14 @@ class SN2E(Module):
         varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
         index = self.variable(index)
-        return self.conceptMeanEmbedding(index), self.conceptVariEmbedding(index)
+        return Embedding(self.conceptMeanEmbedding(index), self.conceptVariEmbedding(index))
 
     def loaddefiEmbedding(self, index):
         homos = self.homoIndex[index - self.num_nodefi]
         homosEmbedding  = self.lookupEmbedding(homos)
         return self.calcIntersection(homosEmbedding)
 
-    def calcIntersection(self, embeddingA):
+    def calcIntersection(self, a:Embedding):
         '''
         meanA      : (torch.tensor)[num0, numA, dim] 
         varInvA    : (torch.tensor)[num0, numA, dim]
@@ -52,12 +60,11 @@ class SN2E(Module):
         meanU      : (torch.tensor)[num0, dim]
         varInvU    : (torch.tensor)[num0, dim]
         '''
-        meanA, varInvA = embeddingA
-        varInvU = varInvA.sum(-2)
-        meanU = (varInvA * meanA).sum(-2) / varInvU
-        return meanU, varInvU
+        varInvU = a.v.sum(-2)
+        meanU = (a.v * a.m).sum(-2) / varInvU
+        return Embedding(meanU, varInvU)
 
-    def calcLambda(self, embeddingA, embeddingU)-> torch.Tensor:
+    def calcLambda(self, a:Embedding, u:Embedding)-> torch.Tensor:
         '''
         meanA      : (torch.tensor)[num0, numA, dim] 
         varInvA    : (torch.tensor)[num0, numA, dim]
@@ -66,12 +73,9 @@ class SN2E(Module):
 
         lambd      : (torch.tensor)[num0]
         '''
-        meanA, varInvA = embeddingA
-        meanU, varInvU = embeddingU
-        lambd = - 1/2 * ( - (meanA.pow(2) * varInvA).sum(-2) + meanU.pow(2) * varInvU).sum(-1)
-        return lambd
+        return - 1/2 * ( - (a.m.pow(2) * a.v).sum(-2) + u.m.pow(2) * u.v).sum(-1)
 
-    def calcGap(self, embedding0, embeddingN) -> torch.Tensor:
+    def calcGap(self, s:Embedding, n:Embedding) -> torch.Tensor:
         '''
         mean0      : (torch.tensor)[num0, dim] 
         varInv0    : (torch.tensor)[num0, dim]
@@ -80,66 +84,101 @@ class SN2E(Module):
 
         gap        : (torch.tensor)[num0, numN]
         '''
-        mean0, varInv0 = embedding0
-        meanN, varInvN = embeddingN
-        mean0, varInv0 = mean0.unsqueeze(-2), varInv0.unsqueeze(-2)
-        gap = 1/2 * ( - (mean0 - meanN).pow(2) * (varInv0 * varInvN) / (varInv0 + varInvN) ).sum(-1)
-        return gap
+        return 1/2 * ( - (s.m.unsqueeze(-2) - n.m).pow(2).div(s.v.reciprocal().unsqueeze(-2) + n.v.reciprocal())).sum(-1)
     
-    def calcEntailProb(self, embedding1, embedding2):
-        mean1, varInv1 = embedding1
-        mean2, varInv2 = embedding2
-        mean1, varInv1 = mean1.unsqueeze(-2), varInv1.unsqueeze(-2)
-        mean2, varInv2 = mean2.unsqueeze(-3), varInv2.unsqueeze(-3)
-        EntailProb = 1/2 * ( (1 + varInv2 / varInv1).log() + (mean1 - mean2).pow(2) * varInv1 * varInv2 / (varInv1 + varInv2)).sum(-1)
-        return EntailProb.squeeze()
+    def calcEntailProb(self, s:Embedding, t:Embedding):
+        return 1/2 * ( (1 + t.v.unsqueeze(-3) / s.v.unsqueeze(-2)).log() \
+            + (s.m.unsqueeze(-2) - t.m.unsqueeze(-3)).pow(2).div(s.v.reciprocal().unsqueeze(-2)+t.v.reciprocal().unsqueeze(-3))).sum(-1)
+    
+    def calcKL(self, s:Embedding, t:Embedding):
+        s = s.inv().unsqueeze(-2)
+        t = t.inv().unsqueeze(-3)
+        vardiv = s.v.div(t.v)
+        return 1/2 * ( - vardiv.log() - 1 + vardiv + (s.m - t.m).pow(2).div(t.v)).sum(-1)
 
-    def scorePos(self, indexA) -> torch.Tensor:
+    def scorePos(self, indexA, indexP = None) -> torch.Tensor:
         '''
         indexA    : (index)[num0, numA]
         '''
-        embeddingA = self.lookupEmbedding(indexA)
-        embeddingU = self.calcIntersection(embeddingA)
-        return self.calcLambda(embeddingA, embeddingU)
+        if not (indexP is None):
+            e_p = self.loaddefiEmbedding(indexP)
+            e_a = self.lookupEmbedding(indexA).cat(e_p)
+        else:
+            e_a = self.lookupEmbedding(indexA)
+        e_u = self.calcIntersection(e_a)
+        return self.calcLambda(e_a, e_u)
 
     def scoreNeg_prim(self, index0, indexN) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
         '''
-        embedding0 = self.lookupEmbedding(index0)
-        embeddingN = self.lookupEmbedding(indexN)
-        return self.calcGap(embedding0, embeddingN)
+        e_0 = self.lookupEmbedding(index0)
+        e_n = self.lookupEmbedding(indexN)
+        return self.calcGap(e_0, e_n)
     
     def scoreNeg_defi(self, index0, indexN) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
         '''
-        embedding0 = self.loaddefiEmbedding(index0)
-        embeddingN = self.lookupEmbedding(indexN)
-        return self.calcGap(embedding0, embeddingN)
+        e_0 = self.loaddefiEmbedding(index0)
+        e_n = self.lookupEmbedding(indexN)
+        return self.calcGap(e_0, e_n)
     
     def forward(self, data):
         '''
         index0    :(index)[num0]
         indexA    :(index)[num0, numA]
         indexN    :(index)[num0, numN]
-
         loss      :(torch.scale)
         '''
-        [index0, indexN, indexA]  = data
-        seppoint = (index0 < self.num_nodefi).sum()
-        lambd   = self.scorePos(indexA[seppoint:])
-        gap_prim     = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
-        gap_defi     = self.scoreNeg_defi(index0[seppoint:], indexN[seppoint:])
+        [index0, indexN, indexA, indexP]  = data  #seppoint = (index0 < self.num_nodefi).sum()
+        lambd   = self.scorePos(indexA, indexP)
+        gap     = self.scoreNeg_defi(index0, indexN)  #gap_prim = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
         posloss = torch.max(lambd, self.lambdaMax).sum() 
-        negloss_prim = - (self.alpha / torch.max(gap_prim, self.gapMax_prim)).sum()
-        negloss_defi = - (self.alpha / torch.max(gap_defi, self.gapMax_defi)).sum()
-        loss = posloss + negloss_prim + negloss_defi
-        return loss, lambd.sum().item(), (- gap_prim.sum().item(), - gap_defi.sum().item()), \
-            lambd.max().item(), (- gap_prim.max().item(), -gap_defi.max().item())
+        negloss = - (self.alpha / torch.max(gap, self.gapMax_defi)).sum()
+        loss    = posloss + negloss
+        showgap = - gap[gap>-10000]
+        return loss, lambd.sum().item(), showgap.sum().item(), lambd.max().item(), showgap.min().item()
         
+    def tailingWorks(self):
+        self.conceptVariEmbedding.weight[1:].data.copy_(
+            torch.clamp(
+                input=self.conceptVariEmbedding.weight[1:].data,
+                min=self.invmin,
+                max=self.invmax))
+    
+    def scorePos_test(self, indexA) -> torch.Tensor:
+        '''
+        indexA    : (index)[num0, numA]
+        '''
+        e_a = self.lookupEmbedding_whole(indexA)
+        embeddingU = self.calcIntersection(e_a)
+        return self.calcLambda(e_a, embeddingU)
+    
+    def scoreNeg_test(self, index0, indexN) ->torch.Tensor:
+        '''
+        index0    :(index)[num0]
+        indexN    :(index)[num0, numN]
+        '''
+        e_0 = self.lookupEmbedding_whole(index0)
+        e_n = self.lookupEmbedding_whole(indexN)
+        return self.calcGap(e_0, e_n)
+    
+    def generateWholeEmbedding(self):
+        homoEmbedding = self.lookupEmbedding(self.homoIndex)
+        defiEmebdding = self.calcIntersection(homoEmbedding)
+        self.conceptmeanEmbedding_whole = torch.cat([self.conceptMeanEmbedding.weight, defiEmebdding.m])
+        self.conceptvariEmbedding_whole = torch.cat([self.conceptVariEmbedding.weight, defiEmebdding.v])
+    
+    def lookupEmbedding_whole(self, index):
+        index = self.variable(index)
+        return Embedding(self.conceptmeanEmbedding_whole[index], self.conceptvariEmbedding_whole[index])
+    
+    def sethomoIndex(self, homoDF):
+        self.homoIndex = self.variable(torch.tensor(np.asarray(homoDF).T))
+    
     def variable(self, data):
         if not type(data) == torch.Tensor:
             if type(data) == int:
@@ -150,50 +189,6 @@ class SN2E(Module):
             return data.cuda(self.gpunum)
         else:
             return data
-    
-    def tailingWorks(self):
-        self.conceptVariEmbedding.weight.data.copy_(
-            torch.clamp(
-                input=self.conceptVariEmbedding.weight.data,
-                min=self.invmin,
-                max=self.invmax))
-    
-    def scorePos_test(self, indexA) -> torch.Tensor:
-        '''
-        indexA    : (index)[num0, numA]
-        '''
-        embeddingA = self.lookupEmbedding_whole(indexA)
-        embeddingU = self.calcIntersection(embeddingA)
-        return self.calcLambda(embeddingA, embeddingU)
-
-    
-    def scoreNeg_test(self, index0, indexN) ->torch.Tensor:
-        '''
-        index0    :(index)[num0]
-        indexN    :(index)[num0, numN]
-        '''
-        embedding0 = self.lookupEmbedding_whole(index0)
-        embeddingN = self.lookupEmbedding_whole(indexN)
-        return self.calcGap(embedding0, embeddingN)
-    
-    def generateWholeEmbedding(self):
-        homoEmbedding = self.lookupEmbedding(self.homoIndex)
-        defimeanEmebdding, defivariEmebdding = self.calcIntersection(homoEmbedding)
-        self.conceptmeanEmbedding = torch.cat([self.conceptMeanEmbedding.weight, defimeanEmebdding])
-        self.conceptvariEmbedding = torch.cat([self.conceptVariEmbedding.weight, defivariEmebdding])
-    
-    def lookupEmbedding_whole(self, index):
-        index = self.variable(index)
-        return self.conceptmeanEmbedding[index], self.conceptvariEmbedding[index]
-        
-
-    def evaluate(self, index1, index2):
-        embedding1 = self.lookupEmbedding(index1)
-        embedding2 = self.lookupEmbedding(index2)
-        return self.calcEntailProb(embedding1, embedding2)
-    
-    def sethomoIndex(self, homoDF):
-        self.homoIndex = self.variable(torch.tensor(np.asarray(homoDF).T))
         
     def cudaModel(self, gpunum):
         self.cuda(gpunum)
@@ -203,6 +198,12 @@ class SN2E(Module):
     def cpuModel(self):
         self.cpu()
         self.isCuda = False
+        
+    def evaluate(self, index1, index2):
+        embedding1 = self.lookupEmbedding_whole(index1)
+        embedding2 = self.lookupEmbedding_whole(index2)
+        return self.calcEntailProb(embedding1, embedding2)
+
     
     
             

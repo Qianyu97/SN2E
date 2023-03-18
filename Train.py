@@ -36,26 +36,21 @@ class Trainer():
     def run(self):
         print('Info -- : start model training')
         EPOCHS = TrainArg.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS), mininterval=30, miniters=10)
+        EPOCHS_ITER = tqdm(range(EPOCHS),mininterval=30 ,miniters=10)
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
-            worstlambd, worstgap_prim, worstgap_defi = 0, float("inf"), float("inf") 
-            posloss_sum, negloss_prim_sum, negloss_defi_sum = 0, 0, 0
+            worstlambd, worstgap = 0, float("inf")
+            posloss_sum, negloss_sum = 0, 0
             for batchdata in self.dataLoader:
                 posloss, negloss, lambd_max, gap_min = self.train_one_batch(batchdata)
-                negloss_prim, negloss_defi = negloss
-                gap_prim_min, gap_defi_min = gap_min
-                posloss_sum         += posloss
-                negloss_prim_sum    += negloss_prim
-                negloss_defi_sum    += negloss_defi
-                worstlambd      = max(lambd_max, worstlambd)
-                worstgap_prim   = min(gap_prim_min, worstgap_prim)
-                worstgap_defi   = min(gap_defi_min, worstgap_defi)
-            aveposloss      = posloss_sum / ModelArg.model.num_defi
-            avenegloss_prim = negloss_prim_sum / ModelArg.model.num_prim/DataloaderArg.negtsamplenum
-            avenegloss_defi = negloss_defi_sum / ModelArg.model.num_defi/DataloaderArg.negtsamplenum
-            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive prim loss : %.2f, negtive defi loss : %.2f, worst lambd: %.2f, worst prim gap: %.2f, worst defi gap: %.2f" \
-                            % (epoch, aveposloss, avenegloss_prim, avenegloss_defi, worstlambd, worstgap_prim, worstgap_defi), refresh=None)
+                posloss_sum += posloss
+                negloss_sum += negloss
+                worstlambd  = max(lambd_max, worstlambd)
+                worstgap    = min(gap_min, worstgap)
+            aveposloss = posloss_sum / ModelArg.model.num_defi
+            avenegloss = negloss_sum / ModelArg.model.num_defi/DataloaderArg.negtsamplenum
+            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst lambd: %.2f, worst gap: %.2f" \
+                            % (epoch, aveposloss, avenegloss, worstlambd, worstgap), refresh=False)
             self.scheduler.step()
         print('Info : finish model training')
         self.model.saveCheckpoint(ModelArg.path_model)
@@ -64,6 +59,7 @@ class Trainer():
         a = 0
 
 def displayArgs():
+    print(time.strftime("\n%Y-%m-%d %H:%M:%S", time.localtime()))
     showstring = str()
     args = [i for i in dir(displayArg) if not i.startswith('__')]
     args.sort()
@@ -128,18 +124,17 @@ def main():
             shuffle     = DataloaderArg.shuffle,
             num_workers = DataloaderArg.numworkers,
             drop_last   = DataloaderArg.droplast,
-            collate_fn  = my_collate
+            #collate_fn  = my_collate
             )
-    model      = prepare.prepareModel(finaldata.indexdata.homoDF)
+    model      = prepare.prepareModel(finaldata.indexdata.homoDF, ifLoadModel=False)
     evaluater = Evaluater(finaldata, model)
     trainer = Trainer(dataloader, model, evaluater)
     trainer.run()
     finaldata.save(DatapathArg.path_indexdict, 'dictionary')
 
 if __name__ == "__main__":
-    print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     displayArgs()
-    finaldata = FinalData(DatapathArg.path_rawdata)
+    finaldata = FinalData(ifloadDictionary=False)
     dataset = attrDataset(finaldata.indexdata) 
     if False:
         print('the validation begin')
@@ -151,7 +146,7 @@ if __name__ == "__main__":
             print('\n\n\n')
     else:
         if False:
-            lprofiler = LineProfiler(SN2E.scorePos)
+            lprofiler = LineProfiler(SN2E.calcLambda)
             lprofiler.run('main()')
             lprofiler.print_stats()
             lprofiler.dump_stats(DatapathArg.path_profiler)

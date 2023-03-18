@@ -1,0 +1,814 @@
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 8 | postive loss : 11424.63, negtive prim loss : 915.57, negtive defi loss : 1098.93, worst lambd: 21672.48, worst prim gap: 129.44, worst defi gap: 158.67:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 14 | postive loss : 7143.02, negtive prim loss : 799.07, negtive defi loss : 961.78, worst lambd: 16071.59, worst prim gap: 50.02, worst defi gap: 53.70:   3%|▎         | 15/500 [00:31<17:12,  2.13s/it]
+Epoch 29 | postive loss : 3271.56, negtive prim loss : 577.45, negtive defi loss : 704.81, worst lambd: 9417.92, worst prim gap: 2.17, worst defi gap: 5.49:   6%|▌         | 30/500 [01:03<16:33,  2.11s/it]   
+Epoch 44 | postive loss : 1972.47, negtive prim loss : 420.49, negtive defi loss : 523.16, worst lambd: 5975.92, worst prim gap: 0.37, worst defi gap: 0.32:   9%|▉         | 45/500 [01:34<15:58,  2.11s/it]
+Epoch 59 | postive loss : 1277.19, negtive prim loss : 307.12, negtive defi loss : 390.84, worst lambd: 3877.19, worst prim gap: 0.16, worst defi gap: 0.18:  12%|█▏        | 60/500 [02:06<15:26,  2.11s/it]
+Epoch 74 | postive loss : 824.71, negtive prim loss : 225.28, negtive defi loss : 294.80, worst lambd: 2459.12, worst prim gap: 0.06, worst defi gap: 0.15:  15%|█▌        | 75/500 [02:37<14:53,  2.10s/it] 
+Epoch 89 | postive loss : 518.73, negtive prim loss : 168.00, negtive defi loss : 231.16, worst lambd: 1566.43, worst prim gap: 0.04, worst defi gap: 0.05:  18%|█▊        | 90/500 [03:09<14:21,  2.10s/it]
+Epoch 104 | postive loss : 324.27, negtive prim loss : 127.98, negtive defi loss : 188.09, worst lambd: 987.30, worst prim gap: 0.03, worst defi gap: 0.03:  21%|██        | 105/500 [03:40<13:49,  2.10s/it]
+Epoch 119 | postive loss : 203.25, negtive prim loss : 99.03, negtive defi loss : 155.31, worst lambd: 621.44, worst prim gap: 0.02, worst defi gap: 0.04:  24%|██▍       | 120/500 [04:12<13:22,  2.11s/it] 
+Epoch 134 | postive loss : 125.79, negtive prim loss : 77.19, negtive defi loss : 128.47, worst lambd: 381.69, worst prim gap: 0.04, worst defi gap: 0.03:  27%|██▋       | 135/500 [04:44<12:48,  2.11s/it]
+Epoch 149 | postive loss : 77.13, negtive prim loss : 60.28, negtive defi loss : 105.49, worst lambd: 237.09, worst prim gap: 0.01, worst defi gap: 0.04:  30%|███       | 150/500 [05:16<12:19,  2.11s/it] 
+Epoch 164 | postive loss : 46.92, negtive prim loss : 46.64, negtive defi loss : 84.86, worst lambd: 146.94, worst prim gap: 0.03, worst defi gap: 0.06:  33%|███▎      | 165/500 [05:48<11:49,  2.12s/it] 
+Epoch 179 | postive loss : 28.51, negtive prim loss : 35.44, negtive defi loss : 66.67, worst lambd: 87.07, worst prim gap: 0.01, worst defi gap: 0.06:  36%|███▌      | 180/500 [06:19<11:17,  2.12s/it] 
+Epoch 194 | postive loss : 17.95, negtive prim loss : 26.51, negtive defi loss : 51.20, worst lambd: 49.36, worst prim gap: 0.01, worst defi gap: 0.15:  39%|███▉      | 195/500 [06:51<10:46,  2.12s/it]
+Epoch 208 | postive loss : 12.15, negtive prim loss : 19.85, negtive defi loss : 39.11, worst lambd: 30.73, worst prim gap: 0.03, worst defi gap: 0.07:  42%|████▏     | 209/500 [07:22<10:25,  2.15s/it]
+Epoch 223 | postive loss : 8.85, negtive prim loss : 14.38, negtive defi loss : 28.67, worst lambd: 21.98, worst prim gap: 0.03, worst defi gap: 0.17:  45%|████▍     | 224/500 [07:54<09:51,  2.14s/it] 
+Epoch 238 | postive loss : 6.97, negtive prim loss : 10.36, negtive defi loss : 20.80, worst lambd: 15.39, worst prim gap: 0.01, worst defi gap: 0.15:  48%|████▊     | 239/500 [08:26<09:16,  2.13s/it]
+Epoch 253 | postive loss : 5.73, negtive prim loss : 7.56, negtive defi loss : 15.24, worst lambd: 11.77, worst prim gap: 0.01, worst defi gap: 0.16:  51%|█████     | 254/500 [08:57<08:41,  2.12s/it] 
+Epoch 268 | postive loss : 5.04, negtive prim loss : 5.73, negtive defi loss : 11.56, worst lambd: 10.73, worst prim gap: 0.01, worst defi gap: 0.15:  54%|█████▍    | 269/500 [09:29<08:08,  2.11s/it]
+Epoch 283 | postive loss : 4.68, negtive prim loss : 4.65, negtive defi loss : 9.35, worst lambd: 10.09, worst prim gap: 0.01, worst defi gap: 0.14:  57%|█████▋    | 284/500 [10:00<07:35,  2.11s/it] 
+Epoch 298 | postive loss : 4.36, negtive prim loss : 4.04, negtive defi loss : 8.13, worst lambd: 9.06, worst prim gap: 0.01, worst defi gap: 0.14:  60%|█████▉    | 299/500 [10:32<07:02,  2.10s/it] 
+Epoch 313 | postive loss : 4.14, negtive prim loss : 3.70, negtive defi loss : 7.41, worst lambd: 9.07, worst prim gap: 0.02, worst defi gap: 0.13:  63%|██████▎   | 314/500 [11:03<06:30,  2.10s/it]
+Epoch 328 | postive loss : 3.97, negtive prim loss : 3.46, negtive defi loss : 6.91, worst lambd: 8.58, worst prim gap: 0.02, worst defi gap: 0.11:  66%|██████▌   | 329/500 [11:35<05:59,  2.10s/it]
+Epoch 343 | postive loss : 3.91, negtive prim loss : 3.29, negtive defi loss : 6.55, worst lambd: 8.79, worst prim gap: 0.01, worst defi gap: 0.11:  69%|██████▉   | 344/500 [12:06<05:27,  2.10s/it]
+Epoch 358 | postive loss : 3.82, negtive prim loss : 3.15, negtive defi loss : 6.26, worst lambd: 8.07, worst prim gap: 0.02, worst defi gap: 0.03:  72%|███████▏  | 359/500 [12:37<04:55,  2.10s/it]
+Epoch 373 | postive loss : 3.83, negtive prim loss : 3.03, negtive defi loss : 5.98, worst lambd: 8.06, worst prim gap: 0.02, worst defi gap: 0.10:  75%|███████▍  | 374/500 [13:09<04:24,  2.10s/it]
+Epoch 388 | postive loss : 3.67, negtive prim loss : 2.94, negtive defi loss : 5.78, worst lambd: 8.11, worst prim gap: 0.00, worst defi gap: 0.10:  78%|███████▊  | 389/500 [13:40<03:52,  2.10s/it]
+Epoch 403 | postive loss : 3.61, negtive prim loss : 2.84, negtive defi loss : 5.58, worst lambd: 8.16, worst prim gap: 0.01, worst defi gap: 0.11:  81%|████████  | 404/500 [14:12<03:21,  2.10s/it]
+Epoch 418 | postive loss : 3.53, negtive prim loss : 2.78, negtive defi loss : 5.43, worst lambd: 7.82, worst prim gap: 0.02, worst defi gap: 0.14:  84%|████████▍ | 419/500 [14:43<02:50,  2.10s/it]
+Epoch 433 | postive loss : 3.46, negtive prim loss : 2.72, negtive defi loss : 5.31, worst lambd: 7.33, worst prim gap: 0.02, worst defi gap: 0.04:  87%|████████▋ | 434/500 [15:15<02:18,  2.10s/it]
+Epoch 448 | postive loss : 3.46, negtive prim loss : 2.67, negtive defi loss : 5.19, worst lambd: 8.06, worst prim gap: 0.01, worst defi gap: 0.02:  90%|████████▉ | 449/500 [15:46<01:46,  2.09s/it]
+Epoch 463 | postive loss : 3.44, negtive prim loss : 2.62, negtive defi loss : 5.08, worst lambd: 7.43, worst prim gap: 0.02, worst defi gap: 0.09:  93%|█████████▎| 464/500 [16:18<01:15,  2.10s/it]
+Epoch 478 | postive loss : 3.37, negtive prim loss : 2.59, negtive defi loss : 4.99, worst lambd: 8.37, worst prim gap: 0.02, worst defi gap: 0.08:  96%|█████████▌| 479/500 [16:49<00:43,  2.09s/it]
+Epoch 493 | postive loss : 3.32, negtive prim loss : 2.55, negtive defi loss : 4.90, worst lambd: 7.59, worst prim gap: 0.03, worst defi gap: 0.14:  99%|█████████▉| 494/500 [17:20<00:12,  2.09s/it]
+Epoch 499 | postive loss : 3.31, negtive prim loss : 2.55, negtive defi loss : 4.89, worst lambd: 7.39, worst prim gap: 0.01, worst defi gap: 0.13: 100%|██████████| 500/500 [17:33<00:00,  2.11s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+2023-03-14 19:01:56
+alpha: 1    batchsize: 128    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 100    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 1 | postive loss : 3981.93, negtive prim loss : 1091.07, negtive defi loss : 1322.97, worst lambd: 6663.12, worst prim gap: 307.44, worst defi gap: 566.81:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 8 | postive loss : 3571.02, negtive prim loss : 965.88, negtive defi loss : 1187.98, worst lambd: 6041.12, worst prim gap: 288.28, worst defi gap: 504.22:   2%|▏         | 9/500 [00:31<28:43,  3.51s/it]
+Epoch 17 | postive loss : 3090.77, negtive prim loss : 823.31, negtive defi loss : 1031.37, worst lambd: 5301.24, worst prim gap: 268.16, worst defi gap: 415.78:   4%|▎         | 18/500 [01:02<27:50,  3.47s/it]
+Epoch 27 | postive loss : 2626.78, negtive prim loss : 689.16, negtive defi loss : 880.46, worst lambd: 4580.13, worst prim gap: 217.87, worst defi gap: 336.55:   6%|▌         | 28/500 [01:35<26:43,  3.40s/it] 
+Epoch 37 | postive loss : 2224.66, negtive prim loss : 575.71, negtive defi loss : 749.15, worst lambd: 3947.42, worst prim gap: 149.97, worst defi gap: 261.01:   8%|▊         | 38/500 [02:08<25:54,  3.37s/it]
+Epoch 47 | postive loss : 1875.51, negtive prim loss : 478.91, negtive defi loss : 634.81, worst lambd: 3393.79, worst prim gap: 114.77, worst defi gap: 200.03:  10%|▉         | 48/500 [02:42<25:13,  3.35s/it]
+Epoch 57 | postive loss : 1573.07, negtive prim loss : 396.86, negtive defi loss : 536.24, worst lambd: 2902.94, worst prim gap: 84.68, worst defi gap: 171.42:  12%|█▏        | 58/500 [03:15<24:35,  3.34s/it] 
+Epoch 67 | postive loss : 1312.04, negtive prim loss : 327.23, negtive defi loss : 450.35, worst lambd: 2473.09, worst prim gap: 81.24, worst defi gap: 138.16:  14%|█▎        | 68/500 [03:48<23:59,  3.33s/it]
+Epoch 77 | postive loss : 1087.28, negtive prim loss : 268.35, negtive defi loss : 376.37, worst lambd: 2096.43, worst prim gap: 66.93, worst defi gap: 109.12:  16%|█▌        | 78/500 [04:21<23:24,  3.33s/it]
+Epoch 87 | postive loss : 894.36, negtive prim loss : 218.90, negtive defi loss : 312.48, worst lambd: 1761.44, worst prim gap: 38.91, worst defi gap: 78.76:  18%|█▊        | 88/500 [04:54<22:51,  3.33s/it]  
+Epoch 96 | postive loss : 745.05, negtive prim loss : 181.23, negtive defi loss : 262.85, worst lambd: 1495.57, worst prim gap: 31.04, worst defi gap: 68.22:  19%|█▉        | 97/500 [05:25<22:23,  3.33s/it]
+Epoch 105 | postive loss : 616.31, negtive prim loss : 149.20, negtive defi loss : 219.79, worst lambd: 1261.04, worst prim gap: 27.55, worst defi gap: 54.28:  21%|██        | 106/500 [05:55<21:59,  3.35s/it]
+Epoch 114 | postive loss : 505.34, negtive prim loss : 122.01, negtive defi loss : 181.95, worst lambd: 1052.76, worst prim gap: 23.29, worst defi gap: 43.27:  23%|██▎       | 115/500 [06:25<21:30,  3.35s/it]
+Epoch 123 | postive loss : 410.80, negtive prim loss : 98.99, negtive defi loss : 149.62, worst lambd: 871.34, worst prim gap: 16.55, worst defi gap: 30.75:  25%|██▍       | 124/500 [06:56<21:02,  3.36s/it]  
+Epoch 132 | postive loss : 330.36, negtive prim loss : 79.70, negtive defi loss : 121.84, worst lambd: 709.72, worst prim gap: 11.65, worst defi gap: 22.99:  27%|██▋       | 133/500 [07:26<20:31,  3.36s/it]
+Epoch 141 | postive loss : 262.05, negtive prim loss : 63.43, negtive defi loss : 97.86, worst lambd: 567.59, worst prim gap: 7.08, worst defi gap: 14.74:  28%|██▊       | 142/500 [07:57<20:10,  3.38s/it]  
+Epoch 150 | postive loss : 204.93, negtive prim loss : 49.85, negtive defi loss : 77.61, worst lambd: 447.35, worst prim gap: 4.55, worst defi gap: 10.51:  30%|███       | 151/500 [08:27<19:38,  3.38s/it]
+Epoch 159 | postive loss : 157.66, negtive prim loss : 38.67, negtive defi loss : 60.57, worst lambd: 349.95, worst prim gap: 3.23, worst defi gap: 6.78:  32%|███▏      | 160/500 [08:57<19:04,  3.36s/it] 
+Epoch 168 | postive loss : 118.99, negtive prim loss : 29.42, negtive defi loss : 46.37, worst lambd: 270.58, worst prim gap: 3.18, worst defi gap: 5.24:  34%|███▍      | 169/500 [09:27<18:34,  3.37s/it]
+Epoch 177 | postive loss : 87.60, negtive prim loss : 21.93, negtive defi loss : 34.64, worst lambd: 203.96, worst prim gap: 1.91, worst defi gap: 2.92:  36%|███▌      | 178/500 [10:00<18:23,  3.43s/it] 
+Epoch 186 | postive loss : 62.94, negtive prim loss : 15.94, negtive defi loss : 25.32, worst lambd: 150.86, worst prim gap: 1.16, worst defi gap: 1.42:  37%|███▋      | 187/500 [10:30<17:53,  3.43s/it]
+Epoch 195 | postive loss : 43.65, negtive prim loss : 11.23, negtive defi loss : 17.81, worst lambd: 107.43, worst prim gap: 0.51, worst defi gap: 0.93:  39%|███▉      | 196/500 [11:01<17:21,  3.43s/it]
+Epoch 204 | postive loss : 29.20, negtive prim loss : 7.63, negtive defi loss : 12.09, worst lambd: 73.76, worst prim gap: 0.37, worst defi gap: 0.71:  41%|████      | 205/500 [11:33<17:04,  3.47s/it]  
+Epoch 213 | postive loss : 19.17, negtive prim loss : 5.01, negtive defi loss : 8.05, worst lambd: 49.40, worst prim gap: 0.34, worst defi gap: 0.65:  43%|████▎     | 214/500 [12:05<16:36,  3.48s/it] 
+Epoch 222 | postive loss : 14.22, negtive prim loss : 3.37, negtive defi loss : 5.82, worst lambd: 35.22, worst prim gap: 0.28, worst defi gap: 0.82:  45%|████▍     | 223/500 [12:36<16:01,  3.47s/it]
+Epoch 231 | postive loss : 11.75, negtive prim loss : 2.35, negtive defi loss : 4.57, worst lambd: 33.87, worst prim gap: 0.26, worst defi gap: 0.83:  46%|████▋     | 232/500 [13:07<15:25,  3.45s/it]
+Epoch 240 | postive loss : 10.90, negtive prim loss : 1.74, negtive defi loss : 3.98, worst lambd: 30.94, worst prim gap: 0.24, worst defi gap: 0.90:  48%|████▊     | 241/500 [13:37<14:46,  3.42s/it]
+Epoch 249 | postive loss : 10.85, negtive prim loss : 1.40, negtive defi loss : 3.76, worst lambd: 29.96, worst prim gap: 0.23, worst defi gap: 0.88:  50%|█████     | 250/500 [14:07<14:11,  3.41s/it]
+Epoch 258 | postive loss : 11.25, negtive prim loss : 1.21, negtive defi loss : 3.75, worst lambd: 31.44, worst prim gap: 0.25, worst defi gap: 0.89:  52%|█████▏    | 259/500 [14:37<13:38,  3.39s/it]
+Epoch 267 | postive loss : 11.19, negtive prim loss : 1.12, negtive defi loss : 3.67, worst lambd: 30.00, worst prim gap: 0.28, worst defi gap: 0.90:  54%|█████▎    | 268/500 [15:08<13:06,  3.39s/it]
+Epoch 276 | postive loss : 10.93, negtive prim loss : 1.06, negtive defi loss : 3.53, worst lambd: 28.86, worst prim gap: 0.30, worst defi gap: 0.84:  55%|█████▌    | 277/500 [15:38<12:33,  3.38s/it]
+Epoch 285 | postive loss : 11.17, negtive prim loss : 1.02, negtive defi loss : 3.58, worst lambd: 27.62, worst prim gap: 0.30, worst defi gap: 0.85:  57%|█████▋    | 286/500 [16:09<12:03,  3.38s/it]
+Epoch 294 | postive loss : 11.05, negtive prim loss : 1.01, negtive defi loss : 3.52, worst lambd: 28.14, worst prim gap: 0.26, worst defi gap: 0.90:  59%|█████▉    | 295/500 [16:39<11:32,  3.38s/it]
+Epoch 303 | postive loss : 10.80, negtive prim loss : 0.98, negtive defi loss : 3.40, worst lambd: 25.86, worst prim gap: 0.32, worst defi gap: 0.90:  61%|██████    | 304/500 [17:09<10:59,  3.37s/it]
+Epoch 312 | postive loss : 9.98, negtive prim loss : 0.97, negtive defi loss : 3.16, worst lambd: 22.22, worst prim gap: 0.31, worst defi gap: 0.85:  63%|██████▎   | 313/500 [17:39<10:28,  3.36s/it] 
+Epoch 321 | postive loss : 10.09, negtive prim loss : 0.95, negtive defi loss : 3.18, worst lambd: 22.20, worst prim gap: 0.13, worst defi gap: 0.93:  64%|██████▍   | 322/500 [18:09<09:57,  3.36s/it]
+Epoch 330 | postive loss : 9.71, negtive prim loss : 0.94, negtive defi loss : 3.08, worst lambd: 21.54, worst prim gap: 0.31, worst defi gap: 0.70:  66%|██████▌   | 331/500 [18:40<09:32,  3.39s/it] 
+Epoch 339 | postive loss : 9.59, negtive prim loss : 0.93, negtive defi loss : 3.03, worst lambd: 20.48, worst prim gap: 0.31, worst defi gap: 0.86:  68%|██████▊   | 340/500 [19:12<09:10,  3.44s/it]
+Epoch 348 | postive loss : 9.76, negtive prim loss : 0.93, negtive defi loss : 3.09, worst lambd: 21.00, worst prim gap: 0.32, worst defi gap: 0.90:  70%|██████▉   | 349/500 [19:43<08:36,  3.42s/it]
+Epoch 357 | postive loss : 9.27, negtive prim loss : 0.93, negtive defi loss : 2.96, worst lambd: 22.72, worst prim gap: 0.34, worst defi gap: 0.86:  72%|███████▏  | 358/500 [20:13<08:03,  3.40s/it]
+Epoch 366 | postive loss : 9.13, negtive prim loss : 0.93, negtive defi loss : 2.92, worst lambd: 23.17, worst prim gap: 0.33, worst defi gap: 0.91:  73%|███████▎  | 367/500 [20:44<07:32,  3.40s/it]
+Epoch 375 | postive loss : 9.09, negtive prim loss : 0.91, negtive defi loss : 2.86, worst lambd: 25.17, worst prim gap: 0.22, worst defi gap: 0.91:  75%|███████▌  | 376/500 [21:14<07:00,  3.39s/it]
+Epoch 384 | postive loss : 8.93, negtive prim loss : 0.90, negtive defi loss : 2.78, worst lambd: 25.57, worst prim gap: 0.31, worst defi gap: 0.89:  77%|███████▋  | 385/500 [21:44<06:27,  3.37s/it]
+Epoch 393 | postive loss : 9.00, negtive prim loss : 0.89, negtive defi loss : 2.79, worst lambd: 26.25, worst prim gap: 0.32, worst defi gap: 0.89:  79%|███████▉  | 394/500 [22:14<05:56,  3.37s/it]
+Epoch 402 | postive loss : 8.92, negtive prim loss : 0.89, negtive defi loss : 2.77, worst lambd: 27.43, worst prim gap: 0.33, worst defi gap: 0.92:  81%|████████  | 403/500 [22:45<05:27,  3.37s/it]
+Epoch 411 | postive loss : 8.91, negtive prim loss : 0.89, negtive defi loss : 2.77, worst lambd: 26.95, worst prim gap: 0.34, worst defi gap: 0.87:  82%|████████▏ | 412/500 [23:15<04:56,  3.37s/it]
+Epoch 420 | postive loss : 8.59, negtive prim loss : 0.90, negtive defi loss : 2.71, worst lambd: 26.28, worst prim gap: 0.27, worst defi gap: 0.92:  84%|████████▍ | 421/500 [23:45<04:25,  3.36s/it]
+Epoch 430 | postive loss : 8.49, negtive prim loss : 0.90, negtive defi loss : 2.72, worst lambd: 26.36, worst prim gap: 0.24, worst defi gap: 0.85:  86%|████████▌ | 431/500 [24:18<03:51,  3.35s/it]
+Epoch 439 | postive loss : 8.11, negtive prim loss : 0.92, negtive defi loss : 2.67, worst lambd: 25.05, worst prim gap: 0.31, worst defi gap: 0.91:  88%|████████▊ | 440/500 [24:48<03:20,  3.35s/it]
+Epoch 448 | postive loss : 7.95, negtive prim loss : 0.93, negtive defi loss : 2.68, worst lambd: 24.83, worst prim gap: 0.33, worst defi gap: 0.91:  90%|████████▉ | 449/500 [25:18<02:50,  3.34s/it]
+Epoch 458 | postive loss : 7.87, negtive prim loss : 0.94, negtive defi loss : 2.69, worst lambd: 24.23, worst prim gap: 0.32, worst defi gap: 0.85:  92%|█████████▏| 459/500 [25:52<02:17,  3.34s/it]
+Epoch 468 | postive loss : 7.62, negtive prim loss : 0.95, negtive defi loss : 2.62, worst lambd: 24.92, worst prim gap: 0.27, worst defi gap: 0.94:  94%|█████████▍| 469/500 [26:25<01:43,  3.34s/it]
+Epoch 477 | postive loss : 7.51, negtive prim loss : 0.94, negtive defi loss : 2.57, worst lambd: 24.88, worst prim gap: 0.34, worst defi gap: 0.89:  96%|█████████▌| 478/500 [26:55<01:13,  3.34s/it]
+Epoch 486 | postive loss : 7.60, negtive prim loss : 0.93, negtive defi loss : 2.54, worst lambd: 27.30, worst prim gap: 0.22, worst defi gap: 0.88:  97%|█████████▋| 487/500 [27:26<00:43,  3.37s/it]
+Epoch 495 | postive loss : 7.69, negtive prim loss : 0.92, negtive defi loss : 2.54, worst lambd: 28.06, worst prim gap: 0.31, worst defi gap: 0.83:  99%|█████████▉| 496/500 [27:56<00:13,  3.38s/it]
+Epoch 499 | postive loss : 7.71, negtive prim loss : 0.92, negtive defi loss : 2.54, worst lambd: 28.05, worst prim gap: 0.34, worst defi gap: 0.84: 100%|██████████| 500/500 [28:10<00:00,  3.38s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+Timer unit: 1e-09 s
+
+Total time: 30.8657 s
+File: /home1/cqy2020/SN2E/mycode/models/SN2E.py
+Function: scorePos at line 102
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   102                                               def scorePos(self, indexA, indexP = None) -> torch.Tensor:
+   103                                                   '''
+   104                                                   indexA    : (index)[num0, numA]
+   105                                                   '''
+   106     57000   21121373.0    370.6      0.1          if not (indexP is None):
+   107     57000 12099267244.0 212267.8     39.2              e_p = self.loaddefiEmbedding(indexP).detach()
+   108     57000 6691215669.0 117389.7     21.7              e_a = self.lookupEmbedding(indexA).cat(e_p)
+   109                                                   else:
+   110                                                       e_a = self.lookupEmbedding(indexA)
+   111     57000 3936142632.0  69055.1     12.8          e_u = self.calcIntersection(e_a)
+   112     57000 8117932769.0 142419.9     26.3          return self.calcLambda(e_a, e_u)
+
+2023-03-14 19:54:34
+alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 100    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 1 | postive loss : 3970.13, negtive prim loss : 1089.04, negtive defi loss : 1320.60, worst lambd: 6772.68, worst prim gap: 284.96, worst defi gap: 590.74:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 8 | postive loss : 3559.70, negtive prim loss : 963.59, negtive defi loss : 1185.67, worst lambd: 6099.49, worst prim gap: 312.90, worst defi gap: 472.13:   2%|▏         | 9/500 [00:31<28:32,  3.49s/it]
+Epoch 18 | postive loss : 3030.37, negtive prim loss : 807.22, negtive defi loss : 1012.49, worst lambd: 5227.32, worst prim gap: 229.91, worst defi gap: 397.86:   4%|▍         | 19/500 [01:04<27:04,  3.38s/it]
+Epoch 28 | postive loss : 2574.10, negtive prim loss : 675.66, negtive defi loss : 864.53, worst lambd: 4468.22, worst prim gap: 184.28, worst defi gap: 331.86:   6%|▌         | 29/500 [01:37<26:15,  3.34s/it] 
+Epoch 38 | postive loss : 2178.52, negtive prim loss : 563.98, negtive defi loss : 734.71, worst lambd: 3833.14, worst prim gap: 152.93, worst defi gap: 276.06:   8%|▊         | 39/500 [02:10<25:38,  3.34s/it]
+Epoch 48 | postive loss : 1834.77, negtive prim loss : 469.14, negtive defi loss : 622.05, worst lambd: 3221.67, worst prim gap: 111.96, worst defi gap: 230.75:  10%|▉         | 49/500 [02:43<24:59,  3.32s/it]
+Epoch 58 | postive loss : 1537.59, negtive prim loss : 388.42, negtive defi loss : 524.76, worst lambd: 2720.68, worst prim gap: 94.70, worst defi gap: 171.06:  12%|█▏        | 59/500 [03:17<24:25,  3.32s/it] 
+Epoch 68 | postive loss : 1280.45, negtive prim loss : 320.14, negtive defi loss : 440.00, worst lambd: 2286.53, worst prim gap: 80.91, worst defi gap: 136.60:  14%|█▍        | 69/500 [03:50<23:50,  3.32s/it]
+Epoch 78 | postive loss : 1059.47, negtive prim loss : 262.29, negtive defi loss : 366.56, worst lambd: 1925.84, worst prim gap: 54.14, worst defi gap: 94.73:  16%|█▌        | 79/500 [04:23<23:17,  3.32s/it] 
+Epoch 87 | postive loss : 887.96, negtive prim loss : 218.05, negtive defi loss : 309.61, worst lambd: 1644.64, worst prim gap: 45.22, worst defi gap: 71.78:  18%|█▊        | 88/500 [04:53<22:51,  3.33s/it] 
+Epoch 97 | postive loss : 724.23, negtive prim loss : 176.52, negtive defi loss : 254.94, worst lambd: 1372.01, worst prim gap: 30.79, worst defi gap: 61.76:  20%|█▉        | 98/500 [05:26<22:16,  3.33s/it]
+Epoch 107 | postive loss : 585.20, negtive prim loss : 141.86, negtive defi loss : 208.10, worst lambd: 1134.15, worst prim gap: 27.51, worst defi gap: 44.18:  22%|██▏       | 108/500 [05:59<21:40,  3.32s/it]
+Epoch 117 | postive loss : 467.61, negtive prim loss : 113.04, negtive defi loss : 168.10, worst lambd: 932.24, worst prim gap: 16.39, worst defi gap: 28.01:  24%|██▎       | 118/500 [06:32<21:06,  3.32s/it] 
+Epoch 126 | postive loss : 378.08, negtive prim loss : 91.38, negtive defi loss : 137.39, worst lambd: 778.35, worst prim gap: 17.14, worst defi gap: 20.53:  25%|██▌       | 127/500 [07:03<20:42,  3.33s/it] 
+Epoch 136 | postive loss : 294.27, negtive prim loss : 71.27, negtive defi loss : 108.39, worst lambd: 630.55, worst prim gap: 9.82, worst defi gap: 14.80:  27%|██▋       | 137/500 [07:36<20:08,  3.33s/it] 
+Epoch 145 | postive loss : 231.89, negtive prim loss : 56.32, negtive defi loss : 86.44, worst lambd: 515.90, worst prim gap: 8.38, worst defi gap: 8.44:  29%|██▉       | 146/500 [08:06<19:39,  3.33s/it]  
+Epoch 154 | postive loss : 179.58, negtive prim loss : 43.96, negtive defi loss : 67.89, worst lambd: 415.27, worst prim gap: 4.70, worst defi gap: 5.43:  31%|███       | 155/500 [08:36<19:12,  3.34s/it]
+Epoch 164 | postive loss : 132.40, negtive prim loss : 32.71, negtive defi loss : 50.78, worst lambd: 320.23, worst prim gap: 3.41, worst defi gap: 3.52:  33%|███▎      | 165/500 [09:09<18:36,  3.33s/it]
+Epoch 173 | postive loss : 98.26, negtive prim loss : 24.53, negtive defi loss : 38.26, worst lambd: 248.42, worst prim gap: 2.02, worst defi gap: 1.99:  35%|███▍      | 174/500 [09:40<18:07,  3.34s/it] 
+Epoch 182 | postive loss : 70.99, negtive prim loss : 17.95, negtive defi loss : 28.02, worst lambd: 188.11, worst prim gap: 1.13, worst defi gap: 1.14:  37%|███▋      | 183/500 [10:10<17:39,  3.34s/it]
+Epoch 191 | postive loss : 49.70, negtive prim loss : 12.75, negtive defi loss : 19.87, worst lambd: 136.76, worst prim gap: 0.73, worst defi gap: 1.12:  38%|███▊      | 192/500 [10:40<17:11,  3.35s/it]
+Epoch 200 | postive loss : 33.41, negtive prim loss : 8.71, negtive defi loss : 13.54, worst lambd: 96.04, worst prim gap: 0.35, worst defi gap: 0.72:  40%|████      | 201/500 [11:10<16:43,  3.36s/it]  
+Epoch 210 | postive loss : 20.35, negtive prim loss : 5.41, negtive defi loss : 8.39, worst lambd: 59.70, worst prim gap: 0.34, worst defi gap: 0.39:  42%|████▏     | 211/500 [11:44<16:08,  3.35s/it] 
+Epoch 220 | postive loss : 13.09, negtive prim loss : 3.20, negtive defi loss : 5.32, worst lambd: 38.35, worst prim gap: 0.16, worst defi gap: 0.57:  44%|████▍     | 221/500 [12:17<15:30,  3.34s/it]
+Epoch 229 | postive loss : 11.26, negtive prim loss : 2.06, negtive defi loss : 4.24, worst lambd: 35.97, worst prim gap: 0.20, worst defi gap: 0.52:  46%|████▌     | 230/500 [12:47<15:05,  3.35s/it]
+Epoch 238 | postive loss : 10.26, negtive prim loss : 1.41, negtive defi loss : 3.62, worst lambd: 31.30, worst prim gap: 0.20, worst defi gap: 0.78:  48%|████▊     | 239/500 [13:18<14:41,  3.38s/it]
+Epoch 247 | postive loss : 10.34, negtive prim loss : 1.10, negtive defi loss : 3.48, worst lambd: 30.47, worst prim gap: 0.19, worst defi gap: 0.76:  50%|████▉     | 248/500 [13:49<14:15,  3.39s/it]
+Epoch 256 | postive loss : 10.94, negtive prim loss : 0.98, negtive defi loss : 3.54, worst lambd: 30.30, worst prim gap: 0.21, worst defi gap: 0.80:  51%|█████▏    | 257/500 [14:20<13:46,  3.40s/it]
+Epoch 265 | postive loss : 10.80, negtive prim loss : 0.93, negtive defi loss : 3.44, worst lambd: 29.66, worst prim gap: 0.14, worst defi gap: 0.61:  53%|█████▎    | 266/500 [14:51<13:17,  3.41s/it]
+Epoch 274 | postive loss : 11.09, negtive prim loss : 0.91, negtive defi loss : 3.50, worst lambd: 29.53, worst prim gap: 0.19, worst defi gap: 0.79:  55%|█████▌    | 275/500 [15:22<12:49,  3.42s/it]
+Epoch 283 | postive loss : 10.67, negtive prim loss : 0.89, negtive defi loss : 3.34, worst lambd: 28.48, worst prim gap: 0.25, worst defi gap: 0.72:  57%|█████▋    | 284/500 [15:55<12:37,  3.51s/it]
+Epoch 292 | postive loss : 10.63, negtive prim loss : 0.88, negtive defi loss : 3.31, worst lambd: 26.90, worst prim gap: 0.25, worst defi gap: 0.65:  59%|█████▊    | 293/500 [16:28<12:17,  3.56s/it]
+Epoch 301 | postive loss : 10.27, negtive prim loss : 0.88, negtive defi loss : 3.21, worst lambd: 26.73, worst prim gap: 0.22, worst defi gap: 0.81:  60%|██████    | 302/500 [17:01<11:50,  3.59s/it]
+Epoch 310 | postive loss : 9.83, negtive prim loss : 0.88, negtive defi loss : 3.10, worst lambd: 25.23, worst prim gap: 0.25, worst defi gap: 0.77:  62%|██████▏   | 311/500 [17:33<11:17,  3.58s/it] 
+Epoch 319 | postive loss : 9.58, negtive prim loss : 0.91, negtive defi loss : 3.10, worst lambd: 23.21, worst prim gap: 0.18, worst defi gap: 0.77:  64%|██████▍   | 320/500 [18:06<10:45,  3.58s/it]
+Epoch 328 | postive loss : 9.37, negtive prim loss : 0.93, negtive defi loss : 3.11, worst lambd: 21.21, worst prim gap: 0.25, worst defi gap: 0.81:  66%|██████▌   | 329/500 [18:39<10:20,  3.63s/it]
+Epoch 337 | postive loss : 9.31, negtive prim loss : 0.93, negtive defi loss : 3.07, worst lambd: 22.34, worst prim gap: 0.15, worst defi gap: 0.84:  68%|██████▊   | 338/500 [19:12<09:48,  3.63s/it]
+Epoch 346 | postive loss : 9.15, negtive prim loss : 0.89, negtive defi loss : 2.92, worst lambd: 22.63, worst prim gap: 0.23, worst defi gap: 0.84:  69%|██████▉   | 347/500 [19:44<09:11,  3.60s/it]
+Epoch 355 | postive loss : 9.24, negtive prim loss : 0.88, negtive defi loss : 2.93, worst lambd: 24.91, worst prim gap: 0.18, worst defi gap: 0.83:  71%|███████   | 356/500 [20:17<08:42,  3.63s/it]
+Epoch 363 | postive loss : 9.39, negtive prim loss : 0.88, negtive defi loss : 3.01, worst lambd: 25.73, worst prim gap: 0.16, worst defi gap: 0.81:  73%|███████▎  | 364/500 [20:47<08:18,  3.66s/it]
+Epoch 372 | postive loss : 9.19, negtive prim loss : 0.87, negtive defi loss : 2.94, worst lambd: 26.57, worst prim gap: 0.23, worst defi gap: 0.76:  75%|███████▍  | 373/500 [21:20<07:43,  3.65s/it]
+Epoch 381 | postive loss : 9.17, negtive prim loss : 0.87, negtive defi loss : 2.99, worst lambd: 26.48, worst prim gap: 0.12, worst defi gap: 0.82:  76%|███████▋  | 382/500 [21:52<07:08,  3.63s/it]
+Epoch 390 | postive loss : 9.39, negtive prim loss : 0.87, negtive defi loss : 3.09, worst lambd: 27.32, worst prim gap: 0.10, worst defi gap: 0.83:  78%|███████▊  | 391/500 [22:24<06:35,  3.63s/it]
+Epoch 399 | postive loss : 9.54, negtive prim loss : 0.86, negtive defi loss : 3.13, worst lambd: 27.57, worst prim gap: 0.23, worst defi gap: 0.77:  80%|████████  | 400/500 [22:57<06:01,  3.62s/it]
+Epoch 408 | postive loss : 9.32, negtive prim loss : 0.87, negtive defi loss : 3.09, worst lambd: 27.10, worst prim gap: 0.18, worst defi gap: 0.76:  82%|████████▏ | 409/500 [23:30<05:32,  3.65s/it]
+Epoch 417 | postive loss : 9.42, negtive prim loss : 0.86, negtive defi loss : 3.13, worst lambd: 26.92, worst prim gap: 0.09, worst defi gap: 0.82:  84%|████████▎ | 418/500 [24:04<05:01,  3.68s/it]
+Epoch 426 | postive loss : 9.28, negtive prim loss : 0.91, negtive defi loss : 3.21, worst lambd: 26.22, worst prim gap: 0.08, worst defi gap: 0.70:  85%|████████▌ | 427/500 [24:37<04:29,  3.69s/it]
+Epoch 435 | postive loss : 8.97, negtive prim loss : 0.97, negtive defi loss : 3.30, worst lambd: 25.16, worst prim gap: 0.10, worst defi gap: 0.78:  87%|████████▋ | 436/500 [25:09<03:53,  3.64s/it]
+Epoch 444 | postive loss : 8.85, negtive prim loss : 0.98, negtive defi loss : 3.27, worst lambd: 25.14, worst prim gap: 0.13, worst defi gap: 0.75:  89%|████████▉ | 445/500 [25:43<03:21,  3.67s/it]
+Epoch 453 | postive loss : 8.79, negtive prim loss : 0.90, negtive defi loss : 3.02, worst lambd: 24.93, worst prim gap: 0.09, worst defi gap: 0.80:  91%|█████████ | 454/500 [26:14<02:46,  3.62s/it]
+Epoch 462 | postive loss : 8.58, negtive prim loss : 0.84, negtive defi loss : 2.81, worst lambd: 25.35, worst prim gap: 0.10, worst defi gap: 0.77:  93%|█████████▎| 463/500 [26:47<02:14,  3.63s/it]
+Epoch 470 | postive loss : 8.54, negtive prim loss : 0.84, negtive defi loss : 2.80, worst lambd: 25.06, worst prim gap: 0.15, worst defi gap: 0.65:  94%|█████████▍| 471/500 [27:17<01:46,  3.67s/it]
+Epoch 478 | postive loss : 8.50, negtive prim loss : 0.85, negtive defi loss : 2.78, worst lambd: 25.07, worst prim gap: 0.14, worst defi gap: 0.77:  96%|█████████▌| 479/500 [27:48<01:17,  3.70s/it]
+Epoch 487 | postive loss : 8.44, negtive prim loss : 0.83, negtive defi loss : 2.69, worst lambd: 26.03, worst prim gap: 0.16, worst defi gap: 0.75:  98%|█████████▊| 488/500 [28:21<00:44,  3.70s/it]
+Epoch 496 | postive loss : 8.35, negtive prim loss : 0.82, negtive defi loss : 2.61, worst lambd: 27.35, worst prim gap: 0.13, worst defi gap: 0.66:  99%|█████████▉| 497/500 [28:52<00:10,  3.61s/it]
+Epoch 499 | postive loss : 8.37, negtive prim loss : 0.82, negtive defi loss : 2.61, worst lambd: 27.99, worst prim gap: 0.20, worst defi gap: 0.70: 100%|██████████| 500/500 [29:02<00:00,  3.48s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+Timer unit: 1e-09 s
+
+Total time: 31.2516 s
+File: /home1/cqy2020/SN2E/mycode/models/SN2E.py
+Function: scorePos at line 91
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    91                                               def scorePos(self, indexA, indexP = None) -> torch.Tensor:
+    92                                                   '''
+    93                                                   indexA    : (index)[num0, numA]
+    94                                                   '''
+    95     57000   21169474.0    371.4      0.1          if not (indexP is None):
+    96     57000 12205944657.0 214139.4     39.1              e_p = self.loaddefiEmbedding(indexP).detach()
+    97     57000 6801882651.0 119331.3     21.8              e_a = self.lookupEmbedding(indexA).cat(e_p)
+    98                                                   else:
+    99                                                       e_a = self.lookupEmbedding(indexA)
+   100     57000 4035003391.0  70789.5     12.9          e_u = self.calcIntersection(e_a)
+   101     57000 8187624406.0 143642.5     26.2          return self.calcLambda(e_a, e_u)
+
+2023-03-15 07:01:56
+alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax_defi: -5    gapMax_prim: -5    lambdaMax: 0    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 100    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]2023-03-15 07:02:42
+alpha: 0.1    batchsize: 128    dim: 128    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 100    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 1 | postive loss : 7947.81, negtive prim loss : 2179.18, negtive defi loss : 2641.82, worst lambd: 12536.38, worst prim gap: 1007.39, worst defi gap: 1532.99:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 7 | postive loss : 7242.12, negtive prim loss : 1963.06, negtive defi loss : 2410.15, worst lambd: 11485.36, worst prim gap: 948.77, worst defi gap: 1365.46:   2%|▏         | 8/500 [00:30<30:47,  3.76s/it]
+Epoch 16 | postive loss : 6269.02, negtive prim loss : 1674.33, negtive defi loss : 2093.45, worst lambd: 10014.19, worst prim gap: 807.39, worst defi gap: 1190.19:   3%|▎         | 17/500 [01:02<29:13,  3.63s/it]
+Epoch 25 | postive loss : 5418.36, negtive prim loss : 1426.81, negtive defi loss : 1816.44, worst lambd: 8736.61, worst prim gap: 625.08, worst defi gap: 967.65:   5%|▌         | 26/500 [01:34<28:24,  3.60s/it]  
+Epoch 34 | postive loss : 4670.56, negtive prim loss : 1214.01, negtive defi loss : 1573.15, worst lambd: 7623.71, worst prim gap: 538.49, worst defi gap: 857.79:   7%|▋         | 35/500 [02:06<27:45,  3.58s/it]
+Epoch 43 | postive loss : 4012.95, negtive prim loss : 1030.38, negtive defi loss : 1358.09, worst lambd: 6645.13, worst prim gap: 397.24, worst defi gap: 705.36:   9%|▉         | 44/500 [02:38<27:08,  3.57s/it]
+Epoch 52 | postive loss : 3433.51, negtive prim loss : 871.76, negtive defi loss : 1168.21, worst lambd: 5763.26, worst prim gap: 375.99, worst defi gap: 574.44:  11%|█         | 53/500 [03:10<26:34,  3.57s/it] 
+Epoch 61 | postive loss : 2924.33, negtive prim loss : 734.63, negtive defi loss : 1001.60, worst lambd: 4987.96, worst prim gap: 296.02, worst defi gap: 507.41:  12%|█▏        | 62/500 [03:42<26:00,  3.56s/it]
+Epoch 70 | postive loss : 2477.20, negtive prim loss : 616.73, negtive defi loss : 854.94, worst lambd: 4292.44, worst prim gap: 253.20, worst defi gap: 412.95:  14%|█▍        | 71/500 [04:14<25:28,  3.56s/it] 
+Epoch 79 | postive loss : 2087.15, negtive prim loss : 515.27, negtive defi loss : 726.49, worst lambd: 3683.64, worst prim gap: 202.58, worst defi gap: 330.52:  16%|█▌        | 80/500 [04:46<24:56,  3.56s/it]
+Epoch 88 | postive loss : 1747.94, negtive prim loss : 428.33, negtive defi loss : 614.06, worst lambd: 3128.53, worst prim gap: 162.73, worst defi gap: 278.14:  18%|█▊        | 89/500 [05:18<24:25,  3.57s/it]
+Epoch 97 | postive loss : 1453.50, negtive prim loss : 354.36, negtive defi loss : 516.01, worst lambd: 2645.05, worst prim gap: 117.86, worst defi gap: 216.40:  20%|█▉        | 98/500 [05:50<23:52,  3.56s/it]
+Epoch 106 | postive loss : 1199.26, negtive prim loss : 291.37, negtive defi loss : 430.69, worst lambd: 2213.62, worst prim gap: 109.85, worst defi gap: 177.59:  21%|██▏       | 107/500 [06:22<23:20,  3.56s/it]
+Epoch 115 | postive loss : 980.64, negtive prim loss : 237.82, negtive defi loss : 356.93, worst lambd: 1834.97, worst prim gap: 85.40, worst defi gap: 134.79:  23%|██▎       | 116/500 [06:54<22:48,  3.56s/it]  
+Epoch 124 | postive loss : 795.31, negtive prim loss : 192.83, negtive defi loss : 293.32, worst lambd: 1511.10, worst prim gap: 60.21, worst defi gap: 110.90:  25%|██▌       | 125/500 [07:26<22:16,  3.56s/it]
+Epoch 133 | postive loss : 637.13, negtive prim loss : 154.90, negtive defi loss : 238.46, worst lambd: 1224.00, worst prim gap: 45.69, worst defi gap: 75.39:  27%|██▋       | 134/500 [07:58<21:44,  3.56s/it] 
+Epoch 142 | postive loss : 505.05, negtive prim loss : 123.21, negtive defi loss : 191.98, worst lambd: 986.62, worst prim gap: 34.95, worst defi gap: 56.79:  29%|██▊       | 143/500 [08:30<21:11,  3.56s/it] 
+Epoch 151 | postive loss : 394.08, negtive prim loss : 96.75, negtive defi loss : 152.23, worst lambd: 780.69, worst prim gap: 24.69, worst defi gap: 41.46:  30%|███       | 152/500 [09:03<20:42,  3.57s/it] 
+Epoch 160 | postive loss : 303.15, negtive prim loss : 75.02, negtive defi loss : 119.00, worst lambd: 606.80, worst prim gap: 17.84, worst defi gap: 27.56:  32%|███▏      | 161/500 [09:35<20:09,  3.57s/it]
+Epoch 169 | postive loss : 228.46, negtive prim loss : 57.12, negtive defi loss : 91.27, worst lambd: 461.84, worst prim gap: 9.85, worst defi gap: 20.27:  34%|███▍      | 170/500 [10:07<19:36,  3.56s/it]  
+Epoch 178 | postive loss : 168.15, negtive prim loss : 42.61, negtive defi loss : 68.42, worst lambd: 341.34, worst prim gap: 6.49, worst defi gap: 13.35:  36%|███▌      | 179/500 [10:39<19:03,  3.56s/it]
+Epoch 187 | postive loss : 120.82, negtive prim loss : 31.02, negtive defi loss : 49.99, worst lambd: 249.56, worst prim gap: 5.71, worst defi gap: 9.69:  38%|███▊      | 188/500 [11:11<18:30,  3.56s/it] 
+Epoch 196 | postive loss : 83.99, negtive prim loss : 21.90, negtive defi loss : 35.38, worst lambd: 176.05, worst prim gap: 3.25, worst defi gap: 5.64:  39%|███▉      | 197/500 [11:43<17:57,  3.56s/it] 
+Epoch 205 | postive loss : 56.26, negtive prim loss : 14.92, negtive defi loss : 24.10, worst lambd: 123.67, worst prim gap: 2.04, worst defi gap: 3.31:  41%|████      | 206/500 [12:15<17:26,  3.56s/it]
+Epoch 214 | postive loss : 35.83, negtive prim loss : 9.68, negtive defi loss : 15.59, worst lambd: 83.70, worst prim gap: 1.18, worst defi gap: 1.42:  43%|████▎     | 215/500 [12:47<16:53,  3.56s/it]  
+Epoch 223 | postive loss : 21.54, negtive prim loss : 5.93, negtive defi loss : 9.49, worst lambd: 53.45, worst prim gap: 0.60, worst defi gap: 0.93:  45%|████▍     | 224/500 [13:19<16:22,  3.56s/it] 
+Epoch 232 | postive loss : 12.14, negtive prim loss : 3.39, negtive defi loss : 5.38, worst lambd: 33.20, worst prim gap: 0.36, worst defi gap: 0.66:  47%|████▋     | 233/500 [13:51<15:50,  3.56s/it]
+Epoch 241 | postive loss : 8.97, negtive prim loss : 1.90, negtive defi loss : 3.56, worst lambd: 26.31, worst prim gap: 0.27, worst defi gap: 0.74:  48%|████▊     | 242/500 [14:23<15:18,  3.56s/it] 
+Epoch 250 | postive loss : 8.70, negtive prim loss : 1.15, negtive defi loss : 3.02, worst lambd: 23.73, worst prim gap: 0.23, worst defi gap: 0.75:  50%|█████     | 251/500 [14:55<14:47,  3.56s/it]
+Epoch 259 | postive loss : 9.31, negtive prim loss : 0.88, negtive defi loss : 3.02, worst lambd: 25.79, worst prim gap: 0.24, worst defi gap: 0.77:  52%|█████▏    | 260/500 [15:27<14:15,  3.56s/it]
+Epoch 268 | postive loss : 9.99, negtive prim loss : 0.82, negtive defi loss : 3.16, worst lambd: 25.08, worst prim gap: 0.26, worst defi gap: 0.74:  54%|█████▍    | 269/500 [15:59<13:43,  3.56s/it]
+Epoch 277 | postive loss : 9.99, negtive prim loss : 0.80, negtive defi loss : 3.15, worst lambd: 23.74, worst prim gap: 0.26, worst defi gap: 0.77:  56%|█████▌    | 278/500 [16:31<13:13,  3.58s/it]
+Epoch 286 | postive loss : 9.94, negtive prim loss : 0.80, negtive defi loss : 3.14, worst lambd: 23.04, worst prim gap: 0.16, worst defi gap: 0.73:  57%|█████▋    | 287/500 [17:04<12:43,  3.58s/it]
+Epoch 295 | postive loss : 9.51, negtive prim loss : 0.82, negtive defi loss : 3.07, worst lambd: 20.92, worst prim gap: 0.21, worst defi gap: 0.82:  59%|█████▉    | 296/500 [17:37<12:18,  3.62s/it]
+Epoch 304 | postive loss : 9.35, negtive prim loss : 0.84, negtive defi loss : 3.04, worst lambd: 21.04, worst prim gap: 0.17, worst defi gap: 0.61:  61%|██████    | 305/500 [18:10<11:49,  3.64s/it]
+Epoch 313 | postive loss : 9.18, negtive prim loss : 0.85, negtive defi loss : 3.01, worst lambd: 21.18, worst prim gap: 0.15, worst defi gap: 0.67:  63%|██████▎   | 314/500 [18:43<11:13,  3.62s/it]
+Epoch 322 | postive loss : 9.03, negtive prim loss : 0.85, negtive defi loss : 2.93, worst lambd: 20.07, worst prim gap: 0.12, worst defi gap: 0.80:  65%|██████▍   | 323/500 [19:16<10:46,  3.65s/it]
+Epoch 331 | postive loss : 8.66, negtive prim loss : 0.85, negtive defi loss : 2.80, worst lambd: 19.30, worst prim gap: 0.14, worst defi gap: 0.76:  66%|██████▋   | 332/500 [19:49<10:15,  3.66s/it]
+Epoch 340 | postive loss : 8.55, negtive prim loss : 0.85, negtive defi loss : 2.75, worst lambd: 20.99, worst prim gap: 0.19, worst defi gap: 0.70:  68%|██████▊   | 341/500 [20:22<09:43,  3.67s/it]
+Epoch 349 | postive loss : 8.68, negtive prim loss : 0.85, negtive defi loss : 2.77, worst lambd: 24.49, worst prim gap: 0.10, worst defi gap: 0.81:  70%|███████   | 350/500 [20:56<09:11,  3.68s/it]
+Epoch 358 | postive loss : 8.68, negtive prim loss : 0.85, negtive defi loss : 2.75, worst lambd: 27.59, worst prim gap: 0.15, worst defi gap: 0.63:  72%|███████▏  | 359/500 [21:29<08:37,  3.67s/it]
+Epoch 367 | postive loss : 8.67, negtive prim loss : 0.87, negtive defi loss : 2.74, worst lambd: 31.73, worst prim gap: 0.15, worst defi gap: 0.80:  74%|███████▎  | 368/500 [22:02<08:05,  3.68s/it]
+Epoch 376 | postive loss : 8.64, negtive prim loss : 0.87, negtive defi loss : 2.72, worst lambd: 35.29, worst prim gap: 0.14, worst defi gap: 0.80:  75%|███████▌  | 377/500 [22:34<07:30,  3.66s/it]
+Epoch 385 | postive loss : 8.77, negtive prim loss : 0.87, negtive defi loss : 2.74, worst lambd: 39.28, worst prim gap: 0.15, worst defi gap: 0.81:  77%|███████▋  | 386/500 [23:07<06:54,  3.63s/it]
+Epoch 394 | postive loss : 8.55, negtive prim loss : 0.89, negtive defi loss : 2.68, worst lambd: 42.96, worst prim gap: 0.14, worst defi gap: 0.83:  79%|███████▉  | 395/500 [23:39<06:19,  3.61s/it]
+Epoch 403 | postive loss : 8.22, negtive prim loss : 0.89, negtive defi loss : 2.56, worst lambd: 45.96, worst prim gap: 0.09, worst defi gap: 0.72:  81%|████████  | 404/500 [24:11<05:45,  3.60s/it]
+Epoch 412 | postive loss : 8.31, negtive prim loss : 0.85, negtive defi loss : 2.50, worst lambd: 50.42, worst prim gap: 0.17, worst defi gap: 0.74:  83%|████████▎ | 413/500 [24:43<05:12,  3.60s/it]
+Epoch 421 | postive loss : 8.27, negtive prim loss : 0.86, negtive defi loss : 2.49, worst lambd: 54.69, worst prim gap: 0.13, worst defi gap: 0.72:  84%|████████▍ | 422/500 [25:15<04:40,  3.59s/it]
+Epoch 430 | postive loss : 8.40, negtive prim loss : 0.88, negtive defi loss : 2.58, worst lambd: 58.54, worst prim gap: 0.14, worst defi gap: 0.76:  86%|████████▌ | 431/500 [25:48<04:07,  3.59s/it]
+Epoch 439 | postive loss : 8.73, negtive prim loss : 0.90, negtive defi loss : 2.69, worst lambd: 63.97, worst prim gap: 0.11, worst defi gap: 0.75:  88%|████████▊ | 440/500 [26:20<03:35,  3.59s/it]
+Epoch 448 | postive loss : 8.72, negtive prim loss : 0.88, negtive defi loss : 2.63, worst lambd: 67.53, worst prim gap: 0.17, worst defi gap: 0.45:  90%|████████▉ | 449/500 [26:53<03:03,  3.61s/it]
+Epoch 457 | postive loss : 8.99, negtive prim loss : 0.87, negtive defi loss : 2.68, worst lambd: 72.32, worst prim gap: 0.13, worst defi gap: 0.75:  92%|█████████▏| 458/500 [27:25<02:31,  3.60s/it]
+Epoch 466 | postive loss : 9.49, negtive prim loss : 0.86, negtive defi loss : 2.79, worst lambd: 75.04, worst prim gap: 0.13, worst defi gap: 0.75:  93%|█████████▎| 467/500 [27:57<01:58,  3.59s/it]
+Epoch 475 | postive loss : 9.85, negtive prim loss : 0.82, negtive defi loss : 2.74, worst lambd: 78.10, worst prim gap: 0.10, worst defi gap: 0.70:  95%|█████████▌| 476/500 [28:29<01:25,  3.58s/it]
+Epoch 484 | postive loss : 10.09, negtive prim loss : 0.79, negtive defi loss : 2.77, worst lambd: 80.15, worst prim gap: 0.16, worst defi gap: 0.76:  97%|█████████▋| 485/500 [29:02<00:53,  3.59s/it]
+Epoch 493 | postive loss : 10.19, negtive prim loss : 0.80, negtive defi loss : 2.86, worst lambd: 79.23, worst prim gap: 0.12, worst defi gap: 0.76:  99%|█████████▉| 494/500 [29:34<00:21,  3.59s/it]
+Epoch 499 | postive loss : 10.00, negtive prim loss : 0.79, negtive defi loss : 2.78, worst lambd: 77.49, worst prim gap: 0.16, worst defi gap: 0.72: 100%|██████████| 500/500 [29:56<00:00,  3.59s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+Timer unit: 1e-09 s
+
+Total time: 31.4709 s
+File: /home1/cqy2020/SN2E/mycode/models/SN2E.py
+Function: scorePos at line 91
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    91                                               def scorePos(self, indexA, indexP = None) -> torch.Tensor:
+    92                                                   '''
+    93                                                   indexA    : (index)[num0, numA]
+    94                                                   '''
+    95     57000   22566320.0    395.9      0.1          if not (indexP is None):
+    96     57000 12492714324.0 219170.4     39.7              e_p = self.loaddefiEmbedding(indexP).detach()
+    97     57000 6780546821.0 118957.0     21.5              e_a = self.lookupEmbedding(indexA).cat(e_p)
+    98                                                   else:
+    99                                                       e_a = self.lookupEmbedding(indexA)
+   100     57000 4031177084.0  70722.4     12.8          e_u = self.calcIntersection(e_a)
+   101     57000 8143872716.0 142875.0     25.9          return self.calcLambda(e_a, e_u)
+
+
+2023-03-15 07:37:46
+alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 1 | postive loss : 3961.00, negtive prim loss : 1090.39, negtive defi loss : 1315.29, worst lambd: 6663.29, worst prim gap: 360.04, worst defi gap: 541.07:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 8 | postive loss : 3549.06, negtive prim loss : 965.69, negtive defi loss : 1180.10, worst lambd: 6006.02, worst prim gap: 303.09, worst defi gap: 417.83:   2%|▏         | 9/500 [00:31<28:43,  3.51s/it]
+Epoch 17 | postive loss : 3067.75, negtive prim loss : 824.53, negtive defi loss : 1023.29, worst lambd: 5227.93, worst prim gap: 239.70, worst defi gap: 383.54:   4%|▎         | 18/500 [01:01<27:22,  3.41s/it]
+Epoch 27 | postive loss : 2602.20, negtive prim loss : 690.90, negtive defi loss : 871.83, worst lambd: 4462.58, worst prim gap: 209.43, worst defi gap: 295.02:   6%|▌         | 28/500 [01:34<26:31,  3.37s/it] 
+Epoch 36 | postive loss : 2236.07, negtive prim loss : 588.15, negtive defi loss : 752.83, worst lambd: 3864.76, worst prim gap: 180.80, worst defi gap: 240.01:   7%|▋         | 37/500 [02:05<26:01,  3.37s/it]
+Epoch 45 | postive loss : 1913.10, negtive prim loss : 498.85, negtive defi loss : 646.50, worst lambd: 3341.67, worst prim gap: 141.01, worst defi gap: 204.10:   9%|▉         | 46/500 [02:36<25:39,  3.39s/it]
+Epoch 54 | postive loss : 1628.75, negtive prim loss : 421.85, negtive defi loss : 553.74, worst lambd: 2872.30, worst prim gap: 123.42, worst defi gap: 168.25:  11%|█         | 55/500 [03:06<25:00,  3.37s/it]
+Epoch 63 | postive loss : 1379.27, negtive prim loss : 355.00, negtive defi loss : 471.34, worst lambd: 2456.30, worst prim gap: 74.20, worst defi gap: 140.57:  13%|█▎        | 64/500 [03:36<24:27,  3.36s/it] 
+Epoch 72 | postive loss : 1161.18, negtive prim loss : 297.31, negtive defi loss : 399.58, worst lambd: 2093.07, worst prim gap: 74.39, worst defi gap: 107.25:  15%|█▍        | 73/500 [04:06<23:54,  3.36s/it]
+Epoch 81 | postive loss : 971.19, negtive prim loss : 247.66, negtive defi loss : 336.43, worst lambd: 1786.50, worst prim gap: 54.69, worst defi gap: 95.67:  16%|█▋        | 82/500 [04:36<23:22,  3.36s/it]  
+Epoch 90 | postive loss : 806.91, negtive prim loss : 205.18, negtive defi loss : 281.68, worst lambd: 1514.17, worst prim gap: 47.66, worst defi gap: 77.25:  18%|█▊        | 91/500 [05:06<22:51,  3.35s/it]
+Epoch 99 | postive loss : 665.26, negtive prim loss : 168.86, negtive defi loss : 234.18, worst lambd: 1275.63, worst prim gap: 41.73, worst defi gap: 69.99:  20%|██        | 100/500 [05:36<22:20,  3.35s/it]
+Epoch 108 | postive loss : 543.73, negtive prim loss : 137.99, negtive defi loss : 193.07, worst lambd: 1065.09, worst prim gap: 30.38, worst defi gap: 46.41:  22%|██▏       | 109/500 [06:06<21:49,  3.35s/it]
+Epoch 117 | postive loss : 440.31, negtive prim loss : 111.90, negtive defi loss : 157.97, worst lambd: 883.38, worst prim gap: 20.35, worst defi gap: 39.77:  24%|██▎       | 118/500 [06:36<21:18,  3.35s/it] 
+Epoch 126 | postive loss : 352.63, negtive prim loss : 89.89, negtive defi loss : 127.76, worst lambd: 722.95, worst prim gap: 19.76, worst defi gap: 29.17:  25%|██▌       | 127/500 [07:07<20:48,  3.35s/it] 
+Epoch 135 | postive loss : 279.08, negtive prim loss : 71.45, negtive defi loss : 102.10, worst lambd: 585.77, worst prim gap: 12.69, worst defi gap: 22.15:  27%|██▋       | 136/500 [07:37<20:19,  3.35s/it]
+Epoch 144 | postive loss : 217.80, negtive prim loss : 56.10, negtive defi loss : 80.64, worst lambd: 467.30, worst prim gap: 7.35, worst defi gap: 16.42:  29%|██▉       | 145/500 [08:07<19:50,  3.35s/it]  
+Epoch 153 | postive loss : 167.58, negtive prim loss : 43.44, negtive defi loss : 62.75, worst lambd: 366.25, worst prim gap: 6.46, worst defi gap: 11.23:  31%|███       | 154/500 [08:38<19:24,  3.36s/it]
+Epoch 162 | postive loss : 126.47, negtive prim loss : 33.11, negtive defi loss : 47.93, worst lambd: 281.42, worst prim gap: 5.99, worst defi gap: 7.12:  33%|███▎      | 163/500 [09:08<18:56,  3.37s/it] 
+Epoch 171 | postive loss : 93.43, negtive prim loss : 24.73, negtive defi loss : 35.81, worst lambd: 210.98, worst prim gap: 3.50, worst defi gap: 4.50:  34%|███▍      | 172/500 [09:39<18:32,  3.39s/it] 
+Epoch 180 | postive loss : 67.39, negtive prim loss : 18.06, negtive defi loss : 26.16, worst lambd: 154.82, worst prim gap: 2.38, worst defi gap: 3.11:  36%|███▌      | 181/500 [10:09<18:00,  3.39s/it]
+Epoch 189 | postive loss : 47.22, negtive prim loss : 12.82, negtive defi loss : 18.53, worst lambd: 109.52, worst prim gap: 1.52, worst defi gap: 1.63:  38%|███▊      | 190/500 [10:40<17:26,  3.37s/it]
+Epoch 198 | postive loss : 31.99, negtive prim loss : 8.81, negtive defi loss : 12.70, worst lambd: 75.81, worst prim gap: 0.98, worst defi gap: 0.92:  40%|███▉      | 199/500 [11:10<16:55,  3.37s/it]  
+Epoch 207 | postive loss : 20.78, negtive prim loss : 5.83, negtive defi loss : 8.34, worst lambd: 51.30, worst prim gap: 0.69, worst defi gap: 0.58:  42%|████▏     | 208/500 [11:41<16:29,  3.39s/it] 
+Epoch 216 | postive loss : 12.92, negtive prim loss : 3.68, negtive defi loss : 5.25, worst lambd: 32.50, worst prim gap: 0.34, worst defi gap: 0.50:  43%|████▎     | 217/500 [12:11<15:57,  3.38s/it]
+Epoch 225 | postive loss : 9.34, negtive prim loss : 2.30, negtive defi loss : 3.66, worst lambd: 23.80, worst prim gap: 0.28, worst defi gap: 0.65:  45%|████▌     | 226/500 [12:41<15:25,  3.38s/it] 
+Epoch 234 | postive loss : 8.18, negtive prim loss : 1.46, negtive defi loss : 2.97, worst lambd: 21.71, worst prim gap: 0.21, worst defi gap: 0.67:  47%|████▋     | 235/500 [13:12<14:55,  3.38s/it]
+Epoch 243 | postive loss : 7.84, negtive prim loss : 1.07, negtive defi loss : 2.68, worst lambd: 24.43, worst prim gap: 0.21, worst defi gap: 0.65:  49%|████▉     | 244/500 [13:42<14:22,  3.37s/it]
+Epoch 252 | postive loss : 7.98, negtive prim loss : 0.93, negtive defi loss : 2.60, worst lambd: 30.87, worst prim gap: 0.24, worst defi gap: 0.63:  51%|█████     | 253/500 [14:12<13:50,  3.36s/it]
+Epoch 262 | postive loss : 8.26, negtive prim loss : 0.87, negtive defi loss : 2.54, worst lambd: 40.00, worst prim gap: 0.28, worst defi gap: 0.61:  53%|█████▎    | 263/500 [14:45<13:14,  3.35s/it]
+Epoch 272 | postive loss : 8.32, negtive prim loss : 0.84, negtive defi loss : 2.45, worst lambd: 48.40, worst prim gap: 0.27, worst defi gap: 0.61:  55%|█████▍    | 273/500 [15:18<12:38,  3.34s/it]
+Epoch 281 | postive loss : 8.16, negtive prim loss : 0.84, negtive defi loss : 2.35, worst lambd: 54.47, worst prim gap: 0.26, worst defi gap: 0.70:  56%|█████▋    | 282/500 [15:49<12:09,  3.35s/it]
+Epoch 291 | postive loss : 7.94, negtive prim loss : 0.83, negtive defi loss : 2.22, worst lambd: 61.94, worst prim gap: 0.25, worst defi gap: 0.68:  58%|█████▊    | 292/500 [16:22<11:35,  3.34s/it]
+Epoch 300 | postive loss : 7.80, negtive prim loss : 0.82, negtive defi loss : 2.15, worst lambd: 66.59, worst prim gap: 0.24, worst defi gap: 0.77:  60%|██████    | 301/500 [16:52<11:05,  3.34s/it]
+Epoch 310 | postive loss : 7.85, negtive prim loss : 0.82, negtive defi loss : 2.14, worst lambd: 73.56, worst prim gap: 0.21, worst defi gap: 0.64:  62%|██████▏   | 311/500 [17:25<10:30,  3.34s/it]
+Epoch 319 | postive loss : 7.85, negtive prim loss : 0.82, negtive defi loss : 2.15, worst lambd: 76.08, worst prim gap: 0.18, worst defi gap: 0.73:  64%|██████▍   | 320/500 [17:56<10:01,  3.34s/it]
+Epoch 329 | postive loss : 7.79, negtive prim loss : 0.81, negtive defi loss : 2.12, worst lambd: 79.93, worst prim gap: 0.22, worst defi gap: 0.61:  66%|██████▌   | 330/500 [18:29<09:27,  3.34s/it]
+Epoch 338 | postive loss : 7.78, negtive prim loss : 0.81, negtive defi loss : 2.12, worst lambd: 80.69, worst prim gap: 0.17, worst defi gap: 0.63:  68%|██████▊   | 339/500 [18:59<08:57,  3.34s/it]
+Epoch 347 | postive loss : 7.71, negtive prim loss : 0.80, negtive defi loss : 2.09, worst lambd: 80.41, worst prim gap: 0.18, worst defi gap: 0.62:  70%|██████▉   | 348/500 [19:29<08:27,  3.34s/it]
+Epoch 357 | postive loss : 7.66, negtive prim loss : 0.80, negtive defi loss : 2.09, worst lambd: 78.21, worst prim gap: 0.19, worst defi gap: 0.63:  72%|███████▏  | 358/500 [20:02<07:53,  3.34s/it]
+Epoch 367 | postive loss : 7.57, negtive prim loss : 0.79, negtive defi loss : 2.07, worst lambd: 75.43, worst prim gap: 0.13, worst defi gap: 0.70:  74%|███████▎  | 368/500 [20:36<07:20,  3.34s/it]
+Epoch 377 | postive loss : 7.37, negtive prim loss : 0.79, negtive defi loss : 2.05, worst lambd: 70.97, worst prim gap: 0.21, worst defi gap: 0.63:  76%|███████▌  | 378/500 [21:09<06:48,  3.34s/it]
+Epoch 386 | postive loss : 7.25, negtive prim loss : 0.79, negtive defi loss : 2.03, worst lambd: 68.01, worst prim gap: 0.21, worst defi gap: 0.69:  77%|███████▋  | 387/500 [21:39<06:17,  3.34s/it]
+Epoch 395 | postive loss : 7.14, negtive prim loss : 0.80, negtive defi loss : 2.06, worst lambd: 64.52, worst prim gap: 0.14, worst defi gap: 0.61:  79%|███████▉  | 396/500 [22:09<05:47,  3.35s/it]
+Epoch 404 | postive loss : 7.10, negtive prim loss : 0.82, negtive defi loss : 2.09, worst lambd: 61.77, worst prim gap: 0.16, worst defi gap: 0.55:  81%|████████  | 405/500 [22:40<05:17,  3.35s/it]
+Epoch 413 | postive loss : 7.11, negtive prim loss : 0.82, negtive defi loss : 2.11, worst lambd: 59.92, worst prim gap: 0.15, worst defi gap: 0.64:  83%|████████▎ | 414/500 [23:10<04:47,  3.35s/it]
+Epoch 422 | postive loss : 6.80, negtive prim loss : 0.82, negtive defi loss : 2.06, worst lambd: 57.79, worst prim gap: 0.07, worst defi gap: 0.63:  85%|████████▍ | 423/500 [23:40<04:17,  3.34s/it]
+Epoch 431 | postive loss : 6.64, negtive prim loss : 0.83, negtive defi loss : 2.02, worst lambd: 57.23, worst prim gap: 0.22, worst defi gap: 0.56:  86%|████████▋ | 432/500 [24:10<03:47,  3.34s/it]
+Epoch 440 | postive loss : 6.60, negtive prim loss : 0.82, negtive defi loss : 2.00, worst lambd: 55.33, worst prim gap: 0.08, worst defi gap: 0.61:  88%|████████▊ | 441/500 [24:40<03:17,  3.34s/it]
+Epoch 449 | postive loss : 6.61, negtive prim loss : 0.82, negtive defi loss : 2.01, worst lambd: 53.75, worst prim gap: 0.15, worst defi gap: 0.52:  90%|█████████ | 450/500 [25:10<02:47,  3.35s/it]
+Epoch 458 | postive loss : 6.55, negtive prim loss : 0.82, negtive defi loss : 2.01, worst lambd: 53.68, worst prim gap: 0.18, worst defi gap: 0.65:  92%|█████████▏| 459/500 [25:40<02:17,  3.35s/it]
+Epoch 467 | postive loss : 6.50, negtive prim loss : 0.82, negtive defi loss : 1.98, worst lambd: 53.32, worst prim gap: 0.18, worst defi gap: 0.75:  94%|█████████▎| 468/500 [26:10<01:47,  3.35s/it]
+Epoch 476 | postive loss : 6.49, negtive prim loss : 0.81, negtive defi loss : 1.93, worst lambd: 54.32, worst prim gap: 0.02, worst defi gap: 0.67:  95%|█████████▌| 477/500 [26:40<01:16,  3.35s/it]
+Epoch 485 | postive loss : 6.51, negtive prim loss : 0.80, negtive defi loss : 1.94, worst lambd: 57.58, worst prim gap: 0.17, worst defi gap: 0.65:  97%|█████████▋| 486/500 [27:11<00:46,  3.35s/it]
+Epoch 494 | postive loss : 6.55, negtive prim loss : 0.85, negtive defi loss : 2.15, worst lambd: 58.21, worst prim gap: 0.17, worst defi gap: 0.65:  99%|█████████▉| 495/500 [27:41<00:16,  3.35s/it]
+Epoch 499 | postive loss : 6.62, negtive prim loss : 0.88, negtive defi loss : 2.28, worst lambd: 58.01, worst prim gap: 0.14, worst defi gap: 0.74: 100%|██████████| 500/500 [27:58<00:00,  3.36s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+Timer unit: 1e-09 s
+
+Total time: 30.5346 s
+File: /home1/cqy2020/SN2E/mycode/models/SN2E.py
+Function: scorePos at line 91
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    91                                               def scorePos(self, indexA, indexP = None) -> torch.Tensor:
+    92                                                   '''
+    93                                                   indexA    : (index)[num0, numA]
+    94                                                   '''
+    95     57000   20501027.0    359.7      0.1          if not (indexP is None):
+    96     57000 11947990931.0 209613.9     39.1              e_p = self.loaddefiEmbedding(indexP).detach()
+    97     57000 6659718231.0 116837.2     21.8              e_a = self.lookupEmbedding(indexA).cat(e_p)
+    98                                                   else:
+    99                                                       e_a = self.lookupEmbedding(indexA)
+   100     57000 3934423568.0  69025.0     12.9          e_u = self.calcIntersection(e_a)
+   101     57000 7971921686.0 139858.3     26.1          return self.calcLambda(e_a, e_u)
+
+
+
+
+2023-03-15 09:59:06
+alpha: 0.1    batchsize: 128    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 2 | postive loss : 3950.07, negtive prim loss : 1072.42, negtive defi loss : 1306.17, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 13 | postive loss : 3320.29, negtive prim loss : 884.39, negtive defi loss : 1102.79, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   3%|▎         | 14/500 [00:31<18:24,  2.27s/it]
+Epoch 28 | postive loss : 2606.70, negtive prim loss : 679.55, negtive defi loss : 872.70, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   6%|▌         | 29/500 [01:03<17:10,  2.19s/it] 
+Epoch 43 | postive loss : 2032.63, negtive prim loss : 519.76, negtive defi loss : 687.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   9%|▉         | 44/500 [01:35<16:27,  2.17s/it]
+Epoch 58 | postive loss : 1570.08, negtive prim loss : 394.26, negtive defi loss : 537.24, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  12%|█▏        | 59/500 [02:07<15:49,  2.15s/it]
+Epoch 72 | postive loss : 1223.22, negtive prim loss : 302.45, negtive defi loss : 425.01, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  15%|█▍        | 73/500 [02:37<15:18,  2.15s/it]
+Epoch 86 | postive loss : 945.70, negtive prim loss : 230.43, negtive defi loss : 334.41, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  17%|█▋        | 87/500 [03:08<14:47,  2.15s/it] 
+Epoch 101 | postive loss : 712.79, negtive prim loss : 171.10, negtive defi loss : 258.21, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  20%|██        | 102/500 [03:40<14:13,  2.15s/it]
+Epoch 115 | postive loss : 544.55, negtive prim loss : 129.23, negtive defi loss : 202.51, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  23%|██▎       | 116/500 [04:10<13:44,  2.15s/it]
+Epoch 128 | postive loss : 423.06, negtive prim loss : 99.49, negtive defi loss : 161.83, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  26%|██▌       | 129/500 [04:40<13:35,  2.20s/it] 
+Epoch 142 | postive loss : 322.30, negtive prim loss : 75.39, negtive defi loss : 127.54, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  29%|██▊       | 143/500 [05:10<13:03,  2.19s/it]
+Epoch 156 | postive loss : 245.29, negtive prim loss : 57.52, negtive defi loss : 101.01, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  31%|███▏      | 157/500 [05:41<12:29,  2.19s/it]
+Epoch 171 | postive loss : 183.46, negtive prim loss : 43.47, negtive defi loss : 78.95, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  34%|███▍      | 172/500 [06:13<11:51,  2.17s/it] 
+Epoch 186 | postive loss : 136.97, negtive prim loss : 33.07, negtive defi loss : 61.58, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  37%|███▋      | 187/500 [06:45<11:14,  2.15s/it]
+Epoch 201 | postive loss : 102.21, negtive prim loss : 25.24, negtive defi loss : 47.85, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  40%|████      | 202/500 [07:17<10:40,  2.15s/it]
+Epoch 216 | postive loss : 75.72, negtive prim loss : 19.18, negtive defi loss : 36.62, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  43%|████▎     | 217/500 [07:49<10:06,  2.14s/it] 
+Epoch 231 | postive loss : 57.69, negtive prim loss : 14.65, negtive defi loss : 28.00, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  46%|████▋     | 232/500 [08:20<09:32,  2.14s/it]
+Epoch 245 | postive loss : 46.49, negtive prim loss : 11.48, negtive defi loss : 22.12, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  49%|████▉     | 246/500 [08:50<09:03,  2.14s/it]
+Epoch 260 | postive loss : 38.89, negtive prim loss : 9.10, negtive defi loss : 17.61, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  52%|█████▏    | 261/500 [09:22<08:30,  2.14s/it] 
+Epoch 275 | postive loss : 31.97, negtive prim loss : 7.11, negtive defi loss : 13.91, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  55%|█████▌    | 276/500 [09:54<07:57,  2.13s/it]
+Epoch 290 | postive loss : 26.42, negtive prim loss : 5.37, negtive defi loss : 11.05, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  58%|█████▊    | 291/500 [10:26<07:25,  2.13s/it]
+Epoch 305 | postive loss : 22.85, negtive prim loss : 4.04, negtive defi loss : 9.19, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  61%|██████    | 306/500 [10:58<06:53,  2.13s/it] 
+Epoch 320 | postive loss : 20.78, negtive prim loss : 3.02, negtive defi loss : 8.00, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  64%|██████▍   | 321/500 [11:30<06:20,  2.13s/it]
+Epoch 334 | postive loss : 20.27, negtive prim loss : 2.24, negtive defi loss : 7.37, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  67%|██████▋   | 335/500 [12:00<05:51,  2.13s/it]
+Epoch 349 | postive loss : 20.04, negtive prim loss : 1.74, negtive defi loss : 7.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  70%|███████   | 350/500 [12:32<05:19,  2.13s/it]
+Epoch 364 | postive loss : 19.78, negtive prim loss : 1.48, negtive defi loss : 6.89, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  73%|███████▎  | 365/500 [13:04<04:47,  2.13s/it]
+Epoch 379 | postive loss : 19.32, negtive prim loss : 1.33, negtive defi loss : 6.70, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  76%|███████▌  | 380/500 [13:36<04:15,  2.13s/it]
+Epoch 394 | postive loss : 18.15, negtive prim loss : 1.23, negtive defi loss : 6.33, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  79%|███████▉  | 395/500 [14:08<03:44,  2.13s/it]
+Epoch 409 | postive loss : 16.85, negtive prim loss : 1.15, negtive defi loss : 5.96, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  82%|████████▏ | 410/500 [14:40<03:11,  2.13s/it]
+Epoch 424 | postive loss : 15.64, negtive prim loss : 1.10, negtive defi loss : 5.58, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  85%|████████▌ | 425/500 [15:12<02:39,  2.13s/it]
+Epoch 439 | postive loss : 13.98, negtive prim loss : 1.08, negtive defi loss : 5.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  88%|████████▊ | 440/500 [15:44<02:07,  2.13s/it]
+Epoch 454 | postive loss : 12.37, negtive prim loss : 1.07, negtive defi loss : 4.66, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  91%|█████████ | 455/500 [16:15<01:35,  2.13s/it]
+Epoch 469 | postive loss : 10.86, negtive prim loss : 1.04, negtive defi loss : 4.14, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  94%|█████████▍| 470/500 [16:47<01:03,  2.13s/it]
+Epoch 484 | postive loss : 9.37, negtive prim loss : 0.98, negtive defi loss : 3.51, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  97%|█████████▋| 485/500 [17:19<00:31,  2.13s/it] 
+Epoch 499 | postive loss : 8.35, negtive prim loss : 0.92, negtive defi loss : 3.10, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 500/500 [17:51<00:00,  2.13s/it]
+Epoch 499 | postive loss : 8.35, negtive prim loss : 0.92, negtive defi loss : 3.10, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 500/500 [17:51<00:00,  2.14s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+
+2023-03-15 11:02:16
+alpha: 0.1    batchsize: 128    dim: 128    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 7297.33, negtive prim loss : 1966.37, negtive defi loss : 2416.59, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 12 | postive loss : 6738.67, negtive prim loss : 1801.48, negtive defi loss : 2236.75, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   3%|▎         | 13/500 [00:30<19:10,  2.36s/it]
+Epoch 26 | postive loss : 5380.18, negtive prim loss : 1408.78, negtive defi loss : 1797.40, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   5%|▌         | 27/500 [01:02<18:03,  2.29s/it]
+Epoch 40 | postive loss : 4272.32, negtive prim loss : 1097.79, negtive defi loss : 1440.13, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   8%|▊         | 41/500 [01:33<17:24,  2.28s/it]
+Epoch 54 | postive loss : 3366.74, negtive prim loss : 850.14, negtive defi loss : 1147.66, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  11%|█         | 55/500 [02:05<16:47,  2.26s/it] 
+Epoch 68 | postive loss : 2630.38, negtive prim loss : 653.52, negtive defi loss : 908.44, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  14%|█▍        | 69/500 [02:36<16:14,  2.26s/it] 
+Epoch 82 | postive loss : 2037.55, negtive prim loss : 498.73, negtive defi loss : 715.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  17%|█▋        | 83/500 [03:08<15:40,  2.26s/it]
+Epoch 96 | postive loss : 1566.30, negtive prim loss : 378.11, negtive defi loss : 560.67, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  19%|█▉        | 97/500 [03:39<15:07,  2.25s/it]
+Epoch 110 | postive loss : 1196.68, negtive prim loss : 285.22, negtive defi loss : 438.42, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  22%|██▏       | 111/500 [04:11<14:35,  2.25s/it]
+Epoch 124 | postive loss : 910.07, negtive prim loss : 214.74, negtive defi loss : 342.57, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  25%|██▌       | 125/500 [04:42<14:03,  2.25s/it] 
+Epoch 138 | postive loss : 689.83, negtive prim loss : 161.85, negtive defi loss : 268.10, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  28%|██▊       | 139/500 [05:14<13:32,  2.25s/it]
+Epoch 152 | postive loss : 522.90, negtive prim loss : 122.61, negtive defi loss : 210.77, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  31%|███       | 153/500 [05:45<13:00,  2.25s/it]
+Epoch 166 | postive loss : 396.97, negtive prim loss : 93.80, negtive defi loss : 166.62, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  33%|███▎      | 167/500 [06:17<12:29,  2.25s/it] 
+Epoch 180 | postive loss : 301.50, negtive prim loss : 72.22, negtive defi loss : 131.62, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  36%|███▌      | 181/500 [06:48<11:56,  2.25s/it]
+Epoch 194 | postive loss : 229.02, negtive prim loss : 55.81, negtive defi loss : 103.31, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  39%|███▉      | 195/500 [07:19<11:24,  2.24s/it]
+Epoch 208 | postive loss : 173.47, negtive prim loss : 43.05, negtive defi loss : 80.42, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  42%|████▏     | 209/500 [07:51<10:52,  2.24s/it] 
+Epoch 222 | postive loss : 130.38, negtive prim loss : 32.92, negtive defi loss : 61.50, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  45%|████▍     | 223/500 [08:22<10:21,  2.24s/it]
+Epoch 236 | postive loss : 96.89, negtive prim loss : 24.88, negtive defi loss : 46.21, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  47%|████▋     | 237/500 [08:53<09:49,  2.24s/it] 
+Epoch 250 | postive loss : 71.27, negtive prim loss : 18.53, negtive defi loss : 34.16, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  50%|█████     | 251/500 [09:25<09:18,  2.24s/it]
+Epoch 264 | postive loss : 52.12, negtive prim loss : 13.58, negtive defi loss : 24.75, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  53%|█████▎    | 265/500 [09:56<08:46,  2.24s/it]
+Epoch 278 | postive loss : 38.67, negtive prim loss : 9.98, negtive defi loss : 17.98, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  56%|█████▌    | 279/500 [10:28<08:15,  2.24s/it] 
+Epoch 292 | postive loss : 27.90, negtive prim loss : 7.15, negtive defi loss : 12.66, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  59%|█████▊    | 293/500 [10:59<07:44,  2.25s/it]
+Epoch 306 | postive loss : 22.27, negtive prim loss : 5.34, negtive defi loss : 9.69, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  61%|██████▏   | 307/500 [11:31<07:13,  2.25s/it] 
+Epoch 320 | postive loss : 18.87, negtive prim loss : 3.92, negtive defi loss : 7.79, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  64%|██████▍   | 321/500 [12:02<06:41,  2.25s/it]
+Epoch 334 | postive loss : 17.46, negtive prim loss : 2.86, negtive defi loss : 6.70, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  67%|██████▋   | 335/500 [12:33<06:10,  2.24s/it]
+Epoch 348 | postive loss : 16.55, negtive prim loss : 2.14, negtive defi loss : 5.97, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  70%|██████▉   | 349/500 [13:05<05:38,  2.24s/it]
+Epoch 362 | postive loss : 16.02, negtive prim loss : 1.64, negtive defi loss : 5.57, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  73%|███████▎  | 363/500 [13:36<05:07,  2.24s/it]
+Epoch 376 | postive loss : 15.50, negtive prim loss : 1.36, negtive defi loss : 5.31, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  75%|███████▌  | 377/500 [14:08<04:36,  2.25s/it]
+Epoch 390 | postive loss : 15.34, negtive prim loss : 1.20, negtive defi loss : 5.22, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  78%|███████▊  | 391/500 [14:39<04:05,  2.25s/it]
+Epoch 404 | postive loss : 15.11, negtive prim loss : 1.10, negtive defi loss : 5.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  81%|████████  | 405/500 [15:11<03:33,  2.25s/it]
+Epoch 418 | postive loss : 14.32, negtive prim loss : 1.04, negtive defi loss : 4.83, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  84%|████████▍ | 419/500 [15:42<03:02,  2.25s/it]
+Epoch 432 | postive loss : 13.83, negtive prim loss : 1.00, negtive defi loss : 4.69, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  87%|████████▋ | 433/500 [16:14<02:30,  2.25s/it]
+Epoch 446 | postive loss : 12.87, negtive prim loss : 0.97, negtive defi loss : 4.41, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  89%|████████▉ | 447/500 [16:45<01:59,  2.25s/it]
+Epoch 460 | postive loss : 11.63, negtive prim loss : 0.95, negtive defi loss : 4.05, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  92%|█████████▏| 461/500 [17:17<01:27,  2.25s/it]
+Epoch 474 | postive loss : 10.34, negtive prim loss : 0.91, negtive defi loss : 3.60, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  95%|█████████▌| 475/500 [17:48<00:56,  2.25s/it]
+Epoch 488 | postive loss : 9.55, negtive prim loss : 0.92, negtive defi loss : 3.44, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  98%|█████████▊| 489/500 [18:19<00:24,  2.24s/it] 
+Epoch 499 | postive loss : 9.02, negtive prim loss : 0.96, negtive defi loss : 3.46, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 500/500 [18:44<00:00,  2.25s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-15 11:22:42
+alpha: 0.1    batchsize: 128    dim: 128    epoch: 200    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model loading complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/200 [00:00<?, ?it/s]
+Epoch 2 | postive loss : 8.83, negtive prim loss : 0.98, negtive defi loss : 3.46, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/200 [00:10<?, ?it/s]
+Epoch 12 | postive loss : 8.39, negtive prim loss : 1.04, negtive defi loss : 3.52, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   6%|▋         | 13/200 [00:31<07:28,  2.40s/it]
+Epoch 26 | postive loss : 7.41, negtive prim loss : 1.11, negtive defi loss : 3.48, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  14%|█▎        | 27/200 [01:02<06:39,  2.31s/it]
+Epoch 40 | postive loss : 6.99, negtive prim loss : 1.16, negtive defi loss : 3.54, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  20%|██        | 41/200 [01:34<06:03,  2.28s/it]
+Epoch 54 | postive loss : 6.81, negtive prim loss : 1.05, negtive defi loss : 3.22, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  28%|██▊       | 55/200 [02:05<05:29,  2.27s/it]
+Epoch 68 | postive loss : 6.68, negtive prim loss : 0.96, negtive defi loss : 2.97, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  34%|███▍      | 69/200 [02:37<04:57,  2.27s/it]
+Epoch 82 | postive loss : 6.72, negtive prim loss : 0.93, negtive defi loss : 2.96, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  42%|████▏     | 83/200 [03:09<04:24,  2.26s/it]
+Epoch 96 | postive loss : 6.60, negtive prim loss : 0.96, negtive defi loss : 3.03, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  48%|████▊     | 97/200 [03:40<03:52,  2.26s/it]
+Epoch 110 | postive loss : 6.70, negtive prim loss : 0.97, negtive defi loss : 3.12, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  56%|█████▌    | 111/200 [04:12<03:21,  2.26s/it]
+Epoch 124 | postive loss : 6.87, negtive prim loss : 1.07, negtive defi loss : 3.50, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  62%|██████▎   | 125/200 [04:43<02:49,  2.26s/it]
+Epoch 138 | postive loss : 7.03, negtive prim loss : 1.17, negtive defi loss : 3.80, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  70%|██████▉   | 139/200 [05:15<02:17,  2.26s/it]
+Epoch 152 | postive loss : 6.96, negtive prim loss : 1.05, negtive defi loss : 3.40, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  76%|███████▋  | 153/200 [05:46<01:45,  2.25s/it]
+Epoch 166 | postive loss : 7.15, negtive prim loss : 0.89, negtive defi loss : 3.01, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  84%|████████▎ | 167/200 [06:18<01:14,  2.25s/it]
+Epoch 180 | postive loss : 7.38, negtive prim loss : 0.79, negtive defi loss : 2.85, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  90%|█████████ | 181/200 [06:49<00:42,  2.26s/it]
+Epoch 194 | postive loss : 7.49, negtive prim loss : 0.81, negtive defi loss : 2.98, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  98%|█████████▊| 195/200 [07:21<00:11,  2.26s/it]
+Epoch 199 | postive loss : 7.51, negtive prim loss : 0.83, negtive defi loss : 3.02, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 200/200 [07:33<00:00,  2.27s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-15 11:32:34
+alpha: 0.01    batchsize: 128    dim: 128    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 7273.31, negtive prim loss : 1964.68, negtive defi loss : 2411.65, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 12 | postive loss : 6713.60, negtive prim loss : 1799.66, negtive defi loss : 2230.31, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   3%|▎         | 13/500 [00:30<19:09,  2.36s/it]
+Epoch 26 | postive loss : 5351.47, negtive prim loss : 1406.60, negtive defi loss : 1791.48, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   5%|▌         | 27/500 [01:02<18:02,  2.29s/it]
+Epoch 40 | postive loss : 4240.36, negtive prim loss : 1095.48, negtive defi loss : 1433.01, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   8%|▊         | 41/500 [01:33<17:19,  2.27s/it]
+Epoch 54 | postive loss : 3332.89, negtive prim loss : 847.25, negtive defi loss : 1139.21, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  11%|█         | 55/500 [02:04<16:43,  2.25s/it] 
+Epoch 68 | postive loss : 2596.26, negtive prim loss : 650.29, negtive defi loss : 899.79, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  14%|█▍        | 69/500 [02:36<16:09,  2.25s/it] 
+Epoch 82 | postive loss : 2004.42, negtive prim loss : 495.28, negtive defi loss : 706.85, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  17%|█▋        | 83/500 [03:07<15:34,  2.24s/it]
+Epoch 96 | postive loss : 1534.59, negtive prim loss : 374.42, negtive defi loss : 552.60, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  19%|█▉        | 97/500 [03:38<15:00,  2.23s/it]
+Epoch 110 | postive loss : 1166.35, negtive prim loss : 281.60, negtive defi loss : 431.24, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  22%|██▏       | 111/500 [04:09<14:27,  2.23s/it]
+Epoch 124 | postive loss : 882.52, negtive prim loss : 211.30, negtive defi loss : 336.52, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  25%|██▌       | 125/500 [04:40<13:55,  2.23s/it] 
+Epoch 138 | postive loss : 666.71, negtive prim loss : 158.96, negtive defi loss : 263.99, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  28%|██▊       | 139/500 [05:11<13:23,  2.23s/it]
+Epoch 152 | postive loss : 504.39, negtive prim loss : 120.31, negtive defi loss : 208.47, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  31%|███       | 153/500 [05:42<12:52,  2.23s/it]
+Epoch 166 | postive loss : 382.79, negtive prim loss : 92.04, negtive defi loss : 165.60, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  33%|███▎      | 167/500 [06:13<12:20,  2.22s/it] 
+Epoch 180 | postive loss : 290.98, negtive prim loss : 71.14, negtive defi loss : 132.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  36%|███▌      | 181/500 [06:45<11:49,  2.22s/it]
+Epoch 194 | postive loss : 221.39, negtive prim loss : 55.35, negtive defi loss : 105.13, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  39%|███▉      | 195/500 [07:16<11:17,  2.22s/it]
+Epoch 208 | postive loss : 168.32, negtive prim loss : 43.19, negtive defi loss : 83.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  42%|████▏     | 209/500 [07:47<10:46,  2.22s/it] 
+Epoch 222 | postive loss : 126.27, negtive prim loss : 33.45, negtive defi loss : 64.96, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  45%|████▍     | 223/500 [08:18<10:14,  2.22s/it]
+Epoch 236 | postive loss : 93.83, negtive prim loss : 25.59, negtive defi loss : 50.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  47%|████▋     | 237/500 [08:49<09:43,  2.22s/it] 
+Epoch 250 | postive loss : 68.78, negtive prim loss : 19.32, negtive defi loss : 38.03, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  50%|█████     | 251/500 [09:20<09:12,  2.22s/it]
+Epoch 264 | postive loss : 49.82, negtive prim loss : 14.33, negtive defi loss : 28.27, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  53%|█████▎    | 265/500 [09:51<08:41,  2.22s/it]
+Epoch 278 | postive loss : 35.52, negtive prim loss : 10.47, negtive defi loss : 20.67, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  56%|█████▌    | 279/500 [10:22<08:10,  2.22s/it]
+Epoch 292 | postive loss : 26.25, negtive prim loss : 7.60, negtive defi loss : 14.99, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  59%|█████▊    | 293/500 [10:53<07:39,  2.22s/it] 
+Epoch 306 | postive loss : 20.30, negtive prim loss : 5.64, negtive defi loss : 11.12, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  61%|██████▏   | 307/500 [11:24<07:08,  2.22s/it]
+Epoch 320 | postive loss : 17.29, negtive prim loss : 4.31, negtive defi loss : 8.81, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  64%|██████▍   | 321/500 [11:55<06:37,  2.22s/it] 
+Epoch 334 | postive loss : 15.37, negtive prim loss : 3.23, negtive defi loss : 7.31, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  67%|██████▋   | 335/500 [12:26<06:06,  2.22s/it]
+Epoch 348 | postive loss : 13.65, negtive prim loss : 2.29, negtive defi loss : 6.08, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  70%|██████▉   | 349/500 [12:58<05:36,  2.23s/it]
+Epoch 362 | postive loss : 12.44, negtive prim loss : 1.62, negtive defi loss : 5.27, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  73%|███████▎  | 363/500 [13:29<05:05,  2.23s/it]
+Epoch 376 | postive loss : 11.98, negtive prim loss : 1.31, negtive defi loss : 4.89, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  75%|███████▌  | 377/500 [14:00<04:33,  2.22s/it]
+Epoch 390 | postive loss : 11.34, negtive prim loss : 1.17, negtive defi loss : 4.46, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  78%|███████▊  | 391/500 [14:31<04:02,  2.22s/it]
+Epoch 404 | postive loss : 10.71, negtive prim loss : 1.14, negtive defi loss : 4.17, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  81%|████████  | 405/500 [15:02<03:31,  2.22s/it]
+Epoch 418 | postive loss : 10.14, negtive prim loss : 1.12, negtive defi loss : 3.92, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  84%|████████▍ | 419/500 [15:33<02:59,  2.22s/it]
+Epoch 432 | postive loss : 9.65, negtive prim loss : 1.10, negtive defi loss : 3.69, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  87%|████████▋ | 433/500 [16:04<02:28,  2.22s/it] 
+Epoch 446 | postive loss : 9.05, negtive prim loss : 1.05, negtive defi loss : 3.35, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  89%|████████▉ | 447/500 [16:35<01:57,  2.22s/it]
+Epoch 460 | postive loss : 8.31, negtive prim loss : 1.00, negtive defi loss : 3.04, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  92%|█████████▏| 461/500 [17:06<01:26,  2.22s/it]
+Epoch 474 | postive loss : 7.64, negtive prim loss : 0.96, negtive defi loss : 2.74, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  95%|█████████▌| 475/500 [17:37<00:55,  2.22s/it]
+Epoch 488 | postive loss : 7.16, negtive prim loss : 0.92, negtive defi loss : 2.52, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  98%|█████████▊| 489/500 [18:09<00:24,  2.22s/it]
+Epoch 499 | postive loss : 6.81, negtive prim loss : 0.90, negtive defi loss : 2.37, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 500/500 [18:33<00:00,  2.23s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-15 12:08:54
+alpha: 0.01    batchsize: 128    dim: 128    epoch: 200    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model loading complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/200 [00:00<?, ?it/s]
+Epoch 2 | postive loss : 6.83, negtive prim loss : 0.92, negtive defi loss : 2.39, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/200 [00:10<?, ?it/s]
+Epoch 12 | postive loss : 6.52, negtive prim loss : 0.88, negtive defi loss : 2.27, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   6%|▋         | 13/200 [00:30<07:25,  2.38s/it]
+Epoch 26 | postive loss : 6.13, negtive prim loss : 0.84, negtive defi loss : 2.12, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  14%|█▎        | 27/200 [01:02<06:37,  2.30s/it]
+Epoch 40 | postive loss : 5.94, negtive prim loss : 0.84, negtive defi loss : 2.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  20%|██        | 41/200 [01:33<06:01,  2.27s/it]
+Epoch 54 | postive loss : 5.89, negtive prim loss : 0.83, negtive defi loss : 2.04, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  28%|██▊       | 55/200 [02:05<05:28,  2.26s/it]
+Epoch 68 | postive loss : 5.74, negtive prim loss : 0.83, negtive defi loss : 2.00, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  34%|███▍      | 69/200 [02:36<04:55,  2.26s/it]
+Epoch 82 | postive loss : 5.58, negtive prim loss : 0.83, negtive defi loss : 1.95, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  42%|████▏     | 83/200 [03:08<04:23,  2.25s/it]
+Epoch 96 | postive loss : 5.60, negtive prim loss : 0.83, negtive defi loss : 1.94, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  48%|████▊     | 97/200 [03:39<03:51,  2.25s/it]
+Epoch 110 | postive loss : 5.49, negtive prim loss : 0.84, negtive defi loss : 1.90, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  56%|█████▌    | 111/200 [04:10<03:19,  2.25s/it]
+Epoch 124 | postive loss : 5.46, negtive prim loss : 0.84, negtive defi loss : 1.88, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  62%|██████▎   | 125/200 [04:42<02:48,  2.24s/it]
+Epoch 138 | postive loss : 5.31, negtive prim loss : 0.83, negtive defi loss : 1.84, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  70%|██████▉   | 139/200 [05:13<02:16,  2.24s/it]
+Epoch 152 | postive loss : 5.24, negtive prim loss : 0.82, negtive defi loss : 1.82, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  76%|███████▋  | 153/200 [05:44<01:45,  2.24s/it]
+Epoch 166 | postive loss : 5.19, negtive prim loss : 0.82, negtive defi loss : 1.80, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  84%|████████▎ | 167/200 [06:16<01:13,  2.24s/it]
+Epoch 180 | postive loss : 5.25, negtive prim loss : 0.82, negtive defi loss : 1.82, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  90%|█████████ | 181/200 [06:47<00:42,  2.24s/it]
+Epoch 194 | postive loss : 5.18, negtive prim loss : 0.81, negtive defi loss : 1.81, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  98%|█████████▊| 195/200 [07:18<00:11,  2.24s/it]
+Epoch 199 | postive loss : 5.17, negtive prim loss : 0.81, negtive defi loss : 1.81, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 200/200 [07:29<00:00,  2.25s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-15 12:19:26
+alpha: 0    batchsize: 128    dim: 128    epoch: 1000    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1000 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 7317.12, negtive prim loss : 1964.54, negtive defi loss : 2420.83, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/1000 [00:19<?, ?it/s]
+Epoch 12 | postive loss : 6760.39, negtive prim loss : 1799.84, negtive defi loss : 2242.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   1%|▏         | 13/1000 [00:31<39:25,  2.40s/it]
+Epoch 26 | postive loss : 5406.93, negtive prim loss : 1407.97, negtive defi loss : 1805.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   3%|▎         | 27/1000 [01:02<37:39,  2.32s/it]
+Epoch 40 | postive loss : 4306.46, negtive prim loss : 1098.01, negtive defi loss : 1449.81, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   4%|▍         | 41/1000 [01:34<36:39,  2.29s/it]
+Epoch 54 | postive loss : 3408.84, negtive prim loss : 851.82, negtive defi loss : 1159.88, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   6%|▌         | 55/1000 [02:06<35:55,  2.28s/it] 
+Epoch 68 | postive loss : 2681.11, negtive prim loss : 656.42, negtive defi loss : 923.75, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   7%|▋         | 69/1000 [02:37<35:17,  2.27s/it] 
+Epoch 82 | postive loss : 2096.84, negtive prim loss : 503.16, negtive defi loss : 734.24, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   8%|▊         | 83/1000 [03:09<34:41,  2.27s/it]
+Epoch 96 | postive loss : 1632.67, negtive prim loss : 384.47, negtive defi loss : 582.55, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  10%|▉         | 97/1000 [03:41<34:07,  2.27s/it]
+Epoch 110 | postive loss : 1267.76, negtive prim loss : 293.15, negtive defi loss : 462.81, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  11%|█         | 111/1000 [04:13<33:35,  2.27s/it]
+Epoch 124 | postive loss : 983.41, negtive prim loss : 223.94, negtive defi loss : 368.22, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  12%|█▎        | 125/1000 [04:44<33:03,  2.27s/it] 
+Epoch 138 | postive loss : 765.05, negtive prim loss : 172.18, negtive defi loss : 294.23, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  14%|█▍        | 139/1000 [05:16<32:30,  2.27s/it]
+Epoch 152 | postive loss : 597.72, negtive prim loss : 133.56, negtive defi loss : 236.05, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  15%|█▌        | 153/1000 [05:48<31:57,  2.26s/it]
+Epoch 166 | postive loss : 469.20, negtive prim loss : 104.68, negtive defi loss : 190.02, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  17%|█▋        | 167/1000 [06:19<31:25,  2.26s/it]
+Epoch 180 | postive loss : 369.73, negtive prim loss : 82.74, negtive defi loss : 153.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  18%|█▊        | 181/1000 [06:51<30:53,  2.26s/it] 
+Epoch 194 | postive loss : 290.17, negtive prim loss : 65.54, negtive defi loss : 121.97, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  20%|█▉        | 195/1000 [07:23<30:22,  2.26s/it]
+Epoch 208 | postive loss : 226.92, negtive prim loss : 51.70, negtive defi loss : 96.21, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  21%|██        | 209/1000 [07:54<29:50,  2.26s/it] 
+Epoch 222 | postive loss : 175.48, negtive prim loss : 40.32, negtive defi loss : 74.52, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  22%|██▏       | 223/1000 [08:26<29:18,  2.26s/it]
+Epoch 236 | postive loss : 134.11, negtive prim loss : 31.06, negtive defi loss : 56.68, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  24%|██▎       | 237/1000 [08:58<28:46,  2.26s/it]
+Epoch 250 | postive loss : 101.04, negtive prim loss : 23.50, negtive defi loss : 42.15, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  25%|██▌       | 251/1000 [09:29<28:15,  2.26s/it]
+Epoch 264 | postive loss : 74.72, negtive prim loss : 17.46, negtive defi loss : 30.69, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  26%|██▋       | 265/1000 [10:01<27:43,  2.26s/it] 
+Epoch 278 | postive loss : 54.00, negtive prim loss : 12.72, negtive defi loss : 21.90, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  28%|██▊       | 279/1000 [10:33<27:11,  2.26s/it]
+Epoch 292 | postive loss : 38.16, negtive prim loss : 9.08, negtive defi loss : 15.27, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  29%|██▉       | 293/1000 [11:04<26:40,  2.26s/it] 
+Epoch 306 | postive loss : 26.28, negtive prim loss : 6.33, negtive defi loss : 10.37, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  31%|███       | 307/1000 [11:36<26:08,  2.26s/it]
+Epoch 320 | postive loss : 17.64, negtive prim loss : 4.32, negtive defi loss : 6.85, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  32%|███▏      | 321/1000 [12:08<25:36,  2.26s/it] 
+Epoch 334 | postive loss : 11.51, negtive prim loss : 2.88, negtive defi loss : 4.41, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  34%|███▎      | 335/1000 [12:39<25:03,  2.26s/it]
+Epoch 348 | postive loss : 7.28, negtive prim loss : 1.87, negtive defi loss : 2.73, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  35%|███▍      | 349/1000 [13:11<24:31,  2.26s/it] 
+Epoch 362 | postive loss : 4.45, negtive prim loss : 1.18, negtive defi loss : 1.64, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  36%|███▋      | 363/1000 [13:43<23:59,  2.26s/it]
+Epoch 376 | postive loss : 2.63, negtive prim loss : 0.72, negtive defi loss : 0.95, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  38%|███▊      | 377/1000 [14:14<23:27,  2.26s/it]
+Epoch 390 | postive loss : 1.49, negtive prim loss : 0.43, negtive defi loss : 0.53, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  39%|███▉      | 391/1000 [14:46<22:55,  2.26s/it]
+Epoch 404 | postive loss : 0.82, negtive prim loss : 0.24, negtive defi loss : 0.29, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  40%|████      | 405/1000 [15:18<22:24,  2.26s/it]
+Epoch 418 | postive loss : 0.44, negtive prim loss : 0.14, negtive defi loss : 0.15, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  42%|████▏     | 419/1000 [15:49<21:52,  2.26s/it]
+Epoch 432 | postive loss : 0.26, negtive prim loss : 0.08, negtive defi loss : 0.09, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  43%|████▎     | 433/1000 [16:21<21:22,  2.26s/it]
+Epoch 446 | postive loss : 0.20, negtive prim loss : 0.07, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  45%|████▍     | 447/1000 [16:53<20:50,  2.26s/it]
+Epoch 460 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  46%|████▌     | 461/1000 [17:24<20:18,  2.26s/it]
+Epoch 474 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  48%|████▊     | 475/1000 [17:56<19:46,  2.26s/it]
+Epoch 488 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  49%|████▉     | 489/1000 [18:27<19:15,  2.26s/it]
+Epoch 502 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  50%|█████     | 503/1000 [18:59<18:43,  2.26s/it]
+Epoch 516 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  52%|█████▏    | 517/1000 [19:31<18:11,  2.26s/it]
+Epoch 530 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  53%|█████▎    | 531/1000 [20:02<17:40,  2.26s/it]
+Epoch 544 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  55%|█████▍    | 545/1000 [20:34<17:08,  2.26s/it]
+Epoch 558 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  56%|█████▌    | 559/1000 [21:06<16:36,  2.26s/it]
+Epoch 572 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  57%|█████▋    | 573/1000 [21:38<16:08,  2.27s/it]
+Epoch 586 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  59%|█████▊    | 587/1000 [22:09<15:37,  2.27s/it]
+Epoch 600 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  60%|██████    | 601/1000 [22:41<15:04,  2.27s/it]
+Epoch 614 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  62%|██████▏   | 615/1000 [23:13<14:31,  2.26s/it]
+Epoch 628 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  63%|██████▎   | 629/1000 [23:44<13:59,  2.26s/it]
+Epoch 642 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  64%|██████▍   | 643/1000 [24:16<13:27,  2.26s/it]
+Epoch 656 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  66%|██████▌   | 657/1000 [24:48<12:55,  2.26s/it]
+Epoch 670 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  67%|██████▋   | 671/1000 [25:19<12:23,  2.26s/it]
+Epoch 684 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  68%|██████▊   | 685/1000 [25:51<11:52,  2.26s/it]
+Epoch 698 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  70%|██████▉   | 699/1000 [26:23<11:20,  2.26s/it]
+Epoch 712 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  71%|███████▏  | 713/1000 [26:54<10:48,  2.26s/it]
+Epoch 726 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  73%|███████▎  | 727/1000 [27:26<10:17,  2.26s/it]
+Epoch 740 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  74%|███████▍  | 741/1000 [27:57<09:45,  2.26s/it]
+Epoch 754 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  76%|███████▌  | 755/1000 [28:29<09:13,  2.26s/it]
+Epoch 768 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  77%|███████▋  | 769/1000 [29:01<08:41,  2.26s/it]
+Epoch 782 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  78%|███████▊  | 783/1000 [29:32<08:10,  2.26s/it]
+Epoch 796 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  80%|███████▉  | 797/1000 [30:04<07:38,  2.26s/it]
+Epoch 810 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  81%|████████  | 811/1000 [30:36<07:07,  2.26s/it]
+Epoch 824 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  82%|████████▎ | 825/1000 [31:07<06:35,  2.26s/it]
+Epoch 838 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  84%|████████▍ | 839/1000 [31:39<06:03,  2.26s/it]
+Epoch 852 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  85%|████████▌ | 853/1000 [32:11<05:32,  2.26s/it]
+Epoch 866 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  87%|████████▋ | 867/1000 [32:42<05:00,  2.26s/it]
+Epoch 880 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  88%|████████▊ | 881/1000 [33:14<04:28,  2.26s/it]
+Epoch 894 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  90%|████████▉ | 895/1000 [33:45<03:57,  2.26s/it]
+Epoch 908 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  91%|█████████ | 909/1000 [34:17<03:25,  2.26s/it]
+Epoch 922 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  92%|█████████▏| 923/1000 [34:49<02:53,  2.26s/it]
+Epoch 936 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  94%|█████████▎| 937/1000 [35:20<02:22,  2.26s/it]
+Epoch 950 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  95%|█████████▌| 951/1000 [35:52<01:50,  2.26s/it]
+Epoch 964 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  96%|█████████▋| 965/1000 [36:24<01:19,  2.26s/it]
+Epoch 978 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  98%|█████████▊| 979/1000 [36:55<00:47,  2.26s/it]
+Epoch 992 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  99%|█████████▉| 993/1000 [37:27<00:15,  2.26s/it]
+Epoch 999 | postive loss : 0.19, negtive prim loss : 0.06, negtive defi loss : 0.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 1000/1000 [37:43<00:00,  2.26s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-15 16:48:49
+alpha: 0.001    batchsize: 128    dim: 128    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 7303.24, negtive prim loss : 1967.01, negtive defi loss : 2420.13, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 12 | postive loss : 6742.35, negtive prim loss : 1801.59, negtive defi loss : 2240.26, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   3%|▎         | 13/500 [00:30<19:18,  2.38s/it]
+Epoch 26 | postive loss : 5375.65, negtive prim loss : 1408.52, negtive defi loss : 1799.05, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   5%|▌         | 27/500 [01:02<18:11,  2.31s/it]
+Epoch 40 | postive loss : 4259.43, negtive prim loss : 1097.38, negtive defi loss : 1439.52, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   8%|▊         | 41/500 [01:34<17:30,  2.29s/it]
+Epoch 54 | postive loss : 3346.38, negtive prim loss : 849.16, negtive defi loss : 1144.63, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  11%|█         | 55/500 [02:06<16:55,  2.28s/it] 
+Epoch 68 | postive loss : 2604.50, negtive prim loss : 651.90, negtive defi loss : 903.94, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  14%|█▍        | 69/500 [02:38<16:24,  2.28s/it] 
+Epoch 82 | postive loss : 2007.02, negtive prim loss : 496.25, negtive defi loss : 709.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  17%|█▋        | 83/500 [03:10<15:52,  2.28s/it]
+Epoch 96 | postive loss : 1532.29, negtive prim loss : 374.92, negtive defi loss : 552.91, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  19%|█▉        | 97/500 [03:42<15:19,  2.28s/it]
+Epoch 109 | postive loss : 1183.88, negtive prim loss : 287.02, negtive defi loss : 437.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  22%|██▏       | 110/500 [04:12<14:54,  2.29s/it]
+Epoch 123 | postive loss : 891.53, negtive prim loss : 214.53, negtive defi loss : 338.56, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  25%|██▍       | 124/500 [04:43<14:18,  2.28s/it] 
+Epoch 137 | postive loss : 668.37, negtive prim loss : 160.04, negtive defi loss : 262.33, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  28%|██▊       | 138/500 [05:15<13:44,  2.28s/it]
+Epoch 151 | postive loss : 500.66, negtive prim loss : 119.70, negtive defi loss : 203.78, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  30%|███       | 152/500 [05:47<13:11,  2.27s/it]
+Epoch 165 | postive loss : 375.06, negtive prim loss : 90.05, negtive defi loss : 158.77, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  33%|███▎      | 166/500 [06:18<12:38,  2.27s/it] 
+Epoch 179 | postive loss : 280.98, negtive prim loss : 68.28, negtive defi loss : 123.82, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  36%|███▌      | 180/500 [06:50<12:05,  2.27s/it]
+Epoch 193 | postive loss : 210.55, negtive prim loss : 52.05, negtive defi loss : 96.56, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  39%|███▉      | 194/500 [07:22<11:33,  2.27s/it] 
+Epoch 207 | postive loss : 157.29, negtive prim loss : 39.78, negtive defi loss : 74.93, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  42%|████▏     | 208/500 [07:54<11:02,  2.27s/it]
+Epoch 220 | postive loss : 119.49, negtive prim loss : 30.99, negtive defi loss : 59.00, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  44%|████▍     | 221/500 [08:24<10:36,  2.28s/it]
+Epoch 234 | postive loss : 88.32, negtive prim loss : 23.57, negtive defi loss : 45.21, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  47%|████▋     | 235/500 [08:56<10:05,  2.28s/it] 
+Epoch 248 | postive loss : 64.65, negtive prim loss : 17.67, negtive defi loss : 33.99, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  50%|████▉     | 249/500 [09:28<09:33,  2.28s/it]
+Epoch 262 | postive loss : 47.33, negtive prim loss : 13.11, negtive defi loss : 25.29, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  53%|█████▎    | 263/500 [10:00<09:01,  2.28s/it]
+Epoch 275 | postive loss : 34.52, negtive prim loss : 9.80, negtive defi loss : 18.84, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  55%|█████▌    | 276/500 [10:30<08:36,  2.30s/it] 
+Epoch 288 | postive loss : 25.01, negtive prim loss : 7.09, negtive defi loss : 13.57, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  58%|█████▊    | 289/500 [11:01<08:07,  2.31s/it]
+Epoch 302 | postive loss : 18.80, negtive prim loss : 5.02, negtive defi loss : 9.96, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  61%|██████    | 303/500 [11:33<07:33,  2.30s/it] 
+Epoch 316 | postive loss : 14.99, negtive prim loss : 3.63, negtive defi loss : 7.61, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  63%|██████▎   | 317/500 [12:05<07:00,  2.30s/it]
+Epoch 330 | postive loss : 13.18, negtive prim loss : 2.73, negtive defi loss : 6.20, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  66%|██████▌   | 331/500 [12:37<06:27,  2.29s/it]
+Epoch 344 | postive loss : 11.84, negtive prim loss : 2.10, negtive defi loss : 5.22, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  69%|██████▉   | 345/500 [13:08<05:54,  2.28s/it]
+Epoch 358 | postive loss : 10.77, negtive prim loss : 1.60, negtive defi loss : 4.52, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  72%|███████▏  | 359/500 [13:40<05:21,  2.28s/it]
+Epoch 372 | postive loss : 10.05, negtive prim loss : 1.24, negtive defi loss : 4.00, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  75%|███████▍  | 373/500 [14:12<04:48,  2.27s/it]
+Epoch 386 | postive loss : 9.57, negtive prim loss : 1.00, negtive defi loss : 3.64, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  77%|███████▋  | 387/500 [14:43<04:16,  2.27s/it] 
+Epoch 400 | postive loss : 9.08, negtive prim loss : 0.88, negtive defi loss : 3.39, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  80%|████████  | 401/500 [15:15<03:44,  2.27s/it]
+Epoch 414 | postive loss : 8.70, negtive prim loss : 0.82, negtive defi loss : 3.23, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  83%|████████▎ | 415/500 [15:47<03:13,  2.27s/it]
+Epoch 428 | postive loss : 8.52, negtive prim loss : 0.78, negtive defi loss : 3.11, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  86%|████████▌ | 429/500 [16:19<02:41,  2.27s/it]
+Epoch 442 | postive loss : 7.97, negtive prim loss : 0.72, negtive defi loss : 2.85, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  89%|████████▊ | 443/500 [16:50<02:09,  2.27s/it]
+Epoch 456 | postive loss : 7.62, negtive prim loss : 0.68, negtive defi loss : 2.68, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  91%|█████████▏| 457/500 [17:22<01:37,  2.27s/it]
+Epoch 470 | postive loss : 7.20, negtive prim loss : 0.67, negtive defi loss : 2.53, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  94%|█████████▍| 471/500 [17:54<01:05,  2.27s/it]
+Epoch 484 | postive loss : 6.80, negtive prim loss : 0.68, negtive defi loss : 2.48, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  97%|█████████▋| 485/500 [18:26<00:34,  2.27s/it]
+Epoch 498 | postive loss : 6.28, negtive prim loss : 0.66, negtive defi loss : 2.31, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|█████████▉| 499/500 [18:57<00:02,  2.27s/it]
+Epoch 499 | postive loss : 6.24, negtive prim loss : 0.66, negtive defi loss : 2.30, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 500/500 [19:00<00:00,  2.28s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-15 17:14:32
+alpha: 0.1    batchsize: 128    dim: 128    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.2    learningrate: 0.002    lrdecay: 1    lrdecayEpoch: 250    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.1    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 2 | postive loss : 7658.03, negtive prim loss : 2138.95, negtive defi loss : 2545.81, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 12 | postive loss : 6323.30, negtive prim loss : 1787.91, negtive defi loss : 2124.12, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   3%|▎         | 13/500 [00:31<19:41,  2.43s/it]
+Epoch 25 | postive loss : 5019.76, negtive prim loss : 1416.35, negtive defi loss : 1707.04, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   5%|▌         | 26/500 [01:01<18:37,  2.36s/it]
+Epoch 38 | postive loss : 3966.34, negtive prim loss : 1119.27, negtive defi loss : 1369.38, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:   8%|▊         | 39/500 [01:31<17:57,  2.34s/it]
+Epoch 51 | postive loss : 3103.28, negtive prim loss : 879.14, negtive defi loss : 1092.68, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  10%|█         | 52/500 [02:01<17:22,  2.33s/it] 
+Epoch 64 | postive loss : 2398.18, negtive prim loss : 685.51, negtive defi loss : 866.37, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  13%|█▎        | 65/500 [02:31<16:49,  2.32s/it] 
+Epoch 77 | postive loss : 1826.77, negtive prim loss : 530.26, negtive defi loss : 682.35, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  16%|█▌        | 78/500 [03:01<16:17,  2.32s/it]
+Epoch 90 | postive loss : 1369.51, negtive prim loss : 406.22, negtive defi loss : 533.77, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  18%|█▊        | 91/500 [03:31<15:46,  2.31s/it]
+Epoch 104 | postive loss : 984.16, negtive prim loss : 301.77, negtive defi loss : 406.53, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  21%|██        | 105/500 [04:04<15:13,  2.31s/it]
+Epoch 118 | postive loss : 690.51, negtive prim loss : 221.51, negtive defi loss : 306.99, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  24%|██▍       | 119/500 [04:36<14:38,  2.31s/it]
+Epoch 132 | postive loss : 471.11, negtive prim loss : 160.53, negtive defi loss : 230.30, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  27%|██▋       | 133/500 [05:08<14:04,  2.30s/it]
+Epoch 146 | postive loss : 311.03, negtive prim loss : 114.87, negtive defi loss : 171.58, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  29%|██▉       | 147/500 [05:40<13:31,  2.30s/it]
+Epoch 160 | postive loss : 197.67, negtive prim loss : 81.05, negtive defi loss : 127.08, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  32%|███▏      | 161/500 [06:12<12:59,  2.30s/it] 
+Epoch 174 | postive loss : 120.16, negtive prim loss : 56.34, negtive defi loss : 93.30, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  35%|███▌      | 175/500 [06:44<12:26,  2.30s/it] 
+Epoch 188 | postive loss : 69.25, negtive prim loss : 38.54, negtive defi loss : 67.78, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  38%|███▊      | 189/500 [07:16<11:54,  2.30s/it] 
+Epoch 202 | postive loss : 37.42, negtive prim loss : 25.91, negtive defi loss : 48.54, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  41%|████      | 203/500 [07:48<11:21,  2.30s/it]
+Epoch 216 | postive loss : 18.71, negtive prim loss : 17.06, negtive defi loss : 34.08, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  43%|████▎     | 217/500 [08:20<10:49,  2.30s/it]
+Epoch 230 | postive loss : 8.53, negtive prim loss : 11.00, negtive defi loss : 23.36, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  46%|████▌     | 231/500 [08:53<10:17,  2.29s/it] 
+Epoch 244 | postive loss : 3.52, negtive prim loss : 6.96, negtive defi loss : 15.62, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  49%|████▉     | 245/500 [09:25<09:45,  2.29s/it] 
+Epoch 258 | postive loss : 1.54, negtive prim loss : 4.57, negtive defi loss : 10.58, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  52%|█████▏    | 259/500 [09:57<09:12,  2.29s/it]
+Epoch 272 | postive loss : 0.98, negtive prim loss : 3.49, negtive defi loss : 8.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  55%|█████▍    | 273/500 [10:29<08:40,  2.29s/it] 
+Epoch 286 | postive loss : 0.78, negtive prim loss : 2.98, negtive defi loss : 6.80, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  57%|█████▋    | 287/500 [11:01<08:08,  2.29s/it]
+Epoch 300 | postive loss : 0.69, negtive prim loss : 2.68, negtive defi loss : 6.07, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  60%|██████    | 301/500 [11:33<07:36,  2.29s/it]
+Epoch 314 | postive loss : 0.65, negtive prim loss : 2.50, negtive defi loss : 5.60, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  63%|██████▎   | 315/500 [12:05<07:04,  2.29s/it]
+Epoch 328 | postive loss : 0.62, negtive prim loss : 2.37, negtive defi loss : 5.29, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  66%|██████▌   | 329/500 [12:37<06:32,  2.29s/it]
+Epoch 342 | postive loss : 0.61, negtive prim loss : 2.28, negtive defi loss : 5.06, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  69%|██████▊   | 343/500 [13:10<06:00,  2.29s/it]
+Epoch 356 | postive loss : 0.59, negtive prim loss : 2.22, negtive defi loss : 4.90, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  71%|███████▏  | 357/500 [13:42<05:28,  2.29s/it]
+Epoch 370 | postive loss : 0.58, negtive prim loss : 2.17, negtive defi loss : 4.78, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  74%|███████▍  | 371/500 [14:14<04:55,  2.29s/it]
+Epoch 384 | postive loss : 0.57, negtive prim loss : 2.13, negtive defi loss : 4.69, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  77%|███████▋  | 385/500 [14:46<04:23,  2.29s/it]
+Epoch 398 | postive loss : 0.58, negtive prim loss : 2.10, negtive defi loss : 4.60, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  80%|███████▉  | 399/500 [15:18<03:51,  2.30s/it]
+Epoch 412 | postive loss : 0.57, negtive prim loss : 2.07, negtive defi loss : 4.53, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  83%|████████▎ | 413/500 [15:50<03:19,  2.30s/it]
+Epoch 426 | postive loss : 0.56, negtive prim loss : 2.05, negtive defi loss : 4.48, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  85%|████████▌ | 427/500 [16:22<02:47,  2.30s/it]
+Epoch 440 | postive loss : 0.56, negtive prim loss : 2.03, negtive defi loss : 4.43, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  88%|████████▊ | 441/500 [16:55<02:15,  2.30s/it]
+Epoch 450 | postive loss : 0.56, negtive prim loss : 2.01, negtive defi loss : 4.40, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  90%|█████████ | 451/500 [17:25<02:00,  2.47s/it]
+Epoch 457 | postive loss : 0.55, negtive prim loss : 2.01, negtive defi loss : 4.38, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  92%|█████████▏| 458/500 [17:57<02:00,  2.86s/it]
+Epoch 469 | postive loss : 0.55, negtive prim loss : 1.99, negtive defi loss : 4.35, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  94%|█████████▍| 470/500 [18:30<01:24,  2.83s/it]
+Epoch 481 | postive loss : 0.55, negtive prim loss : 1.98, negtive defi loss : 4.32, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  96%|█████████▋| 482/500 [19:00<00:49,  2.73s/it]
+Epoch 494 | postive loss : 0.56, negtive prim loss : 1.97, negtive defi loss : 4.30, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00:  99%|█████████▉| 495/500 [19:30<00:13,  2.60s/it]
+Epoch 499 | postive loss : 0.55, negtive prim loss : 1.96, negtive defi loss : 4.29, worst lambd: 0.00, worst prim gap: 0.00, worst defi gap: 0.00: 100%|██████████| 500/500 [19:42<00:00,  2.36s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully

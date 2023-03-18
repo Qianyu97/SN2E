@@ -9,7 +9,7 @@ class DatapathArg():
 
 class DataloaderArg():
     # Dataloader arguments
-    batchsize   = 128
+    batchsize   = 16
     shuffle     = True
     numworkers  = 0
     droplast    = False
@@ -20,24 +20,23 @@ class ModelArg():
     # Model and training general arguments
     class SN2E():
         name        = 'SN2E'
-        dim         = 64
-        lambdaMax   = 2
+        dim         = 128
+        lambdaMax   = 0.5
         gapMax_prim = -0.5
-        gapMax_defi = -1
-        vmax        = 100
-        vmin        = 0.01
-        alpha       = 1
+        gapMax_defi = -2
+        vmax        = 10000
+        vmin        = 0.0001
+        alpha       = 0.1
         NoneIndex   = None
+        learningrate    = 0.004
+        weightdecay     = 0
+        lrdecay         = 0.5
+        lrdecayEpoch    = 300
+        momentum        = 0
         num_defi    = 0
         num_prim    = 0
         num_full    = 0
-        
-        
-        learningrate    = 0.002
-        weightdecay     = 0
-        lrdecay         = 1
-        lrdecayEpoch    = 250
-        momentum        = 0
+        num_nodefi  = 0
     class TransE():
         name   = 'TransE'
         Dim    = 100,
@@ -75,7 +74,7 @@ class ModelArg():
     
 class TrainArg():
     # Training arguments
-    epochs      = 500
+    epochs      = 2000
     ifLoadModel = False
     usegpu      = True
     gpunum      = 0
@@ -97,9 +96,9 @@ class WordnetArg():
     a = TrainArg.epochs
 
 class validateArg():
-    field = ModelArg.model
-    name = 'learningrate'
-    candidate = [0.00025, 0.0005, 0.001, 0.002, 0.004]
+    field = DataloaderArg
+    name = 'batchsize'
+    candidate = [8, 4]
 
 class displayArg():
     epoch           = TrainArg.epochs

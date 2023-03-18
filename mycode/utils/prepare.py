@@ -19,7 +19,7 @@ def prepareModel(homoDF:pd.DataFrame,ifLoadModel = False):
     elif ModelArg.model.name == "KG2E":
         model = KG2E.KG2E(ModelArg.model)
     elif ModelArg.model.name == "SN2E":
-        model:SN2E.SN2E = SN2E.SN2E(ModelArg.model)
+        model:SN2E.SN2E = SN2E.SN2E()
     else:
         print("ERROR : No model named %s" % ModelArg.model.name)
         raise Exception("Model Setting Error")

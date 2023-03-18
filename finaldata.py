@@ -2,18 +2,18 @@ from refine import FineData, RawData, BaseData, pd
 from config import DatapathArg
 
 class FinalData(BaseData):
-    def __init__(self, path_rawdata, path_dictionary = None):
-        finedata = FineData(path_rawdata)
-        if not path_dictionary:
+    def __init__(self, ifloadDictionary = False):
+        finedata = FineData(DatapathArg.path_rawdata)
+        if not ifloadDictionary:
             self.dictionary = self.creat_index(finedata.fulllist) 
         else: 
-            self.dictionary:dict = self.load(path_dictionary)   # type: ignore
+            self.dictionary:dict = self.load(DatapathArg.path_indexdict)   # type: ignore
         indexdata:FineData = self.indexconvert(finedata)              
         self.finedata   = finedata
         self.indexdata  = indexdata
     
     def creat_index(self, fulllist):
-        num2strList = [None] + fulllist
+        num2strList = [None] + ['negtpad'] + fulllist + ['godfather']
         str2numdict = {item: idx for idx, item in enumerate(num2strList)}
         return {'str' : str2numdict, 'num': num2strList}
     

@@ -9,7 +9,7 @@ from mycode.models.SN2E import SN2E
 from mycode.utils import prepare
 from finaldata import FinalData
 from config import DatapathArg, TestArg
-from mycode.utils.treeunit import NodeUnit
+from mycode.utils.treeunit import NodeUnit, Embedding
 
 class GaussianDrawer():
     def __init__(self, dataset:FinalData, model:SN2E):
@@ -47,9 +47,8 @@ class GaussianDrawer():
         plt.ylabel('y')
         plt.savefig(DatapathArg.path_picture + label + ".jpg")
     
-    def PCA_Gaussians(self, embedding):
-        [means, inVariances] = embedding
-        means, variances = means.unsqueeze(-1), torch.diag_embed(1/inVariances)
+    def PCA_Gaussians(self, embedding:Embedding):
+        means, variances = embedding.m.unsqueeze(-1), torch.diag_embed(1/embedding.v)
 
         MeanAve              = means.mean()
         variancePCA         = ((means - MeanAve) @ (means - MeanAve).transpose(1, 2)).mean(0)

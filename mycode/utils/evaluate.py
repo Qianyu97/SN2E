@@ -14,7 +14,7 @@ class Evaluater():
         self.targetData = finaldata.indexdata.fulllist
         self.sourceLen = len(self.sourceData)
         self.targetLen = len(self.targetData)
-        self.redundlen = self.targetLen - self.sourceLen + 1
+        self.redundlen = self.targetLen - self.sourceLen + 2
         self.model = model
         self.threshold = 0.5
         '''torch.arange(
@@ -27,7 +27,8 @@ class Evaluater():
     
     def creatGroundTruth(self, truthdict:dict):
         groundtruth = torch.zeros([self.sourceLen, self.targetLen], dtype = bool)  # type: ignore
-        for row, columns in truthdict.items():
+        for row in self.sourceData:
+            columns = truthdict[row]
             groundtruth[row - self.redundlen, list(columns)] = True
         #groundtruth_flat = list(groundtruth.reshape(-1,1).nonzero())[0]
         return groundtruth
@@ -42,7 +43,7 @@ class Evaluater():
     
     def calcF1score(self):
         evalResult = torch.Tensor()
-        chunknum = 2
+        chunknum = 3
         chunklen = int(self.sourceLen / chunknum)
         chunkdata = sample(self.sourceData, chunklen) 
         evalResult = self.model.evaluate(chunkdata, self.targetData)
@@ -70,11 +71,13 @@ class Evaluater():
         return gap
 
     def findworstlambd(self):
-        attrDF = self.finaldata.indexdata.homoDF.sort_index(axis = 1)
-        lambd = self.model.scorePos(np.asarray(attrDF).T) # type: ignore
+        attrDF = self.finaldata.indexdata.attrDF.sort_index(axis = 1)
+        pareDF = self.finaldata.indexdata.pareDF.sort_index(axis = 1)
+        lambd = self.model.scorePos(np.asarray(attrDF).T, np.asarray(pareDF).T) # type: ignore
         worstlambd, indexes = lambd.sort(descending=True)
         showname    = self.finaldata.indexconvert((indexes + self.redundlen).tolist()[:5], 'num2str')
         showvalue  = worstlambd.tolist()[:5]
         namestring  = '{}, {}, {}, {}, {} have the worst lambd, which are '.format(*showname)
         valuestring = '{:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f} '.format(*showvalue)
         print(namestring + valuestring)
+        
