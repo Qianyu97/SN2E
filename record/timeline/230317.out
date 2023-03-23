@@ -1,0 +1,731 @@
+
+2023-03-16 17:57:59
+alpha: 0.1    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 750    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 1
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 53.14, negtive loss : 57.28, worst lambd: 172.11, worst gap: 0.00:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 26 | postive loss : 44.36, negtive loss : 49.75, worst lambd: 147.30, worst gap: 0.00:   5%|▌         | 27/500 [00:30<08:49,  1.12s/it]
+Epoch 53 | postive loss : 30.49, negtive loss : 36.91, worst lambd: 103.54, worst gap: 0.00:  11%|█         | 54/500 [01:00<08:19,  1.12s/it]
+Epoch 80 | postive loss : 15.98, negtive loss : 21.42, worst lambd: 76.77, worst gap: 0.00:  16%|█▌        | 81/500 [01:30<07:49,  1.12s/it] 
+Epoch 107 | postive loss : 8.86, negtive loss : 12.00, worst lambd: 57.43, worst gap: 0.00:  22%|██▏       | 108/500 [02:00<07:19,  1.12s/it]
+Epoch 135 | postive loss : 8.15, negtive loss : 9.64, worst lambd: 43.15, worst gap: 0.00:  27%|██▋       | 136/500 [02:31<06:46,  1.12s/it] 
+Epoch 163 | postive loss : 9.50, negtive loss : 10.43, worst lambd: 34.35, worst gap: 0.00:  33%|███▎      | 164/500 [03:02<06:13,  1.11s/it]
+Epoch 190 | postive loss : 11.41, negtive loss : 12.20, worst lambd: 27.02, worst gap: 0.00:  38%|███▊      | 191/500 [03:32<05:43,  1.11s/it]
+Epoch 218 | postive loss : 13.50, negtive loss : 14.36, worst lambd: 31.72, worst gap: 0.00:  44%|████▍     | 219/500 [04:03<05:12,  1.11s/it]
+Epoch 245 | postive loss : 15.33, negtive loss : 16.34, worst lambd: 34.64, worst gap: 0.00:  49%|████▉     | 246/500 [04:34<04:42,  1.11s/it]
+Epoch 273 | postive loss : 16.92, negtive loss : 18.08, worst lambd: 37.86, worst gap: 0.00:  55%|█████▍    | 274/500 [05:04<04:10,  1.11s/it]
+Epoch 300 | postive loss : 18.47, negtive loss : 19.85, worst lambd: 42.93, worst gap: 0.00:  60%|██████    | 301/500 [05:35<03:41,  1.11s/it]
+Epoch 328 | postive loss : 19.37, negtive loss : 20.89, worst lambd: 46.09, worst gap: 0.00:  66%|██████▌   | 329/500 [06:06<03:10,  1.11s/it]
+Epoch 356 | postive loss : 19.93, negtive loss : 21.62, worst lambd: 44.55, worst gap: 0.00:  71%|███████▏  | 357/500 [06:37<02:38,  1.11s/it]
+Epoch 384 | postive loss : 20.02, negtive loss : 21.93, worst lambd: 48.25, worst gap: 0.00:  77%|███████▋  | 385/500 [07:08<02:07,  1.11s/it]
+Epoch 412 | postive loss : 20.06, negtive loss : 22.12, worst lambd: 50.02, worst gap: 0.00:  83%|████████▎ | 413/500 [07:39<01:36,  1.11s/it]
+Epoch 440 | postive loss : 19.86, negtive loss : 22.00, worst lambd: 54.66, worst gap: 0.00:  88%|████████▊ | 441/500 [08:10<01:05,  1.11s/it]
+Epoch 468 | postive loss : 19.43, negtive loss : 21.68, worst lambd: 53.49, worst gap: 0.00:  94%|█████████▍| 469/500 [08:40<00:34,  1.11s/it]
+Epoch 496 | postive loss : 18.68, negtive loss : 21.01, worst lambd: 51.53, worst gap: 0.00:  99%|█████████▉| 497/500 [09:11<00:03,  1.11s/it]
+Epoch 499 | postive loss : 18.61, negtive loss : 20.98, worst lambd: 52.11, worst gap: 0.00: 100%|██████████| 500/500 [09:15<00:00,  1.11s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-16 18:10:41
+alpha: 0.001    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 750    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 1
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 16 | postive loss : 13.31, negtive loss : 5.08, worst lambd: 61.69, worst gap: 0.00:   0%|          | 0/500 [00:20<?, ?it/s]
+Epoch 26 | postive loss : 8.49, negtive loss : 3.30, worst lambd: 35.14, worst gap: 0.00:   5%|▌         | 27/500 [00:30<08:54,  1.13s/it]
+Epoch 53 | postive loss : 3.09, negtive loss : 1.27, worst lambd: 22.74, worst gap: 0.00:  11%|█         | 54/500 [01:00<08:20,  1.12s/it]
+Epoch 80 | postive loss : 1.67, negtive loss : 0.63, worst lambd: 9.57, worst gap: 0.00:  16%|█▌        | 81/500 [01:30<07:50,  1.12s/it] 
+Epoch 107 | postive loss : 1.74, negtive loss : 0.62, worst lambd: 4.88, worst gap: 0.00:  22%|██▏       | 108/500 [02:01<07:20,  1.12s/it]
+Epoch 134 | postive loss : 1.51, negtive loss : 0.57, worst lambd: 4.99, worst gap: 0.00:  27%|██▋       | 135/500 [02:31<06:49,  1.12s/it]
+Epoch 161 | postive loss : 0.99, negtive loss : 0.42, worst lambd: 3.86, worst gap: 0.00:  32%|███▏      | 162/500 [03:02<06:19,  1.12s/it]
+Epoch 188 | postive loss : 0.68, negtive loss : 0.40, worst lambd: 3.45, worst gap: 0.00:  38%|███▊      | 189/500 [03:32<05:49,  1.12s/it]
+Epoch 215 | postive loss : 0.58, negtive loss : 0.47, worst lambd: 3.89, worst gap: 0.00:  43%|████▎     | 216/500 [04:02<05:19,  1.12s/it]
+Epoch 242 | postive loss : 0.54, negtive loss : 0.55, worst lambd: 4.83, worst gap: 0.00:  49%|████▊     | 243/500 [04:33<04:49,  1.12s/it]
+Epoch 269 | postive loss : 0.52, negtive loss : 0.61, worst lambd: 5.69, worst gap: 0.00:  54%|█████▍    | 270/500 [05:03<04:19,  1.13s/it]
+Epoch 296 | postive loss : 0.51, negtive loss : 0.67, worst lambd: 5.90, worst gap: 0.00:  59%|█████▉    | 297/500 [05:34<03:48,  1.13s/it]
+Epoch 323 | postive loss : 0.50, negtive loss : 0.72, worst lambd: 6.65, worst gap: 0.00:  65%|██████▍   | 324/500 [06:04<03:17,  1.12s/it]
+Epoch 350 | postive loss : 0.49, negtive loss : 0.77, worst lambd: 6.71, worst gap: 0.00:  70%|███████   | 351/500 [06:34<02:47,  1.12s/it]
+Epoch 377 | postive loss : 0.49, negtive loss : 0.81, worst lambd: 6.77, worst gap: 0.00:  76%|███████▌  | 378/500 [07:04<02:17,  1.12s/it]
+Epoch 404 | postive loss : 0.48, negtive loss : 0.85, worst lambd: 6.60, worst gap: 0.00:  81%|████████  | 405/500 [07:35<01:46,  1.13s/it]
+Epoch 431 | postive loss : 0.48, negtive loss : 0.88, worst lambd: 6.54, worst gap: 0.00:  86%|████████▋ | 432/500 [08:05<01:16,  1.13s/it]
+Epoch 458 | postive loss : 0.47, negtive loss : 0.91, worst lambd: 6.71, worst gap: 0.00:  92%|█████████▏| 459/500 [08:36<00:46,  1.12s/it]
+Epoch 485 | postive loss : 0.47, negtive loss : 0.94, worst lambd: 6.42, worst gap: 0.00:  97%|█████████▋| 486/500 [09:06<00:15,  1.12s/it]
+Epoch 499 | postive loss : 0.47, negtive loss : 0.95, worst lambd: 6.48, worst gap: 0.00: 100%|██████████| 500/500 [09:21<00:00,  1.12s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-16 18:31:56
+alpha: 0.01    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 2    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 750    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 1
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+  0%|          | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "Train.py", line 154, in <module>
+    main()
+  File "Train.py", line 131, in main
+    trainer.run()
+  File "Train.py", line 45, in run
+    posloss, negloss, lambd_max, gap_min = self.train_one_batch(batchdata)
+  File "Train.py", line 29, in train_one_batch
+    loss, posloss, negloss, lambd_max, gap_min = self.model(batchdata)
+  File "/home1/cqy2020/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home1/cqy2020/SN2E/mycode/models/SN2E.py", line 130, in forward
+    [index0, indexN, indexA, indexP]  = data  #seppoint = (index0 < self.num_nodefi).sum()
+ValueError: not enough values to unpack (expected 4, got 3)
+
+2023-03-16 18:33:30
+alpha: 0.01    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 2    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 750    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 1
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 18 | postive loss : 3.01, negtive loss : 0.66, worst lambd: 11.34, worst gap: 0.00:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 29 | postive loss : 2.75, negtive loss : 0.72, worst lambd: 7.99, worst gap: 0.00:   6%|▌         | 30/500 [00:30<07:51,  1.00s/it]
+Epoch 59 | postive loss : 2.45, negtive loss : 0.89, worst lambd: 7.56, worst gap: 0.01:  12%|█▏        | 60/500 [01:00<07:22,  1.00s/it]
+Epoch 89 | postive loss : 2.33, negtive loss : 0.97, worst lambd: 7.32, worst gap: 0.01:  18%|█▊        | 90/500 [01:30<06:54,  1.01s/it]
+Epoch 119 | postive loss : 2.24, negtive loss : 1.05, worst lambd: 6.67, worst gap: 0.01:  24%|██▍       | 120/500 [02:01<06:24,  1.01s/it]
+Epoch 149 | postive loss : 2.18, negtive loss : 1.12, worst lambd: 6.49, worst gap: 0.01:  30%|███       | 150/500 [02:31<05:54,  1.01s/it]
+Epoch 179 | postive loss : 2.13, negtive loss : 1.18, worst lambd: 6.44, worst gap: 0.00:  36%|███▌      | 180/500 [03:01<05:23,  1.01s/it]
+Epoch 209 | postive loss : 2.10, negtive loss : 1.24, worst lambd: 6.66, worst gap: 0.01:  42%|████▏     | 210/500 [03:32<04:52,  1.01s/it]
+Epoch 239 | postive loss : 2.07, negtive loss : 1.27, worst lambd: 6.29, worst gap: 0.00:  48%|████▊     | 240/500 [04:02<04:23,  1.02s/it]
+Epoch 269 | postive loss : 2.04, negtive loss : 1.31, worst lambd: 6.31, worst gap: 0.00:  54%|█████▍    | 270/500 [04:33<03:53,  1.02s/it]
+Epoch 299 | postive loss : 2.00, negtive loss : 1.33, worst lambd: 6.63, worst gap: 0.00:  60%|██████    | 300/500 [05:04<03:23,  1.02s/it]
+Epoch 329 | postive loss : 1.97, negtive loss : 1.38, worst lambd: 6.28, worst gap: 0.01:  66%|██████▌   | 330/500 [05:34<02:52,  1.02s/it]
+Epoch 359 | postive loss : 1.96, negtive loss : 1.43, worst lambd: 5.59, worst gap: 0.00:  72%|███████▏  | 360/500 [06:05<02:22,  1.02s/it]
+Epoch 389 | postive loss : 1.94, negtive loss : 1.47, worst lambd: 5.91, worst gap: 0.01:  78%|███████▊  | 390/500 [06:35<01:51,  1.01s/it]
+Epoch 419 | postive loss : 1.91, negtive loss : 1.52, worst lambd: 6.23, worst gap: 0.00:  84%|████████▍ | 420/500 [07:06<01:21,  1.02s/it]
+Epoch 449 | postive loss : 1.90, negtive loss : 1.57, worst lambd: 5.50, worst gap: 0.01:  90%|█████████ | 450/500 [07:37<00:51,  1.02s/it]
+Epoch 478 | postive loss : 1.89, negtive loss : 1.60, worst lambd: 5.61, worst gap: 0.00:  96%|█████████▌| 479/500 [08:07<00:21,  1.03s/it]
+Epoch 499 | postive loss : 1.88, negtive loss : 1.64, worst lambd: 6.05, worst gap: 0.00: 100%|██████████| 500/500 [08:29<00:00,  1.02s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 16:03:48
+alpha: 0.01    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 750    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model loading complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 17 | postive loss : 0.71, negtive loss : 1.78, worst lambd: 2.58, worst gap: 0.03:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 26 | postive loss : 0.71, negtive loss : 1.79, worst lambd: 2.50, worst gap: 0.03:   5%|▌         | 27/500 [00:30<08:45,  1.11s/it]
+Epoch 53 | postive loss : 0.69, negtive loss : 1.83, worst lambd: 2.60, worst gap: 0.05:  11%|█         | 54/500 [01:00<08:18,  1.12s/it]
+Epoch 81 | postive loss : 0.68, negtive loss : 1.86, worst lambd: 2.48, worst gap: 0.03:  16%|█▋        | 82/500 [01:31<07:45,  1.11s/it]
+Epoch 109 | postive loss : 0.67, negtive loss : 1.89, worst lambd: 2.41, worst gap: 0.04:  22%|██▏       | 110/500 [02:02<07:12,  1.11s/it]
+Epoch 137 | postive loss : 0.66, negtive loss : 1.92, worst lambd: 2.19, worst gap: 0.04:  28%|██▊       | 138/500 [02:32<06:39,  1.10s/it]
+Epoch 165 | postive loss : 0.65, negtive loss : 1.94, worst lambd: 2.44, worst gap: 0.02:  33%|███▎      | 166/500 [03:03<06:06,  1.10s/it]
+Epoch 193 | postive loss : 0.64, negtive loss : 1.97, worst lambd: 2.14, worst gap: 0.03:  39%|███▉      | 194/500 [03:33<05:34,  1.09s/it]
+Epoch 221 | postive loss : 0.63, negtive loss : 2.00, worst lambd: 2.21, worst gap: 0.04:  44%|████▍     | 222/500 [04:04<05:03,  1.09s/it]
+Epoch 249 | postive loss : 0.62, negtive loss : 2.02, worst lambd: 2.18, worst gap: 0.05:  50%|█████     | 250/500 [04:34<04:32,  1.09s/it]
+Epoch 277 | postive loss : 0.61, negtive loss : 2.04, worst lambd: 2.09, worst gap: 0.05:  56%|█████▌    | 278/500 [05:04<04:01,  1.09s/it]
+Epoch 305 | postive loss : 0.61, negtive loss : 2.08, worst lambd: 1.97, worst gap: 0.03:  61%|██████    | 306/500 [05:35<03:30,  1.09s/it]
+Epoch 333 | postive loss : 0.60, negtive loss : 2.11, worst lambd: 2.17, worst gap: 0.04:  67%|██████▋   | 334/500 [06:05<02:59,  1.08s/it]
+Epoch 361 | postive loss : 0.59, negtive loss : 2.14, worst lambd: 2.24, worst gap: 0.04:  72%|███████▏  | 362/500 [06:35<02:29,  1.08s/it]
+Epoch 389 | postive loss : 0.59, negtive loss : 2.17, worst lambd: 1.98, worst gap: 0.06:  78%|███████▊  | 390/500 [07:06<01:59,  1.08s/it]
+Epoch 417 | postive loss : 0.58, negtive loss : 2.20, worst lambd: 2.07, worst gap: 0.04:  84%|████████▎ | 418/500 [07:36<01:28,  1.08s/it]
+Epoch 445 | postive loss : 0.58, negtive loss : 2.22, worst lambd: 2.13, worst gap: 0.03:  89%|████████▉ | 446/500 [08:06<00:58,  1.09s/it]
+Epoch 473 | postive loss : 0.57, negtive loss : 2.25, worst lambd: 2.07, worst gap: 0.04:  95%|█████████▍| 474/500 [08:37<00:28,  1.09s/it]
+Epoch 499 | postive loss : 0.57, negtive loss : 2.27, worst lambd: 1.95, worst gap: 0.05: 100%|██████████| 500/500 [09:05<00:00,  1.09s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+
+2023-03-17 16:16:57
+alpha: 0.1    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 750    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 16 | postive loss : 6.78, negtive loss : 3.56, worst lambd: 66.52, worst gap: 0.58:   0%|          | 0/500 [00:20<?, ?it/s]
+Epoch 26 | postive loss : 2.86, negtive loss : 1.43, worst lambd: 39.18, worst gap: 0.17:   5%|▌         | 27/500 [00:30<08:53,  1.13s/it]
+Epoch 54 | postive loss : 1.93, negtive loss : 1.37, worst lambd: 4.42, worst gap: 0.16:  11%|█         | 55/500 [01:01<08:17,  1.12s/it] 
+Epoch 81 | postive loss : 1.68, negtive loss : 1.46, worst lambd: 4.37, worst gap: 0.11:  16%|█▋        | 82/500 [01:31<07:47,  1.12s/it]
+Epoch 108 | postive loss : 1.54, negtive loss : 1.54, worst lambd: 4.54, worst gap: 0.08:  22%|██▏       | 109/500 [02:02<07:17,  1.12s/it]
+Epoch 135 | postive loss : 1.43, negtive loss : 1.60, worst lambd: 4.94, worst gap: 0.11:  27%|██▋       | 136/500 [02:32<06:48,  1.12s/it]
+Epoch 162 | postive loss : 1.35, negtive loss : 1.67, worst lambd: 4.60, worst gap: 0.09:  33%|███▎      | 163/500 [03:02<06:17,  1.12s/it]
+Epoch 190 | postive loss : 1.26, negtive loss : 1.75, worst lambd: 4.78, worst gap: 0.05:  38%|███▊      | 191/500 [03:33<05:44,  1.11s/it]
+Epoch 217 | postive loss : 1.19, negtive loss : 1.83, worst lambd: 4.91, worst gap: 0.07:  44%|████▎     | 218/500 [04:03<05:14,  1.11s/it]
+Epoch 244 | postive loss : 1.12, negtive loss : 1.90, worst lambd: 4.95, worst gap: 0.07:  49%|████▉     | 245/500 [04:34<04:45,  1.12s/it]
+Epoch 271 | postive loss : 1.07, negtive loss : 1.99, worst lambd: 4.97, worst gap: 0.09:  54%|█████▍    | 272/500 [05:05<04:16,  1.13s/it]
+Epoch 298 | postive loss : 1.01, negtive loss : 2.08, worst lambd: 4.72, worst gap: 0.05:  60%|█████▉    | 299/500 [05:35<03:45,  1.12s/it]
+Epoch 326 | postive loss : 0.96, negtive loss : 2.17, worst lambd: 4.82, worst gap: 0.07:  65%|██████▌   | 327/500 [06:05<03:12,  1.11s/it]
+Epoch 354 | postive loss : 0.91, negtive loss : 2.26, worst lambd: 4.80, worst gap: 0.06:  71%|███████   | 355/500 [06:36<02:40,  1.11s/it]
+Epoch 381 | postive loss : 0.88, negtive loss : 2.36, worst lambd: 4.70, worst gap: 0.08:  76%|███████▋  | 382/500 [07:06<02:10,  1.11s/it]
+Epoch 408 | postive loss : 0.84, negtive loss : 2.45, worst lambd: 5.15, worst gap: 0.07:  82%|████████▏ | 409/500 [07:37<01:41,  1.12s/it]
+Epoch 435 | postive loss : 0.82, negtive loss : 2.53, worst lambd: 4.64, worst gap: 0.05:  87%|████████▋ | 436/500 [08:07<01:11,  1.12s/it]
+Epoch 462 | postive loss : 0.79, negtive loss : 2.61, worst lambd: 4.72, worst gap: 0.11:  93%|█████████▎| 463/500 [08:37<00:41,  1.12s/it]
+Epoch 489 | postive loss : 0.76, negtive loss : 2.68, worst lambd: 4.86, worst gap: 0.09:  98%|█████████▊| 490/500 [09:08<00:11,  1.12s/it]
+Epoch 499 | postive loss : 0.76, negtive loss : 2.72, worst lambd: 4.93, worst gap: 0.10: 100%|██████████| 500/500 [09:19<00:00,  1.12s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 16:27:07
+alpha: 0.1    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 1000    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model loading complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 16 | postive loss : 0.74, negtive loss : 2.76, worst lambd: 4.97, worst gap: 0.09:   0%|          | 0/500 [00:19<?, ?it/s]
+Epoch 26 | postive loss : 0.73, negtive loss : 2.78, worst lambd: 4.71, worst gap: 0.07:   5%|▌         | 27/500 [00:30<08:48,  1.12s/it]
+Epoch 54 | postive loss : 0.71, negtive loss : 2.85, worst lambd: 4.95, worst gap: 0.06:  11%|█         | 55/500 [01:01<08:13,  1.11s/it]
+Epoch 82 | postive loss : 0.70, negtive loss : 2.92, worst lambd: 4.82, worst gap: 0.07:  17%|█▋        | 83/500 [01:31<07:40,  1.10s/it]
+Epoch 110 | postive loss : 0.68, negtive loss : 2.97, worst lambd: 4.82, worst gap: 0.06:  22%|██▏       | 111/500 [02:02<07:09,  1.10s/it]
+Epoch 138 | postive loss : 0.67, negtive loss : 3.03, worst lambd: 4.68, worst gap: 0.11:  28%|██▊       | 139/500 [02:33<06:39,  1.11s/it]
+Epoch 166 | postive loss : 0.66, negtive loss : 3.08, worst lambd: 4.75, worst gap: 0.07:  33%|███▎      | 167/500 [03:04<06:07,  1.10s/it]
+Epoch 194 | postive loss : 0.65, negtive loss : 3.12, worst lambd: 4.79, worst gap: 0.06:  39%|███▉      | 195/500 [03:35<05:36,  1.10s/it]
+Epoch 222 | postive loss : 0.64, negtive loss : 3.16, worst lambd: 4.71, worst gap: 0.09:  45%|████▍     | 223/500 [04:06<05:05,  1.10s/it]
+Epoch 250 | postive loss : 0.64, negtive loss : 3.22, worst lambd: 4.80, worst gap: 0.08:  50%|█████     | 251/500 [04:37<04:34,  1.10s/it]
+Epoch 278 | postive loss : 0.62, negtive loss : 3.24, worst lambd: 4.46, worst gap: 0.07:  56%|█████▌    | 279/500 [05:08<04:03,  1.10s/it]
+Epoch 306 | postive loss : 0.62, negtive loss : 3.28, worst lambd: 4.56, worst gap: 0.08:  61%|██████▏   | 307/500 [05:39<03:33,  1.10s/it]
+Epoch 334 | postive loss : 0.62, negtive loss : 3.31, worst lambd: 4.57, worst gap: 0.04:  67%|██████▋   | 335/500 [06:10<03:02,  1.10s/it]
+Epoch 362 | postive loss : 0.61, negtive loss : 3.34, worst lambd: 4.54, worst gap: 0.07:  73%|███████▎  | 363/500 [06:41<02:31,  1.11s/it]
+Epoch 390 | postive loss : 0.61, negtive loss : 3.37, worst lambd: 4.66, worst gap: 0.09:  78%|███████▊  | 391/500 [07:12<02:00,  1.10s/it]
+Epoch 418 | postive loss : 0.60, negtive loss : 3.39, worst lambd: 4.36, worst gap: 0.05:  84%|████████▍ | 419/500 [07:42<01:29,  1.10s/it]
+Epoch 446 | postive loss : 0.60, negtive loss : 3.40, worst lambd: 4.19, worst gap: 0.09:  89%|████████▉ | 447/500 [08:13<00:58,  1.10s/it]
+Epoch 474 | postive loss : 0.59, negtive loss : 3.43, worst lambd: 4.45, worst gap: 0.09:  95%|█████████▌| 475/500 [08:44<00:27,  1.10s/it]
+Epoch 499 | postive loss : 0.59, negtive loss : 3.44, worst lambd: 4.10, worst gap: 0.08: 100%|██████████| 500/500 [09:12<00:00,  1.10s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 16:37:25
+alpha: 0.1    batchsize: 16    dim: 64    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.001    lrdecay: 0.5    lrdecayEpoch: 1000    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model loading complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 0.56, negtive loss : 3.56, worst lambd: 4.07, worst gap: 0.08:   0%|          | 0/500 [00:10<?, ?it/s]
+Epoch 26 | postive loss : 0.55, negtive loss : 3.56, worst lambd: 4.06, worst gap: 0.10:   5%|▌         | 27/500 [00:30<08:49,  1.12s/it]
+Epoch 54 | postive loss : 0.55, negtive loss : 3.57, worst lambd: 3.90, worst gap: 0.05:  11%|█         | 55/500 [01:01<08:15,  1.11s/it]
+Epoch 82 | postive loss : 0.55, negtive loss : 3.59, worst lambd: 4.07, worst gap: 0.06:  17%|█▋        | 83/500 [01:32<07:43,  1.11s/it]
+Epoch 110 | postive loss : 0.55, negtive loss : 3.60, worst lambd: 3.93, worst gap: 0.09:  22%|██▏       | 111/500 [02:03<07:12,  1.11s/it]
+Epoch 137 | postive loss : 0.55, negtive loss : 3.61, worst lambd: 4.05, worst gap: 0.07:  28%|██▊       | 138/500 [02:33<06:42,  1.11s/it]
+Epoch 165 | postive loss : 0.54, negtive loss : 3.63, worst lambd: 4.05, worst gap: 0.10:  33%|███▎      | 166/500 [03:04<06:09,  1.11s/it]
+Epoch 193 | postive loss : 0.54, negtive loss : 3.65, worst lambd: 3.96, worst gap: 0.10:  39%|███▉      | 194/500 [03:35<05:38,  1.11s/it]
+Epoch 221 | postive loss : 0.54, negtive loss : 3.66, worst lambd: 3.92, worst gap: 0.05:  44%|████▍     | 222/500 [04:06<05:07,  1.11s/it]
+Epoch 248 | postive loss : 0.54, negtive loss : 3.68, worst lambd: 3.83, worst gap: 0.08:  50%|████▉     | 249/500 [04:36<04:38,  1.11s/it]
+Epoch 275 | postive loss : 0.54, negtive loss : 3.68, worst lambd: 4.03, worst gap: 0.08:  55%|█████▌    | 276/500 [05:06<04:08,  1.11s/it]
+Epoch 302 | postive loss : 0.54, negtive loss : 3.69, worst lambd: 3.95, worst gap: 0.10:  61%|██████    | 303/500 [05:36<03:39,  1.11s/it]
+Epoch 330 | postive loss : 0.54, negtive loss : 3.71, worst lambd: 3.82, worst gap: 0.09:  66%|██████▌   | 331/500 [06:07<03:07,  1.11s/it]
+Epoch 358 | postive loss : 0.53, negtive loss : 3.71, worst lambd: 4.04, worst gap: 0.07:  72%|███████▏  | 359/500 [06:38<02:36,  1.11s/it]
+Epoch 386 | postive loss : 0.54, negtive loss : 3.73, worst lambd: 3.89, worst gap: 0.08:  77%|███████▋  | 387/500 [07:09<02:05,  1.11s/it]
+Epoch 414 | postive loss : 0.53, negtive loss : 3.75, worst lambd: 3.97, worst gap: 0.08:  83%|████████▎ | 415/500 [07:40<01:34,  1.11s/it]
+Epoch 442 | postive loss : 0.53, negtive loss : 3.75, worst lambd: 3.85, worst gap: 0.07:  89%|████████▊ | 443/500 [08:11<01:03,  1.11s/it]
+Epoch 470 | postive loss : 0.53, negtive loss : 3.76, worst lambd: 3.88, worst gap: 0.09:  94%|█████████▍| 471/500 [08:42<00:32,  1.11s/it]
+Epoch 498 | postive loss : 0.53, negtive loss : 3.78, worst lambd: 3.78, worst gap: 0.07: 100%|█████████▉| 499/500 [09:13<00:01,  1.11s/it]
+Epoch 499 | postive loss : 0.53, negtive loss : 3.78, worst lambd: 3.71, worst gap: 0.09: 100%|██████████| 500/500 [09:14<00:00,  1.11s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 16:57:59
+alpha: 0.1    batchsize: 16    dim: 128    epoch: 1000    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1000 [00:00<?, ?it/s]
+Epoch 16 | postive loss : 12.51, negtive loss : 6.80, worst lambd: 110.14, worst gap: 0.59:   0%|          | 0/1000 [00:20<?, ?it/s]
+Epoch 26 | postive loss : 3.25, negtive loss : 1.79, worst lambd: 62.78, worst gap: 0.26:   3%|▎         | 27/1000 [00:30<18:31,  1.14s/it]
+Epoch 53 | postive loss : 1.96, negtive loss : 1.38, worst lambd: 4.64, worst gap: 0.13:   5%|▌         | 54/1000 [01:01<18:03,  1.15s/it] 
+Epoch 80 | postive loss : 1.71, negtive loss : 1.46, worst lambd: 4.37, worst gap: 0.11:   8%|▊         | 81/1000 [01:32<17:24,  1.14s/it]
+Epoch 107 | postive loss : 1.57, negtive loss : 1.53, worst lambd: 4.48, worst gap: 0.08:  11%|█         | 108/1000 [02:02<16:50,  1.13s/it]
+Epoch 134 | postive loss : 1.46, negtive loss : 1.59, worst lambd: 4.64, worst gap: 0.09:  14%|█▎        | 135/1000 [02:32<16:15,  1.13s/it]
+Epoch 161 | postive loss : 1.37, negtive loss : 1.66, worst lambd: 4.79, worst gap: 0.06:  16%|█▌        | 162/1000 [03:03<15:42,  1.12s/it]
+Epoch 188 | postive loss : 1.28, negtive loss : 1.73, worst lambd: 4.86, worst gap: 0.07:  19%|█▉        | 189/1000 [03:33<15:10,  1.12s/it]
+Epoch 215 | postive loss : 1.20, negtive loss : 1.80, worst lambd: 5.02, worst gap: 0.07:  22%|██▏       | 216/1000 [04:03<14:39,  1.12s/it]
+Epoch 242 | postive loss : 1.13, negtive loss : 1.88, worst lambd: 4.87, worst gap: 0.09:  24%|██▍       | 243/1000 [04:33<14:09,  1.12s/it]
+Epoch 269 | postive loss : 1.07, negtive loss : 1.96, worst lambd: 4.70, worst gap: 0.07:  27%|██▋       | 270/1000 [05:04<13:38,  1.12s/it]
+Epoch 296 | postive loss : 1.02, negtive loss : 2.05, worst lambd: 4.69, worst gap: 0.11:  30%|██▉       | 297/1000 [05:34<13:09,  1.12s/it]
+Epoch 323 | postive loss : 0.95, negtive loss : 2.14, worst lambd: 4.44, worst gap: 0.04:  32%|███▏      | 324/1000 [06:04<12:38,  1.12s/it]
+Epoch 350 | postive loss : 0.91, negtive loss : 2.22, worst lambd: 4.39, worst gap: 0.07:  35%|███▌      | 351/1000 [06:35<12:08,  1.12s/it]
+Epoch 377 | postive loss : 0.86, negtive loss : 2.31, worst lambd: 4.61, worst gap: 0.08:  38%|███▊      | 378/1000 [07:05<11:39,  1.12s/it]
+Epoch 404 | postive loss : 0.83, negtive loss : 2.40, worst lambd: 4.51, worst gap: 0.13:  40%|████      | 405/1000 [07:36<11:09,  1.13s/it]
+Epoch 431 | postive loss : 0.79, negtive loss : 2.48, worst lambd: 4.18, worst gap: 0.09:  43%|████▎     | 432/1000 [08:06<10:42,  1.13s/it]
+Epoch 458 | postive loss : 0.77, negtive loss : 2.55, worst lambd: 4.28, worst gap: 0.11:  46%|████▌     | 459/1000 [08:37<10:14,  1.14s/it]
+Epoch 485 | postive loss : 0.74, negtive loss : 2.62, worst lambd: 4.39, worst gap: 0.07:  49%|████▊     | 486/1000 [09:08<09:45,  1.14s/it]
+Epoch 512 | postive loss : 0.66, negtive loss : 2.71, worst lambd: 4.18, worst gap: 0.10:  51%|█████▏    | 513/1000 [09:39<09:15,  1.14s/it]
+Epoch 539 | postive loss : 0.65, negtive loss : 2.75, worst lambd: 4.10, worst gap: 0.07:  54%|█████▍    | 540/1000 [10:10<08:42,  1.14s/it]
+Epoch 566 | postive loss : 0.65, negtive loss : 2.78, worst lambd: 4.38, worst gap: 0.07:  57%|█████▋    | 567/1000 [10:40<08:11,  1.14s/it]
+Epoch 593 | postive loss : 0.64, negtive loss : 2.82, worst lambd: 4.31, worst gap: 0.09:  59%|█████▉    | 594/1000 [11:11<07:41,  1.14s/it]
+Epoch 619 | postive loss : 0.63, negtive loss : 2.85, worst lambd: 4.17, worst gap: 0.10:  62%|██████▏   | 620/1000 [11:41<07:15,  1.15s/it]
+Epoch 646 | postive loss : 0.63, negtive loss : 2.89, worst lambd: 4.33, worst gap: 0.10:  65%|██████▍   | 647/1000 [12:12<06:44,  1.14s/it]
+Epoch 673 | postive loss : 0.62, negtive loss : 2.91, worst lambd: 4.23, worst gap: 0.10:  67%|██████▋   | 674/1000 [12:43<06:13,  1.14s/it]
+Epoch 700 | postive loss : 0.61, negtive loss : 2.95, worst lambd: 4.18, worst gap: 0.08:  70%|███████   | 701/1000 [13:14<05:42,  1.15s/it]
+Epoch 727 | postive loss : 0.61, negtive loss : 2.98, worst lambd: 4.18, worst gap: 0.07:  73%|███████▎  | 728/1000 [13:45<05:11,  1.15s/it]
+Epoch 754 | postive loss : 0.60, negtive loss : 3.00, worst lambd: 4.00, worst gap: 0.06:  76%|███████▌  | 755/1000 [14:16<04:39,  1.14s/it]
+Epoch 781 | postive loss : 0.60, negtive loss : 3.04, worst lambd: 4.09, worst gap: 0.11:  78%|███████▊  | 782/1000 [14:46<04:07,  1.14s/it]
+Epoch 808 | postive loss : 0.59, negtive loss : 3.06, worst lambd: 3.91, worst gap: 0.10:  81%|████████  | 809/1000 [15:16<03:36,  1.13s/it]
+Epoch 835 | postive loss : 0.59, negtive loss : 3.08, worst lambd: 3.97, worst gap: 0.10:  84%|████████▎ | 836/1000 [15:47<03:05,  1.13s/it]
+Epoch 862 | postive loss : 0.59, negtive loss : 3.11, worst lambd: 3.69, worst gap: 0.11:  86%|████████▋ | 863/1000 [16:17<02:34,  1.13s/it]
+Epoch 889 | postive loss : 0.58, negtive loss : 3.13, worst lambd: 3.73, worst gap: 0.12:  89%|████████▉ | 890/1000 [16:48<02:04,  1.13s/it]
+Epoch 916 | postive loss : 0.58, negtive loss : 3.16, worst lambd: 3.54, worst gap: 0.08:  92%|█████████▏| 917/1000 [17:18<01:33,  1.13s/it]
+Epoch 943 | postive loss : 0.58, negtive loss : 3.18, worst lambd: 3.54, worst gap: 0.06:  94%|█████████▍| 944/1000 [17:49<01:03,  1.13s/it]
+Epoch 970 | postive loss : 0.57, negtive loss : 3.20, worst lambd: 3.46, worst gap: 0.10:  97%|█████████▋| 971/1000 [18:19<00:32,  1.13s/it]
+Epoch 997 | postive loss : 0.57, negtive loss : 3.22, worst lambd: 3.49, worst gap: 0.07: 100%|█████████▉| 998/1000 [18:50<00:02,  1.13s/it]
+Epoch 999 | postive loss : 0.57, negtive loss : 3.23, worst lambd: 3.49, worst gap: 0.06: 100%|██████████| 1000/1000 [18:52<00:00,  1.13s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+
+2023-03-17 17:18:18
+alpha: 0.1    batchsize: 16    dim: 128    epoch: 500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 5e-05    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model loading complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 16 | postive loss : 0.54, negtive loss : 3.29, worst lambd: 3.49, worst gap: 0.09:   0%|          | 0/500 [00:20<?, ?it/s]
+Epoch 26 | postive loss : 0.55, negtive loss : 3.30, worst lambd: 3.50, worst gap: 0.09:   5%|▌         | 27/500 [00:30<08:58,  1.14s/it]
+Epoch 53 | postive loss : 0.55, negtive loss : 3.32, worst lambd: 3.49, worst gap: 0.12:  11%|█         | 54/500 [01:01<08:23,  1.13s/it]
+Epoch 80 | postive loss : 0.55, negtive loss : 3.32, worst lambd: 3.47, worst gap: 0.11:  16%|█▌        | 81/500 [01:31<07:52,  1.13s/it]
+Epoch 108 | postive loss : 0.54, negtive loss : 3.32, worst lambd: 3.46, worst gap: 0.08:  22%|██▏       | 109/500 [02:02<07:17,  1.12s/it]
+Epoch 136 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.47, worst gap: 0.13:  27%|██▋       | 137/500 [02:33<06:43,  1.11s/it]
+Epoch 164 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.10:  33%|███▎      | 165/500 [03:04<06:11,  1.11s/it]
+Epoch 192 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.46, worst gap: 0.14:  39%|███▊      | 193/500 [03:35<05:39,  1.11s/it]
+Epoch 219 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.13:  44%|████▍     | 220/500 [04:05<05:11,  1.11s/it]
+Epoch 246 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.46, worst gap: 0.12:  49%|████▉     | 247/500 [04:35<04:42,  1.12s/it]
+Epoch 273 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.13:  55%|█████▍    | 274/500 [05:05<04:12,  1.12s/it]
+Epoch 300 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.11:  60%|██████    | 301/500 [05:35<03:42,  1.12s/it]
+Epoch 327 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.11:  66%|██████▌   | 328/500 [06:06<03:12,  1.12s/it]
+Epoch 354 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.46, worst gap: 0.11:  71%|███████   | 355/500 [06:36<02:41,  1.12s/it]
+Epoch 381 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.12:  76%|███████▋  | 382/500 [07:06<02:11,  1.12s/it]
+Epoch 408 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.45, worst gap: 0.10:  82%|████████▏ | 409/500 [07:36<01:41,  1.12s/it]
+Epoch 435 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 3.44, worst gap: 0.11:  87%|████████▋ | 436/500 [08:06<01:11,  1.11s/it]
+Epoch 462 | postive loss : 0.54, negtive loss : 3.32, worst lambd: 3.45, worst gap: 0.12:  93%|█████████▎| 463/500 [08:36<00:41,  1.11s/it]
+Epoch 490 | postive loss : 0.54, negtive loss : 3.32, worst lambd: 3.44, worst gap: 0.11:  98%|█████████▊| 491/500 [09:07<00:10,  1.11s/it]
+Epoch 499 | postive loss : 0.54, negtive loss : 3.32, worst lambd: 3.45, worst gap: 0.08: 100%|██████████| 500/500 [09:17<00:00,  1.12s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 17:33:37
+alpha: 0.1    batchsize: 16    dim: 256    epoch: 1500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1500 [00:00<?, ?it/s]
+Epoch 15 | postive loss : 30.80, negtive loss : 16.33, worst lambd: 260.05, worst gap: 0.64:   0%|          | 0/1500 [00:19<?, ?it/s]
+Epoch 24 | postive loss : 5.38, negtive loss : 3.43, worst lambd: 165.88, worst gap: 0.40:   2%|▏         | 25/1500 [00:30<29:58,  1.22s/it]
+Epoch 50 | postive loss : 2.08, negtive loss : 1.37, worst lambd: 8.49, worst gap: 0.12:   3%|▎         | 51/1500 [01:01<29:06,  1.21s/it]  
+Epoch 76 | postive loss : 1.80, negtive loss : 1.44, worst lambd: 4.45, worst gap: 0.17:   5%|▌         | 77/1500 [01:32<28:29,  1.20s/it]
+Epoch 102 | postive loss : 1.65, negtive loss : 1.50, worst lambd: 4.74, worst gap: 0.12:   7%|▋         | 103/1500 [02:03<27:55,  1.20s/it]
+Epoch 128 | postive loss : 1.54, negtive loss : 1.56, worst lambd: 4.71, worst gap: 0.11:   9%|▊         | 129/1500 [02:34<27:22,  1.20s/it]
+Epoch 154 | postive loss : 1.44, negtive loss : 1.62, worst lambd: 4.51, worst gap: 0.10:  10%|█         | 155/1500 [03:06<26:51,  1.20s/it]
+Epoch 180 | postive loss : 1.34, negtive loss : 1.69, worst lambd: 4.76, worst gap: 0.12:  12%|█▏        | 181/1500 [03:37<26:19,  1.20s/it]
+Epoch 205 | postive loss : 1.26, negtive loss : 1.76, worst lambd: 4.65, worst gap: 0.14:  14%|█▎        | 206/1500 [04:07<25:52,  1.20s/it]
+Epoch 230 | postive loss : 1.18, negtive loss : 1.83, worst lambd: 4.98, worst gap: 0.10:  15%|█▌        | 231/1500 [04:37<25:23,  1.20s/it]
+Epoch 255 | postive loss : 1.12, negtive loss : 1.91, worst lambd: 4.79, worst gap: 0.09:  17%|█▋        | 256/1500 [05:07<24:55,  1.20s/it]
+Epoch 280 | postive loss : 1.05, negtive loss : 1.98, worst lambd: 4.82, worst gap: 0.11:  19%|█▊        | 281/1500 [05:37<24:26,  1.20s/it]
+Epoch 305 | postive loss : 0.99, negtive loss : 2.07, worst lambd: 4.61, worst gap: 0.10:  20%|██        | 306/1500 [06:07<23:57,  1.20s/it]
+Epoch 330 | postive loss : 0.94, negtive loss : 2.16, worst lambd: 4.82, worst gap: 0.09:  22%|██▏       | 331/1500 [06:37<23:29,  1.21s/it]
+Epoch 355 | postive loss : 0.90, negtive loss : 2.24, worst lambd: 4.83, worst gap: 0.06:  24%|██▎       | 356/1500 [07:07<22:57,  1.20s/it]
+Epoch 381 | postive loss : 0.85, negtive loss : 2.32, worst lambd: 4.83, worst gap: 0.08:  25%|██▌       | 382/1500 [07:39<22:24,  1.20s/it]
+Epoch 407 | postive loss : 0.82, negtive loss : 2.41, worst lambd: 4.99, worst gap: 0.11:  27%|██▋       | 408/1500 [08:10<21:50,  1.20s/it]
+Epoch 433 | postive loss : 0.79, negtive loss : 2.47, worst lambd: 4.56, worst gap: 0.10:  29%|██▉       | 434/1500 [08:41<21:18,  1.20s/it]
+Epoch 459 | postive loss : 0.76, negtive loss : 2.55, worst lambd: 4.86, worst gap: 0.11:  31%|███       | 460/1500 [09:12<20:46,  1.20s/it]
+Epoch 485 | postive loss : 0.74, negtive loss : 2.61, worst lambd: 4.92, worst gap: 0.07:  32%|███▏      | 486/1500 [09:43<20:13,  1.20s/it]
+Epoch 511 | postive loss : 0.65, negtive loss : 2.71, worst lambd: 4.61, worst gap: 0.10:  34%|███▍      | 512/1500 [10:14<19:41,  1.20s/it]
+Epoch 537 | postive loss : 0.64, negtive loss : 2.74, worst lambd: 4.89, worst gap: 0.07:  36%|███▌      | 538/1500 [10:45<19:09,  1.19s/it]
+Epoch 563 | postive loss : 0.63, negtive loss : 2.78, worst lambd: 4.69, worst gap: 0.06:  38%|███▊      | 564/1500 [11:16<18:37,  1.19s/it]
+Epoch 589 | postive loss : 0.63, negtive loss : 2.81, worst lambd: 4.53, worst gap: 0.10:  39%|███▉      | 590/1500 [11:47<18:05,  1.19s/it]
+Epoch 615 | postive loss : 0.62, negtive loss : 2.84, worst lambd: 4.02, worst gap: 0.08:  41%|████      | 616/1500 [12:18<17:34,  1.19s/it]
+Epoch 641 | postive loss : 0.61, negtive loss : 2.87, worst lambd: 4.01, worst gap: 0.10:  43%|████▎     | 642/1500 [12:49<17:04,  1.19s/it]
+Epoch 667 | postive loss : 0.61, negtive loss : 2.90, worst lambd: 3.99, worst gap: 0.09:  45%|████▍     | 668/1500 [13:20<16:33,  1.19s/it]
+Epoch 693 | postive loss : 0.60, negtive loss : 2.93, worst lambd: 3.88, worst gap: 0.09:  46%|████▋     | 694/1500 [13:51<16:02,  1.19s/it]
+Epoch 718 | postive loss : 0.60, negtive loss : 2.96, worst lambd: 4.03, worst gap: 0.11:  48%|████▊     | 719/1500 [14:21<15:36,  1.20s/it]
+Epoch 743 | postive loss : 0.59, negtive loss : 2.99, worst lambd: 4.07, worst gap: 0.11:  50%|████▉     | 744/1500 [14:52<15:09,  1.20s/it]
+Epoch 768 | postive loss : 0.59, negtive loss : 3.01, worst lambd: 4.00, worst gap: 0.05:  51%|█████▏    | 769/1500 [15:22<14:41,  1.21s/it]
+Epoch 793 | postive loss : 0.58, negtive loss : 3.03, worst lambd: 3.97, worst gap: 0.09:  53%|█████▎    | 794/1500 [15:52<14:11,  1.21s/it]
+Epoch 819 | postive loss : 0.58, negtive loss : 3.06, worst lambd: 3.82, worst gap: 0.09:  55%|█████▍    | 820/1500 [16:23<13:38,  1.20s/it]
+Epoch 845 | postive loss : 0.58, negtive loss : 3.09, worst lambd: 3.85, worst gap: 0.11:  56%|█████▋    | 846/1500 [16:55<13:05,  1.20s/it]
+Epoch 871 | postive loss : 0.57, negtive loss : 3.11, worst lambd: 3.87, worst gap: 0.05:  58%|█████▊    | 872/1500 [17:26<12:33,  1.20s/it]
+Epoch 897 | postive loss : 0.57, negtive loss : 3.13, worst lambd: 3.69, worst gap: 0.10:  60%|█████▉    | 898/1500 [17:57<12:01,  1.20s/it]
+Epoch 923 | postive loss : 0.57, negtive loss : 3.16, worst lambd: 3.58, worst gap: 0.08:  62%|██████▏   | 924/1500 [18:28<11:29,  1.20s/it]
+Epoch 949 | postive loss : 0.56, negtive loss : 3.17, worst lambd: 3.42, worst gap: 0.09:  63%|██████▎   | 950/1500 [18:59<10:57,  1.20s/it]
+Epoch 975 | postive loss : 0.56, negtive loss : 3.20, worst lambd: 3.40, worst gap: 0.05:  65%|██████▌   | 976/1500 [19:30<10:25,  1.19s/it]
+Epoch 1001 | postive loss : 0.54, negtive loss : 3.24, worst lambd: 3.24, worst gap: 0.10:  67%|██████▋   | 1002/1500 [20:01<09:54,  1.19s/it]
+Epoch 1027 | postive loss : 0.54, negtive loss : 3.27, worst lambd: 3.20, worst gap: 0.06:  69%|██████▊   | 1028/1500 [20:32<09:23,  1.19s/it]
+Epoch 1053 | postive loss : 0.54, negtive loss : 3.28, worst lambd: 3.13, worst gap: 0.09:  70%|███████   | 1054/1500 [21:03<08:52,  1.19s/it]
+Epoch 1079 | postive loss : 0.54, negtive loss : 3.30, worst lambd: 3.14, worst gap: 0.11:  72%|███████▏  | 1080/1500 [21:34<08:22,  1.20s/it]
+Epoch 1105 | postive loss : 0.54, negtive loss : 3.30, worst lambd: 3.05, worst gap: 0.09:  74%|███████▎  | 1106/1500 [22:05<07:51,  1.20s/it]
+Epoch 1130 | postive loss : 0.54, negtive loss : 3.32, worst lambd: 3.07, worst gap: 0.12:  75%|███████▌  | 1131/1500 [22:35<07:21,  1.20s/it]
+Epoch 1155 | postive loss : 0.54, negtive loss : 3.33, worst lambd: 3.02, worst gap: 0.12:  77%|███████▋  | 1156/1500 [23:05<06:53,  1.20s/it]
+Epoch 1180 | postive loss : 0.54, negtive loss : 3.34, worst lambd: 3.06, worst gap: 0.06:  79%|███████▊  | 1181/1500 [23:36<06:23,  1.20s/it]
+Epoch 1205 | postive loss : 0.54, negtive loss : 3.35, worst lambd: 3.06, worst gap: 0.10:  80%|████████  | 1206/1500 [24:06<05:53,  1.20s/it]
+Epoch 1230 | postive loss : 0.54, negtive loss : 3.36, worst lambd: 3.02, worst gap: 0.10:  82%|████████▏ | 1231/1500 [24:36<05:23,  1.20s/it]
+Epoch 1255 | postive loss : 0.53, negtive loss : 3.37, worst lambd: 3.02, worst gap: 0.11:  84%|████████▎ | 1256/1500 [25:06<04:53,  1.20s/it]
+Epoch 1280 | postive loss : 0.53, negtive loss : 3.38, worst lambd: 3.01, worst gap: 0.10:  85%|████████▌ | 1281/1500 [25:36<04:23,  1.20s/it]
+Epoch 1305 | postive loss : 0.53, negtive loss : 3.39, worst lambd: 2.98, worst gap: 0.07:  87%|████████▋ | 1306/1500 [26:06<03:53,  1.20s/it]
+Epoch 1330 | postive loss : 0.53, negtive loss : 3.40, worst lambd: 2.98, worst gap: 0.07:  89%|████████▊ | 1331/1500 [26:36<03:23,  1.20s/it]
+Epoch 1355 | postive loss : 0.53, negtive loss : 3.41, worst lambd: 2.91, worst gap: 0.09:  90%|█████████ | 1356/1500 [27:06<02:53,  1.20s/it]
+Epoch 1380 | postive loss : 0.53, negtive loss : 3.42, worst lambd: 2.95, worst gap: 0.08:  92%|█████████▏| 1381/1500 [27:36<02:23,  1.20s/it]
+Epoch 1405 | postive loss : 0.53, negtive loss : 3.43, worst lambd: 2.90, worst gap: 0.11:  94%|█████████▎| 1406/1500 [28:07<01:53,  1.20s/it]
+Epoch 1430 | postive loss : 0.53, negtive loss : 3.44, worst lambd: 2.83, worst gap: 0.08:  95%|█████████▌| 1431/1500 [28:37<01:23,  1.20s/it]
+Epoch 1455 | postive loss : 0.53, negtive loss : 3.44, worst lambd: 2.86, worst gap: 0.09:  97%|█████████▋| 1456/1500 [29:07<00:52,  1.20s/it]
+Epoch 1480 | postive loss : 0.53, negtive loss : 3.45, worst lambd: 2.80, worst gap: 0.05:  99%|█████████▊| 1481/1500 [29:37<00:22,  1.20s/it]
+Epoch 1499 | postive loss : 0.53, negtive loss : 3.46, worst lambd: 2.75, worst gap: 0.12: 100%|██████████| 1500/1500 [30:00<00:00,  1.20s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+
+2023-03-17 18:08:34
+alpha: 0.1    batchsize: 16    dim: 512    epoch: 1500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1500 [00:00<?, ?it/s]
+Epoch 12 | postive loss : 118.48, negtive loss : 55.90, worst lambd: 596.97, worst gap: 2.62:   0%|          | 0/1500 [00:19<?, ?it/s]
+Epoch 20 | postive loss : 19.79, negtive loss : 12.73, worst lambd: 432.31, worst gap: 0.47:   1%|▏         | 21/1500 [00:30<35:56,  1.46s/it]
+Epoch 41 | postive loss : 2.44, negtive loss : 1.37, worst lambd: 57.28, worst gap: 0.14:   3%|▎         | 42/1500 [01:01<35:22,  1.46s/it]   
+Epoch 62 | postive loss : 2.06, negtive loss : 1.42, worst lambd: 4.77, worst gap: 0.10:   4%|▍         | 63/1500 [01:31<34:45,  1.45s/it] 
+Epoch 84 | postive loss : 1.89, negtive loss : 1.47, worst lambd: 5.18, worst gap: 0.12:   6%|▌         | 85/1500 [02:02<33:50,  1.44s/it]
+Epoch 106 | postive loss : 1.76, negtive loss : 1.51, worst lambd: 4.85, worst gap: 0.12:   7%|▋         | 107/1500 [02:33<32:58,  1.42s/it]
+Epoch 128 | postive loss : 1.64, negtive loss : 1.56, worst lambd: 4.77, worst gap: 0.13:   9%|▊         | 129/1500 [03:03<32:12,  1.41s/it]
+Epoch 150 | postive loss : 1.55, negtive loss : 1.61, worst lambd: 4.50, worst gap: 0.07:  10%|█         | 151/1500 [03:34<31:32,  1.40s/it]
+Epoch 172 | postive loss : 1.45, negtive loss : 1.66, worst lambd: 4.87, worst gap: 0.07:  12%|█▏        | 173/1500 [04:04<30:56,  1.40s/it]
+Epoch 194 | postive loss : 1.37, negtive loss : 1.72, worst lambd: 4.88, worst gap: 0.07:  13%|█▎        | 195/1500 [04:35<30:21,  1.40s/it]
+Epoch 216 | postive loss : 1.29, negtive loss : 1.78, worst lambd: 4.70, worst gap: 0.07:  14%|█▍        | 217/1500 [05:06<29:48,  1.39s/it]
+Epoch 238 | postive loss : 1.22, negtive loss : 1.85, worst lambd: 4.83, worst gap: 0.07:  16%|█▌        | 239/1500 [05:36<29:17,  1.39s/it]
+Epoch 260 | postive loss : 1.15, negtive loss : 1.91, worst lambd: 4.79, worst gap: 0.10:  17%|█▋        | 261/1500 [06:07<28:45,  1.39s/it]
+Epoch 282 | postive loss : 1.07, negtive loss : 1.99, worst lambd: 4.53, worst gap: 0.08:  19%|█▉        | 283/1500 [06:37<28:14,  1.39s/it]
+Epoch 304 | postive loss : 1.02, negtive loss : 2.07, worst lambd: 4.77, worst gap: 0.11:  20%|██        | 305/1500 [07:08<27:42,  1.39s/it]
+Epoch 326 | postive loss : 0.97, negtive loss : 2.15, worst lambd: 4.55, worst gap: 0.10:  22%|██▏       | 327/1500 [07:39<27:11,  1.39s/it]
+Epoch 348 | postive loss : 0.92, negtive loss : 2.22, worst lambd: 4.80, worst gap: 0.07:  23%|██▎       | 349/1500 [08:09<26:41,  1.39s/it]
+Epoch 370 | postive loss : 0.88, negtive loss : 2.30, worst lambd: 4.81, worst gap: 0.12:  25%|██▍       | 371/1500 [08:40<26:10,  1.39s/it]
+Epoch 392 | postive loss : 0.84, negtive loss : 2.37, worst lambd: 4.69, worst gap: 0.10:  26%|██▌       | 393/1500 [09:10<25:39,  1.39s/it]
+Epoch 414 | postive loss : 0.80, negtive loss : 2.44, worst lambd: 4.80, worst gap: 0.13:  28%|██▊       | 415/1500 [09:41<25:08,  1.39s/it]
+Epoch 436 | postive loss : 0.78, negtive loss : 2.51, worst lambd: 4.79, worst gap: 0.09:  29%|██▉       | 437/1500 [10:12<24:38,  1.39s/it]
+Epoch 458 | postive loss : 0.75, negtive loss : 2.55, worst lambd: 4.79, worst gap: 0.10:  31%|███       | 459/1500 [10:42<24:07,  1.39s/it]
+Epoch 480 | postive loss : 0.73, negtive loss : 2.62, worst lambd: 4.49, worst gap: 0.11:  32%|███▏      | 481/1500 [11:13<23:37,  1.39s/it]
+Epoch 502 | postive loss : 0.63, negtive loss : 2.71, worst lambd: 4.75, worst gap: 0.10:  34%|███▎      | 503/1500 [11:44<23:16,  1.40s/it]
+Epoch 523 | postive loss : 0.63, negtive loss : 2.75, worst lambd: 4.44, worst gap: 0.08:  35%|███▍      | 524/1500 [12:14<22:57,  1.41s/it]
+Epoch 544 | postive loss : 0.63, negtive loss : 2.78, worst lambd: 4.62, worst gap: 0.07:  36%|███▋      | 545/1500 [12:45<22:36,  1.42s/it]
+Epoch 565 | postive loss : 0.63, negtive loss : 2.81, worst lambd: 4.55, worst gap: 0.11:  38%|███▊      | 566/1500 [13:15<22:14,  1.43s/it]
+Epoch 586 | postive loss : 0.62, negtive loss : 2.83, worst lambd: 4.43, worst gap: 0.07:  39%|███▉      | 587/1500 [13:45<21:50,  1.44s/it]
+Epoch 607 | postive loss : 0.62, negtive loss : 2.86, worst lambd: 4.44, worst gap: 0.09:  41%|████      | 608/1500 [14:16<21:23,  1.44s/it]
+Epoch 628 | postive loss : 0.61, negtive loss : 2.88, worst lambd: 4.25, worst gap: 0.07:  42%|████▏     | 629/1500 [14:46<20:57,  1.44s/it]
+Epoch 649 | postive loss : 0.60, negtive loss : 2.91, worst lambd: 4.33, worst gap: 0.12:  43%|████▎     | 650/1500 [15:17<20:27,  1.44s/it]
+Epoch 670 | postive loss : 0.60, negtive loss : 2.93, worst lambd: 4.22, worst gap: 0.06:  45%|████▍     | 671/1500 [15:47<19:58,  1.45s/it]
+Epoch 691 | postive loss : 0.59, negtive loss : 2.96, worst lambd: 4.20, worst gap: 0.06:  46%|████▌     | 692/1500 [16:18<19:32,  1.45s/it]
+Epoch 712 | postive loss : 0.59, negtive loss : 2.98, worst lambd: 4.19, worst gap: 0.07:  48%|████▊     | 713/1500 [16:49<19:03,  1.45s/it]
+Epoch 733 | postive loss : 0.59, negtive loss : 3.00, worst lambd: 4.09, worst gap: 0.10:  49%|████▉     | 734/1500 [17:19<18:31,  1.45s/it]
+Epoch 754 | postive loss : 0.59, negtive loss : 3.03, worst lambd: 4.05, worst gap: 0.10:  50%|█████     | 755/1500 [17:49<17:59,  1.45s/it]
+Epoch 775 | postive loss : 0.58, negtive loss : 3.05, worst lambd: 4.04, worst gap: 0.08:  52%|█████▏    | 776/1500 [18:20<17:28,  1.45s/it]
+Epoch 796 | postive loss : 0.58, negtive loss : 3.06, worst lambd: 3.96, worst gap: 0.07:  53%|█████▎    | 797/1500 [18:50<17:00,  1.45s/it]
+Epoch 817 | postive loss : 0.58, negtive loss : 3.09, worst lambd: 3.97, worst gap: 0.10:  55%|█████▍    | 818/1500 [19:21<16:29,  1.45s/it]
+Epoch 838 | postive loss : 0.57, negtive loss : 3.11, worst lambd: 3.99, worst gap: 0.09:  56%|█████▌    | 839/1500 [19:51<15:57,  1.45s/it]
+Epoch 859 | postive loss : 0.57, negtive loss : 3.13, worst lambd: 3.96, worst gap: 0.10:  57%|█████▋    | 860/1500 [20:21<15:26,  1.45s/it]
+Epoch 880 | postive loss : 0.57, negtive loss : 3.14, worst lambd: 3.97, worst gap: 0.10:  59%|█████▊    | 881/1500 [20:52<14:54,  1.45s/it]
+Epoch 901 | postive loss : 0.56, negtive loss : 3.15, worst lambd: 3.91, worst gap: 0.11:  60%|██████    | 902/1500 [21:22<14:24,  1.45s/it]
+Epoch 922 | postive loss : 0.56, negtive loss : 3.17, worst lambd: 3.82, worst gap: 0.07:  62%|██████▏   | 923/1500 [21:52<13:53,  1.44s/it]
+Epoch 943 | postive loss : 0.56, negtive loss : 3.18, worst lambd: 3.91, worst gap: 0.07:  63%|██████▎   | 944/1500 [22:23<13:23,  1.44s/it]
+Epoch 964 | postive loss : 0.56, negtive loss : 3.20, worst lambd: 3.79, worst gap: 0.06:  64%|██████▍   | 965/1500 [22:53<12:51,  1.44s/it]
+Epoch 986 | postive loss : 0.56, negtive loss : 3.22, worst lambd: 3.69, worst gap: 0.06:  66%|██████▌   | 987/1500 [23:24<12:13,  1.43s/it]
+Epoch 1008 | postive loss : 0.54, negtive loss : 3.29, worst lambd: 3.66, worst gap: 0.07:  67%|██████▋   | 1009/1500 [23:54<11:35,  1.42s/it]
+Epoch 1030 | postive loss : 0.54, negtive loss : 3.29, worst lambd: 3.74, worst gap: 0.12:  69%|██████▊   | 1031/1500 [24:25<11:00,  1.41s/it]
+Epoch 1052 | postive loss : 0.54, negtive loss : 3.30, worst lambd: 3.77, worst gap: 0.07:  70%|███████   | 1053/1500 [24:55<10:27,  1.40s/it]
+Epoch 1074 | postive loss : 0.53, negtive loss : 3.31, worst lambd: 3.61, worst gap: 0.08:  72%|███████▏  | 1075/1500 [25:26<09:54,  1.40s/it]
+Epoch 1096 | postive loss : 0.53, negtive loss : 3.32, worst lambd: 3.70, worst gap: 0.08:  73%|███████▎  | 1097/1500 [25:56<09:22,  1.40s/it]
+Epoch 1118 | postive loss : 0.53, negtive loss : 3.33, worst lambd: 3.70, worst gap: 0.08:  75%|███████▍  | 1119/1500 [26:27<08:51,  1.39s/it]
+Epoch 1140 | postive loss : 0.53, negtive loss : 3.34, worst lambd: 3.73, worst gap: 0.08:  76%|███████▌  | 1141/1500 [26:58<08:20,  1.39s/it]
+Epoch 1162 | postive loss : 0.53, negtive loss : 3.35, worst lambd: 3.80, worst gap: 0.11:  78%|███████▊  | 1163/1500 [27:28<07:49,  1.39s/it]
+Epoch 1183 | postive loss : 0.53, negtive loss : 3.36, worst lambd: 3.74, worst gap: 0.10:  79%|███████▉  | 1184/1500 [27:59<07:25,  1.41s/it]
+Epoch 1204 | postive loss : 0.53, negtive loss : 3.37, worst lambd: 3.69, worst gap: 0.11:  80%|████████  | 1205/1500 [28:29<06:57,  1.42s/it]
+Epoch 1225 | postive loss : 0.53, negtive loss : 3.37, worst lambd: 3.69, worst gap: 0.09:  82%|████████▏ | 1226/1500 [28:59<06:29,  1.42s/it]
+Epoch 1246 | postive loss : 0.53, negtive loss : 3.38, worst lambd: 3.64, worst gap: 0.10:  83%|████████▎ | 1247/1500 [29:29<06:00,  1.43s/it]
+Epoch 1267 | postive loss : 0.53, negtive loss : 3.39, worst lambd: 3.57, worst gap: 0.12:  85%|████████▍ | 1268/1500 [30:00<05:32,  1.43s/it]
+Epoch 1288 | postive loss : 0.53, negtive loss : 3.40, worst lambd: 3.57, worst gap: 0.10:  86%|████████▌ | 1289/1500 [30:30<05:03,  1.44s/it]
+Epoch 1309 | postive loss : 0.53, negtive loss : 3.41, worst lambd: 3.60, worst gap: 0.08:  87%|████████▋ | 1310/1500 [31:00<04:33,  1.44s/it]
+Epoch 1330 | postive loss : 0.53, negtive loss : 3.42, worst lambd: 3.56, worst gap: 0.12:  89%|████████▊ | 1331/1500 [31:30<04:03,  1.44s/it]
+Epoch 1352 | postive loss : 0.53, negtive loss : 3.43, worst lambd: 3.70, worst gap: 0.07:  90%|█████████ | 1353/1500 [32:02<03:30,  1.43s/it]
+Epoch 1373 | postive loss : 0.52, negtive loss : 3.44, worst lambd: 3.49, worst gap: 0.08:  92%|█████████▏| 1374/1500 [32:32<03:00,  1.43s/it]
+Epoch 1394 | postive loss : 0.52, negtive loss : 3.45, worst lambd: 3.51, worst gap: 0.08:  93%|█████████▎| 1395/1500 [33:02<02:30,  1.44s/it]
+Epoch 1415 | postive loss : 0.52, negtive loss : 3.45, worst lambd: 3.55, worst gap: 0.08:  94%|█████████▍| 1416/1500 [33:32<02:00,  1.44s/it]
+Epoch 1437 | postive loss : 0.52, negtive loss : 3.46, worst lambd: 3.61, worst gap: 0.11:  96%|█████████▌| 1438/1500 [34:04<01:28,  1.43s/it]
+Epoch 1458 | postive loss : 0.52, negtive loss : 3.47, worst lambd: 3.55, worst gap: 0.11:  97%|█████████▋| 1459/1500 [34:34<00:58,  1.43s/it]
+Epoch 1479 | postive loss : 0.52, negtive loss : 3.47, worst lambd: 3.62, worst gap: 0.07:  99%|█████████▊| 1480/1500 [35:04<00:28,  1.44s/it]
+Epoch 1499 | postive loss : 0.52, negtive loss : 3.49, worst lambd: 3.56, worst gap: 0.09: 100%|██████████| 1500/1500 [35:33<00:00,  1.42s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 18:45:13
+alpha: 0.1    batchsize: 16    dim: 256    epoch: 1500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1500 [00:00<?, ?it/s]
+Epoch 15 | postive loss : 30.75, negtive loss : 16.26, worst lambd: 271.88, worst gap: 0.63:   0%|          | 0/1500 [00:20<?, ?it/s]
+Epoch 24 | postive loss : 5.39, negtive loss : 3.44, worst lambd: 172.48, worst gap: 0.32:   2%|▏         | 25/1500 [00:30<29:59,  1.22s/it]
+Epoch 49 | postive loss : 2.11, negtive loss : 1.37, worst lambd: 10.41, worst gap: 0.16:   3%|▎         | 50/1500 [01:00<29:21,  1.21s/it] 
+Epoch 74 | postive loss : 1.82, negtive loss : 1.45, worst lambd: 4.38, worst gap: 0.08:   5%|▌         | 75/1500 [01:30<28:45,  1.21s/it] 
+Epoch 99 | postive loss : 1.67, negtive loss : 1.50, worst lambd: 4.74, worst gap: 0.14:   7%|▋         | 100/1500 [02:00<28:09,  1.21s/it]
+Epoch 125 | postive loss : 1.54, negtive loss : 1.57, worst lambd: 4.76, worst gap: 0.10:   8%|▊         | 126/1500 [02:32<27:33,  1.20s/it]
+Epoch 151 | postive loss : 1.44, negtive loss : 1.63, worst lambd: 5.05, worst gap: 0.08:  10%|█         | 152/1500 [03:03<26:59,  1.20s/it]
+Epoch 177 | postive loss : 1.35, negtive loss : 1.69, worst lambd: 5.08, worst gap: 0.07:  12%|█▏        | 178/1500 [03:34<26:26,  1.20s/it]
+Epoch 202 | postive loss : 1.27, negtive loss : 1.76, worst lambd: 5.00, worst gap: 0.11:  14%|█▎        | 203/1500 [04:04<25:57,  1.20s/it]
+Epoch 227 | postive loss : 1.19, negtive loss : 1.83, worst lambd: 5.27, worst gap: 0.07:  15%|█▌        | 228/1500 [04:34<25:31,  1.20s/it]
+Epoch 252 | postive loss : 1.12, negtive loss : 1.90, worst lambd: 5.58, worst gap: 0.06:  17%|█▋        | 253/1500 [05:04<25:04,  1.21s/it]
+Epoch 277 | postive loss : 1.05, negtive loss : 1.98, worst lambd: 5.58, worst gap: 0.10:  19%|█▊        | 278/1500 [05:35<24:35,  1.21s/it]
+Epoch 302 | postive loss : 0.99, negtive loss : 2.06, worst lambd: 5.68, worst gap: 0.07:  20%|██        | 303/1500 [06:05<24:06,  1.21s/it]
+Epoch 327 | postive loss : 0.94, negtive loss : 2.14, worst lambd: 5.37, worst gap: 0.09:  22%|██▏       | 328/1500 [06:35<23:35,  1.21s/it]
+Epoch 352 | postive loss : 0.90, negtive loss : 2.22, worst lambd: 5.46, worst gap: 0.09:  24%|██▎       | 353/1500 [07:05<23:02,  1.21s/it]
+Epoch 377 | postive loss : 0.85, negtive loss : 2.31, worst lambd: 5.67, worst gap: 0.07:  25%|██▌       | 378/1500 [07:35<22:32,  1.21s/it]
+Epoch 402 | postive loss : 0.82, negtive loss : 2.38, worst lambd: 5.86, worst gap: 0.10:  27%|██▋       | 403/1500 [08:05<22:01,  1.20s/it]
+Epoch 427 | postive loss : 0.79, negtive loss : 2.46, worst lambd: 5.82, worst gap: 0.12:  29%|██▊       | 428/1500 [08:36<21:32,  1.21s/it]
+Epoch 452 | postive loss : 0.76, negtive loss : 2.53, worst lambd: 5.72, worst gap: 0.06:  30%|███       | 453/1500 [09:06<21:02,  1.21s/it]
+Epoch 477 | postive loss : 0.74, negtive loss : 2.60, worst lambd: 6.14, worst gap: 0.06:  32%|███▏      | 478/1500 [09:36<20:30,  1.20s/it]
+Epoch 503 | postive loss : 0.64, negtive loss : 2.70, worst lambd: 5.90, worst gap: 0.06:  34%|███▎      | 504/1500 [10:07<19:57,  1.20s/it]
+Epoch 529 | postive loss : 0.64, negtive loss : 2.74, worst lambd: 5.80, worst gap: 0.10:  35%|███▌      | 530/1500 [10:38<19:24,  1.20s/it]
+Epoch 555 | postive loss : 0.63, negtive loss : 2.77, worst lambd: 5.80, worst gap: 0.10:  37%|███▋      | 556/1500 [11:09<18:52,  1.20s/it]
+Epoch 580 | postive loss : 0.63, negtive loss : 2.80, worst lambd: 5.85, worst gap: 0.09:  39%|███▊      | 581/1500 [11:39<18:22,  1.20s/it]
+Epoch 605 | postive loss : 0.62, negtive loss : 2.84, worst lambd: 5.66, worst gap: 0.06:  40%|████      | 606/1500 [12:09<17:53,  1.20s/it]
+Epoch 631 | postive loss : 0.61, negtive loss : 2.86, worst lambd: 5.77, worst gap: 0.10:  42%|████▏     | 632/1500 [12:40<17:19,  1.20s/it]
+Epoch 657 | postive loss : 0.61, negtive loss : 2.90, worst lambd: 5.81, worst gap: 0.07:  44%|████▍     | 658/1500 [13:11<16:48,  1.20s/it]
+Epoch 682 | postive loss : 0.60, negtive loss : 2.92, worst lambd: 5.61, worst gap: 0.09:  46%|████▌     | 683/1500 [13:42<16:20,  1.20s/it]
+Epoch 707 | postive loss : 0.60, negtive loss : 2.95, worst lambd: 5.24, worst gap: 0.13:  47%|████▋     | 708/1500 [14:12<15:55,  1.21s/it]
+Epoch 732 | postive loss : 0.60, negtive loss : 2.98, worst lambd: 4.88, worst gap: 0.08:  49%|████▉     | 733/1500 [14:42<15:27,  1.21s/it]
+Epoch 757 | postive loss : 0.59, negtive loss : 3.00, worst lambd: 5.01, worst gap: 0.10:  51%|█████     | 758/1500 [15:13<14:56,  1.21s/it]
+Epoch 782 | postive loss : 0.59, negtive loss : 3.02, worst lambd: 4.79, worst gap: 0.08:  52%|█████▏    | 783/1500 [15:43<14:24,  1.21s/it]
+Epoch 808 | postive loss : 0.58, negtive loss : 3.04, worst lambd: 4.80, worst gap: 0.05:  54%|█████▍    | 809/1500 [16:14<13:51,  1.20s/it]
+Epoch 834 | postive loss : 0.58, negtive loss : 3.08, worst lambd: 4.53, worst gap: 0.07:  56%|█████▌    | 835/1500 [16:45<13:18,  1.20s/it]
+Epoch 860 | postive loss : 0.57, negtive loss : 3.08, worst lambd: 4.71, worst gap: 0.09:  57%|█████▋    | 861/1500 [17:16<12:46,  1.20s/it]
+Epoch 886 | postive loss : 0.57, negtive loss : 3.11, worst lambd: 4.49, worst gap: 0.08:  59%|█████▉    | 887/1500 [17:47<12:14,  1.20s/it]
+Epoch 912 | postive loss : 0.57, negtive loss : 3.14, worst lambd: 4.38, worst gap: 0.10:  61%|██████    | 913/1500 [18:18<11:43,  1.20s/it]
+Epoch 938 | postive loss : 0.57, negtive loss : 3.16, worst lambd: 4.46, worst gap: 0.11:  63%|██████▎   | 939/1500 [18:49<11:11,  1.20s/it]
+Epoch 964 | postive loss : 0.56, negtive loss : 3.18, worst lambd: 4.40, worst gap: 0.09:  64%|██████▍   | 965/1500 [19:20<10:40,  1.20s/it]
+Epoch 990 | postive loss : 0.56, negtive loss : 3.19, worst lambd: 4.41, worst gap: 0.05:  66%|██████▌   | 991/1500 [19:52<10:09,  1.20s/it]
+Epoch 1015 | postive loss : 0.54, negtive loss : 3.26, worst lambd: 4.35, worst gap: 0.10:  68%|██████▊   | 1016/1500 [20:22<09:41,  1.20s/it]
+Epoch 1040 | postive loss : 0.54, negtive loss : 3.27, worst lambd: 4.40, worst gap: 0.08:  69%|██████▉   | 1041/1500 [20:52<09:12,  1.20s/it]
+Epoch 1065 | postive loss : 0.54, negtive loss : 3.28, worst lambd: 4.32, worst gap: 0.05:  71%|███████   | 1066/1500 [21:22<08:43,  1.21s/it]
+Epoch 1090 | postive loss : 0.54, negtive loss : 3.28, worst lambd: 4.27, worst gap: 0.10:  73%|███████▎  | 1091/1500 [21:53<08:13,  1.21s/it]
+Epoch 1115 | postive loss : 0.54, negtive loss : 3.30, worst lambd: 4.18, worst gap: 0.10:  74%|███████▍  | 1116/1500 [22:23<07:43,  1.21s/it]
+Epoch 1140 | postive loss : 0.54, negtive loss : 3.31, worst lambd: 4.23, worst gap: 0.10:  76%|███████▌  | 1141/1500 [22:53<07:13,  1.21s/it]
+Epoch 1165 | postive loss : 0.54, negtive loss : 3.32, worst lambd: 4.07, worst gap: 0.11:  78%|███████▊  | 1166/1500 [23:23<06:43,  1.21s/it]
+Epoch 1190 | postive loss : 0.54, negtive loss : 3.33, worst lambd: 4.02, worst gap: 0.10:  79%|███████▉  | 1191/1500 [23:53<06:12,  1.21s/it]
+Epoch 1215 | postive loss : 0.53, negtive loss : 3.34, worst lambd: 3.93, worst gap: 0.08:  81%|████████  | 1216/1500 [24:23<05:42,  1.21s/it]
+Epoch 1240 | postive loss : 0.53, negtive loss : 3.35, worst lambd: 3.96, worst gap: 0.10:  83%|████████▎ | 1241/1500 [24:53<05:12,  1.20s/it]
+Epoch 1265 | postive loss : 0.53, negtive loss : 3.36, worst lambd: 3.86, worst gap: 0.08:  84%|████████▍ | 1266/1500 [25:24<04:41,  1.20s/it]
+Epoch 1290 | postive loss : 0.53, negtive loss : 3.37, worst lambd: 3.83, worst gap: 0.09:  86%|████████▌ | 1291/1500 [25:54<04:11,  1.20s/it]
+Epoch 1315 | postive loss : 0.53, negtive loss : 3.38, worst lambd: 3.80, worst gap: 0.09:  88%|████████▊ | 1316/1500 [26:24<03:41,  1.20s/it]
+Epoch 1340 | postive loss : 0.53, negtive loss : 3.39, worst lambd: 3.90, worst gap: 0.12:  89%|████████▉ | 1341/1500 [26:54<03:12,  1.21s/it]
+Epoch 1364 | postive loss : 0.53, negtive loss : 3.40, worst lambd: 3.75, worst gap: 0.09:  91%|█████████ | 1365/1500 [27:25<02:45,  1.23s/it]
+Epoch 1389 | postive loss : 0.53, negtive loss : 3.41, worst lambd: 3.75, worst gap: 0.06:  93%|█████████▎| 1390/1500 [27:55<02:14,  1.22s/it]
+Epoch 1414 | postive loss : 0.53, negtive loss : 3.41, worst lambd: 3.66, worst gap: 0.12:  94%|█████████▍| 1415/1500 [28:25<01:43,  1.22s/it]
+Epoch 1439 | postive loss : 0.53, negtive loss : 3.42, worst lambd: 3.65, worst gap: 0.10:  96%|█████████▌| 1440/1500 [28:56<01:13,  1.22s/it]
+Epoch 1464 | postive loss : 0.53, negtive loss : 3.43, worst lambd: 3.53, worst gap: 0.09:  98%|█████████▊| 1465/1500 [29:26<00:42,  1.22s/it]
+Epoch 1489 | postive loss : 0.52, negtive loss : 3.44, worst lambd: 3.44, worst gap: 0.11:  99%|█████████▉| 1490/1500 [29:56<00:12,  1.21s/it]
+Epoch 1499 | postive loss : 0.53, negtive loss : 3.45, worst lambd: 3.40, worst gap: 0.09: 100%|██████████| 1500/1500 [30:08<00:00,  1.21s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 19:16:12
+alpha: 0.1    batchsize: 16    dim: 256    epoch: 1500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1500 [00:00<?, ?it/s]
+Epoch 7 | postive loss : 162.18, negtive loss : 65.00, worst lambd: 382.01, worst gap: 10.70:   0%|          | 0/1500 [00:10<?, ?it/s]
+Epoch 24 | postive loss : 5.41, negtive loss : 3.45, worst lambd: 161.28, worst gap: 0.42:   2%|▏         | 25/1500 [00:30<30:10,  1.23s/it]
+Epoch 49 | postive loss : 2.10, negtive loss : 1.37, worst lambd: 8.40, worst gap: 0.16:   3%|▎         | 50/1500 [01:01<29:51,  1.24s/it]  
+Epoch 74 | postive loss : 1.82, negtive loss : 1.44, worst lambd: 4.60, worst gap: 0.12:   5%|▌         | 75/1500 [01:32<29:16,  1.23s/it]
+Epoch 99 | postive loss : 1.67, negtive loss : 1.49, worst lambd: 4.57, worst gap: 0.08:   7%|▋         | 100/1500 [02:03<28:40,  1.23s/it]
+Epoch 124 | postive loss : 1.56, negtive loss : 1.56, worst lambd: 4.71, worst gap: 0.11:   8%|▊         | 125/1500 [02:33<28:04,  1.23s/it]
+Epoch 149 | postive loss : 1.46, negtive loss : 1.62, worst lambd: 4.85, worst gap: 0.09:  10%|█         | 150/1500 [03:04<27:31,  1.22s/it]
+Epoch 174 | postive loss : 1.37, negtive loss : 1.68, worst lambd: 4.89, worst gap: 0.12:  12%|█▏        | 175/1500 [03:34<27:01,  1.22s/it]
+Epoch 197 | postive loss : 1.29, negtive loss : 1.74, worst lambd: 5.02, worst gap: 0.06:  13%|█▎        | 198/1500 [04:04<27:09,  1.25s/it]
+Epoch 222 | postive loss : 1.22, negtive loss : 1.82, worst lambd: 4.76, worst gap: 0.12:  15%|█▍        | 223/1500 [04:35<26:26,  1.24s/it]
+Epoch 247 | postive loss : 1.14, negtive loss : 1.90, worst lambd: 4.98, worst gap: 0.08:  17%|█▋        | 248/1500 [05:06<25:53,  1.24s/it]
+Epoch 272 | postive loss : 1.08, negtive loss : 1.98, worst lambd: 5.07, worst gap: 0.07:  18%|█▊        | 273/1500 [05:37<25:20,  1.24s/it]
+Epoch 297 | postive loss : 1.01, negtive loss : 2.06, worst lambd: 5.05, worst gap: 0.09:  20%|█▉        | 298/1500 [06:07<24:42,  1.23s/it]
+Epoch 322 | postive loss : 0.96, negtive loss : 2.15, worst lambd: 5.04, worst gap: 0.09:  22%|██▏       | 323/1500 [06:38<24:07,  1.23s/it]
+Epoch 347 | postive loss : 0.91, negtive loss : 2.24, worst lambd: 4.88, worst gap: 0.06:  23%|██▎       | 348/1500 [07:08<23:31,  1.23s/it]
+Epoch 372 | postive loss : 0.87, negtive loss : 2.32, worst lambd: 4.81, worst gap: 0.08:  25%|██▍       | 373/1500 [07:39<23:03,  1.23s/it]
+Epoch 397 | postive loss : 0.83, negtive loss : 2.41, worst lambd: 5.09, worst gap: 0.13:  27%|██▋       | 398/1500 [08:10<22:31,  1.23s/it]
+Epoch 422 | postive loss : 0.80, negtive loss : 2.48, worst lambd: 4.87, worst gap: 0.08:  28%|██▊       | 423/1500 [08:40<21:56,  1.22s/it]
+Epoch 447 | postive loss : 0.77, negtive loss : 2.56, worst lambd: 5.06, worst gap: 0.09:  30%|██▉       | 448/1500 [09:10<21:22,  1.22s/it]
+Epoch 472 | postive loss : 0.74, negtive loss : 2.62, worst lambd: 5.10, worst gap: 0.10:  32%|███▏      | 473/1500 [09:41<20:55,  1.22s/it]
+Epoch 497 | postive loss : 0.72, negtive loss : 2.69, worst lambd: 4.95, worst gap: 0.09:  33%|███▎      | 498/1500 [10:12<20:28,  1.23s/it]
+Epoch 522 | postive loss : 0.65, negtive loss : 2.78, worst lambd: 5.08, worst gap: 0.11:  35%|███▍      | 523/1500 [10:42<19:58,  1.23s/it]
+Epoch 547 | postive loss : 0.64, negtive loss : 2.81, worst lambd: 4.80, worst gap: 0.09:  37%|███▋      | 548/1500 [11:13<19:28,  1.23s/it]
+Epoch 572 | postive loss : 0.63, negtive loss : 2.84, worst lambd: 4.85, worst gap: 0.07:  38%|███▊      | 573/1500 [11:44<18:55,  1.22s/it]
+Epoch 597 | postive loss : 0.63, negtive loss : 2.87, worst lambd: 4.87, worst gap: 0.04:  40%|███▉      | 598/1500 [12:14<18:26,  1.23s/it]
+Epoch 622 | postive loss : 0.62, negtive loss : 2.91, worst lambd: 4.62, worst gap: 0.10:  42%|████▏     | 623/1500 [12:45<17:53,  1.22s/it]
+Epoch 647 | postive loss : 0.62, negtive loss : 2.93, worst lambd: 4.53, worst gap: 0.06:  43%|████▎     | 648/1500 [13:16<17:23,  1.22s/it]
+Epoch 672 | postive loss : 0.61, negtive loss : 2.96, worst lambd: 4.46, worst gap: 0.11:  45%|████▍     | 673/1500 [13:46<16:52,  1.22s/it]
+Epoch 697 | postive loss : 0.61, negtive loss : 2.99, worst lambd: 4.29, worst gap: 0.06:  47%|████▋     | 698/1500 [14:17<16:19,  1.22s/it]
+Epoch 722 | postive loss : 0.60, negtive loss : 3.02, worst lambd: 4.19, worst gap: 0.09:  48%|████▊     | 723/1500 [14:47<15:47,  1.22s/it]
+Epoch 747 | postive loss : 0.60, negtive loss : 3.04, worst lambd: 4.18, worst gap: 0.06:  50%|████▉     | 748/1500 [15:18<15:19,  1.22s/it]
+Epoch 772 | postive loss : 0.59, negtive loss : 3.06, worst lambd: 4.19, worst gap: 0.10:  52%|█████▏    | 773/1500 [15:48<14:49,  1.22s/it]
+Epoch 797 | postive loss : 0.59, negtive loss : 3.09, worst lambd: 4.29, worst gap: 0.09:  53%|█████▎    | 798/1500 [16:19<14:19,  1.22s/it]
+Epoch 822 | postive loss : 0.58, negtive loss : 3.10, worst lambd: 4.20, worst gap: 0.06:  55%|█████▍    | 823/1500 [16:50<13:49,  1.23s/it]
+Epoch 847 | postive loss : 0.58, negtive loss : 3.13, worst lambd: 4.01, worst gap: 0.08:  57%|█████▋    | 848/1500 [17:20<13:16,  1.22s/it]
+Epoch 872 | postive loss : 0.58, negtive loss : 3.15, worst lambd: 4.11, worst gap: 0.09:  58%|█████▊    | 873/1500 [17:51<12:46,  1.22s/it]
+Epoch 897 | postive loss : 0.57, negtive loss : 3.18, worst lambd: 4.12, worst gap: 0.11:  60%|█████▉    | 898/1500 [18:21<12:15,  1.22s/it]
+Epoch 922 | postive loss : 0.57, negtive loss : 3.20, worst lambd: 4.14, worst gap: 0.11:  62%|██████▏   | 923/1500 [18:52<11:46,  1.22s/it]
+Epoch 947 | postive loss : 0.57, negtive loss : 3.22, worst lambd: 4.14, worst gap: 0.10:  63%|██████▎   | 948/1500 [19:22<11:15,  1.22s/it]
+Epoch 972 | postive loss : 0.56, negtive loss : 3.23, worst lambd: 4.10, worst gap: 0.10:  65%|██████▍   | 973/1500 [19:53<10:44,  1.22s/it]
+Epoch 997 | postive loss : 0.56, negtive loss : 3.26, worst lambd: 4.15, worst gap: 0.09:  67%|██████▋   | 998/1500 [20:23<10:13,  1.22s/it]
+Epoch 1022 | postive loss : 0.55, negtive loss : 3.31, worst lambd: 3.99, worst gap: 0.08:  68%|██████▊   | 1023/1500 [20:54<09:42,  1.22s/it]
+Epoch 1047 | postive loss : 0.54, negtive loss : 3.33, worst lambd: 4.01, worst gap: 0.11:  70%|██████▉   | 1048/1500 [21:24<09:11,  1.22s/it]
+Epoch 1072 | postive loss : 0.54, negtive loss : 3.33, worst lambd: 3.99, worst gap: 0.11:  72%|███████▏  | 1073/1500 [21:55<08:40,  1.22s/it]
+Epoch 1097 | postive loss : 0.54, negtive loss : 3.35, worst lambd: 3.95, worst gap: 0.07:  73%|███████▎  | 1098/1500 [22:25<08:10,  1.22s/it]
+Epoch 1122 | postive loss : 0.54, negtive loss : 3.36, worst lambd: 3.90, worst gap: 0.09:  75%|███████▍  | 1123/1500 [22:56<07:39,  1.22s/it]
+Epoch 1147 | postive loss : 0.54, negtive loss : 3.37, worst lambd: 3.89, worst gap: 0.11:  77%|███████▋  | 1148/1500 [23:26<07:09,  1.22s/it]
+Epoch 1172 | postive loss : 0.54, negtive loss : 3.38, worst lambd: 3.92, worst gap: 0.08:  78%|███████▊  | 1173/1500 [23:57<06:37,  1.22s/it]
+Epoch 1198 | postive loss : 0.54, negtive loss : 3.40, worst lambd: 3.98, worst gap: 0.10:  80%|███████▉  | 1199/1500 [24:28<06:03,  1.21s/it]
+Epoch 1224 | postive loss : 0.54, negtive loss : 3.40, worst lambd: 3.93, worst gap: 0.08:  82%|████████▏ | 1225/1500 [24:59<05:31,  1.20s/it]
+Epoch 1249 | postive loss : 0.54, negtive loss : 3.41, worst lambd: 3.93, worst gap: 0.11:  83%|████████▎ | 1250/1500 [25:29<05:01,  1.21s/it]
+Epoch 1274 | postive loss : 0.54, negtive loss : 3.42, worst lambd: 3.95, worst gap: 0.10:  85%|████████▌ | 1275/1500 [25:59<04:31,  1.21s/it]
+Epoch 1299 | postive loss : 0.53, negtive loss : 3.43, worst lambd: 3.85, worst gap: 0.07:  87%|████████▋ | 1300/1500 [26:30<04:02,  1.21s/it]
+Epoch 1324 | postive loss : 0.54, negtive loss : 3.44, worst lambd: 3.88, worst gap: 0.11:  88%|████████▊ | 1325/1500 [27:00<03:32,  1.21s/it]
+Epoch 1349 | postive loss : 0.53, negtive loss : 3.45, worst lambd: 3.84, worst gap: 0.08:  90%|█████████ | 1350/1500 [27:30<03:02,  1.21s/it]
+Epoch 1374 | postive loss : 0.53, negtive loss : 3.46, worst lambd: 4.01, worst gap: 0.10:  92%|█████████▏| 1375/1500 [28:01<02:31,  1.21s/it]
+Epoch 1399 | postive loss : 0.53, negtive loss : 3.47, worst lambd: 3.90, worst gap: 0.10:  93%|█████████▎| 1400/1500 [28:31<02:01,  1.21s/it]
+Epoch 1424 | postive loss : 0.53, negtive loss : 3.47, worst lambd: 3.88, worst gap: 0.10:  95%|█████████▌| 1425/1500 [29:01<01:31,  1.21s/it]
+Epoch 1449 | postive loss : 0.53, negtive loss : 3.48, worst lambd: 3.85, worst gap: 0.11:  97%|█████████▋| 1450/1500 [29:32<01:00,  1.21s/it]
+Epoch 1474 | postive loss : 0.53, negtive loss : 3.50, worst lambd: 3.90, worst gap: 0.05:  98%|█████████▊| 1475/1500 [30:02<00:30,  1.21s/it]
+Epoch 1499 | postive loss : 0.53, negtive loss : 3.51, worst lambd: 3.79, worst gap: 0.09: 100%|██████████| 1500/1500 [30:32<00:00,  1.21s/it]
+Epoch 1499 | postive loss : 0.53, negtive loss : 3.51, worst lambd: 3.79, worst gap: 0.09: 100%|██████████| 1500/1500 [30:32<00:00,  1.22s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
+
+2023-03-17 20:09:08
+alpha: 0.1    batchsize: 16    dim: 128    epoch: 1500    gapMax_defi: -1    gapMax_prim: -0.5    lambdaMax: 0.5    learningrate: 0.002    lrdecay: 0.5    lrdecayEpoch: 500    modelname: SN2E    momentum: 0    negtsamplenum: 128    optimizer: Adam    vmax: 10    vmin: 0.01    weightdecay: 0    
+INFO -- prepare : Init model SN2E
+INFO -- prepare : set model cuda: 0
+INFO -- prepare : Model initialization complete
+INFO -- prepare : Init optimizer
+INFO -- prepare : Finish preparing Optimizer...
+Info -- : start model training
+
+  0%|          | 0/1500 [00:00<?, ?it/s]
+Epoch 16 | postive loss : 12.55, negtive loss : 6.87, worst lambd: 136.26, worst gap: 0.60:   0%|          | 0/1500 [00:19<?, ?it/s]
+Epoch 26 | postive loss : 3.27, negtive loss : 1.80, worst lambd: 79.23, worst gap: 0.28:   2%|▏         | 27/1500 [00:30<28:00,  1.14s/it]
+Epoch 53 | postive loss : 1.96, negtive loss : 1.37, worst lambd: 5.02, worst gap: 0.13:   4%|▎         | 54/1500 [01:01<27:18,  1.13s/it] 
+Epoch 80 | postive loss : 1.70, negtive loss : 1.46, worst lambd: 4.09, worst gap: 0.14:   5%|▌         | 81/1500 [01:31<26:49,  1.13s/it]
+Epoch 107 | postive loss : 1.56, negtive loss : 1.53, worst lambd: 4.74, worst gap: 0.13:   7%|▋         | 108/1500 [02:02<26:12,  1.13s/it]
+Epoch 134 | postive loss : 1.45, negtive loss : 1.60, worst lambd: 4.81, worst gap: 0.08:   9%|▉         | 135/1500 [02:32<25:39,  1.13s/it]
+Epoch 160 | postive loss : 1.36, negtive loss : 1.67, worst lambd: 4.72, worst gap: 0.06:  11%|█         | 161/1500 [03:02<25:25,  1.14s/it]
+Epoch 186 | postive loss : 1.28, negtive loss : 1.74, worst lambd: 4.91, worst gap: 0.07:  12%|█▏        | 187/1500 [03:33<25:18,  1.16s/it]
+Epoch 212 | postive loss : 1.21, negtive loss : 1.82, worst lambd: 4.90, worst gap: 0.07:  14%|█▍        | 213/1500 [04:04<24:51,  1.16s/it]
+Epoch 239 | postive loss : 1.13, negtive loss : 1.90, worst lambd: 4.79, worst gap: 0.05:  16%|█▌        | 240/1500 [04:35<24:15,  1.15s/it]
+Epoch 266 | postive loss : 1.07, negtive loss : 1.99, worst lambd: 4.78, worst gap: 0.06:  18%|█▊        | 267/1500 [05:05<23:35,  1.15s/it]
+Epoch 293 | postive loss : 1.01, negtive loss : 2.08, worst lambd: 4.67, worst gap: 0.07:  20%|█▉        | 294/1500 [05:36<22:58,  1.14s/it]
+Epoch 320 | postive loss : 0.95, negtive loss : 2.17, worst lambd: 4.39, worst gap: 0.09:  21%|██▏       | 321/1500 [06:06<22:24,  1.14s/it]
+Epoch 347 | postive loss : 0.91, negtive loss : 2.27, worst lambd: 4.50, worst gap: 0.09:  23%|██▎       | 348/1500 [06:37<21:56,  1.14s/it]
+Epoch 374 | postive loss : 0.86, negtive loss : 2.36, worst lambd: 4.76, worst gap: 0.08:  25%|██▌       | 375/1500 [07:08<21:28,  1.15s/it]
+Epoch 401 | postive loss : 0.82, negtive loss : 2.46, worst lambd: 4.34, worst gap: 0.10:  27%|██▋       | 402/1500 [07:39<20:59,  1.15s/it]
+Epoch 428 | postive loss : 0.79, negtive loss : 2.56, worst lambd: 4.56, worst gap: 0.12:  29%|██▊       | 429/1500 [08:10<20:24,  1.14s/it]
+Epoch 454 | postive loss : 0.77, negtive loss : 2.63, worst lambd: 4.41, worst gap: 0.08:  30%|███       | 455/1500 [08:40<19:58,  1.15s/it]
+Epoch 481 | postive loss : 0.74, negtive loss : 2.71, worst lambd: 4.40, worst gap: 0.06:  32%|███▏      | 482/1500 [09:11<19:23,  1.14s/it]
+Epoch 508 | postive loss : 0.66, negtive loss : 2.83, worst lambd: 4.24, worst gap: 0.05:  34%|███▍      | 509/1500 [09:42<18:52,  1.14s/it]
+Epoch 535 | postive loss : 0.65, negtive loss : 2.87, worst lambd: 4.19, worst gap: 0.11:  36%|███▌      | 536/1500 [10:13<18:22,  1.14s/it]
+Epoch 562 | postive loss : 0.64, negtive loss : 2.90, worst lambd: 4.37, worst gap: 0.08:  38%|███▊      | 563/1500 [10:43<17:47,  1.14s/it]
+Epoch 589 | postive loss : 0.63, negtive loss : 2.94, worst lambd: 4.23, worst gap: 0.06:  39%|███▉      | 590/1500 [11:14<17:13,  1.14s/it]
+Epoch 616 | postive loss : 0.63, negtive loss : 2.98, worst lambd: 4.11, worst gap: 0.11:  41%|████      | 617/1500 [11:44<16:41,  1.13s/it]
+Epoch 643 | postive loss : 0.62, negtive loss : 3.02, worst lambd: 4.44, worst gap: 0.14:  43%|████▎     | 644/1500 [12:15<16:11,  1.13s/it]
+Epoch 670 | postive loss : 0.62, negtive loss : 3.05, worst lambd: 4.39, worst gap: 0.08:  45%|████▍     | 671/1500 [12:45<15:40,  1.13s/it]
+Epoch 697 | postive loss : 0.61, negtive loss : 3.08, worst lambd: 4.27, worst gap: 0.09:  47%|████▋     | 698/1500 [13:16<15:09,  1.13s/it]
+Epoch 724 | postive loss : 0.61, negtive loss : 3.11, worst lambd: 4.31, worst gap: 0.07:  48%|████▊     | 725/1500 [13:46<14:37,  1.13s/it]
+Epoch 751 | postive loss : 0.60, negtive loss : 3.14, worst lambd: 4.32, worst gap: 0.06:  50%|█████     | 752/1500 [14:17<14:06,  1.13s/it]
+Epoch 778 | postive loss : 0.59, negtive loss : 3.17, worst lambd: 4.40, worst gap: 0.12:  52%|█████▏    | 779/1500 [14:48<13:36,  1.13s/it]
+Epoch 805 | postive loss : 0.59, negtive loss : 3.20, worst lambd: 4.17, worst gap: 0.09:  54%|█████▎    | 806/1500 [15:18<13:04,  1.13s/it]
+Epoch 832 | postive loss : 0.59, negtive loss : 3.22, worst lambd: 4.31, worst gap: 0.09:  56%|█████▌    | 833/1500 [15:48<12:32,  1.13s/it]
+Epoch 859 | postive loss : 0.58, negtive loss : 3.25, worst lambd: 4.30, worst gap: 0.08:  57%|█████▋    | 860/1500 [16:19<12:01,  1.13s/it]
+Epoch 885 | postive loss : 0.58, negtive loss : 3.28, worst lambd: 4.22, worst gap: 0.08:  59%|█████▉    | 886/1500 [16:49<11:38,  1.14s/it]
+Epoch 912 | postive loss : 0.58, negtive loss : 3.30, worst lambd: 4.25, worst gap: 0.11:  61%|██████    | 913/1500 [17:19<11:04,  1.13s/it]
+Epoch 939 | postive loss : 0.58, negtive loss : 3.33, worst lambd: 4.16, worst gap: 0.12:  63%|██████▎   | 940/1500 [17:50<10:36,  1.14s/it]
+Epoch 966 | postive loss : 0.57, negtive loss : 3.35, worst lambd: 4.16, worst gap: 0.06:  64%|██████▍   | 967/1500 [18:21<10:07,  1.14s/it]
+Epoch 993 | postive loss : 0.57, negtive loss : 3.36, worst lambd: 4.06, worst gap: 0.11:  66%|██████▋   | 994/1500 [18:52<09:36,  1.14s/it]
+Epoch 1019 | postive loss : 0.55, negtive loss : 3.43, worst lambd: 3.91, worst gap: 0.08:  68%|██████▊   | 1020/1500 [19:22<09:09,  1.14s/it]
+Epoch 1046 | postive loss : 0.55, negtive loss : 3.43, worst lambd: 3.93, worst gap: 0.09:  70%|██████▉   | 1047/1500 [19:53<08:39,  1.15s/it]
+Epoch 1073 | postive loss : 0.55, negtive loss : 3.45, worst lambd: 3.83, worst gap: 0.07:  72%|███████▏  | 1074/1500 [20:24<08:08,  1.15s/it]
+Epoch 1100 | postive loss : 0.55, negtive loss : 3.46, worst lambd: 3.81, worst gap: 0.06:  73%|███████▎  | 1101/1500 [20:55<07:36,  1.14s/it]
+Epoch 1127 | postive loss : 0.55, negtive loss : 3.48, worst lambd: 3.79, worst gap: 0.05:  75%|███████▌  | 1128/1500 [21:25<07:04,  1.14s/it]
+Epoch 1154 | postive loss : 0.55, negtive loss : 3.48, worst lambd: 3.62, worst gap: 0.05:  77%|███████▋  | 1155/1500 [21:56<06:32,  1.14s/it]
+Epoch 1181 | postive loss : 0.54, negtive loss : 3.49, worst lambd: 3.69, worst gap: 0.09:  79%|███████▉  | 1182/1500 [22:27<06:02,  1.14s/it]
+Epoch 1207 | postive loss : 0.54, negtive loss : 3.50, worst lambd: 3.55, worst gap: 0.11:  81%|████████  | 1208/1500 [22:57<05:34,  1.14s/it]
+Epoch 1234 | postive loss : 0.54, negtive loss : 3.51, worst lambd: 3.75, worst gap: 0.09:  82%|████████▏ | 1235/1500 [23:28<05:02,  1.14s/it]
+Epoch 1261 | postive loss : 0.54, negtive loss : 3.52, worst lambd: 3.55, worst gap: 0.07:  84%|████████▍ | 1262/1500 [23:58<04:31,  1.14s/it]
+Epoch 1288 | postive loss : 0.54, negtive loss : 3.54, worst lambd: 3.53, worst gap: 0.09:  86%|████████▌ | 1289/1500 [24:29<04:00,  1.14s/it]
+Epoch 1315 | postive loss : 0.54, negtive loss : 3.54, worst lambd: 3.57, worst gap: 0.07:  88%|████████▊ | 1316/1500 [24:59<03:29,  1.14s/it]
+Epoch 1341 | postive loss : 0.54, negtive loss : 3.56, worst lambd: 3.47, worst gap: 0.08:  89%|████████▉ | 1342/1500 [25:29<03:00,  1.14s/it]
+Epoch 1368 | postive loss : 0.54, negtive loss : 3.57, worst lambd: 3.46, worst gap: 0.11:  91%|█████████▏| 1369/1500 [26:00<02:29,  1.14s/it]
+Epoch 1395 | postive loss : 0.54, negtive loss : 3.59, worst lambd: 3.33, worst gap: 0.10:  93%|█████████▎| 1396/1500 [26:30<01:57,  1.13s/it]
+Epoch 1422 | postive loss : 0.54, negtive loss : 3.59, worst lambd: 3.37, worst gap: 0.08:  95%|█████████▍| 1423/1500 [27:00<01:26,  1.13s/it]
+Epoch 1449 | postive loss : 0.54, negtive loss : 3.60, worst lambd: 3.34, worst gap: 0.10:  97%|█████████▋| 1450/1500 [27:31<00:56,  1.13s/it]
+Epoch 1476 | postive loss : 0.53, negtive loss : 3.61, worst lambd: 3.35, worst gap: 0.08:  98%|█████████▊| 1477/1500 [28:02<00:26,  1.13s/it]
+Epoch 1499 | postive loss : 0.53, negtive loss : 3.62, worst lambd: 3.28, worst gap: 0.08: 100%|██████████| 1500/1500 [28:28<00:00,  1.14s/it]
+Info : finish model training
+Info : save model sucessfully
+Info : save sucessfully
