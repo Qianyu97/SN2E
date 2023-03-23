@@ -33,13 +33,13 @@ def prepareModel(homoDF:pd.DataFrame,ifLoadModel = False):
         print("INFO -- prepare : set model cpu ")
     if ifLoadModel:
         model.loadCheckpoint(ModelArg.path_model, device)
-        model.sethomoIndex(homoDF.sort_index(axis = 1))
+        model.sethomoIndex(homoDF.sort_index())
         model.tailingWorks()
         model.generateWholeEmbedding()
         print("INFO -- prepare : Model loading complete")
     else:
         model.initEmbedding()
-        model.sethomoIndex(homoDF.sort_index(axis = 1))
+        model.sethomoIndex(homoDF.sort_index())
         model.tailingWorks()
         print("INFO -- prepare : Model initialization complete")
     return model

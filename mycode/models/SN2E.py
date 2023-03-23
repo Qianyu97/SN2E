@@ -19,8 +19,7 @@ class SN2E(Module):
         #self.num_defi, self.num_prim = ModelArg.model.num_defi, ModelArg.model.num_prim
         self.num_nodefi = ModelArg.model.num_nodefi
         self.lambdaMax  = pm.Parameter(torch.Tensor([ModelArg.model.lambdaMax]), requires_grad = False)
-        self.gapMax_prim = pm.Parameter(torch.Tensor([ModelArg.model.gapMax_prim]), requires_grad = False)
-        self.gapMax_defi = pm.Parameter(torch.Tensor([ModelArg.model.gapMax_defi]), requires_grad = False)
+        self.gapMax     = pm.Parameter(torch.Tensor([ModelArg.model.gapMax]), requires_grad = False)
         self.invmax     = 1/ModelArg.model.vmin
         self.invmin     = 1/ModelArg.model.vmax
         self.alpha      = ModelArg.model.alpha
@@ -29,6 +28,12 @@ class SN2E(Module):
         self.conceptMeanEmbedding = torch.nn.Embedding(self.num_nodefi, ModelArg.model.dim, padding_idx = 0)
         self.conceptVariEmbedding = torch.nn.Embedding(self.num_nodefi, ModelArg.model.dim, padding_idx = 0)
         self.isCuda     = False
+        if ModelArg.model.gapmode == 'gap':
+            self.calcNeg = self.calcGap 
+        elif ModelArg.model.gapmode == 'entail':
+            self.calcNeg = self.calcEntailProb
+        else:
+            raise Exception('gap mode should be \'gap\' or \'entail\'')
         
     def initEmbedding(self, varInitMode = 'const'):
         nn.init.uniform_(self.conceptMeanEmbedding.weight, -1, 1)
@@ -37,6 +42,7 @@ class SN2E(Module):
         self.conceptVariEmbedding.weight.data[0] = self.defaultNoneInvar
         self.conceptMeanEmbedding.weight.data[1] = 1000
         self.conceptVariEmbedding.weight.data[1] = 1000
+        
 
     def lookupEmbedding(self, index):
         '''
@@ -84,17 +90,18 @@ class SN2E(Module):
 
         gap        : (torch.tensor)[num0, numN]
         '''
-        return 1/2 * ( - (s.m.unsqueeze(-2) - n.m).pow(2).div(s.v.reciprocal().unsqueeze(-2) + n.v.reciprocal())).sum(-1)
+        s = s.unsqueeze(-2)
+        return 1/2 * ( (s.m - n.m).pow(2).div(s.v.reciprocal() + n.v.reciprocal())).sum(-1)
     
     def calcEntailProb(self, s:Embedding, t:Embedding):
-        return 1/2 * ( (1 + t.v.unsqueeze(-3) / s.v.unsqueeze(-2)).log() \
-            + (s.m.unsqueeze(-2) - t.m.unsqueeze(-3)).pow(2).div(s.v.reciprocal().unsqueeze(-2)+t.v.reciprocal().unsqueeze(-3))).sum(-1)
+        s = s.unsqueeze(-2)
+        return 1/2 * ( (s.v + t.v).log() - s.v.log() + (s.m - t.m).pow(2).div(s.v.reciprocal()+t.v.reciprocal())).sum(-1)
     
     def calcKL(self, s:Embedding, t:Embedding):
         s = s.inv().unsqueeze(-2)
-        t = t.inv().unsqueeze(-3)
+        t = t.inv()
         vardiv = s.v.div(t.v)
-        return 1/2 * ( - vardiv.log() - 1 + vardiv + (s.m - t.m).pow(2).div(t.v)).sum(-1)
+        return 1/2 * ( torch.max(- 1 + vardiv, self.zero)  + (s.m - t.m).pow(2).div(t.v)).sum(-1)
 
     def scorePos(self, indexA, indexP = None) -> torch.Tensor:
         '''
@@ -107,24 +114,15 @@ class SN2E(Module):
             e_a = self.lookupEmbedding(indexA)
         e_u = self.calcIntersection(e_a)
         return self.calcLambda(e_a, e_u)
-
-    def scoreNeg_prim(self, index0, indexN) ->torch.Tensor:
-        '''
-        index0    :(index)[num0]
-        indexN    :(index)[num0, numN]
-        '''
-        e_0 = self.lookupEmbedding(index0)
-        e_n = self.lookupEmbedding(indexN)
-        return self.calcGap(e_0, e_n)
     
-    def scoreNeg_defi(self, index0, indexN) ->torch.Tensor:
+    def scoreNeg(self, index0, indexN) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
         '''
         e_0 = self.loaddefiEmbedding(index0)
         e_n = self.lookupEmbedding(indexN)
-        return self.calcGap(e_0, e_n)
+        return self.calcNeg(e_0, e_n)
     
     def forward(self, data):
         '''
@@ -133,19 +131,19 @@ class SN2E(Module):
         indexN    :(index)[num0, numN]
         loss      :(torch.scale)
         '''
-        [index0, indexN, indexA, indexP]  = data  #seppoint = (index0 < self.num_nodefi).sum()
-        lambd   = self.scorePos(indexA, indexP)
-        gap     = self.scoreNeg_defi(index0, indexN)  #gap_prim = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
+        [index0, indexN, indexA]  = data  #seppoint = (index0 < self.num_nodefi).sum()       
+        lambd   = self.scorePos(indexA)
+        gap     = self.scoreNeg(index0, indexN)  #gap_prim = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
         posloss = torch.max(lambd, self.lambdaMax).sum() 
-        negloss = - (self.alpha / torch.max(gap, self.gapMax_defi)).sum()
+        negloss = (self.alpha / torch.min(gap, self.gapMax)).sum()
         loss    = posloss + negloss
-        showgap = - gap[gap>-10000]
+        showgap = gap[gap<10000]
         return loss, lambd.sum().item(), showgap.sum().item(), lambd.max().item(), showgap.min().item()
         
     def tailingWorks(self):
-        self.conceptVariEmbedding.weight[1:].data.copy_(
+        self.conceptVariEmbedding.weight[2:].data.copy_(
             torch.clamp(
-                input=self.conceptVariEmbedding.weight[1:].data,
+                input=self.conceptVariEmbedding.weight[2:].data,
                 min=self.invmin,
                 max=self.invmax))
     
@@ -164,7 +162,7 @@ class SN2E(Module):
         '''
         e_0 = self.lookupEmbedding_whole(index0)
         e_n = self.lookupEmbedding_whole(indexN)
-        return self.calcGap(e_0, e_n)
+        return self.calcNeg(e_0, e_n)
     
     def generateWholeEmbedding(self):
         homoEmbedding = self.lookupEmbedding(self.homoIndex)
@@ -177,7 +175,7 @@ class SN2E(Module):
         return Embedding(self.conceptmeanEmbedding_whole[index], self.conceptvariEmbedding_whole[index])
     
     def sethomoIndex(self, homoDF):
-        self.homoIndex = self.variable(torch.tensor(np.asarray(homoDF).T))
+        self.homoIndex = self.variable(torch.tensor(np.asarray(homoDF)))
     
     def variable(self, data):
         if not type(data) == torch.Tensor:
@@ -188,21 +186,31 @@ class SN2E(Module):
         if self.isCuda:
             return data.cuda(self.gpunum)
         else:
-            return data
+            return data.cpu()
         
     def cudaModel(self, gpunum):
         self.cuda(gpunum)
         self.isCuda = True
         self.gpunum = gpunum
+        self.zero  = self.variable(torch.Tensor([0]))
 
     def cpuModel(self):
         self.cpu()
         self.isCuda = False
+        self.zero  = self.variable(torch.Tensor([0]))
         
-    def evaluate(self, index1, index2):
+    def evaluate(self, index1, index2, mode = 'gap'):
         embedding1 = self.lookupEmbedding_whole(index1)
         embedding2 = self.lookupEmbedding_whole(index2)
-        return self.calcEntailProb(embedding1, embedding2)
+        if mode == 'KL':
+            eval = self.calcKL
+        elif mode == 'gap':
+            eval = self.calcGap
+        elif mode == 'entail':
+            eval = self.calcEntailProb
+        else:
+            raise Exception('eval mode should be \'kl\', \'gap\' or \'entail\'')
+        return eval(embedding1, embedding2)
 
     
     

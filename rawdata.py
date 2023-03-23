@@ -1,5 +1,6 @@
 
 from nltk.corpus import wordnet as wn
+from random import sample
 import collections
 
 from mycode.utils.treeunit import NodeUnit
@@ -38,13 +39,18 @@ class RawData(BaseData):
         self.basetree = basetree
         self.basedict = basedict
         self.attrbasedict = attrbasedict
+        print('concept number: %d'%len(basedict))
         
     def creat_basetree(self, origword, maxdepth):
+        
         def iter(node_father:NodeUnit, syns_father, depth):  
             node_father.depth = maxdepth - depth
             if depth <= 0:
                 return
-            for syns_son in syns_father.hyponyms():
+            sonlist = syns_father.hyponyms()
+            '''if len(sonlist) > 5:
+                sonlist = sorted(sonlist, key=lambda x:len(x.hyponyms()), reverse=True)[:5]'''
+            for syns_son in sonlist:
                 name_son = syns_son.name()[:-5]
                 while name_son in basedict:
                     name_son = name_son + '+'
@@ -65,7 +71,7 @@ class RawData(BaseData):
         startmark = 'a'
         def iter(node:NodeUnit, id):
             attrnum = random.randint(minAttrnum, maxAttrnum)
-            upperId = id + int(levelnumdict[node.depth])
+            upperId = id + 4 * int(levelnumdict[node.depth])
             if upperId > attrnum:
                 attributes = random.sample(range(id, upperId), attrnum) 
             else:
@@ -82,7 +88,6 @@ class RawData(BaseData):
                 node.addAttribute(attribute)
             for son in node.sons:
                 iter(son, upperId)
-            
         maxAttrnum = 4
         minAttrnum = 2
         levelnumdict  = self.countlevelnum(basetree)
@@ -96,15 +101,25 @@ class RawData(BaseData):
         def iter(node:NodeUnit, id):
             attrnum = random.randint(minAttrnum, maxAttrnum)
             attributes = [startmark + str(i) for i in range(id, id + attrnum)]
-            node.updateAttribute(attributes)
             id += attrnum
+            for i in attributes:
+                name = startmark + str(i)
+                if name in attrbasedict:
+                    attribute = attrbasedict[name]
+                else:
+                    attribute = NodeUnit(name)
+                    attrbasedict[name] = attribute
+                attribute.addSon(node.name)
+                node.addAttribute(attribute)
             for son in node.sons:
                 id = iter(son, id)
             return id
         maxAttrnum = 4
         minAttrnum = 2
+        levelnumdict  = self.countlevelnum(basetree)
+        attrbasedict:dict[str,NodeUnit] = dict()
         iter(basetree, 0)
-        return basetree'''
+        return basetree, attrbasedict'''
     
     def countlevelnum(self, tree:NodeUnit):
         def iter(node:NodeUnit):
@@ -128,8 +143,18 @@ class RawData(BaseData):
             startconcept = self.basedict[startconcept] # type: ignore
         iter(startconcept, targetdepth) # type: ignore
     
-    
-
+    def countdescendant(self, basetree):
+        def iter(node:NodeUnit):
+            descdict[node.name].update(node.sons)
+            for son in node.sons:
+                iter(son)
+                descdict[node.name].update(descdict[son.name])
+            node.num_desc = len(descdict[node.name])
+            return
+        descdict = collections.defaultdict(set)
+        iter(basetree)
+        
+        
 if __name__ == "__main__":
     rawdata = RawData(WordnetArg.originWord, WordnetArg.wordnet_depth)
     rawdata.save(DatapathArg.path_rawdata)

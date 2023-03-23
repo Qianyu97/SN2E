@@ -31,7 +31,6 @@ class Tester():
         
         #self.draw('animal', 'attr')
         #self.evaluater.calcF1score()
-        a = self.checkEntail('tiger', ['big_cat'])
         self.draw('mammal', 'attr')
         self.draw('vertebrate', 'attr')
         self.draw('critter', 'attr')
@@ -43,11 +42,13 @@ class Tester():
         e_chordate = self.lookupEmbedding('chordate')
         e_vertebra = self.lookupEmbedding('vertebrate')
         e_mammal   = self.lookupEmbedding('mammal')
-        basetree = self.addLambd(self.model, self.rawdata.basetree)
         e_bigcat = self.lookupEmbedding('big_cat')
         e_tiger = self.lookupEmbedding('tiger')
+        basetree = self.addLambd(self.model, self.rawdata.basetree, mode = 'homo')
+        self.evaluater.calcF1score()
         self.evaluater.findworstlambd()    
-            
+        self.evaluater.findworstgap('KL')
+        self.evaluater.findworstgap_homo('KL')
         a = 0
     
     def checklambd(self, concept, mode = 'attr'):
@@ -58,20 +59,20 @@ class Tester():
         else:
             raise Exception('lambd mode should be \'attr\' or \'homo\'')
         attrIndex   = [list(self.finaldata.indexconvert(attributes))]
-        lambd       = self.model.scorePos_test(attrIndex)
+        lambd       = self.model.scorePos(attrIndex)
         return lambd
     
-    def checkgap(self, concept0, conceptN):
+    def checkgap(self, concept0, conceptN, mode = 'gap'):
         index0  = self.finaldata.indexconvert(concept0)
-        indexN  = list(self.finaldata.indexconvert(conceptN))
-        gap     = self.model.scoreNeg_test(index0, indexN)
-        return - gap
+        indexN = self.finaldata.indexconvert(conceptN)
+        if type(indexN) == set:
+            indexN  = list(indexN)
+        gap     = self.model.evaluate(index0, indexN, mode = mode)
+        if type(indexN) == list:
+            return gap.tolist()#[round(i, 2) for i in gap.tolist()]
+        else:
+            return round(gap.item(), 2)
 
-    def checkEntail(self, concept0, conceptN):
-        index0  = self.finaldata.indexconvert(concept0)
-        indexN  = list(self.finaldata.indexconvert(conceptN))
-        eval     = self.model.evaluate(index0, indexN)
-        return eval
     
     def draw(self, name, partner = 'default'):
         if partner == 'attr':
@@ -91,9 +92,12 @@ class Tester():
         a = sorted(self.rawdata.basedict.keys(), key=lambda x:len(self.rawdata.basedict[x].sons), reverse=True)
         print(*a)
 
-    def addLambd(self, model:SN2E, tree:NodeUnit):
+    def addLambd(self, model:SN2E, tree:NodeUnit,mode = 'attr'):
         def iter(node:NodeUnit):
-            attrIndex   = [list(self.finaldata.indexconvert(node.attributes|node.fathers))]
+            if mode == 'attr':
+                attrIndex   = [list(self.finaldata.indexconvert(node.attributes|node.fathers))]
+            elif mode == 'homo':
+                attrIndex = [list(self.finaldata.indexconvert(self.finaldata.finedata.homodict[node.name]))]
             node.lambd = round(model.scorePos_test(attrIndex).item(), 2) # type: ignore
             for son in node.sons:
                 iter(son)
@@ -105,6 +109,7 @@ class Tester():
             if concept in v:
                 print('alert!!')
         print('end')
+
         
         
 

@@ -11,7 +11,7 @@ class attrDataset(Dataset):
         super(Dataset, self).__init__()
         self.len = len(indexdata.defilist)
         self.indexdata  = indexdata
-        self.attrDF     = indexdata.attrDF
+        self.attrDF     = indexdata.homoDF.T
         self.padAttr    = [0]*self.attrDF.shape[0]
         self.padPare    = [0]
         self.padNegt    = [1]    
@@ -29,7 +29,7 @@ class attrDataset(Dataset):
             negdata = sample(negdata, DataloaderArg.negtsamplenum) 
         else:
             negdata.extend(self.padNegt*(DataloaderArg.negtsamplenum - len_negdata))
-        return [np.asarray(items), np.asarray(negdata), np.asarray(attrdata), np.asarray(paredata)] # type: ignore  
+        return [np.asarray(items), np.asarray(negdata), np.asarray(attrdata)] # type: ignore  
         
 
 

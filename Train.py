@@ -17,6 +17,7 @@ from mycode.utils.evaluate import Evaluater
 from mycode.datasets.attrDataset import attrDataset
 from mycode.datasets.tripleDataset import tripleDataset
 from mycode.models.SN2E import SN2E
+from Tester import *
 
 class Trainer():
     def __init__(self, dataLoader:DataLoader, model:SN2E, evaluater:Evaluater) -> None:
@@ -36,7 +37,7 @@ class Trainer():
     def run(self):
         print('Info -- : start model training')
         EPOCHS = TrainArg.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS),mininterval=30 ,miniters=10)
+        EPOCHS_ITER = tqdm(range(EPOCHS), mininterval=30 ,miniters=5)
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
             worstlambd, worstgap = 0, float("inf")
@@ -51,14 +52,19 @@ class Trainer():
             avenegloss = negloss_sum / ModelArg.model.num_defi/DataloaderArg.negtsamplenum
             EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst lambd: %.2f, worst gap: %.2f" \
                             % (epoch, aveposloss, avenegloss, worstlambd, worstgap), refresh=False)
-            self.scheduler.step()
+            if epoch % 100 == 0:
+                self.model.generateWholeEmbedding()
+                self.evaluater.calcF1score(chunknum=50)
+            self.scheduler.step() 
         print('Info : finish model training')
+        self.model.generateWholeEmbedding()
         self.model.saveCheckpoint(ModelArg.path_model)
         #self.evaluater.findworstlambd()
         print('Info : save model sucessfully')
         a = 0
 
 def displayArgs():
+    print('\n\n\n\n')
     print(time.strftime("\n%Y-%m-%d %H:%M:%S", time.localtime()))
     showstring = str()
     args = [i for i in dir(displayArg) if not i.startswith('__')]
@@ -70,53 +76,6 @@ def displayArgs():
             showstring += '    '
     print(showstring)
 
-def my_collate(batch):
-    elem = batch[0]
-    elem_type = type(elem)
-    default_collate_err_msg_format = (
-        "default_collate: batch must contain tensors, numpy arrays, numbers, "
-        "dicts or lists; found {}")
-    np_str_obj_array_pattern = re.compile(r'[SaUO]')
-    if isinstance(elem, torch.Tensor):
-        out = None
-        if torch.utils.data.get_worker_info() is not None:
-            # If we're in a background process, concatenate directly into a
-            # shared memory tensor to avoid an extra copy
-            numel = sum(x.numel() for x in batch)
-            storage = elem.storage()._new_shared(numel)
-            out = elem.new(storage)
-        return torch.stack(batch, 0, out=out)
-    elif elem_type.__module__ == 'numpy' and elem_type.__name__ != 'str_' \
-            and elem_type.__name__ != 'string_':
-        if elem_type.__name__ == 'ndarray' or elem_type.__name__ == 'memmap':
-            # array of string classes and object
-            if np_str_obj_array_pattern.search(elem.dtype.str) is not None:
-                raise TypeError(default_collate_err_msg_format.format(elem.dtype))
-            return my_collate([torch.as_tensor(b) for b in batch])
-        elif elem.shape == ():  # scalars
-            return torch.as_tensor(batch)
-    elif isinstance(elem, float):
-        return torch.tensor(batch, dtype=torch.float64)
-    elif isinstance(elem, int):
-        return torch.tensor(batch) 
-    elif isinstance(elem, string_classes):
-        return batch
-    elif isinstance(elem, collections.abc.Mapping):
-        return {key: my_collate([d[key] for d in batch]) for key in elem}
-    elif isinstance(elem, tuple) and hasattr(elem, '_fields'):  # namedtuple
-        return elem_type(*(my_collate(samples) for samples in zip(*batch)))
-    elif isinstance(elem, collections.abc.Sequence):
-        # check to make sure that the elements in batch have consistent size
-        '''it = iter(batch)
-        elem_size = len(next(it))
-        if not all(len(elem) == elem_size for elem in it):
-            raise RuntimeError('each element in list of batch should be of equal size')'''
-        transposed = zip(*sorted(batch, key=lambda x:x[0]))
-        a = [my_collate(samples) for samples in transposed]
-        return a
-    raise TypeError(default_collate_err_msg_format.format(elem_type))
-
-
 def main():
     dataloader = DataLoader(
             dataset     = dataset,                
@@ -126,15 +85,21 @@ def main():
             drop_last   = DataloaderArg.droplast,
             #collate_fn  = my_collate
             )
-    model      = prepare.prepareModel(finaldata.indexdata.homoDF, ifLoadModel=False)
+    model      = prepare.prepareModel(finaldata.indexdata.homoDF, ifLoadModel=TrainArg.ifloadmodel)
     evaluater = Evaluater(finaldata, model)
     trainer = Trainer(dataloader, model, evaluater)
     trainer.run()
     finaldata.save(DatapathArg.path_indexdict, 'dictionary')
+    
+    # Test
+    drawer = GaussianDrawer(finaldata, model)
+    test = Tester(finaldata, model, drawer, evaluater)
+    test.run()
+    
 
 if __name__ == "__main__":
     displayArgs()
-    finaldata = FinalData(ifloadDictionary=False)
+    finaldata = FinalData(ifloadDictionary=TrainArg.ifloadmodel)
     dataset = attrDataset(finaldata.indexdata) 
     if False:
         print('the validation begin')

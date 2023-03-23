@@ -21,16 +21,16 @@ class ModelArg():
     class SN2E():
         name        = 'SN2E'
         dim         = 128
-        lambdaMax   = 0.5
-        gapMax_prim = -0.5
-        gapMax_defi = -2
+        lambdaMax   = 1
+        gapMax      = 3
+        gapmode     = 'gap'
         vmax        = 10000
         vmin        = 0.0001
-        alpha       = 0.1
+        alpha       = 1
         NoneIndex   = None
         learningrate    = 0.004
         weightdecay     = 0
-        lrdecay         = 0.5
+        lrdecay         = 0.1
         lrdecayEpoch    = 300
         momentum        = 0
         num_defi    = 0
@@ -74,14 +74,14 @@ class ModelArg():
     
 class TrainArg():
     # Training arguments
-    epochs      = 2000
-    ifLoadModel = False
+    epochs      = 1000
     usegpu      = True
     gpunum      = 0
     evalepoch   = 1
     optimizer   = "Adam"
     evalmethod  = "MR"
     simmeasure  = "L2"
+    ifloadmodel = False
 
 class TestArg():
     threshold_lower = 0
@@ -108,8 +108,8 @@ class displayArg():
     modelname       = ModelArg.model.name
     dim             = ModelArg.model.dim
     lambdaMax       = ModelArg.model.lambdaMax
-    gapMax_prim     = ModelArg.model.gapMax_prim
-    gapMax_defi     = ModelArg.model.gapMax_defi
+    gapMax          = ModelArg.model.gapMax
+    gapmode         = ModelArg.model.gapmode
     vmax            = ModelArg.model.vmax
     vmin            = ModelArg.model.vmin
     alpha           = ModelArg.model.alpha

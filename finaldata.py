@@ -28,8 +28,8 @@ class FinalData(BaseData):
                         newsource.__setattr__(a, translate(ga))
                 return newsource
             elif sourcetype == pd.DataFrame:
-                newDataFrame = source.applymap(lambda x: dictionary[x])
-                newDataFrame.columns = source.columns.map(lambda x: dictionary[x])
+                newDataFrame:pd.DataFrame = source.applymap(lambda x: dictionary[x])
+                newDataFrame.index = source.index.map(lambda x: dictionary[x])
                 return newDataFrame
             elif sourcetype == dict:
                 return  {dictionary[key] : translate(value) for key, value in source.items()}
@@ -47,5 +47,5 @@ class FinalData(BaseData):
         return output
 
 if __name__ == '__main__':
-    finaldata = FinalData(DatapathArg.path_rawdata)
+    finaldata = FinalData()
     a = 0

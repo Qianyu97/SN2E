@@ -7,6 +7,7 @@ class NodeUnit(object):
         self.sons:set[NodeUnit] = set()
         self.attributes:set[NodeUnit]    = set()
         self.depth = 0
+        self.num_desc = 0
     
     def addFather(self, father):
         self.fathers.add(father)

@@ -30,7 +30,6 @@ class FineData(BaseData):
             ModelArg.SN2E.num_prim = len(primlist)
             ModelArg.SN2E.num_full = len(fulllist)
             ModelArg.SN2E.num_nodefi = ModelArg.SN2E.num_prim + 2
-            
             #self.negtDF = self.creat_DataFrame(negtdict)
             a = 0
     
@@ -62,8 +61,21 @@ class FineData(BaseData):
         attrdict = collections.defaultdict(set)
         homodict = collections.defaultdict(set)
         iter(basetree)
-        homodict['godfather'] = set()
+        #homodict['godfather'] = set()
         return dict(attrdict), dict(homodict)
+    
+    def creat_homodict_kt(self):
+        def iter(node:NodeUnit):
+            homodict[node.name].update(node.attributes)
+            homodict[node.name].add(node.name)
+            for son in node.sons:
+                homodict[son.name].update(homodict[node.name])
+                iter(son) 
+            return
+        homodict = collections.defaultdict(set)
+        iter(self.rawdata.basetree)
+        return dict(homodict)
+    
 
     def creat_negtdict(self, defilist, primlist, basetree:NodeUnit):
         def creat_cogndict():
@@ -86,7 +98,7 @@ class FineData(BaseData):
         return { k:list(v.fathers) for k, v in basedict.items()}
     
     def creat_DataFrame(self, sourcedict):
-        return pd.DataFrame.from_dict(sourcedict, orient='index').T
+        return pd.DataFrame.from_dict(sourcedict, orient='index')
         
     def findMaxAttrnum(self, attrdict):
         maxAttrenum = 0
