@@ -38,7 +38,7 @@ class GaussianDrawer():
         plt.switch_backend('agg')
         indexConcepts = self.dataset.indexconvert(conceptlist)
         embedding = self.model.lookupEmbedding_whole(indexConcepts)
-        reducedMeans, reducedVariances = self.PCA_Gaussians(embedding)
+        reducedMeans, reducedVariances = self.PCA_Gaussians(embedding.inv())
         figure , ax = plt.subplots()
         self.gaussians_ellipse(indexConcepts, reducedMeans, reducedVariances, ax, facecolor = 'blue')
         plt.axis('scaled')
@@ -48,19 +48,16 @@ class GaussianDrawer():
         plt.savefig(DatapathArg.path_picture + label + ".jpg")
     
     def PCA_Gaussians(self, embedding:Embedding):
-        means, variances = embedding.m.unsqueeze(-1), torch.diag_embed(1/embedding.v)
-
-        MeanAve              = means.mean()
-        variancePCA         = ((means - MeanAve) @ (means - MeanAve).transpose(1, 2)).mean(0)
-
-        (evals,evecs) = torch.eig(variancePCA, eigenvectors=True)
-        eTopkIndex         = evals[:,0].argsort(descending=True)[ : self.reduceDim]
-        reducedEvecs       = evecs[: , eTopkIndex]
-        
-        reducedMeans        = reducedEvecs.T @ means
-        reducedVariances    = reducedEvecs.T @ variances @ reducedEvecs
+        means, variances = embedding.m.unsqueeze(-1), torch.diag_embed(embedding.v)
+        MeanAve     = means.mean()
+        a           = (means - MeanAve)#*(embedding.v.sum(-2).sqrt().unsqueeze(-1))
+        variancePCA = ((a @ a.transpose(1, 2)) + variances).mean(0)
+        evals,evecs = torch.linalg.eig(variancePCA)
+        eTopkIndex  = evals.real.argsort(descending=True)[ : self.reduceDim]
+        reducedEvecs    = evecs[: , eTopkIndex].real
+        reducedMeans    = reducedEvecs.T @ means
+        reducedVariances= reducedEvecs.T @ variances @ reducedEvecs
         return reducedMeans, reducedVariances
-
 
     def gaussians_ellipse(self, conceptlist, mean, variance, ax, n_std=1, facecolor='yellow',**kwargs):
         """
@@ -118,9 +115,4 @@ class GaussianDrawer():
 
 
 
-if __name__ == "__main__":
-    dataset    = FinalData(DatapathArg.path_rawdata, DatapathArg.path_indexdict)
-    model      = prepare.prepareModel(ifLoadModel=True)
-    drawer     = GaussianDrawer(dataset, model)
-    drawer.drawSamples()
     
