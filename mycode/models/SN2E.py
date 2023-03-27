@@ -135,8 +135,8 @@ class SN2E(Module):
         lambd   = self.scorePos(indexA)
         gap     = self.scoreNeg(index0, indexN)  #gap_prim = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
         posloss = torch.max(lambd, self.lambdaMax).sum() 
-        negloss = (self.alpha / torch.min(gap, self.gapMax)).sum()
-        loss    = posloss + negloss
+        negloss = torch.min(gap, self.gapMax).reciprocal().sum()
+        loss    = posloss + self.alpha * negloss
         showgap = gap[gap<10000]
         return loss, lambd.sum().item(), showgap.sum().item(), lambd.max().item(), showgap.min().item()
         
