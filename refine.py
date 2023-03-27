@@ -13,7 +13,7 @@ class FineData(BaseData):
             fulllist, defilist, primlist = self.creat_baselist(rawdata.basetree)
             attrdict, homodict = self.creat_attrhomodict(rawdata.basetree)
             paredict = self.creat_paredict(rawdata.basedict)
-            negtdict = self.creat_negtdict(defilist, primlist, rawdata.basetree)
+            negtdict = self.creat_negtdict(defilist, rawdata.basetree)
             self.rawdata = rawdata
             self.fulllist = fulllist
             self.fullset  = set(fulllist)
@@ -77,11 +77,11 @@ class FineData(BaseData):
         return dict(homodict)
     
 
-    def creat_negtdict(self, defilist, primlist, basetree:NodeUnit):
+    def creat_negtdict(self, defilist, basetree:NodeUnit):
         def creat_cogndict():
             def iter(node:NodeUnit):
                 tempset = set()
-                cogndict[node.name].update(node.attributes)
+                cogndict[node.name].update(node.name)
                 for son in node.sons:
                     cogndict[son.name].update(cogndict[node.name])
                     iter(son)
@@ -91,7 +91,8 @@ class FineData(BaseData):
             iter(basetree)
             return cogndict
         cogndict = creat_cogndict()
-        negtdict = {concept: list(set(primlist) - cogndict[concept]) for concept in defilist}
+        defiset = set(defilist)
+        negtdict = {concept: list(defiset - cogndict[concept]) for concept in defilist}
         return negtdict
 
     def creat_paredict(self, basedict:'dict[str, NodeUnit]'):
