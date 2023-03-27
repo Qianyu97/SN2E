@@ -30,7 +30,7 @@ class ModelArg():
         NoneIndex   = None
         learningrate    = 0.004
         weightdecay     = 0
-        lrdecay         = 0.1
+        lrdecay         = 0.5
         lrdecayEpoch    = 300
         momentum        = 0
         num_defi    = 0
@@ -74,9 +74,9 @@ class ModelArg():
     
 class TrainArg():
     # Training arguments
-    epochs      = 1000
+    epochs      = 2000
     usegpu      = True
-    gpunum      = 0
+    gpunum      = 1
     evalepoch   = 1
     optimizer   = "Adam"
     evalmethod  = "MR"

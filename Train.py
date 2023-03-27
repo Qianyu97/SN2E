@@ -37,7 +37,7 @@ class Trainer():
     def run(self):
         print('Info -- : start model training')
         EPOCHS = TrainArg.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS), mininterval=30 ,miniters=5)
+        EPOCHS_ITER = tqdm(range(EPOCHS),miniters=5)
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
             worstlambd, worstgap = 0, float("inf")
@@ -99,7 +99,9 @@ def main():
 
 if __name__ == "__main__":
     displayArgs()
+    t1 = time.time()
     finaldata = FinalData(ifloadDictionary=TrainArg.ifloadmodel)
+    print("The time interval of dataloader is", time.time() - t1, "seconds.")
     dataset = attrDataset(finaldata.indexdata) 
     if False:
         print('the validation begin')

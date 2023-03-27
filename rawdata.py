@@ -40,9 +40,9 @@ class RawData(BaseData):
         self.basedict = basedict
         self.attrbasedict = attrbasedict
         print('concept number: %d'%len(basedict))
+        print('attribute number %d'%len(attrbasedict))
         
     def creat_basetree(self, origword, maxdepth):
-        
         def iter(node_father:NodeUnit, syns_father, depth):  
             node_father.depth = maxdepth - depth
             if depth <= 0:

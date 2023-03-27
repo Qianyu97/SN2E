@@ -121,7 +121,7 @@ class SN2E(Module):
         indexN    :(index)[num0, numN]
         '''
         e_0 = self.loaddefiEmbedding(index0)
-        e_n = self.lookupEmbedding(indexN)
+        e_n = self.loaddefiEmbedding(indexN)
         return self.calcNeg(e_0, e_n)
     
     def forward(self, data):

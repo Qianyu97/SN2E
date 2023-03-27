@@ -22,7 +22,7 @@ class attrDataset(Dataset):
     def __getitem__(self, items):
         items += (ModelArg.model.num_nodefi)
         attrdata = self.attrDF.get(items, self.padAttr)
-        paredata = self.indexdata.paredict.get(items, self.padPare)
+        #paredata = self.indexdata.paredict.get(items, self.padPare)
         negdata = self.indexdata.negtdict[items]
         len_negdata = len(negdata)
         if len_negdata > DataloaderArg.negtsamplenum:
