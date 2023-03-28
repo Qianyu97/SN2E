@@ -109,7 +109,7 @@ class GaussianDrawer():
                 .translate(mean_x, mean_y)
             ellipse.set_transform(transf + ax.transData)
             ax.add_patch(ellipse)
-            showinfo = self.dataset.indexconvert(conceptlist[i], 'num2str')
+            showinfo = self.dataset.indexconvert(conceptlist[i], 'int2str')
             ax.annotate(showinfo, xytext = (mean_x, mean_y), xy = (mean_x, mean_y ) )
         return ax
 

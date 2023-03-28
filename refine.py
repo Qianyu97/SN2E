@@ -12,25 +12,21 @@ class FineData(BaseData):
             rawdata:RawData = self.load(path_rawdata) # type: ignore 
             fulllist, defilist, primlist = self.creat_baselist(rawdata.basetree)
             attrdict, homodict = self.creat_attrhomodict(rawdata.basetree)
-            paredict = self.creat_paredict(rawdata.basedict)
-            negtdict = self.creat_negtdict(defilist, rawdata.basetree)
-            self.rawdata = rawdata
+            negtdict, negtnum = self.creat_negtdict(defilist, primlist, rawdata.basetree)
+            self.rawdata  = rawdata
             self.fulllist = fulllist
             self.fullset  = set(fulllist)
             self.defilist = defilist
             self.primlist = primlist
             self.attrdict = attrdict
             self.homodict = homodict
-            self.paredict = paredict
-            self.negtdict = negtdict
-            self.attrDF = self.creat_DataFrame(attrdict)
-            self.homoDF = self.creat_DataFrame(homodict)
-            self.pareDF = self.creat_DataFrame(paredict)
+            self.homoDF   = self.creat_DataFrame(homodict)
+            self.negtDF   = self.creat_DataFrame(negtdict)
+            self.negtnum  = negtnum 
             ModelArg.SN2E.num_defi = len(defilist)
             ModelArg.SN2E.num_prim = len(primlist)
             ModelArg.SN2E.num_full = len(fulllist)
             ModelArg.SN2E.num_nodefi = ModelArg.SN2E.num_prim + 2
-            #self.negtDF = self.creat_DataFrame(negtdict)
             a = 0
     
     def creat_baselist(self, basetree:NodeUnit):
@@ -75,13 +71,12 @@ class FineData(BaseData):
         homodict = collections.defaultdict(set)
         iter(self.rawdata.basetree)
         return dict(homodict)
-    
 
-    def creat_negtdict(self, defilist, basetree:NodeUnit):
+    def creat_negtdict(self, defilist, primlist, basetree:NodeUnit):
         def creat_cogndict():
             def iter(node:NodeUnit):
                 tempset = set()
-                cogndict[node.name].update(node.name)
+                cogndict[node.name].update(node.attributes)
                 for son in node.sons:
                     cogndict[son.name].update(cogndict[node.name])
                     iter(son)
@@ -91,12 +86,10 @@ class FineData(BaseData):
             iter(basetree)
             return cogndict
         cogndict = creat_cogndict()
-        defiset = set(defilist)
-        negtdict = {concept: list(defiset - cogndict[concept]) for concept in defilist}
-        return negtdict
-
-    def creat_paredict(self, basedict:'dict[str, NodeUnit]'):
-        return { k:list(v.fathers) for k, v in basedict.items()}
+        primset = set(primlist)
+        negtdict = {concept: list(primset - cogndict[concept]) for concept in defilist}
+        negtnum  = {concept: len(negtdict[concept]) for concept in defilist}
+        return negtdict, negtnum
     
     def creat_DataFrame(self, sourcedict):
         return pd.DataFrame.from_dict(sourcedict, orient='index')

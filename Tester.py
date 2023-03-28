@@ -47,11 +47,11 @@ class Tester():
         basetree = self.addLambd(self.model, self.rawdata.basetree, mode = 'homo')
         self.evaluater.calcF1score()
         self.evaluater.findworstlambd()    
-        self.evaluater.findworstgap('KL')
+        #self.evaluater.findworstgap('KL')
         self.evaluater.findworstgap_homo('KL')
         a = 0
     
-    def checklambd(self, concept, mode = 'attr'):
+    def checklambd(self, concept, mode = 'homo'):
         if mode == 'attr':
             attributes  = self.finaldata.finedata.attrdict[concept]|set(self.finaldata.finedata.paredict[concept])
         elif mode == 'homo':
@@ -76,7 +76,7 @@ class Tester():
     
     def draw(self, name, partner = 'default'):
         if partner == 'attr':
-            self.drawer.drawOneSample([name] + list(self.finaldata.finedata.attrdict[name]) + list(self.finaldata.finedata.paredict[name]), name + '-attr')
+            self.drawer.drawOneSample([name] + list(self.finaldata.finedata.attrdict[name]), name + '-attr')
         elif partner == 'sons':
             self.drawer.drawOneSample([name] + list(self.finaldata.finedata.rawdata.basedict[name].sons), name + '-son')
         elif partner == 'default':

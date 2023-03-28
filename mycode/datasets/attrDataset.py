@@ -11,25 +11,24 @@ class attrDataset(Dataset):
         super(Dataset, self).__init__()
         self.len = len(indexdata.defilist)
         self.indexdata  = indexdata
-        self.attrDF     = indexdata.homoDF.T
-        self.padAttr    = [0]*self.attrDF.shape[0]
-        self.padPare    = [0]
-        self.padNegt    = [1]    
+        self.attrDF     = indexdata.homoDF.T 
+        self.negtDF     = indexdata.negtDF.T
+        self.negtnum    = indexdata.negtnum 
+        self.negtsample_num = DataloaderArg.negtsamplenum
     
     def __len__(self):
         return self.len
     
     def __getitem__(self, items):
         items += (ModelArg.model.num_nodefi)
-        attrdata = self.attrDF.get(items, self.padAttr)
-        #paredata = self.indexdata.paredict.get(items, self.padPare)
-        negdata = self.indexdata.negtdict[items]
-        len_negdata = len(negdata)
-        if len_negdata > DataloaderArg.negtsamplenum:
-            negdata = sample(negdata, DataloaderArg.negtsamplenum) 
+        attrdata = self.attrDF[items]
+        negtdata = self.negtDF[items]
+        negt_num = self.negtnum[items]
+        if negt_num > DataloaderArg.negtsamplenum:
+            negtdata = negtdata[:negt_num].sample(n = self.negtsample_num) 
         else:
-            negdata.extend(self.padNegt*(DataloaderArg.negtsamplenum - len_negdata))
-        return [np.asarray(items), np.asarray(negdata), np.asarray(attrdata)] # type: ignore  
+            negtdata = negtdata[:self.negtsample_num]
+        return [np.asarray(items), np.asarray(negtdata), np.asarray(attrdata)] # type: ignore  
         
 
 

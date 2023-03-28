@@ -59,8 +59,8 @@ class Evaluater():
         print('F1score: %.4f ' % F1score)
         print('wrong fn: ')
         for i in ( ~ groundtruth *   judgement)[:100].nonzero().tolist():
-            sourcename = self.finaldata.indexconvert(chunkdata[i[0]], 'num2str')
-            targetname = self.finaldata.indexconvert(i[1] + 2, 'num2str')
+            sourcename = self.finaldata.indexconvert(chunkdata[i[0]], 'int2str')
+            targetname = self.finaldata.indexconvert(i[1] + 2, 'int2str')
             print('%s - %s'%(sourcename, targetname))
         
         return F1score
@@ -79,10 +79,10 @@ class Evaluater():
 
     def findworstlambd(self):
         attrDF = self.finaldata.indexdata.homoDF.sort_index()
-        pareDF = self.finaldata.indexdata.pareDF.sort_index()
+        #pareDF = self.finaldata.indexdata.pareDF.sort_index()
         lambd = self.model.scorePos(np.asarray(attrDF)) # type: ignore
         worstlambd, indexes = lambd.sort(descending=True)
-        showname    = self.finaldata.indexconvert((indexes + self.redundlen).tolist()[:5], 'num2str')
+        showname    = self.finaldata.indexconvert((indexes + self.redundlen).tolist()[:5], 'int2str')
         showvalue  = worstlambd.tolist()[:5]
         namestring  = '{}, {}, {}, {}, {} have the worst lambd, which are '.format(*showname)
         valuestring = '{:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f} '.format(*showvalue)
@@ -96,8 +96,8 @@ class Evaluater():
         gap_flat = gap.flatten()
         row, colomn = gap.shape
         worstgap, index = gap_flat.sort()
-        showname_s = self.finaldata.indexconvert(((index / colomn).int() + self.redundlen).tolist()[:shownum], 'num2str')
-        showname_t = self.finaldata.indexconvert(list(negtArray[(index / colomn).int().tolist()[:shownum], (index % colomn).int().tolist()[:shownum]]), 'num2str')
+        showname_s = self.finaldata.indexconvert(((index / colomn).int() + self.redundlen).tolist()[:shownum], 'int2str')
+        showname_t = self.finaldata.indexconvert(list(negtArray[(index / colomn).int().tolist()[:shownum], (index % colomn).int().tolist()[:shownum]]), 'int2str')
         showvalue  = worstgap.tolist()[:shownum]
         print("the worst gap coups are:")
         for i, value in enumerate(showvalue):
@@ -113,8 +113,8 @@ class Evaluater():
         gap_flat = gap.flatten()
         row, colomn = gap.shape
         worstgap, index = gap_flat.sort(descending=True)
-        showname_s = self.finaldata.indexconvert(((index / colomn).int() + self.redundlen).tolist()[:shownum], 'num2str')
-        showname_t = self.finaldata.indexconvert(list(homoArray[(index / colomn).int().tolist()[:shownum], (index % colomn).int().tolist()[:shownum]]), 'num2str')
+        showname_s = self.finaldata.indexconvert(((index / colomn).int() + self.redundlen).tolist()[:shownum], 'int2str')
+        showname_t = self.finaldata.indexconvert(list(homoArray[(index / colomn).int().tolist()[:shownum], (index % colomn).int().tolist()[:shownum]]), 'int2str')
         showvalue  = worstgap.tolist()[:shownum]
         print("the worst homo coups are:")
         for i, value in enumerate(showvalue):

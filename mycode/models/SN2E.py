@@ -43,7 +43,6 @@ class SN2E(Module):
         self.conceptMeanEmbedding.weight.data[1] = 1000
         self.conceptVariEmbedding.weight.data[1] = 1000
         
-
     def lookupEmbedding(self, index):
         '''
         index:  (index)[batchNum, indexNum]
@@ -121,7 +120,7 @@ class SN2E(Module):
         indexN    :(index)[num0, numN]
         '''
         e_0 = self.loaddefiEmbedding(index0)
-        e_n = self.loaddefiEmbedding(indexN)
+        e_n = self.lookupEmbedding(indexN)
         return self.calcNeg(e_0, e_n)
     
     def forward(self, data):
@@ -135,8 +134,8 @@ class SN2E(Module):
         lambd   = self.scorePos(indexA)
         gap     = self.scoreNeg(index0, indexN)  #gap_prim = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
         posloss = torch.max(lambd, self.lambdaMax).sum() 
-        negloss = (self.alpha / torch.min(gap, self.gapMax)).sum()
-        loss    = posloss + negloss
+        negloss = torch.min(gap, self.gapMax).reciprocal().sum()
+        loss    = posloss + self.alpha * negloss
         showgap = gap[gap<10000]
         return loss, lambd.sum().item(), showgap.sum().item(), lambd.max().item(), showgap.min().item()
         

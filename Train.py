@@ -92,9 +92,9 @@ def main():
     finaldata.save(DatapathArg.path_indexdict, 'dictionary')
     
     # Test
-    drawer = GaussianDrawer(finaldata, model)
-    test = Tester(finaldata, model, drawer, evaluater)
-    test.run()
+    #drawer = GaussianDrawer(finaldata, model)
+    #test = Tester(finaldata, model, drawer, evaluater)
+    #test.run()
     
 
 if __name__ == "__main__":
