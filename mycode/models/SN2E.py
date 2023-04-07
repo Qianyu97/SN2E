@@ -20,8 +20,8 @@ class SN2E(Module):
         self.num_nodefi = ModelArg.model.num_nodefi
         self.lambdaMax  = pm.Parameter(torch.Tensor([ModelArg.model.lambdaMax]), requires_grad = False)
         self.gapMax     = pm.Parameter(torch.Tensor([ModelArg.model.gapMax]), requires_grad = False)
-        self.invmax     = 1/ModelArg.model.vmin
-        self.invmin     = 1/ModelArg.model.vmax
+        self.invmax     = 1/ModelArg.modee.vmin
+        self.invmin     = 1/ModelArg.modee.vmax
         self.alpha      = ModelArg.model.alpha
         self.defaultNonemean   = 0
         self.defaultNoneInvar  = 0.00000001
@@ -57,7 +57,7 @@ class SN2E(Module):
         homosEmbedding  = self.lookupEmbedding(homos)
         return self.calcIntersection(homosEmbedding)
 
-    def calcIntersection(self, a:Embedding):
+    def calcIntersection(self, e:Embedding):
         '''
         meanA      : (torch.tensor)[num0, numA, dim] 
         varInvA    : (torch.tensor)[num0, numA, dim]
@@ -65,9 +65,26 @@ class SN2E(Module):
         meanU      : (torch.tensor)[num0, dim]
         varInvU    : (torch.tensor)[num0, dim]
         '''
-        varInvU = a.v.sum(-2)
-        meanU = (a.v * a.m).sum(-2) / varInvU
+        varInvU = e.v.sum(-2)
+        meanU = (e.v * e.m).sum(-2) / varInvU
         return Embedding(meanU, varInvU)
+
+    def calcUnion(self, e:Embedding, weight=None):
+        '''
+        l       : (Embedding)[num0, num1, dim]
+        weight  : (Embedding)[num0, num1]
+        
+        output  : (Embedding)[num0, dim]
+        '''
+        if weight is None:
+            meanU = e.m.mean()
+            variU = (e.v + (e.m - e.m.mean()).pow(2)).mean()
+        else:
+            if type(weight) == list:
+                weight = torch.Tensor(weight)
+            meanU = (e.m * weight).sum(-2).div(weight.sum(-1))
+            variU = ((e.v + (e.m - e.m.mean(-2))) * weight).sum(-2).div(weight.sum(-1))
+        return Embedding(meanU, variU)
 
     def calcLambda(self, a:Embedding, u:Embedding)-> torch.Tensor:
         '''
@@ -78,7 +95,7 @@ class SN2E(Module):
 
         lambd      : (torch.tensor)[num0]
         '''
-        return - 1/2 * ( - (a.m.pow(2) * a.v).sum(-2) + u.m.pow(2) * u.v).sum(-1)
+        return - 1/2 * ( - (e.m.pow(2) * a.v).sum(-2) + u.m.pow(2) * u.v).sum(-1)
 
     def calcGap(self, s:Embedding, n:Embedding) -> torch.Tensor:
         '''
@@ -210,6 +227,50 @@ class SN2E(Module):
         else:
             raise Exception('eval mode should be \'kl\', \'gap\' or \'entail\'')
         return eval(embedding1, embedding2)
+    
+    def setconceptEmbedding(self, index, embedding:Embedding, detach = False):
+        if detach:
+            embedding = embedding.detach()
+        self.conceptMeanEmbedding.weight[index] = embedding.m
+        self.conceptVariEmbedding.weight[index] = embedding.v
+    
+    def derivefromLeaftoAttributes(self, descIndex, attrIndex):
+        '''
+        descIndex  :(index)[num_attr, num_desc]
+        attrIndex  :(index)[num_attr]
+        '''
+        descEmbedding   = self.lookupEmbedding(descIndex)
+        self.setconceptEmbedding(attrIndex, self.calcUnion(descEmbedding), detach=True)
+        
+    def derivefromAttributestoLeaf(self, homoIndex, leafIndex):
+        '''
+        homoIndex  :(index)[num_leaf, num_homo]
+        leafIndex  :(index)[num_leaf]
+        '''
+        homoEmbedding = self.lookupEmbedding(homoIndex)
+        self.setconceptEmbedding(leafIndex, self.calcIntersection(homoEmbedding), detach=True)
+    
+    def derivefromLeaftoTrunk(self, descIndex, trunkIndex):
+        '''
+        descIndex  :(index)[num_trunk, num_desc]
+        trunkIndex :(index)[num_trunk]
+        '''
+        descEmbedding = self.lookupEmbedding(descIndex)
+        self.setconceptEmbedding(trunkIndex, self.calcUnion(descEmbedding), detach=False)
+    
+    def forward_temp(self, data):
+        '''
+        index0    :(index)[num0]
+        indexN    :(index)[num0, numN]
+        loss      :(torch.scale)
+        '''
+        [index0, indexN]  = data  #seppoint = (index0 < self.num_nodefi).sum()       
+        gap     = self.scoreNeg(index0, indexN)  #gap_prim = self.scoreNeg_prim(index0[:seppoint], indexN[:seppoint])
+        negloss = torch.min(gap, self.gapMax).reciprocal().sum()
+        loss    = negloss
+        showgap = gap[gap<10000]
+        return loss, showgap.sum().item(), showgap.min().item()
+        
 
     
     

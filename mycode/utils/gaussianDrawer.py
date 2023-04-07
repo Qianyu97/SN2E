@@ -51,7 +51,7 @@ class GaussianDrawer():
         means, variances = embedding.m.unsqueeze(-1), torch.diag_embed(embedding.v)
         MeanAve     = means.mean(0)
         a           = (means - MeanAve) #/ embedding.v.sum(-2).sqrt().unsqueeze(-1)
-        variancePCA = ((a @ a.transpose(1, 2))).sum(0) #+ torch.eye(128)
+        variancePCA = (variances + (a @ a.transpose(1, 2))).sum(0) #+ torch.eye(128)
         evals,evecs = torch.linalg.eig(variancePCA)
         eTopkIndex  = evals.real.argsort(descending=True)[ : self.reduceDim]
         reducedEvecs    = evecs[: , eTopkIndex].real

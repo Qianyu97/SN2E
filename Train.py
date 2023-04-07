@@ -20,7 +20,7 @@ from mycode.models.SN2E import SN2E
 from Tester import *
 
 class Trainer():
-    def __init__(self, dataLoader:DataLoader, model:SN2E, evaluater:Evaluater) -> None:
+    def __init__(self, dataLoader:DataLoader, model:SN2E, finaldata:FinalData ,evaluater:Evaluater) -> None:
         self.dataLoader = dataLoader
         self.evaluater  = evaluater
         self.model      = model
@@ -87,7 +87,7 @@ def main():
             )
     model      = prepare.prepareModel(finaldata.indexdata.homoDF, ifLoadModel=TrainArg.ifloadmodel)
     evaluater = Evaluater(finaldata, model)
-    trainer = Trainer(dataloader, model, evaluater)
+    trainer = Trainer(dataloader, model, finaldata, evaluater)
     trainer.run()
     finaldata.save(DatapathArg.path_indexdict, 'dictionary')
     
@@ -113,7 +113,7 @@ if __name__ == "__main__":
             print('\n\n\n')
     else:
         if False:
-            lprofiler = LineProfiler(SN2E.calcLambda)
+            lprofiler = LineProfiler(attrDataset.__getitem__)
             lprofiler.run('main()')
             lprofiler.print_stats()
             lprofiler.dump_stats(DatapathArg.path_profiler)

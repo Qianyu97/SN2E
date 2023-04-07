@@ -76,7 +76,7 @@ class TrainArg():
     # Training arguments
     epochs      = 2000
     usegpu      = True
-    gpunum      = 1
+    gpunum      = 0
     evalepoch   = 1
     optimizer   = "Adam"
     evalmethod  = "MR"
@@ -118,6 +118,7 @@ class displayArg():
     lrdecay         = ModelArg.model.lrdecay
     lrdecayEpoch    = ModelArg.model.lrdecayEpoch
     momentum        = ModelArg.model.momentum
+    gpu_id          = TrainArg.gpunum
     
 if __name__ == '__main__':
     WordnetArg.a = 5

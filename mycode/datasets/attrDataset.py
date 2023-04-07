@@ -25,7 +25,7 @@ class attrDataset(Dataset):
         negtdata = self.negtDF[items]
         negt_num = self.negtnum[items]
         if negt_num > DataloaderArg.negtsamplenum:
-            negtdata = negtdata[:negt_num].sample(n = self.negtsample_num) 
+            negtdata = sample(negtdata[:negt_num], self.negtsample_num)
         else:
             negtdata = negtdata[:self.negtsample_num]
         return [np.asarray(items), np.asarray(negtdata), np.asarray(attrdata)] # type: ignore  
