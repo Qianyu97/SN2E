@@ -28,7 +28,7 @@ class FinalData(BaseData):
                         newsource.__setattr__(a, translate(ga))
                 return newsource
             elif sourcetype == pd.DataFrame:
-                newDataFrame:pd.DataFrame = source.applymap(lambda x: dictionary[x])
+                newDataFrame:pd.DataFrame = source.map(lambda x: dictionary[x])
                 newDataFrame.index = source.index.map(lambda x: dictionary[x])
                 return newDataFrame
             elif sourcetype == dict:

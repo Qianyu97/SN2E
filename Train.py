@@ -5,7 +5,6 @@ from tqdm import tqdm
 import torch
 import re
 import collections
-from torch._six import string_classes
 import time
 import os
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
