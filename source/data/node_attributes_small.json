@@ -1,0 +1,349 @@
+{
+  "Animal": [
+    "has_id Animal"
+  ],
+  "Ant": [
+    "has_id Ant"
+  ],
+  "Artifact": [
+    "has_id Artifact"
+  ],
+  "BakersYeast": [
+    "has_id BakersYeast",
+    "has_property fermentative"
+  ],
+  "Bee": [
+    "has_id Bee"
+  ],
+  "BeetleGroup": [
+    "has_id BeetleGroup"
+  ],
+  "Bicycle": [
+    "has_id Bicycle",
+    "used_for transportation"
+  ],
+  "Bird": [
+    "has_id Bird"
+  ],
+  "BonyFish": [
+    "has_id BonyFish"
+  ],
+  "BrewersYeast": [
+    "has_id BrewersYeast",
+    "has_property fermentative"
+  ],
+  "Butterfly": [
+    "has_id Butterfly"
+  ],
+  "Canary": [
+    "has_id Canary",
+    "has_locomotion fly",
+    "has_body_covering feather2"
+  ],
+  "Canine": [
+    "has_id Canine"
+  ],
+  "Car": [
+    "has_id Car",
+    "used_for transportation"
+  ],
+  "Carp": [
+    "has_id Carp",
+    "has_habitat freshwater"
+  ],
+  "CartilaginousFish": [
+    "has_id CartilaginousFish"
+  ],
+  "Cat": [
+    "has_id Cat",
+    "has_locomotion walk",
+    "has_body_covering fur"
+  ],
+  "Cetacean": [
+    "has_id Cetacean"
+  ],
+  "Chimpanzee": [
+    "has_id Chimpanzee"
+  ],
+  "Cobra": [
+    "has_id Cobra",
+    "has_body_covering scales2"
+  ],
+  "Computer": [
+    "has_id Computer",
+    "has_energy_source electricity"
+  ],
+  "Cow": [
+    "has_id Cow",
+    "has_locomotion walk2",
+    "has_body_covering fur2"
+  ],
+  "Dog": [
+    "has_id Dog",
+    "has_locomotion walk",
+    "has_body_covering fur"
+  ],
+  "Dolphin": [
+    "has_id Dolphin",
+    "has_locomotion swim"
+  ],
+  "Duck": [
+    "has_id Duck",
+    "has_locomotion fly2",
+    "has_body_covering feather"
+  ],
+  "Eagle": [
+    "has_id Eagle",
+    "has_locomotion fly",
+    "has_body_covering feather"
+  ],
+  "ElectronicDevice": [
+    "has_id ElectronicDevice",
+    "has_energy_source electricity"
+  ],
+  "Entity": [
+    "has_id Entity"
+  ],
+  "Feline": [
+    "has_id Feline"
+  ],
+  "Fish": [
+    "has_id Fish"
+  ],
+  "FlightlessBird": [
+    "has_id FlightlessBird"
+  ],
+  "Flower": [
+    "has_id Flower",
+    "has_property photosynthetic2"
+  ],
+  "FlyingInsect": [
+    "has_id FlyingInsect"
+  ],
+  "FreshwaterFish": [
+    "has_id FreshwaterFish"
+  ],
+  "Fungus": [
+    "has_id Fungus"
+  ],
+  "Gecko": [
+    "has_id Gecko"
+  ],
+  "Goldfish": [
+    "has_id Goldfish",
+    "has_habitat freshwater"
+  ],
+  "Hammer": [
+    "has_id Hammer",
+    "used_for repair"
+  ],
+  "Horse": [
+    "has_id Horse",
+    "has_locomotion walk2"
+  ],
+  "Human": [
+    "has_id Human"
+  ],
+  "Iguana": [
+    "has_id Iguana"
+  ],
+  "Insect": [
+    "has_id Insect"
+  ],
+  "Ladybug": [
+    "has_id Ladybug",
+    "has_body_covering shell"
+  ],
+  "Lake": [
+    "has_id Lake",
+    "has_habitat freshwater"
+  ],
+  "Lion": [
+    "has_id Lion",
+    "has_locomotion walk2",
+    "has_body_covering fur2"
+  ],
+  "LivingBeing": [
+    "has_id LivingBeing"
+  ],
+  "LizardGroup": [
+    "has_id LizardGroup"
+  ],
+  "Mammal": [
+    "has_id Mammal"
+  ],
+  "Mosquito": [
+    "has_id Mosquito"
+  ],
+  "Mountain": [
+    "has_id Mountain"
+  ],
+  "Mouse": [
+    "has_id Mouse"
+  ],
+  "Mushroom": [
+    "has_id Mushroom",
+    "has_property edible"
+  ],
+  "NaturalObject": [
+    "has_id NaturalObject"
+  ],
+  "NonLivingBeing": [
+    "has_id NonLivingBeing"
+  ],
+  "Oak": [
+    "has_id Oak",
+    "has_property photosynthetic"
+  ],
+  "Orca": [
+    "has_id Orca",
+    "has_locomotion swim"
+  ],
+  "Ostrich": [
+    "has_id Ostrich",
+    "has_locomotion flightless"
+  ],
+  "Owl": [
+    "has_id Owl",
+    "has_locomotion fly2",
+    "has_body_covering feather"
+  ],
+  "OysterMushroom": [
+    "has_id OysterMushroom",
+    "has_property edible"
+  ],
+  "Penguin": [
+    "has_id Penguin",
+    "has_locomotion flightless"
+  ],
+  "Phone": [
+    "has_id Phone",
+    "has_energy_source electricity"
+  ],
+  "Pine": [
+    "has_id Pine",
+    "has_property photosynthetic"
+  ],
+  "Plant": [
+    "has_id Plant"
+  ],
+  "Primate": [
+    "has_id Primate"
+  ],
+  "Python": [
+    "has_id Python",
+    "has_body_covering scales2"
+  ],
+  "Raptor": [
+    "has_id Raptor"
+  ],
+  "Ray": [
+    "has_id Ray",
+    "has_locomotion swim2",
+    "has_body_covering scales"
+  ],
+  "Reptile": [
+    "has_id Reptile"
+  ],
+  "River": [
+    "has_id River"
+  ],
+  "Rodent": [
+    "has_id Rodent"
+  ],
+  "Rose": [
+    "has_id Rose",
+    "has_property photosynthetic"
+  ],
+  "Salmon": [
+    "has_id Salmon",
+    "has_locomotion swim2",
+    "has_body_covering scales"
+  ],
+  "Screwdriver": [
+    "has_id Screwdriver",
+    "used_for repair"
+  ],
+  "SeaTurtle": [
+    "has_id SeaTurtle",
+    "has_body_covering shell"
+  ],
+  "Shark": [
+    "has_id Shark",
+    "has_locomotion swim",
+    "has_body_covering scales"
+  ],
+  "Shiitake": [
+    "has_id Shiitake",
+    "has_property edible"
+  ],
+  "SnakeGroup": [
+    "has_id SnakeGroup"
+  ],
+  "SocialInsect": [
+    "has_id SocialInsect"
+  ],
+  "Songbird": [
+    "has_id Songbird"
+  ],
+  "Sparrow": [
+    "has_id Sparrow",
+    "has_locomotion fly",
+    "has_body_covering feather2"
+  ],
+  "Squirrel": [
+    "has_id Squirrel",
+    "has_body_covering fur"
+  ],
+  "StagBeetle": [
+    "has_id StagBeetle"
+  ],
+  "Swan": [
+    "has_id Swan",
+    "has_locomotion fly2",
+    "has_body_covering feather2"
+  ],
+  "Tool": [
+    "has_id Tool",
+    "used_for repair"
+  ],
+  "Tortoise": [
+    "has_id Tortoise",
+    "has_body_covering shell"
+  ],
+  "Tree": [
+    "has_id Tree",
+    "has_property photosynthetic2"
+  ],
+  "Tulip": [
+    "has_id Tulip",
+    "has_property photosynthetic2"
+  ],
+  "Tuna": [
+    "has_id Tuna",
+    "has_locomotion swim2",
+    "has_body_covering scales2"
+  ],
+  "TurtleGroup": [
+    "has_id TurtleGroup"
+  ],
+  "Ungulate": [
+    "has_id Ungulate"
+  ],
+  "Vehicle": [
+    "has_id Vehicle",
+    "used_for transportation"
+  ],
+  "Waterfowl": [
+    "has_id Waterfowl"
+  ],
+  "Wolf": [
+    "has_id Wolf",
+    "has_locomotion walk",
+    "has_body_covering fur2"
+  ],
+  "Yeast": [
+    "has_id Yeast",
+    "has_property fermentative"
+  ]
+}
