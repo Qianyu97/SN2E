@@ -1,40 +1,50 @@
 from random import sample
 import numpy as np
+from pandas import DataFrame
 
 from finaldata import FinalData
+from utils.unit import Indexer_SN2E
 from torch.utils.data import Dataset
-from utils import *
 
 class attrDataset(Dataset):
-    def __init__(self, finaldata:FinalData, negtsample_num=10) -> None:
+    def __init__(self, 
+                 nodeList_idx:list[int],
+                 attrDF_idx:DataFrame,
+                 upperDF_idx:DataFrame,
+                 negtDict_idx:dict[int, set[int]], 
+                 negtsample_num=10):
         super(Dataset, self).__init__()
-        self.len = len(finaldata.defiList_idx)
-        self.indexed_data  = finaldata.defiList_idx
-        self.attrDF     = finaldata.attrDF_idx.T
-        self.negtDict   = finaldata.negtDict_idx
-        self.upperdata  = finaldata.upperDict_idx
+        self.len = len(nodeList_idx)
+        self.attrArray = attrDF_idx.sort_index().to_numpy()
+        self.upperArray = upperDF_idx.sort_index().to_numpy()
+        self.nodeList_idx  = nodeList_idx
+        self.negtDict_idx  = negtDict_idx
         self.negtsample_num = negtsample_num
-        self.padAttr    = [0]*self.attrDF.shape[0]
-        self.padPare    = [0]
-        self.padNegt    = [1]    
     
     def __len__(self):
         return self.len
     
     def __getitem__(self, items):
-        #items += (ModelArg.model.num_nodefi)
-        items += 1
-        attrdata = self.attrDF.get(items, self.padAttr)
-        upperdata = self.upperdata.get(items, 0)
-        negdata = self.negtDict[items]
-        negdata = sample(list(negdata), self.negtsample_num) 
-        return [np.asarray(items), np.asarray(negdata), np.asarray(attrdata), np.asarray([upperdata])] # type: ignore  
+        #attrdata = self.attrNumpy[items]
+        #upperdata = self.upperNumpy[items]
+        negdata = self.negtDict_idx[items]
+        negdata = np.asarray(sample(list(negdata), self.negtsample_num)) 
+        return [np.asarray(items),negdata] # type: ignore  
 
 def main():
     finaldata = FinalData(data_dir='source/data/')
-    attrdataset = attrDataset(finaldata, negtsample_num=5)
+    myIndex = Indexer_SN2E(
+        nodeList=finaldata.nodeList,
+        attrList=finaldata.attrList
+        )
+    attrdataset = attrDataset(
+        myIndex.str2num(finaldata.nodeList), 
+        myIndex.str2num(finaldata.negtDict),
+        negtsample_num = 5
+        )
     for i in range(10):
         print(attrdataset[i])
+    a = 0
 
 
 

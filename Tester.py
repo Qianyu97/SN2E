@@ -1,12 +1,11 @@
 import torch
-from utils import initModule
-from utils.evaluate import Evaluater
+from models import initModule
+from evaluate import Evaluater
 from gaussianDrawer import GaussianDrawer
-from utils.treeunit import NodeUnit, AttributeUnit
+from utils.unit import NodeUnit, AttrUnit
 from finaldata import FinalData
 from models.SN2E import SN2E
-from config import PathArg, DataloaderArg, TestArg
-from config_model import SN2E_Arg
+
 class Tester():
     def __init__(self,
                  model:SN2E, 
@@ -20,11 +19,10 @@ class Tester():
 
     def run(self):
         self.evaluater.calcF1score()
-        a = self.evaluater.checklambd('Animal')
-        b = self.evaluater.checkgap('Bee', ['Animal', 'Car'], 'defi')
+        a = self.evaluater.checkgamma('Animal')
+        b = self.evaluater.checkgap('Bee', ['Animal', 'Car'], 'node')
         c = self.evaluater.checkgap('Bee', ['has_id Canary', 'has_id Bee'], 'attr')
-        self.drawer.drawOneConcept('Bee')
-        d = self.evaluater.lookupEmbedding('Animal', type0='defi')
+        d = self.evaluater.lookupEmbedding('Animal', type0='node')
         #self.evaluater.findworstlambd()    
         #self.evaluater.findworstgap('KL')
         #self.evaluater.findworstgap_homo('KL')
@@ -58,15 +56,31 @@ class Tester():
         
 
 if __name__ == "__main__":
-    pathArg         = PathArg()
-    dataloaderArg  = DataloaderArg()
-    modelArg      = SN2E_Arg()
-    testArg       = TestArg()
-
-    finaldata   = FinalData(pathArg.dataDirectory, modelArg, ifLoadIndex=True)
-    model       = initModule.initModel(modelArg, ifloadmodel=True, modelDir=pathArg.modelDirectory, usegpu=testArg.usegpu, gpunum=testArg.gpunum)
-    drawer      = GaussianDrawer(finaldata, model, pathArg.pictureDirectory)
-    evaluater   = Evaluater(finaldata, model)
-    test = Tester(model, drawer, evaluater)
-    test.run()
+    from config import PathArg, TestArg
+    from config_model import SN2EArg
+    from utils.unit import Indexer_SN2E
+    ModelArg = SN2EArg
+    finaldata = FinalData(
+        data_dir=PathArg["dataDirectory"]
+        )
+    myIndex = Indexer_SN2E(
+        nodeList=finaldata.nodeList,
+        attrList=finaldata.attrList,
+        load_dir=PathArg["indexDirectory"]
+        )
+    finaldata.indexConceptUnit(myIndex)
+    model = initModule.initModel(
+        ModelArg, finaldata.returnDataParams(),
+        modelPath=PathArg["modelDirectory"] + ModelArg["name"] + '.ckpt', 
+        usegpu=TestArg["usegpu"], 
+        gpunum=TestArg["gpunum"]
+        )
+    evaluater = Evaluater(finaldata, myIndex, model)
+    drawer      = GaussianDrawer(finaldata, myIndex, model, PathArg["pictureDirectory"])
+    evaluater.evaluateF1score()
+    print(evaluater.checkgap('Cat', ['Feline', 'Mammal']))
+    print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
+    print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
+    a = 0
     #mdrawer.drawSamples()
+

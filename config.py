@@ -1,68 +1,49 @@
 
 
 # Data arguments
-class PathArg():
-    def __init__(self):
-        self.dataDirectory      = 'source/data/'
-        self.pictureDirectory    = 'source/picture/'
-        self.modelDirectory      = 'source/model/'
+PathArg= {
+    "dataDirectory" :'source/data/',
+    "pictureDirectory" :'source/picture/',
+    "modelDirectory" :'source/model/',
+    "indexDirectory" : 'source/index/'
+}
 
 # Dataloader arguments
-class DataloaderArg():
-    def __init__(self):
-        self.batchsize   = 128
-        self.shuffle     = True
-        self.numworkers  = 0
-        self.droplast    = False
-        self.len_attr    = 0
+DataloaderArg = {
+    "batchsize"   : 128,
+    "shuffle"     : True,
+    "numworkers"  : 0,
+    "droplast"    : False,
+    "len_attr"    : 0,
+}
+        
     
 # Training arguments
-class TrainArg():
-    def __init__(self, 
-                negtsample_num = 10,
-                epochs         = 100,
-                usegpu         = True,
-                gpunum         = 1,
-                evalepoch      = 1,
-                optimizer      = "Adam",
-                evalmethod     = "MR",
-                learningrate   = 0.01,
-                weightdecay    = 0,
-                lrdecay        = 0.1,
-                lrdecayEpoch   = 300,
-                momentum       = 0,
-                ):
-        self.negtsample_num = negtsample_num
-        self.epochs         = epochs 
-        self.usegpu         = usegpu
-        self.gpunum         = gpunum 
-        self.evalepoch      = evalepoch
-        self.optimizer      = optimizer
-        self.evalmethod     = evalmethod
-        self.learningrate   = learningrate
-        self.weightdecay    = weightdecay
-        self.lrdecay        = lrdecay
-        self.lrdecayEpoch   = lrdecayEpoch
-        self.momentum       = momentum
-    
+TrainArg = {
+    "negtsample_num" : 30,
+    "epochs"         : 1000,
+    "usegpu"         : True,
+    "gpunum"         : 1,
+    "evalepoch"      : 1,
+    "optimizer"      : "Adam",
+    "evalmethod"     : "MR",
+    "learningrate"   : 0.01,
+    "weightdecay"    : 0,
+    "lrdecay"        : 0,
+    "lrdecayEpoch"   : 300,
+    "momentum"       : 0,
+}
 
-class TestArg():
-    def __init__(self, 
-                usegpu         = True,
-                gpunum         = 1,
-                evalmethod     = "MR",
-                threshold_lower = 0,
-                threshold_Upper = 1,
-                step            = 0.1,
-                num_showpicture = 10,
-                ):
-        self.usegpu         = usegpu
-        self.gpunum         = gpunum 
-        self.evalmethod     = evalmethod
-        self.threshold_lower = threshold_lower
-        self.threshold_Upper = threshold_Upper
-        self.step            = step
-        self.num_showpicture = num_showpicture
+TestArg = {
+    "usegpu"          : True, 
+    "gpunum"          : 1,
+    "evalmethod"      : "MR",
+    "threshold_lower" : 0,
+    "threshold_Upper" : 1,
+    "step"            : 0.1,
+    "num_showpicture" : 10,
+}
+
 
 '''class validateArg():
     field = DataloaderArg
@@ -76,7 +57,7 @@ class TestArg():
     negtsample_num  = TrainArg.negtsample_num
     modelname       = ModelArg.model.name
     dim             = ModelArg.model.dim
-    lambdaMax       = ModelArg.model.lambdaMax
+    gammaaMax       = ModelArg.model.gammaaMax
     gapMax          = ModelArg.model.gapMax
     gapmode         = ModelArg.model.gapmode
     vmax            = ModelArg.model.logv_max

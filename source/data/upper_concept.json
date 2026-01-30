@@ -1,4 +1,5 @@
 {
+  "Entity": null,
   "LivingBeing": "Entity",
   "NonLivingBeing": "Entity",
   "Animal": "LivingBeing",

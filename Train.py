@@ -3,6 +3,7 @@ from line_profiler import LineProfiler
 from torch.utils.data import DataLoader, Sampler
 from tqdm import tqdm
 import torch
+import numpy as np
 import re
 import collections
 import time
@@ -10,15 +11,14 @@ import os
 import random
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
-from config import PathArg, DataloaderArg, TrainArg
-from config_model import SN2E_Arg
+
 from finaldata import FinalData
-from utils import initModule
-from utils.evaluate import Evaluater
+from models import initModule
+from evaluate import Evaluater
 from datasets.attrDataset import attrDataset
 from datasets.tripleDataset import tripleDataset
 from models.SN2E import SN2E
-from Tester import *
+from utils.unit import Indexer_SN2E
 
 class RangeSampler(Sampler):
     #depth_range_record example:  {0: [0, 1], 1: [1, 3], 2: [3, 8], 3: [8, 44], 4: [44, 224], 5: [224, -1]}
@@ -37,58 +37,51 @@ class RangeSampler(Sampler):
 
 
 class Trainer():
-    def __init__(self, dataLoader:DataLoader, model:SN2E, evaluater:Evaluater, trainArg:TrainArg) -> None:
+    def __init__(self, dataLoader:DataLoader, model:SN2E, evaluater:Evaluater, dataset:attrDataset , **trainArg) -> None:
         self.dataLoader = dataLoader
         self.evaluater  = evaluater
         self.model      = model
-        self.trainArg   = trainArg
-        self.optimizer, self.scheduler  = initModule.initOptimizer(self.model, trainArg)
+        self.epochs:int   = trainArg['epochs']
+        self.optimizer, self.scheduler  = initModule.initOptimizer(self.model, **trainArg)
+        self.dataset = dataset
     
     def train_one_batch(self, batchdata):
-        loss, posloss, negloss, lambd_max, gap_min = self.model(batchdata)
+        loss, posloss, negloss, gamma_max, gap_min = self.model(batchdata)
         loss.backward(retain_graph=True)
         self.optimizer.step()
         self.optimizer.zero_grad()
         self.model.batchEndWork()
-        return posloss, negloss, lambd_max, gap_min
-    
+        return posloss, negloss, gamma_max, gap_min
+
     def run(self):
+        
+        pass
+
+    def run_deprecated(self):
         print('Info -- : start model training')
-        EPOCHS = self.trainArg.epochs
+        EPOCHS = self.epochs
         EPOCHS_ITER = tqdm(range(EPOCHS))
         bestHR = float("inf")
         for epoch in EPOCHS_ITER:
-            worstlambd, worstgap = 0, float("-inf")
+            worstgamma, worstgap = 0, float("-inf")
             posloss_sum, negloss_sum = 0, 0
             self.model.epochStartWork()
-            if epoch == 100:
-                a = 0
-            for now_depth, depth_range in self.model.depth_range_record.items():
+            for now_depth, depth_range in self.model.depthRangeRecord.items():
                 start_idx, end_idx = depth_range
                 self.dataLoader.sampler.indices = list(range(start_idx, end_idx))
                 for batchdata in self.dataLoader:
-                    posloss, negloss, lambd_max, gap_min = self.train_one_batch(batchdata)
+                    posloss, negloss, gamma_max, gap_min = self.train_one_batch(batchdata)
                     posloss_sum += posloss
                     negloss_sum += negloss
-                    worstlambd  = min(lambd_max, worstlambd)
+                    worstgamma  = min(gamma_max, worstgamma)
                     worstgap    = max(gap_min, worstgap)
-            aveposloss = posloss_sum / self.model.defi_num
-            avenegloss = negloss_sum / self.model.defi_num/self.trainArg.negtsample_num
-            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst lambd: %.2f, worst gap: %.2f" \
-                                % (epoch, aveposloss, avenegloss, worstlambd, worstgap))
-            a=0
-            
-                #if epoch % 100 == 0:
-                #    self.model.generateWholeEmbedding()
-                #    self.evaluater.calcF1score(chunknum=50)
-                #self.scheduler.step() 
+            aveposloss = posloss_sum / self.model.node_num
+            avenegloss = negloss_sum / self.model.node_num/self.trainArg.negtsample_num
+            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst gamma: %.2f, worst gap: %.2f" \
+                                % (epoch, aveposloss, avenegloss, worstgamma, worstgap))
         print('Info : finish model training')
-        #self.model.generateWholeEmbedding()
-        #self.
-        print('Info : save model sucessfully')
-        #self.evaluater.findworstlambd()
-        #
         a = 0
+        
 
 def displayArgs():
     print('\n\n\n\n')
@@ -104,33 +97,80 @@ def displayArgs():
     print(showstring)
 
 def main():
-    pathArg    = PathArg()
-    dataloaderArg  = DataloaderArg()
-    modelArg       = SN2E_Arg()
-    trainArg       = TrainArg()
+    from config import PathArg, DataloaderArg, TrainArg
+    from config_model import SN2EArg
+    ModelArg = SN2EArg
+    finaldata   = FinalData(PathArg['dataDirectory'])
+    myIndex = Indexer_SN2E(
+        nodeList=finaldata.nodeList,
+        attrList=finaldata.attrList
+        )
+    finaldata.indexConceptUnit(myIndex)
+    dataset = attrDataset(
+        myIndex.str2num(finaldata.nodeList), 
+        myIndex.str2num_DataFrame(finaldata.attrDF),
+        myIndex.str2num_DataFrame(finaldata.upperDF),
+        myIndex.str2num(finaldata.negtDict),
+        TrainArg['negtsample_num']
+        )
+    dataloader = DataLoader(
+        dataset     = dataset,              
+        batch_size  = DataloaderArg["batchsize"],
+        num_workers = DataloaderArg["numworkers"],
+        drop_last   = DataloaderArg["droplast"],
+        shuffle     = DataloaderArg["shuffle"]
+    )
+    model:SN2E = initModule.initModel(
+        ModelArg, finaldata.returnDataParams(),
+        usegpu=TrainArg["usegpu"], 
+        gpunum=TrainArg["gpunum"]
+        )
+    optimizer, scheduler  = initModule.initOptimizer(model, **TrainArg)
+    print('Info -- : start model training')
+    EPOCHS_ITER = tqdm(range(TrainArg["epochs"]), mininterval=10)
+    for epoch in EPOCHS_ITER:
+        gammaList   = []
+        negtDistList = []
+        model.epochStartWork()
+        model.batchStartWork()
+        for now_depth, depth_range in model.depthRangeRecord.items():
+            range_st, range_ed = depth_range
+            now_range = list(range(range_st, range_ed))
+            indexA = dataset.attrArray[range_st:range_ed]
+            indexF = dataset.upperArray[range_st:range_ed]
+            gamma = model.scorePos(indexA, indexF)
+            gammaList.append(gamma)
+        gammaTensor = torch.cat(gammaList)
+        gammaTensor_detached = gammaTensor.detach()
+        for batchdata in dataloader:
+            index0 , indexN = batchdata
+            negtDist = model.scoreNeg(index0, indexN)
+            negtDistList.append(negtDist)
+        negTensor = torch.cat(negtDistList)
+        negTensor_detached = negTensor.detach()
+        posloss = torch.where(gammaTensor<-1, gammaTensor, gammaTensor_detached).sum().neg()
+        negloss = torch.where(negTensor>-0.2, negTensor, negTensor_detached).sum()
+        loss = posloss + negloss
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()
+        EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst gamma: %.2f, worst gap: %.2f" \
+                            % (epoch, gammaTensor_detached.mean().item(), negTensor_detached.mean().item(), 
+                                    gammaTensor_detached.min().item(), negTensor_detached.max().item()))
+    print('Info : finish model training')
+    model.saveCheckpoint(PathArg["modelDirectory"] + ModelArg["name"] + '.ckpt')
+    print('Info : save model sucessfully')
+    myIndex.saveIndex(PathArg["indexDirectory"])
+    print('Info : save data index sucessfully')
 
-    finaldata   = FinalData(pathArg.dataDirectory, modelArg)
-    dataloader  = DataLoader(
-            dataset     = attrDataset(finaldata, trainArg.negtsample_num),              
-            batch_size  = dataloaderArg.batchsize,
-            num_workers = dataloaderArg.numworkers,
-            drop_last   = dataloaderArg.droplast,
-            sampler     = RangeSampler(),
-            shuffle     = False
-            )
-    model     = initModule.initModel(modelArg, usegpu=trainArg.usegpu, gpunum=trainArg.gpunum)
-    evaluater = None#Evaluater(finaldata, model)
-    trainer = Trainer(dataloader, model, evaluater, trainArg=trainArg)
-    trainer.run()
-    trainer.model.saveCheckpoint(pathArg.model_dir + modelArg.name + '.ckpt')
-    #model = prepare.prepareModel(ifLoadmodel=True)
-    #finaldata.save(Arg.DatapathArg.path_indexdict, 'dictionary')
-    
-    # Test
-    #drawer = GaussianDrawer(finaldata, model)
-    #test = Tester(finaldata, model, drawer, evaluater)
-    #test.run()
-    
+    evaluater = Evaluater(finaldata, myIndex, model)
+    f1score = evaluater.evaluateF1score(threshold=0)
+    evaluater.findWorstGamma()
+    d = evaluater.checkgamma('Cat')
+    #evaluater.findWorstNegt(negTensor_detached, indexN)
+    print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
+    print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
+    a=0
 
 if __name__ == "__main__":
     main()

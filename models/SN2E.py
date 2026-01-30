@@ -7,40 +7,39 @@ import os
 
 #from utils.treeunit import Embedding
 from models.base import Module
-from utils.embedding import Embedding
-from utils.embedding import EmbeddingOperator
-from config import TrainArg
-from config_model import SN2E_Arg
-
-
+from utils.unit import Embedding
+from utils.unit import EmbeddingOperator
         
 class SN2E(Module):
-    def __init__(self, ModelArg:SN2E_Arg, device):
+    def __init__(self, modelArg, dataArg):
         super(SN2E, self ).__init__()
-        self.modelName  = ModelArg.name
-        self.dim        = ModelArg.dim
-        self.device     = device
-        self.attr_num   = ModelArg.attr_num
-        self.defi_num   = ModelArg.defi_num
-        self.depth_range_record = ModelArg.depth_range_record
-        self.lambdaMax  = ModelArg.lambdaMax
-        self.gapMax     = ModelArg.gapMax
-        self.logv_max   = ModelArg.logv_max
-        self.logv_min   = ModelArg.logv_min
-        self.alpha      = ModelArg.alpha
-        self.attrMeanEmbedding = torch.nn.Embedding(self.attr_num, self.dim, padding_idx = 0, max_norm=1, device=device)  
-        self.attrLogvEmbedding  = torch.nn.Embedding(self.attr_num, self.dim, padding_idx = 0, device=device) 
+        self.modelName  = modelArg["name"]
+        self.dim        = modelArg["dim"]
+        self.device     = modelArg["device"]
+        self.gammaMax   = modelArg["gammaMax"]
+        self.gapMax     = modelArg["gapMax"]
+        self.logv_max   = modelArg["logv_max"]
+        self.logv_min   = modelArg["logv_min"]
+        self.alpha      = modelArg["alpha"]
+        self.attr_num   =  dataArg["attr_num"]
+        self.node_num   =  dataArg["node_num"]
+        self.depthRangeRecord = dataArg["depth_range_record"]
+
+        self.attrMeanEmbedding  = torch.nn.Embedding(self.attr_num + 1, self.dim, padding_idx = -1, max_norm=1, device=self.device)  
+        self.attrLogvEmbedding  = torch.nn.Embedding(self.attr_num + 1, self.dim, padding_idx = -1, device=self.device) 
         self.attrInvaEmbedding  = self.logv2inva(self.attrLogvEmbedding) #invaision matrix, the inverse of covariance matrix
-        self.defaultMean, self.defaultLogv  = 0, -20
+        self.defaultMean, self.defaultLogv  = 0, 20
         self.NoneMean, self.NoneInva = torch.empty([0]), torch.empty([0])
-        self.defiMeanEmbedding, self.defiInvaEmbedding = torch.empty([0]), torch.empty([0])
-        self.defiMeanList, self.defiInvaList = [], []
+        self.nodeMeanEmbedding, self.nodeInvaEmbedding = torch.empty([0]), torch.empty([0])
+        self.nodeMeanList, self.nodeInvaList = [], []
         self.initNoneEmbedding()
-        self.initDefiEmbedding()
-        self.initUpperMap()
-        if ModelArg.gapmode == 'gap':
+        self.initNodeEmbedding()
+        self.uppermapList = torch.arange(self.node_num, dtype=torch.long, device=self.device)
+        self.nowupper = 1
+        self.attrmapList = torch.arange(self.attr_num, dtype=torch.long, device=self.device)
+        if modelArg["gapmode"] == 'gap':
             self.calcNeg = self.calcGap 
-        elif ModelArg.gapmode == 'entail':
+        elif modelArg["gapmode"] == 'entail':
             self.calcNeg = self.calcEntailProb
         else:
             raise Exception('gap mode should be \'gap\' or \'entail\'')
@@ -48,16 +47,16 @@ class SN2E(Module):
     def initEmbedding(self, varInitMode = 'const'):
         nn.init.uniform_(self.attrMeanEmbedding.weight, -1, 1)
         nn.init.uniform_(self.attrLogvEmbedding.weight, -5, 0)
-        self.attrMeanEmbedding.weight.data[0] = self.defaultMean
-        self.attrLogvEmbedding.weight.data[0] = self.defaultLogv
+        self.attrMeanEmbedding.weight.data[-1] = self.defaultMean
+        self.attrLogvEmbedding.weight.data[-1] = self.defaultLogv
     
-    def lookupEmbedding(self, index, type0 = 'attr', ifdetach=False):
-        if type0 == 'attr':
+    def lookupEmbedding(self, index, dtype = 'attr', ifdetach=False):
+        if dtype == 'attr':
             return self.lookupAttrEmbedding(index, ifdetach)
-        elif type0 == 'defi':
-            return self.lookupDefiEmbedding(index, ifdetach)
+        elif dtype == 'node':
+            return self.lookupNodeEmbedding(index, ifdetach)
         else:
-            raise Exception('type0 should be attr or defi when looking up embedding')
+            raise Exception('type0 should be attr or node when looking up embedding')
 
     def lookupAttrEmbedding(self, index, ifdetach=False)->Embedding:
         '''
@@ -66,16 +65,19 @@ class SN2E(Module):
         varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
         index = self.variable(index)
-        mean, inva = self.attrMeanEmbedding(index), self.attrInvaEmbedding[index]
+        if index.shape[0] == 0:
+            mean, inva = self.attrMeanEmbedding.weight[index], self.attrInvaEmbedding[index]
+        else:
+            index_mapped = self.attrmapList[index]
+            mean, inva = self.attrMeanEmbedding(index_mapped), self.attrInvaEmbedding[index]
         if ifdetach:
             return mean.detach(), inva.detach()
         else:
             return mean, inva
 
-    def lookupDefiEmbedding(self, index, ifdetach=False)-> Embedding:
+    def lookupNodeEmbedding(self, index, ifdetach=False)-> Embedding:
         index = self.variable(index)
-        index_mapped = self.uppermapList[index]
-        mean, inva = self.defiMeanEmbedding[index_mapped], self.defiInvaEmbedding[index_mapped]
+        mean, inva = self.nodeMeanEmbedding[index], self.nodeInvaEmbedding[index]
         if ifdetach:
             return mean.detach(), inva.detach()
         else:
@@ -94,14 +96,14 @@ class SN2E(Module):
         meanU = (inva_a * mean_a).sum(-2) / varInvU
         return meanU, varInvU
 
-    def calcLambda(self, e_a:Embedding, e_u:Embedding)-> torch.Tensor:
+    def calcGamma(self, e_a:Embedding, e_u:Embedding)-> torch.Tensor:
         '''
         meanA      : (torch.tensor)[num0, numA, dim] 
         varLogv    : (torch.tensor)[num0, numA, dim]
         meanU      : (torch.tensor)[num0, dim]
         varInvU    : (torch.tensor)[num0, dim]
 
-        lambd      : (torch.tensor)[num0]
+        gamma      : (torch.tensor)[num0]
         '''
         mean_a, inva_a = e_a
         mean_u, inva_u = e_u
@@ -128,7 +130,8 @@ class SN2E(Module):
         mean_s, inva_s = e_s
         mean_t, inva_t = e_t
         mean_s, inva_s = mean_s.unsqueeze(-2), inva_s.unsqueeze(-2)
-        return (inva_s.log() - (inva_s + inva_t).log() - (mean_s - mean_t).pow(2).div(inva_s.reciprocal()+inva_t.reciprocal())).sum(-1)
+        v_s, v_t = inva_s.reciprocal(), inva_t.reciprocal()
+        return ( - inva_t.log() - (v_s + v_t).log() + 0.693147 - (mean_s - mean_t).pow(2).div(v_s + v_t)).sum(-1)
     
     def calcKL(self, e_s:Embedding, e_t:Embedding)->torch.Tensor:
         mean_s, inva_s = e_s
@@ -141,20 +144,20 @@ class SN2E(Module):
         '''
         indexA    : (index)[num0, numA]
         '''
-        e_f = self.lookupDefiEmbedding(indexF, ifdetach)
+        e_f = self.lookupNodeEmbedding(indexF, ifdetach)
         e_a = self.lookupAttrEmbedding(indexA, ifdetach)
         e_a = EmbeddingOperator.cat([e_a, e_f])
         e_u = self.calcIntersection(e_a)
         if not ifdetach:
-            self.stackDefiEmbedding(e_u)
-        return self.calcLambda(e_a, e_u)
+            self.stackNodeEmbedding(e_u)
+        return self.calcGamma(e_a, e_u)
     
     def scoreNeg(self, index0, indexN, ifdetach=False) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
         '''
-        e_0 = self.lookupDefiEmbedding(index0, ifdetach)
+        e_0 = self.lookupNodeEmbedding(index0, ifdetach)
         e_n = self.lookupAttrEmbedding(indexN, ifdetach)
         return self.calcNeg(e_0, e_n)
     
@@ -165,72 +168,54 @@ class SN2E(Module):
         indexN    :(index)[num0, numN]
         loss      :(torch.scale)
         '''
-        index0, indexN, indexA, indexF  = data  
+        index0, indexA, indexF, indexN  = data  
         self.updateUpperMap(index0)
-        lambd   = self.scorePos(indexA, indexF)
+        gamma   = self.scorePos(indexA, indexF)
         gap     = self.scoreNeg(index0, indexN)  
-        posloss = - torch.where(lambd<self.lambdaMax, lambd, 0).sum() 
+        posloss = - torch.where(gamma<self.gammaMax, gamma, 0).sum() 
         negloss = torch.where(gap>self.gapMax, gap, 0).sum()
         loss    = posloss + self.alpha * negloss
         showgap = gap[gap<10000]
-        return loss, lambd.sum().item(), showgap.sum().item(), lambd.min().item(), showgap.max().item()
+        return loss, gamma.sum().item(), showgap.sum().item(), gamma.min().item(), showgap.max().item()
+    
         
-    def batchEndWork(self):
-        self.attrLogvEmbedding.weight[1:].data.copy_(
+    def batchStartWork(self):
+        self.attrLogvEmbedding.weight[:-1].data.copy_(
             torch.clamp(
-                input=self.attrLogvEmbedding.weight[1:].data,
+                input=self.attrLogvEmbedding.weight[:-1].data,
                 min=self.logv_min,
                 max=self.logv_max))
         self.attrInvaEmbedding = self.logv2inva(self.attrLogvEmbedding)
     
     def epochStartWork(self):
-        self.initDefiEmbedding()
-        self.initUpperMap()
+        self.initNodeEmbedding()
 
-    def generateWholeEmbedding(self):
-        homoEmbedding = self.lookupEmbedding(self.homoIndex)
-        defiEmebdding = self.calcIntersection(homoEmbedding)
-        self.conceptmeanEmbedding_whole = torch.cat([self.conceptMeanEmbedding.weight, defiEmebdding.m])
-        self.conceptvariEmbedding_whole = torch.cat([self.conceptVariEmbedding.weight, defiEmebdding.logv])
-    
     def initNoneEmbedding(self) :
         NoneMean = torch.zeros([1, self.dim], requires_grad=False, device=self.device)
         NoneLogv = torch.ones([1, self.dim], requires_grad=False, device=self.device) * self.defaultLogv
         NoneInva = self.logv2inva(NoneLogv)
-        self.NoneMean, self.NoneInva = NoneMean, NoneInva
+        self.NoneMean, self.NoneInva = [NoneMean], [NoneInva]
 
-    def initDefiEmbedding(self):
-        self.defiMeanList = []
-        self.defiInvaList = []
-        self.stackDefiEmbedding((self.NoneMean, self.NoneInva))
-    
-    def stackDefiEmbedding(self, embedding:Embedding):
+    def initNodeEmbedding(self):
+        self.nodeMeanList = []
+        self.nodeInvaList = []
+        self.nodeMeanEmbedding = torch.vstack(self.nodeMeanList + self.NoneMean)
+        self.nodeInvaEmbedding = torch.vstack(self.nodeInvaList + self.NoneInva)
+
+    def stackNodeEmbedding(self, embedding:Embedding):
         mean, inva = embedding
-        self.defiMeanList.append(mean)
-        self.defiInvaList.append(inva)
-        self.defiMeanEmbedding = torch.vstack(self.defiMeanList)
-        self.defiInvaEmbedding = torch.vstack(self.defiInvaList)
-
-    def initUpperMap(self):
-        self.uppermapList = torch.zeros([self.defi_num], dtype=torch.long, device=self.device)
-        self.nowupper = 1
-
-    def updateUpperMap(self, newIndex:torch.Tensor):
-        self.uppermapList[newIndex] = torch.arange(len(newIndex), device=self.device) + self.nowupper
-        self.nowupper += len(newIndex)
+        self.nodeMeanList.append(mean)
+        self.nodeInvaList.append(inva)
+        self.nodeMeanEmbedding = torch.vstack(self.nodeMeanList + self.NoneMean)
+        self.nodeInvaEmbedding = torch.vstack(self.nodeInvaList + self.NoneInva)
 
     def variable(self, data):
-        if not type(data) == torch.Tensor:
+        if type(data) is not torch.Tensor:
             if type(data) == int:
-                data = torch.LongTensor([data])
-            else:
-                data = torch.LongTensor(data)
-        return data.to(self.device)
-    
-    def init(self):
-        self.initEmbedding()
-        self.batchEndWork()
-        
+                data = [data]
+            return torch.LongTensor(data).to(device=self.device)
+        else:
+            return data.to(device=self.device)
     
     def logv2inva(self, logv:torch.Tensor|torch.nn.Embedding) -> torch.Tensor:
         if type(logv) == torch.nn.Embedding:
@@ -248,34 +233,49 @@ class SN2E(Module):
         for idx, val in enumerate(list):
             self.uppermapList[val] = idx
         
-    def evaluate(self, index1, index2, mode = 'gap', type2 = 'attr'):
-        embedding1 = self.lookupDefiEmbedding(index1)
-        if type2 == 'attr':
-            embedding2 = self.lookupAttrEmbedding(index2)
-        elif type2 == 'defi':
-            embedding2 = self.lookupDefiEmbedding(index2)
-        else:
-            raise Exception("type_2 should be attr or defi")
-        if mode == 'KL':
-            eval = self.calcKL
-        elif mode == 'gap':
-            eval = self.calcGap
-        elif mode == 'entail':
-            eval = self.calcEntailProb
-        else:
-            raise Exception('eval mode should be \'kl\', \'gap\' or \'entail\'')
+    def evaluate(self, inputSamples, mode=None)->torch.Tensor:
+        index1, index2 = inputSamples
+        embedding1 = self.lookupNodeEmbedding(index1, ifdetach=True)
+        embedding2 = self.lookupAttrEmbedding(index2, ifdetach=True)
+        match mode:
+            case 'KL':
+                eval = self.calcKL
+                print(f"Use KL divergence as the similarity function in evaluation ")
+            case 'gap':
+                eval = self.calcGap
+                print(f"Use norm gaussian gap as the similarity function in evaluation ")
+            case 'entail':
+                eval = self.calcEntailProb
+                print(f"Use entail probability as the similarity function in evaluation ")
+            case _ :
+                eval = self.calcEntailProb
+                Warning(f"Unnodened mode, Use default entail probability as the similarity function in evaluation ")
         return eval(embedding1, embedding2)
+    
+    def checkGap(self, index0, indexN, typeN):
+        '''
+        index0: num0 
+        indexN: [numN]
+        '''
+        e_0 = self.lookupNodeEmbedding(index0, ifdetach=True)
+        e_n = self.lookupEmbedding(indexN, dtype=typeN, ifdetach=True)
+        return self.calcNeg(e_0, e_n)
+
     
     def loadCheckpoint(self, path, device):
         ckpt = torch.load(path, device)
         self.load_state_dict(ckpt["model"])
-        self.defiMeanEmbedding, self.defiInvaEmbedding = ckpt["defiEmbedding"]
+        self.nodeMeanEmbedding, self.nodeInvaEmbedding = ckpt["nodeEmbedding"]
+        #self.uppermapList = ckpt["uppermap"]
+        self.attrInvaEmbedding  = self.logv2inva(self.attrLogvEmbedding)
 
     def saveCheckpoint(self, path):
         torch.save({
             "model":self.state_dict(),
-            "defiEmbedding": (self.defiMeanEmbedding, self.defiInvaEmbedding)
+            "nodeEmbedding": (self.nodeMeanEmbedding, self.nodeInvaEmbedding)
+            #"uppermap":self.uppermapList
             }, path)
+        
     
     
             

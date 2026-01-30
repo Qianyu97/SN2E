@@ -10,14 +10,14 @@ class FineData(BaseData):
     def __init__(self, path_rawdata = None):
         if path_rawdata:
             rawdata:RawData = self.load(path_rawdata) # type: ignore 
-            fulllist, defilist, primlist = self.creat_baselist(rawdata.basetree)
+            fulllist, nodelist, primlist = self.creat_baselist(rawdata.basetree)
             attrdict, homodict = self.creat_attrhomodict(rawdata.basetree)
             paredict = self.creat_paredict(rawdata.basedict)
-            negtdict = self.creat_negtdict(defilist, primlist, rawdata.basetree)
+            negtdict = self.creat_negtdict(nodelist, primlist, rawdata.basetree)
             self.rawdata = rawdata
             self.fulllist = fulllist
             self.fullset  = set(fulllist)
-            self.defilist = defilist
+            self.nodelist = nodelist
             self.primlist = primlist
             self.attrdict = attrdict
             self.homodict = homodict
@@ -26,25 +26,25 @@ class FineData(BaseData):
             self.attrDF = self.creat_DataFrame(attrdict)
             self.homoDF = self.creat_DataFrame(homodict)
             self.pareDF = self.creat_DataFrame(paredict)
-            ModelArg.SN2E.num_defi = len(defilist)
+            ModelArg.SN2E.num_node = len(nodelist)
             ModelArg.SN2E.num_prim = len(primlist)
             ModelArg.SN2E.num_full = len(fulllist)
-            ModelArg.SN2E.num_nodefi = ModelArg.SN2E.num_prim + 2
+            ModelArg.SN2E.num_nonode = ModelArg.SN2E.num_prim + 2
             #self.negtDF = self.creat_DataFrame(negtdict)
             a = 0
     
     def creat_baselist(self, basetree:NodeUnit):
         def iter(node:NodeUnit):
             primset.update(node.attributes) #[attribute.name for attribute in node.attributes]
-            defiset.add(node.name)
+            nodeset.add(node.name)
             for son in node.sons:
                 iter(son)
             return
-        defiset, primset = set(), set()
+        nodeset, primset = set(), set()
         iter(basetree)
-        defilist, primlist = list(defiset), list(primset)
-        fulllist = primlist + defilist
-        return fulllist, defilist, primlist
+        nodelist, primlist = list(nodeset), list(primset)
+        fulllist = primlist + nodelist
+        return fulllist, nodelist, primlist
 
     def creat_attrhomodict(self, basetree):
         def iter(node:NodeUnit):
@@ -77,7 +77,7 @@ class FineData(BaseData):
         return dict(homodict)
     
 
-    def creat_negtdict(self, defilist, primlist, basetree:NodeUnit):
+    def creat_negtdict(self, nodelist, primlist, basetree:NodeUnit):
         def creat_cogndict():
             def iter(node:NodeUnit):
                 tempset = set()
@@ -91,7 +91,7 @@ class FineData(BaseData):
             iter(basetree)
             return cogndict
         cogndict = creat_cogndict()
-        negtdict = {concept: list(set(primlist) - cogndict[concept]) for concept in defilist}
+        negtdict = {concept: list(set(primlist) - cogndict[concept]) for concept in nodelist}
         return negtdict
 
     def creat_paredict(self, basedict:'dict[str, NodeUnit]'):
