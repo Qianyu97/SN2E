@@ -50,15 +50,15 @@ class SN2E(Module):
         self.attrMeanEmbedding.weight.data[-1] = self.defaultMean
         self.attrLogvEmbedding.weight.data[-1] = self.defaultLogv
     
-    def lookupEmbedding(self, index, dtype = 'attr', ifdetach=False):
+    def lookupEmbedding(self, index, dtype = 'attr'):
         if dtype == 'attr':
-            return self.lookupAttrEmbedding(index, ifdetach)
+            return self.lookupAttrEmbedding(index)
         elif dtype == 'node':
-            return self.lookupNodeEmbedding(index, ifdetach)
+            return self.lookupNodeEmbedding(index)
         else:
-            raise Exception('type0 should be attr or node when looking up embedding')
+            raise Exception('dtype should be \'attr\' or \'node\' when looking up an embedding')
 
-    def lookupAttrEmbedding(self, index, ifdetach=False)->Embedding:
+    def lookupAttrEmbedding(self, index)->Embedding:
         '''
         index:  (index)[batchNum, indexNum]
         mean:   (torch.tensor)[batchNum, indexNum, dim]
@@ -70,18 +70,12 @@ class SN2E(Module):
         else:
             index_mapped = self.attrmapList[index]
             mean, inva = self.attrMeanEmbedding(index_mapped), self.attrInvaEmbedding[index]
-        if ifdetach:
-            return mean.detach(), inva.detach()
-        else:
-            return mean, inva
+        return mean, inva
 
-    def lookupNodeEmbedding(self, index, ifdetach=False)-> Embedding:
+    def lookupNodeEmbedding(self, index)-> Embedding:
         index = self.variable(index)
         mean, inva = self.nodeMeanEmbedding[index], self.nodeInvaEmbedding[index]
-        if ifdetach:
-            return mean.detach(), inva.detach()
-        else:
-            return mean, inva
+        return mean, inva
 
     def calcIntersection(self, e_a:Embedding)->Embedding:
         '''
@@ -91,6 +85,7 @@ class SN2E(Module):
         meanU      : (torch.tensor)[num0, dim]
         varInvU    : (torch.tensor)[num0, dim]
         '''
+
         mean_a, inva_a = e_a
         varInvU = inva_a.sum(-2)
         meanU = (inva_a * mean_a).sum(-2) / varInvU
@@ -121,7 +116,7 @@ class SN2E(Module):
         mean_s, inva_s = e_s
         mean_n, logv_n = e_n
         mean_s, inva_s = mean_s.unsqueeze(-2), inva_s.unsqueeze(-2)
-        return ( (mean_s - mean_n).pow(2).div(inva_s.reciprocal() + logv_n.reciprocal())).sum(-1)
+        return - ( (mean_s - mean_n).pow(2).div(inva_s.reciprocal() + logv_n.reciprocal())).sum(-1)
     
     def calcEntailProb(self, e_s:Embedding, e_t:Embedding)->torch.Tensor:
         '''
@@ -131,7 +126,7 @@ class SN2E(Module):
         mean_t, inva_t = e_t
         mean_s, inva_s = mean_s.unsqueeze(-2), inva_s.unsqueeze(-2)
         v_s, v_t = inva_s.reciprocal(), inva_t.reciprocal()
-        return ( - inva_t.log() - (v_s + v_t).log() + 0.693147 - (mean_s - mean_t).pow(2).div(v_s + v_t)).sum(-1)
+        return ( - inva_t.log() - (v_s + v_t).log() + 0.593147 - (mean_s - mean_t).pow(2).div(v_s + v_t)).sum(-1)
     
     def calcKL(self, e_s:Embedding, e_t:Embedding)->torch.Tensor:
         mean_s, inva_s = e_s
@@ -140,25 +135,25 @@ class SN2E(Module):
         vardiv = inva_s.div(inva_t)
         return 1/2 * ( - 1 + vardiv  + (mean_s - mean_t).pow(2).div(inva_t)).sum(-1)
 
-    def scorePos(self, indexA, indexF, ifdetach=False) -> torch.Tensor:
+    def scorePos(self, indexA, indexF, train_mode=True) -> torch.Tensor:
         '''
         indexA    : (index)[num0, numA]
         '''
-        e_f = self.lookupNodeEmbedding(indexF, ifdetach)
-        e_a = self.lookupAttrEmbedding(indexA, ifdetach)
+        e_f = self.lookupNodeEmbedding(indexF)
+        e_a = self.lookupAttrEmbedding(indexA)
         e_a = EmbeddingOperator.cat([e_a, e_f])
         e_u = self.calcIntersection(e_a)
-        if not ifdetach:
+        if train_mode:
             self.stackNodeEmbedding(e_u)
         return self.calcGamma(e_a, e_u)
     
-    def scoreNeg(self, index0, indexN, ifdetach=False) ->torch.Tensor:
+    def scoreNeg(self, index0, indexN) ->torch.Tensor:
         '''
         index0    :(index)[num0]
         indexN    :(index)[num0, numN]
         '''
-        e_0 = self.lookupNodeEmbedding(index0, ifdetach)
-        e_n = self.lookupAttrEmbedding(indexN, ifdetach)
+        e_0 = self.lookupNodeEmbedding(index0)
+        e_n = self.lookupAttrEmbedding(indexN)
         return self.calcNeg(e_0, e_n)
     
     def forward(self, data:tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]):
@@ -233,33 +228,29 @@ class SN2E(Module):
         for idx, val in enumerate(list):
             self.uppermapList[val] = idx
         
-    def evaluate(self, inputSamples, mode=None)->torch.Tensor:
+    def evaluate(self, inputSamples)->torch.Tensor:
         index1, index2 = inputSamples
-        embedding1 = self.lookupNodeEmbedding(index1, ifdetach=True)
-        embedding2 = self.lookupAttrEmbedding(index2, ifdetach=True)
-        match mode:
-            case 'KL':
-                eval = self.calcKL
-                print(f"Use KL divergence as the similarity function in evaluation ")
-            case 'gap':
-                eval = self.calcGap
-                print(f"Use norm gaussian gap as the similarity function in evaluation ")
-            case 'entail':
-                eval = self.calcEntailProb
-                print(f"Use entail probability as the similarity function in evaluation ")
-            case _ :
-                eval = self.calcEntailProb
-                Warning(f"Unnodened mode, Use default entail probability as the similarity function in evaluation ")
-        return eval(embedding1, embedding2)
+        embedding1 = self.lookupNodeEmbedding(index1)
+        embedding2 = self.lookupAttrEmbedding(index2)
+        return self.calcNeg(embedding1, embedding2)
+    
+    def checkEntail(self, index0, indexN, typeN):
+        '''
+        index0: num0 
+        indexN: [numN]
+        '''
+        e_0 = self.lookupNodeEmbedding(index0)
+        e_n = self.lookupEmbedding(indexN, dtype=typeN)
+        return self.calcEntailProb(e_0, e_n)
     
     def checkGap(self, index0, indexN, typeN):
         '''
         index0: num0 
         indexN: [numN]
         '''
-        e_0 = self.lookupNodeEmbedding(index0, ifdetach=True)
-        e_n = self.lookupEmbedding(indexN, dtype=typeN, ifdetach=True)
-        return self.calcNeg(e_0, e_n)
+        e_0 = self.lookupNodeEmbedding(index0)
+        e_n = self.lookupEmbedding(indexN, dtype=typeN)
+        return self.calcGap(e_0, e_n)
 
     
     def loadCheckpoint(self, path, device):

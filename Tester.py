@@ -77,10 +77,11 @@ if __name__ == "__main__":
         )
     evaluater = Evaluater(finaldata, myIndex, model)
     drawer      = GaussianDrawer(finaldata, myIndex, model, PathArg["pictureDirectory"])
-    evaluater.evaluateF1score()
-    print(evaluater.checkgap('Cat', ['Feline', 'Mammal']))
-    print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
-    print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
+    print(f"The f1score is {evaluater.evaluateF1score()}")
+    print(f"The auc score is {evaluater.evaluateAUC()}")
+    #print(evaluater.checkgap('Cat', ['Feline', 'Mammal']))
+    #print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
+    #print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
     a = 0
     #mdrawer.drawSamples()
 

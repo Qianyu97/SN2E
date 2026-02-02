@@ -1,36 +1,8 @@
-from collections import defaultdict, deque
+from collections import deque
+
 from utils.unit import NodeUnit, AttrUnit
 from utils import fileTool
 
-# ---------- Main extraction ----------
-class RawData():
-    def __init__(self, data_dir:str):
-        root_concept:str = fileTool.load_json(data_dir + "root_concept.json")
-        nodeList_raw:list[str] = fileTool.load_json(data_dir + "node_concepts.json")
-        attrList_raw:list[str] = fileTool.load_json(data_dir + "attributes.json")
-        upperDict_raw:dict[str,str] = fileTool.load_json(data_dir + "upper_concept.json")
-        attrDict_raw:dict[str,list[str]] = fileTool.load_json(data_dir + "node_attributes.json")
-        nodeList_raw.append(None)
-        attrList_raw.append(None)
-        nodeList, attrList, \
-            nodeUnitDict, attrUnitDict, \
-                upperDict, attrDict = stuffNodeTree(nodeList_raw, attrList_raw, upperDict_raw, attrDict_raw)
-        unitDict:dict[str, dict[str, list[NodeUnit|AttrUnit]]] \
-            = {'attr':attrUnitDict, 'node': nodeUnitDict}
-        origin, nodeList, depth_range_record = set_tree_depth(nodeUnitDict, root_concept)
-        self.nodeList = nodeList[:-1]
-        self.attrList = attrList[:-1]
-        self.nodeAllList = nodeList
-        self.attrAllList = attrList
-        self.nodeUnitDict = nodeUnitDict
-        self.attrUnitDict = attrUnitDict
-        self.unitDict   = unitDict
-        self.upperDict = upperDict
-        self.attrDict = attrDict
-        self.origin = origin
-        self.depth_range_record = depth_range_record
-
-# ---------- raw data method ----------
 def stuffNodeTree(
         nodeList_raw:list[str],
         attrList_raw:list[str], 
@@ -90,8 +62,62 @@ def set_tree_depth(
     depth_range_record = {key: tuple(value) for key, value in depth_range_record.items()}
     return origin, sorted_conceptsList, depth_range_record
 
+def create_homoDict(attrList:list[AttributeError], origin:NodeUnit):
+    attrbute_set = set(attrList)
+    homoDict:dict[NodeUnit, set[AttrUnit]] = {None: set()}
+    queue = deque([origin])
+    while queue:
+        current_node = queue.popleft()
+        queue.extend(current_node.children)
+        homoDict[current_node] = homoDict[current_node.father] | current_node.attributes
+    del homoDict[None]
+    return homoDict
+
+def create_negtDict(attrList:list[AttributeError], origin:NodeUnit):
+    attrbute_set = set(attrList)
+    negtDict:dict[NodeUnit, set[AttrUnit]] = {None: attrbute_set}
+    queue = deque([origin])
+    while queue:
+        current_node = queue.popleft()
+        queue.extend(current_node.children)
+        negtDict[current_node] = negtDict[current_node.father] - current_node.attributes
+    del negtDict[None]
+    return negtDict
+
+# ---------- Main extraction ----------
+class RawData():
+    def __init__(self, data_dir:str):
+        self.root_concept:str = fileTool.load_json(data_dir + "root_concept.json")
+        self.nodeList_raw:list[str] = fileTool.load_json(data_dir + "node_concepts.json")
+        self.attrList_raw:list[str] = fileTool.load_json(data_dir + "attributes.json")
+        self.upperDict_raw:dict[str,str] = fileTool.load_json(data_dir + "upper_concept.json")
+        self.attrDict_raw:dict[str,list[str]] = fileTool.load_json(data_dir + "node_attributes.json")
+        self.nodeList_raw.append(None)
+        self.attrList_raw.append(None)
+        nodeList, attrList, \
+            nodeUnitDict, attrUnitDict, \
+                upperDict, attrDict = stuffNodeTree(self.nodeList_raw, self.attrList_raw, self.upperDict_raw, self.attrDict_raw)
+        unitDict:dict[str, dict[str, list[NodeUnit|AttrUnit]]] \
+            = {'attr':attrUnitDict, 'node': nodeUnitDict}
+        origin, nodeList, depth_range_record = set_tree_depth(nodeUnitDict, self.root_concept)
+        self.nodeList = nodeList[:-1]
+        self.attrList = attrList[:-1]
+        self.nodeAllList = nodeList
+        self.attrAllList = attrList
+        self.nodeUnitDict = nodeUnitDict
+        self.attrUnitDict = attrUnitDict
+        self.unitDict   = unitDict
+        self.upperDict = upperDict
+        self.attrDict = attrDict
+        self.origin = origin
+        self.depth_range_record = depth_range_record
+        self.attrList
+
+        self.homoDict = create_homoDict(self.attrList, self.origin)
+        self.negtDict = create_negtDict(self.attrList, self.origin)
+
 # ---------- Example usage ----------
 if __name__ == "__main__":
-    data_dir = "source/data/"
+    data_dir = "./data/"
     rawdata_instance = RawData(data_dir)
     a = 0

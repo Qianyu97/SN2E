@@ -54,7 +54,6 @@ class Trainer():
         return posloss, negloss, gamma_max, gap_min
 
     def run(self):
-        
         pass
 
     def run_deprecated(self):
@@ -83,24 +82,24 @@ class Trainer():
         a = 0
         
 
-def displayArgs():
-    print('\n\n\n\n')
-    print(time.strftime("\n%Y-%m-%d %H:%M:%S", time.localtime()))
-    showstring = str()
-    args = [i for i in dir(displayArg) if not i.startswith('__')]
-    args.sort()
-    for argname in args:
-        if not argname.startswith('__'):
-            arg = getattr(displayArg, argname)
-            showstring += (argname + ': ' + str(arg))
-            showstring += '    '
-    print(showstring)
+def displayArgs(DataloaderArg:dict, TrainArg:dict, ModelArg:dict):
+    print('Current training arguments:')
+    for key, value in DataloaderArg.items():
+        print(f'  {key} : {value}')
+    for key, value in TrainArg.items():
+        print(f'  {key} : {value}')
+    for key, value in ModelArg.items():
+        print(f'  {key} : {value}')
+    print()
 
 def main():
     from config import PathArg, DataloaderArg, TrainArg
     from config_model import SN2EArg
+    displayArgs(DataloaderArg, TrainArg, SN2EArg)
     ModelArg = SN2EArg
-    finaldata   = FinalData(PathArg['dataDirectory'])
+    finaldata = FinalData(
+        data_dir=PathArg['dataDirectory']
+        )
     myIndex = Indexer_SN2E(
         nodeList=finaldata.nodeList,
         attrList=finaldata.attrList
@@ -126,8 +125,9 @@ def main():
         gpunum=TrainArg["gpunum"]
         )
     optimizer, scheduler  = initModule.initOptimizer(model, **TrainArg)
+    
     print('Info -- : start model training')
-    EPOCHS_ITER = tqdm(range(TrainArg["epochs"]), mininterval=10)
+    EPOCHS_ITER = tqdm(range(TrainArg["epochs"]), miniters=10, mininterval=10)
     for epoch in EPOCHS_ITER:
         gammaList   = []
         negtDistList = []
@@ -154,9 +154,11 @@ def main():
         loss.backward()
         optimizer.step()
         optimizer.zero_grad()
-        EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst gamma: %.2f, worst gap: %.2f" \
-                            % (epoch, gammaTensor_detached.mean().item(), negTensor_detached.mean().item(), 
-                                    gammaTensor_detached.min().item(), negTensor_detached.max().item()))
+        if epoch % 100 == 0:
+            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst gamma: %.2f, worst gap: %.2f" \
+                                % (epoch, gammaTensor_detached.mean().item(), negTensor_detached.mean().item(), 
+                                        gammaTensor_detached.min().item(), negTensor_detached.max().item()))
+        
     print('Info : finish model training')
     model.saveCheckpoint(PathArg["modelDirectory"] + ModelArg["name"] + '.ckpt')
     print('Info : save model sucessfully')
@@ -164,12 +166,13 @@ def main():
     print('Info : save data index sucessfully')
 
     evaluater = Evaluater(finaldata, myIndex, model)
-    f1score = evaluater.evaluateF1score(threshold=0)
+    print(f"The f1score is {evaluater.evaluateF1score()}")
+    print(f"The auc score is {evaluater.evaluateAUC()}")
     evaluater.findWorstGamma()
-    d = evaluater.checkgamma('Cat')
+    #d = evaluater.checkgamma('Cat')
     #evaluater.findWorstNegt(negTensor_detached, indexN)
-    print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
-    print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
+    #print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
+    #print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
     a=0
 
 if __name__ == "__main__":

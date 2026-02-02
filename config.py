@@ -1,27 +1,25 @@
-
-
 # Data arguments
 PathArg= {
-    "dataDirectory" :'source/data/',
-    "pictureDirectory" :'source/picture/',
-    "modelDirectory" :'source/model/',
-    "indexDirectory" : 'source/index/'
-}
+    "dataDirectory" :'./data/',
+    "pictureDirectory" :'./source/picture/',
+    "modelDirectory" :'./source/model/',
+    "indexDirectory" : './source/index/'
+    }
 
 # Dataloader arguments
 DataloaderArg = {
-    "batchsize"   : 128,
+    "batchsize"   : 64,
     "shuffle"     : True,
     "numworkers"  : 0,
     "droplast"    : False,
     "len_attr"    : 0,
-}
+    }
         
     
 # Training arguments
 TrainArg = {
-    "negtsample_num" : 30,
-    "epochs"         : 1000,
+    "negtsample_num" : 100,
+    "epochs"         : 10000,
     "usegpu"         : True,
     "gpunum"         : 1,
     "evalepoch"      : 1,
@@ -32,7 +30,7 @@ TrainArg = {
     "lrdecay"        : 0,
     "lrdecayEpoch"   : 300,
     "momentum"       : 0,
-}
+    }
 
 TestArg = {
     "usegpu"          : True, 
@@ -42,7 +40,7 @@ TestArg = {
     "threshold_Upper" : 1,
     "step"            : 0.1,
     "num_showpicture" : 10,
-}
+    }
 
 
 '''class validateArg():

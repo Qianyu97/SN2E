@@ -6,7 +6,7 @@ def calcF1score(prediction:torch.Tensor, groundTruth:torch.Tensor, askmore = Fal
         fn = ( ~ groundTruth *   prediction).sum()
         precision   = (tp + 1) / ( tp + fp + 1)
         recall      = (tp + 1) / ( tp + fn + 1) 
-        F1score = (2 * precision * recall / (precision + recall)).max().item()
+        F1score = (2 * precision * recall / (precision + recall)).max()
         if not askmore:        
             return F1score, precision, recall
         else:
