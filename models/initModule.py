@@ -8,7 +8,7 @@ from models.base import Module
 
 def initModel(modelArg, dataArg, modelPath=None, usegpu=True, gpunum=0)->Module:
     name = modelArg["name"]
-    print(f"INFO -- prepare : Init model {name}")
+    #print(f"INFO -- prepare : Init model {name}")
     if usegpu:
         device = torch.device('cuda:'+str(gpunum))
         modelArg['device'] = device
@@ -34,14 +34,14 @@ def initModel(modelArg, dataArg, modelPath=None, usegpu=True, gpunum=0)->Module:
         raise Exception("Model Setting Error")
     if modelPath is None:
         model.initEmbedding()
-        print("INFO -- prepare : Model initialization complete")
+        print(f"INFO -- prepare : Model {name} initialization complete")
     else:
         model.loadCheckpoint(modelPath, device)
-        print("INFO -- prepare : Model loading complete")
+        print(f"INFO -- prepare : Model {name} loading complete")
     return model
 
 def initOptimizer(model:Module, **trainArg):
-    print("INFO -- prepare : Init optimizer")
+    #print("INFO -- prepare : Init optimizer")
     optimizer = trainArg["optimizer"]
     learning_rate = trainArg["learningrate"]
     weight_decay = trainArg["weightdecay"]

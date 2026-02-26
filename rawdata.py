@@ -1,4 +1,4 @@
-from collections import deque
+from collections import deque, defaultdict
 
 from utils.unit import NodeUnit, AttrUnit
 from utils import fileTool
@@ -62,8 +62,7 @@ def set_tree_depth(
     depth_range_record = {key: tuple(value) for key, value in depth_range_record.items()}
     return origin, sorted_conceptsList, depth_range_record
 
-def create_homoDict(attrList:list[AttributeError], origin:NodeUnit):
-    attrbute_set = set(attrList)
+def create_homoDict( origin:NodeUnit):
     homoDict:dict[NodeUnit, set[AttrUnit]] = {None: set()}
     queue = deque([origin])
     while queue:
@@ -73,9 +72,19 @@ def create_homoDict(attrList:list[AttributeError], origin:NodeUnit):
     del homoDict[None]
     return homoDict
 
+def create_ancestorDict(origin:NodeUnit):
+    ancestorDict:dict[NodeUnit, set[NodeUnit]] = {None: set()}
+    queue = deque([origin])
+    while queue:
+        current_node = queue.popleft()
+        queue.extend(current_node.children)
+        ancestorDict[current_node] = ancestorDict[current_node.father] | {current_node}
+    del ancestorDict[None]
+    return ancestorDict
+
+
 def create_negtDict(attrList:list[AttributeError], origin:NodeUnit):
-    attrbute_set = set(attrList)
-    negtDict:dict[NodeUnit, set[AttrUnit]] = {None: attrbute_set}
+    negtDict:dict[NodeUnit, set[AttrUnit]] = {None: set(attrList)}
     queue = deque([origin])
     while queue:
         current_node = queue.popleft()
@@ -83,6 +92,8 @@ def create_negtDict(attrList:list[AttributeError], origin:NodeUnit):
         negtDict[current_node] = negtDict[current_node.father] - current_node.attributes
     del negtDict[None]
     return negtDict
+
+
 
 # ---------- Main extraction ----------
 class RawData():
@@ -111,13 +122,26 @@ class RawData():
         self.attrDict = attrDict
         self.origin = origin
         self.depth_range_record = depth_range_record
-        self.attrList
 
-        self.homoDict = create_homoDict(self.attrList, self.origin)
+        self.homoDict = create_homoDict(self.origin)
+        self.anceDict = create_ancestorDict(self.origin)
         self.negtDict = create_negtDict(self.attrList, self.origin)
+        a = 0
+    
+    def print_tree(self, max_depth: int | None = None):
+        def dfs(node: NodeUnit, depth: int):
+            if max_depth is not None and depth > max_depth:
+                return
+            prefix = "  " * depth + ("└─ " if depth > 0 else "") + f" {depth} "
+            print(prefix + node.name)
+            for c in node.children:
+                dfs(c, depth + 1)
+        dfs(self.origin, 0)
+
 
 # ---------- Example usage ----------
 if __name__ == "__main__":
-    data_dir = "./data/"
+    data_dir = "./data_full/"
     rawdata_instance = RawData(data_dir)
+    rawdata_instance.print_tree()
     a = 0

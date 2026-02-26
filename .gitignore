@@ -7,3 +7,6 @@
 /datasets/__pycache__/
 /utils/__pycache__/
 /source/
+*.out
+*.txt
+*.ckpt

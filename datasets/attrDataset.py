@@ -17,7 +17,7 @@ class attrDataset(Dataset):
         self.len = len(nodeList_idx)
         self.attrArray = attrDF_idx.sort_index().to_numpy()
         self.upperArray = upperDF_idx.sort_index().to_numpy()
-        self.nodeList_idx  = nodeList_idx
+        self.nodeList_idx  = np.array(nodeList_idx)
         self.negtDict_idx  = negtDict_idx
         self.negtsample_num = negtsample_num
     

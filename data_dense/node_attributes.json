@@ -1,0 +1,2318 @@
+{
+  "Concept": ["is_a root_concept"],
+  "Artifact": [
+    "hasproperty man_made"
+  ],
+  "Fungus": [
+    "eats organic_matter",
+    "lives_in moist_places"
+  ],
+  "Microorganism": [
+    "hasproperty microscopic",
+    "reproduces rapidly",
+    "lives_in diverse_habitats"
+  ],
+  "Protist": [
+    "lives_in water",
+    "reproduces asexually"
+  ],
+  "Mollusk": [
+    "hasproperty soft_body",
+    "lives_in water"
+  ],
+  "Worm": [
+    "hasproperty elongated_body",
+    "hasproperty limbless"
+  ],
+  "Cnidarian": [
+    "hasproperty radial_symmetry"
+  ],
+  "Echinoderm": [
+    "hasproperty radial_symmetry"
+  ],
+  "Mammal": [
+    "hasproperty warm_blooded"
+  ],
+  "Bird": [
+    "hasproperty warm_blooded",
+    "capable_of laying_eggs"
+  ],
+  "Reptile": [
+    "hasproperty cold_blooded",
+    "capable_of laying_eggs"
+  ],
+  "Amphibian": [
+    "hasproperty cold_blooded"
+  ],
+  "Fish": [
+    "lives_in water",
+    "moves_by swimming"
+  ],
+  "CarnivorousMammal": [
+    "eats meat",
+    "hasproperty sharp_teeth",
+    "capable_of hunting"
+  ],
+  "Ungulate": [
+    "eats plants",
+    "capable_of running"
+  ],
+  "Rodent": [
+    "eats seeds",
+    "capable_of burrowing"
+  ],
+  "Bat": [
+    "capable_of flight",
+    "active_in night"
+  ],
+  "MarineMammal": [
+    "breathes air"
+  ],
+  "Ursid": [
+    "hasproperty large_body",
+    "capable_of hibernation",
+    "eats omnivorous_diet"
+  ],
+  "Mustelid": [
+    "hasproperty elongated_body",
+    "capable_of digging",
+    "eats small_prey"
+  ],
+  "Hyenid": [
+    "capable_of scavenging",
+    "hasproperty strong_jaws",
+    "lives_in savanna"
+  ],
+  "Pinniped": [
+    "lives_in coastal_waters",
+    "moves_by swimming",
+    "hasproperty flippers"
+  ],
+  "GrayWolf": [
+    "eats ungulates"
+  ],
+  "Coyote": [
+    "lives_in grasslands",
+    "eats small_mammals"
+  ],
+  "RedFox": [
+    "hasproperty bushy_tail",
+    "eats rodents"
+  ],
+  "ArcticFox": [
+    "lives_in tundra",
+    "hasproperty thick_fur"
+  ],
+  "GoldenJackal": [
+    "eats carrion",
+    "capable_of scavenging"
+  ],
+  "DomesticDog": [
+    "hasproperty domesticated",
+    "capable_of barking"
+  ],
+  "Lion": [
+    "eats ungulates",
+    "lives_in savanna"
+  ],
+  "Tiger": [
+    "hasproperty striped_coat"
+  ],
+  "Leopard": [
+    "capable_of climbing",
+    "hasproperty spotted_coat"
+  ],
+  "Cheetah": [
+    "lives_in savanna"
+  ],
+  "DomesticCat": [
+    "hasproperty domesticated",
+    "eats small_prey"
+  ],
+  "SnowLeopard": [
+    "lives_in mountains",
+    "hasproperty thick_fur"
+  ],
+  "BrownBear": [
+    "lives_in forest"
+  ],
+  "PolarBear": [
+    "lives_in arctic",
+    "eats seals"
+  ],
+  "AmericanBlackBear": [
+    "capable_of climbing"
+  ],
+  "GiantPanda": [
+    "lives_in mountains"
+  ],
+  "SunBear": [
+    "lives_in rainforest"
+  ],
+  "SlothBear": [
+    "eats termites",
+    "lives_in grasslands",
+    "capable_of digging"
+  ],
+  "RiverOtter": [
+    "lives_in rivers",
+    "capable_of swimming"
+  ],
+  "SeaOtter": [
+    "lives_in ocean",
+    "eats shellfish"
+  ],
+  "Badger": [
+    "lives_in burrows",
+    "eats worms"
+  ],
+  "Wolverine": [
+    "eats carrion",
+    "lives_in boreal_forest"
+  ],
+  "Weasel": [
+    "hasproperty small_body",
+    "eats rodents"
+  ],
+  "Ferret": [
+    "hasproperty domesticated"
+  ],
+  "SpottedHyena": [
+    "eats carrion"
+  ],
+  "StripedHyena": [
+    "lives_in drylands",
+    "eats carrion"
+  ],
+  "BrownHyena": [
+    "lives_in desert",
+    "eats carrion"
+  ],
+  "Aardwolf": [
+    "eats termites"
+  ],
+  "HyaenaClan": [
+    "lives_in groups"
+  ],
+  "ScavengerHyena": [
+    "eats carrion"
+  ],
+  "HarborSeal": [
+    "hasproperty whiskers"
+  ],
+  "ElephantSeal": [
+    "hasproperty large_body",
+    "dives_to deep_water",
+    "eats squid"
+  ],
+  "SeaLion": [
+    "capable_of barking",
+    "lives_in colonies"
+  ],
+  "Walrus": [
+    "lives_in arctic"
+  ],
+  "FurSeal": [
+    "hasproperty thick_fur"
+  ],
+  "MonkSeal": [
+    "eats fish",
+    "hasproperty endangered"
+  ],
+  "Equid": [
+    "eats grasses"
+  ],
+  "Bovid": [
+    "eats grasses",
+    "lives_in herds"
+  ],
+  "Cervid": [
+    "eats leaves"
+  ],
+  "Giraffid": [
+    "hasproperty long_neck",
+    "eats leaves",
+    "lives_in savanna"
+  ],
+  "RhinocerosFamily": [
+    "hasproperty horn",
+    "eats vegetation"
+  ],
+  "Camelid": [
+    "lives_in drylands",
+    "eats shrubs"
+  ],
+  "Horse": [
+    "hasproperty domesticated"
+  ],
+  "Donkey": [
+    "hasproperty hardy",
+    "used_for hauling",
+    "lives_in drylands"
+  ],
+  "Zebra": [
+    "hasproperty striped_coat",
+    "lives_in savanna",
+    "lives_in herds"
+  ],
+  "PrzewalskiHorse": [
+    "hasproperty wild",
+    "hasproperty endangered"
+  ],
+  "Mule": [
+    "used_for hauling",
+    "hasproperty strong"
+  ],
+  "WildAss": [
+    "lives_in desert"
+  ],
+  "Cow": [
+    "hasproperty domesticated"
+  ],
+  "Goat": [
+    "capable_of climbing",
+    "eats shrubs"
+  ],
+  "Sheep": [
+    "hasproperty wool",
+    "lives_in flocks"
+  ],
+  "Bison": [
+    "hasproperty large_body"
+  ],
+  "Antelope": [
+    "lives_in savanna"
+  ],
+  "Yak": [
+    "lives_in mountains",
+    "hasproperty thick_fur"
+  ],
+  "Moose": [
+    "lives_in boreal_forest",
+    "eats aquatic_plants"
+  ],
+  "Elk": [
+    "lives_in herds"
+  ],
+  "Reindeer": [
+    "lives_in tundra"
+  ],
+  "RoeDeer": [
+    "hasproperty small_body"
+  ],
+  "SikaDeer": [
+    "hasproperty spotted_coat",
+    "capable_of jumping"
+  ],
+  "Giraffe": [
+    "eats acacia_leaves"
+  ],
+  "Okapi": [
+    "lives_in rainforest"
+  ],
+  "GiraffidGroup": [
+    "lives_in africa"
+  ],
+  "SavannaGiraffe": [
+    "eats acacia_leaves",
+    "hasproperty tall"
+  ],
+  "MasaiGiraffe": [
+    "hasproperty localized_range"
+  ],
+  "WhiteRhino": [
+    "lives_in savanna",
+    "eats grasses"
+  ],
+  "BlackRhino": [
+    "lives_in savanna",
+    "eats shrubs",
+    "hasproperty endangered"
+  ],
+  "IndianRhino": [
+    "native_to india"
+  ],
+  "SumatranRhino": [
+    "hasproperty hairy",
+    "hasproperty endangered"
+  ],
+  "JavanRhino": [
+    "hasproperty endangered"
+  ],
+  "Camel": [
+    "lives_in desert",
+    "requires little_water"
+  ],
+  "Dromedary": [
+    "lives_in desert"
+  ],
+  "BactrianCamel": [
+    "hasproperty hardy"
+  ],
+  "Llama": [
+    "lives_in mountains"
+  ],
+  "Alpaca": [
+    "hasproperty wool",
+    "lives_in mountains"
+  ],
+  "Vicuna": [
+    "hasproperty wild"
+  ],
+  "MouseAndRat": [
+    "eats grains",
+    "lives_in burrows"
+  ],
+  "Squirrel": [
+    "capable_of climbing",
+    "eats nuts",
+    "hasproperty bushy_tail"
+  ],
+  "BeaverFamily": [
+    "lives_in rivers",
+    "eats bark"
+  ],
+  "PorcupineFamily": [
+    "eats leaves",
+    "capable_of defense"
+  ],
+  "CavyFamily": [
+    "eats grasses",
+    "lives_in groups"
+  ],
+  "CapybaraFamily": [
+    "lives_in wetlands",
+    "eats grasses"
+  ],
+  "HouseMouse": [
+    "lives_in houses",
+    "reproduces rapidly"
+  ],
+  "BrownRat": [
+    "eats omnivorous_diet",
+    "capable_of climbing"
+  ],
+  "FieldMouse": [
+    "lives_in fields"
+  ],
+  "Gerbil": [
+    "capable_of digging"
+  ],
+  "Hamster": [
+    "stores food"
+  ],
+  "KangarooRat": [
+    "lives_in desert",
+    "requires little_water",
+    "capable_of jumping"
+  ],
+  "GraySquirrel": [
+    "lives_in forests"
+  ],
+  "RedSquirrel": [
+    "stores food"
+  ],
+  "Chipmunk": [
+    "stores food",
+    "lives_in burrows"
+  ],
+  "GroundSquirrel": [
+    "lives_in grasslands",
+    "lives_in colonies"
+  ],
+  "FlyingSquirrel": [
+    "active_in night",
+    "lives_in trees"
+  ],
+  "Marmot": [
+    "capable_of hibernation",
+    "eats grasses"
+  ],
+  "NorthAmericanBeaver": [
+    "native_to americas"
+  ],
+  "DamBuilderRodent": [
+    "hasproperty localized_range"
+  ],
+  "AquaticRodent": [
+    "eats plants",
+    "moves_by swimming"
+  ],
+  "NorthAmericanPorcupine": [
+    "eats bark",
+    "capable_of climbing"
+  ],
+  "AfricanCrestedPorcupine": [
+    "eats roots"
+  ],
+  "TreePorcupine": [
+    "capable_of climbing",
+    "lives_in rainforest"
+  ],
+  "QuilledRodent": [
+    "eats vegetation"
+  ],
+  "BrushTailedPorcupine": [
+    "lives_in forest"
+  ],
+  "GuineaPig": [
+    "hasproperty domesticated"
+  ],
+  "PatagonianMara": [
+    "lives_in grasslands",
+    "hasproperty long_legs"
+  ],
+  "RockCavy": [
+    "capable_of climbing",
+    "eats leaves"
+  ],
+  "Cavy": [
+    "lives_in south_america"
+  ],
+  "DomesticCavy": [
+    "hasproperty domesticated"
+  ],
+  "WildCavy": [
+    "lives_in grasslands"
+  ],
+  "Capybara": [
+    "moves_by swimming"
+  ],
+  "GiantRodent": [
+    "eats plants",
+    "lives_in groups"
+  ],
+  "WaterLovingRodent": [
+    "moves_by swimming"
+  ],
+  "CapybaraGroup": [
+    "lives_in south_america"
+  ],
+  "SemiAquaticMammal": [
+    "breathes air"
+  ],
+  "HerbivorousRodent": [
+    "lives_in groups"
+  ],
+  "FruitBat": [
+    "eats fruit"
+  ],
+  "InsectBat": [
+    "uses echolocation"
+  ],
+  "VampireBat": [
+    "eats blood",
+    "lives_in caves"
+  ],
+  "FlyingFox": [
+    "hasproperty large_wingspan",
+    "eats fruit",
+    "lives_in trees"
+  ],
+  "LittleBrownBat": [
+    "uses echolocation",
+    "hibernates seasonally"
+  ],
+  "HorseshoeBat": [
+    "uses echolocation",
+    "lives_in caves"
+  ],
+  "Cetacean": [
+    "hasproperty streamlined"
+  ],
+  "Sirenian": [
+    "eats seagrass"
+  ],
+  "BlueWhale": [
+    "eats krill"
+  ],
+  "HumpbackWhale": [
+    "eats krill",
+    "migrates seasonally"
+  ],
+  "Orca": [
+    "capable_of hunting"
+  ],
+  "BottlenoseDolphin": [
+    "hasproperty intelligent"
+  ],
+  "Narwhal": [
+    "lives_in arctic"
+  ],
+  "SpermWhale": [
+    "dives_to deep_water",
+    "eats squid"
+  ],
+  "Manatee": [
+    "lives_in coastal_waters"
+  ],
+  "Dugong": [
+    "hasproperty endangered"
+  ],
+  "WestIndianManatee": [
+    "native_to india"
+  ],
+  "AmazonianManatee": [
+    "lives_in rivers",
+    "eats aquatic_plants",
+    "lives_in freshwater"
+  ],
+  "AfricanManatee": [
+    "eats plants",
+    "lives_in africa"
+  ],
+  "SeaCow": [
+    "hasproperty extinct",
+    "lives_in sea"
+  ],
+  "Raptor": [
+    "hasproperty keen_vision",
+    "eats meat"
+  ],
+  "Songbird": [
+    "eats insects"
+  ],
+  "Waterfowl": [
+    "lives_in wetlands",
+    "capable_of swimming"
+  ],
+  "Seabird": [
+    "eats fish"
+  ],
+  "Parrot": [
+    "capable_of mimicry",
+    "eats seeds"
+  ],
+  "FlightlessBird": [
+    "lays eggs"
+  ],
+  "BaldEagle": [
+    "eats fish"
+  ],
+  "GoldenEagle": [
+    "lives_in mountains",
+    "capable_of soaring"
+  ],
+  "PeregrineFalcon": [
+    "eats birds",
+    "hasproperty fast"
+  ],
+  "BarnOwl": [
+    "eats rodents"
+  ],
+  "RedTailedHawk": [
+    "eats small_mammals",
+    "capable_of soaring"
+  ],
+  "Osprey": [
+    "dives_to catch_prey",
+    "lives_in coastal_waters"
+  ],
+  "Canary": [
+    "hasproperty small_body"
+  ],
+  "Robin": [
+    "eats worms",
+    "lives_in gardens"
+  ],
+  "Sparrow": [
+    "eats seeds",
+    "hasproperty small_body"
+  ],
+  "Nightingale": [
+    "active_in night"
+  ],
+  "BlueJay": [
+    "capable_of mimicry",
+    "eats nuts"
+  ],
+  "Finch": [
+    "eats seeds",
+    "lives_in flocks"
+  ],
+  "CanadaGoose": [
+    "migrates seasonally"
+  ],
+  "MuteSwan": [
+    "hasproperty long_neck"
+  ],
+  "WoodDuck": [
+    "lives_in forests"
+  ],
+  "SnowGoose": [
+    "migrates seasonally",
+    "lives_in arctic",
+    "eats grasses"
+  ],
+  "TealDuck": [
+    "eats aquatic_plants"
+  ],
+  "Albatross": [
+    "hasproperty large_wingspan"
+  ],
+  "Penguin": [
+    "hasproperty flightless",
+    "moves_by swimming",
+    "lives_in southern_ocean"
+  ],
+  "Gull": [
+    "capable_of scavenging",
+    "lives_in coast"
+  ],
+  "Pelican": [
+    "dives_to catch_prey"
+  ],
+  "Cormorant": [
+    "dives_to catch_prey"
+  ],
+  "Macaw": [
+    "eats nuts"
+  ],
+  "Cockatoo": [
+    "hasproperty crest"
+  ],
+  "AfricanGreyParrot": [
+    "hasproperty intelligent"
+  ],
+  "Budgerigar": [
+    "lives_in flocks"
+  ],
+  "AmazonParrot": [
+    "lives_in rainforest",
+    "eats fruit"
+  ],
+  "Lovebird": [
+    "hasproperty colorful"
+  ],
+  "Ostrich": [
+    "lives_in savanna"
+  ],
+  "Emu": [
+    "hasproperty long_legs"
+  ],
+  "Kiwi": [
+    "active_in night",
+    "lives_in new_zealand"
+  ],
+  "Cassowary": [
+    "lives_in rainforest",
+    "capable_of defense"
+  ],
+  "Rhea": [
+    "hasproperty flightless"
+  ],
+  "Takahe": [
+    "hasproperty endangered",
+    "lives_in new_zealand",
+    "hasproperty flightless"
+  ],
+  "Turtle": [
+    "hasproperty shell",
+    "moves_by crawling"
+  ],
+  "Crocodilian": [
+    "lives_in rivers",
+    "eats meat"
+  ],
+  "Lizard": [
+    "moves_by crawling"
+  ],
+  "Snake": [
+    "hasproperty limbless",
+    "eats prey"
+  ],
+  "TuataraGroup": [
+    "hasproperty ancient_lineage"
+  ],
+  "OtherReptile": [
+    "lays eggs"
+  ],
+  "SeaTurtle": [
+    "hasproperty flippers",
+    "lays eggs"
+  ],
+  "GreenSeaTurtle": [
+    "eats seagrass",
+    "hasproperty endangered"
+  ],
+  "LeatherbackTurtle": [
+    "dives_to deep_water"
+  ],
+  "BoxTurtle": [
+    "lives_in forest"
+  ],
+  "SnappingTurtle": [
+    "hasproperty strong_jaws"
+  ],
+  "Tortoise": [
+    "lives_in drylands",
+    "eats plants",
+    "hasproperty long_lived"
+  ],
+  "NileCrocodile": [
+    "eats fish"
+  ],
+  "AmericanAlligator": [
+    "basks in_sun"
+  ],
+  "SaltwaterCrocodile": [
+    "lives_in estuaries",
+    "hasproperty large_body",
+    "eats mammals"
+  ],
+  "Caiman": [
+    "lives_in south_america"
+  ],
+  "Gharial": [
+    "eats fish"
+  ],
+  "Crocodile": [
+    "lives_in wetlands"
+  ],
+  "Iguana": [
+    "eats leaves",
+    "lives_in trees",
+    "basks in_sun"
+  ],
+  "KomodoDragon": [
+    "eats carrion"
+  ],
+  "MonitorLizard": [
+    "eats small_prey",
+    "capable_of climbing",
+    "lives_in tropics"
+  ],
+  "Skink": [
+    "lives_in grasslands"
+  ],
+  "Gecko": [
+    "active_in night"
+  ],
+  "Cobra": [
+    "hasproperty venomous",
+    "eats rodents"
+  ],
+  "Python": [
+    "kills_by constriction",
+    "eats mammals"
+  ],
+  "Rattlesnake": [
+    "hasproperty venomous",
+    "lives_in desert"
+  ],
+  "GarterSnake": [
+    "lives_in grasslands"
+  ],
+  "BoaConstrictor": [
+    "kills_by constriction",
+    "eats birds",
+    "lives_in rainforest"
+  ],
+  "SeaSnake": [
+    "hasproperty venomous"
+  ],
+  "Tuatara": [
+    "lives_in new_zealand"
+  ],
+  "IslandTuatara": [
+    "lays eggs"
+  ],
+  "ColdClimateReptile": [
+    "tolerates cold",
+    "lays eggs"
+  ],
+  "NocturnalReptile": [
+    "lives_in burrows"
+  ],
+  "Sphenodon": [
+    "lays eggs"
+  ],
+  "Frog": [
+    "lives_in wetlands",
+    "capable_of jumping"
+  ],
+  "Toad": [
+    "lives_in gardens"
+  ],
+  "Salamander": [
+    "hasproperty tail",
+    "lives_in moist_places",
+    "eats insects"
+  ],
+  "Newt": [
+    "lives_in ponds",
+    "hasproperty tail",
+    "regenerates limbs"
+  ],
+  "Caecilian": [
+    "hasproperty limbless",
+    "lives_in soil",
+    "eats worms"
+  ],
+  "OtherAmphibian": [
+    "breathes through_skin",
+    "lays eggs"
+  ],
+  "TreeFrog": [
+    "lives_in trees",
+    "eats insects"
+  ],
+  "Bullfrog": [
+    "lives_in ponds"
+  ],
+  "PoisonDartFrog": [
+    "hasproperty toxic_skin"
+  ],
+  "GlassFrog": [
+    "lives_in rainforest",
+    "lays eggs"
+  ],
+  "AfricanClawedFrog": [
+    "hasproperty claws"
+  ],
+  "FrogTadpole": [
+    "lives_in water",
+    "breathes through_gills"
+  ],
+  "AmericanToad": [
+    "native_to americas"
+  ],
+  "CaneToad": [
+    "hasproperty toxic_skin",
+    "lives_in tropics"
+  ],
+  "EuropeanToad": [
+    "hibernates seasonally"
+  ],
+  "FireBelliedToad": [
+    "hasproperty bright_belly",
+    "hasproperty toxic_skin",
+    "lives_in ponds"
+  ],
+  "NatterjackToad": [
+    "capable_of running"
+  ],
+  "Toadlet": [
+    "hasproperty juvenile",
+    "lives_in moist_places"
+  ],
+  "Axolotl": [
+    "regenerates limbs",
+    "lives_in freshwater"
+  ],
+  "TigerSalamander": [
+    "lives_in burrows"
+  ],
+  "FireSalamander": [
+    "hasproperty toxic_skin"
+  ],
+  "GiantSalamander": [
+    "lives_in rivers"
+  ],
+  "Plethodontid": [
+    "breathes through_skin"
+  ],
+  "SalamanderLarva": [
+    "lives_in water",
+    "breathes through_gills"
+  ],
+  "SmoothNewt": [
+    "eats insects"
+  ],
+  "RoughSkinnedNewt": [
+    "hasproperty toxic_skin"
+  ],
+  "JapaneseFireBellyNewt": [
+    "hasproperty bright_belly"
+  ],
+  "CrestedNewt": [
+    "hasproperty crest"
+  ],
+  "NewtEft": [
+    "hasproperty juvenile"
+  ],
+  "AquaticNewt": [
+    "lives_in water",
+    "moves_by swimming"
+  ],
+  "CommonCaecilian": [
+    "hasproperty species_specific_markings"
+  ],
+  "AquaticCaecilian": [
+    "lives_in rivers",
+    "moves_by swimming"
+  ],
+  "BurrowingCaecilian": [
+    "eats insects"
+  ],
+  "TropicalCaecilian": [
+    "lives_in tropics"
+  ],
+  "CartilaginousFish": [
+    "eats prey"
+  ],
+  "RayFinnedFish": [
+    "breathes through_gills"
+  ],
+  "LobeFinnedFish": [
+    "hasproperty ancient_lineage"
+  ],
+  "ReefFish": [
+    "lives_in coral_reef",
+    "hasproperty colorful",
+    "eats small_prey"
+  ],
+  "FreshwaterFish": [
+    "lives_in freshwater",
+    "breathes through_gills"
+  ],
+  "GreatWhiteShark": [
+    "eats seals",
+    "hasproperty sharp_teeth"
+  ],
+  "HammerheadShark": [
+    "eats fish"
+  ],
+  "TigerShark": [
+    "eats fish",
+    "capable_of scavenging",
+    "lives_in ocean"
+  ],
+  "MantaRay": [
+    "eats plankton",
+    "moves_by gliding"
+  ],
+  "Stingray": [
+    "lives_in seabed"
+  ],
+  "SkateFish": [
+    "lives_in seabed",
+    "eats mollusks",
+    "hasproperty flattened_body"
+  ],
+  "Salmon": [
+    "lives_in ocean"
+  ],
+  "Tuna": [
+    "eats fish"
+  ],
+  "Clownfish": [
+    "lives_in coral_reef",
+    "hasproperty colorful"
+  ],
+  "Goldfish": [
+    "hasproperty domesticated",
+    "lives_in freshwater"
+  ],
+  "Herring": [
+    "eats plankton"
+  ],
+  "Cod": [
+    "lives_in cold_water",
+    "lives_in ocean"
+  ],
+  "Coelacanth": [
+    "lives_in deep_water"
+  ],
+  "Lungfish": [
+    "breathes air",
+    "lives_in freshwater",
+    "survives drought"
+  ],
+  "AustralianLungfish": [
+    "breathes air",
+    "lives_in rivers"
+  ],
+  "AfricanLungfish": [
+    "survives drought",
+    "breathes air",
+    "lives_in wetlands"
+  ],
+  "SouthAmericanLungfish": [
+    "survives drought",
+    "breathes air"
+  ],
+  "Lamprey": [
+    "eats blood",
+    "lives_in rivers"
+  ],
+  "Hagfish": [
+    "produces slime",
+    "eats carrion",
+    "lives_in deep_water"
+  ],
+  "SeaLamprey": [
+    "hasproperty parasitic"
+  ],
+  "RiverLamprey": [
+    "lives_in freshwater",
+    "eats small_prey"
+  ],
+  "GiantHagfish": [
+    "produces slime",
+    "lives_in deep_water",
+    "eats carrion"
+  ],
+  "Parrotfish": [
+    "eats algae"
+  ],
+  "Angelfish": [
+    "eats sponges"
+  ],
+  "Surgeonfish": [
+    "eats algae"
+  ],
+  "Triggerfish": [
+    "hasproperty strong_jaws",
+    "eats sea_urchins"
+  ],
+  "Damselfish": [
+    "eats plankton"
+  ],
+  "Trout": [
+    "eats insects"
+  ],
+  "Carp": [
+    "lives_in lakes",
+    "hasproperty hardy"
+  ],
+  "Catfish": [
+    "hasproperty whiskers",
+    "lives_in rivers"
+  ],
+  "Pike": [
+    "lives_in lakes"
+  ],
+  "Bass": [
+    "lives_in lakes"
+  ],
+  "Tilapia": [
+    "eats algae"
+  ],
+  "Arachnid": [
+    "eats insects"
+  ],
+  "Crustacean": [
+    "hasproperty jointed_legs"
+  ],
+  "Myriapod": [
+    "lives_in soil"
+  ],
+  "TrilobiteGroup": [
+    "hasproperty extinct"
+  ],
+  "OtherArthropod": [
+    "hasproperty jointed_legs"
+  ],
+  "Beetle": [
+    "eats plants",
+    "capable_of flight"
+  ],
+  "ButterflyAndMoth": [
+    "drinks nectar"
+  ],
+  "BeeAndWasp": [
+    "capable_of stinging",
+    "capable_of flight"
+  ],
+  "Fly": [
+    "eats organic_matter",
+    "capable_of flight"
+  ],
+  "GrasshopperAndCricket": [
+    "capable_of jumping",
+    "eats grasses"
+  ],
+  "Ant": [
+    "lives_in colonies",
+    "eats seeds"
+  ],
+  "Ladybug": [
+    "eats aphids"
+  ],
+  "StagBeetle": [
+    "eats sap"
+  ],
+  "DungBeetle": [
+    "lives_in grasslands"
+  ],
+  "Firefly": [
+    "active_in night"
+  ],
+  "Weevil": [
+    "eats grains",
+    "lives_in fields"
+  ],
+  "RhinocerosBeetle": [
+    "hasproperty horn",
+    "eats fruit",
+    "hasproperty strong"
+  ],
+  "MonarchButterfly": [
+    "migrates seasonally"
+  ],
+  "SwallowtailButterfly": [
+    "lives_in gardens"
+  ],
+  "LunaMoth": [
+    "active_in night"
+  ],
+  "SilkwormMoth": [
+    "hasproperty domesticated"
+  ],
+  "CabbageWhite": [
+    "lives_in fields"
+  ],
+  "Bumblebee": [
+    "drinks nectar"
+  ],
+  "CarpenterBee": [
+    "nests_in wood"
+  ],
+  "Yellowjacket": [
+    "eats insects"
+  ],
+  "PaperWasp": [
+    "eats insects"
+  ],
+  "AntlionWasp": [
+    "hunts insects",
+    "lives_in drylands"
+  ],
+  "Housefly": [
+    "lives_in houses"
+  ],
+  "Mosquito": [
+    "eats blood",
+    "spreads disease"
+  ],
+  "FruitFly": [
+    "eats fruit",
+    "reproduces rapidly",
+    "used_for research"
+  ],
+  "Dragonfly": [
+    "hunts insects",
+    "lives_in wetlands"
+  ],
+  "Hoverfly": [
+    "drinks nectar",
+    "eats aphids"
+  ],
+  "TsetseFly": [
+    "eats blood",
+    "spreads disease",
+    "lives_in africa"
+  ],
+  "Cricket": [
+    "eats plants"
+  ],
+  "Katydid": [
+    "eats leaves",
+    "lives_in trees"
+  ],
+  "Locust": [
+    "forms swarms"
+  ],
+  "MoleCricket": [
+    "lives_in soil",
+    "eats roots"
+  ],
+  "Cicada": [
+    "eats sap"
+  ],
+  "CarpenterAnt": [
+    "nests_in wood"
+  ],
+  "FireAnt": [
+    "capable_of stinging"
+  ],
+  "QueenAnt": [
+    "lays eggs",
+    "lives_in colony"
+  ],
+  "WorkerAnt": [
+    "lives_in colony"
+  ],
+  "Spider": [
+    "hasproperty venomous"
+  ],
+  "Scorpion": [
+    "hasproperty venomous"
+  ],
+  "Tick": [
+    "eats blood",
+    "hasproperty parasitic",
+    "spreads disease"
+  ],
+  "Mite": [
+    "hasproperty tiny",
+    "eats organic_matter",
+    "lives_in soil"
+  ],
+  "Harvestman": [
+    "hasproperty long_legs",
+    "eats detritus",
+    "hasproperty nonvenomous"
+  ],
+  "OtherArachnid": [
+    "hasproperty species_specific_markings"
+  ],
+  "Tarantula": [
+    "hasproperty hairy",
+    "hunts prey",
+    "lives_in burrows"
+  ],
+  "JumpingSpider": [
+    "capable_of jumping",
+    "hunts prey",
+    "hasproperty keen_vision"
+  ],
+  "WolfSpider": [
+    "hunts prey",
+    "lives_in grasslands"
+  ],
+  "HouseSpider": [
+    "lives_in houses"
+  ],
+  "EmperorScorpion": [
+    "lives_in rainforest"
+  ],
+  "BarkScorpion": [
+    "lives_in desert"
+  ],
+  "DesertScorpion": [
+    "lives_in desert"
+  ],
+  "ForestScorpion": [
+    "lives_in forest"
+  ],
+  "CommonScorpion": [
+    "hunts insects"
+  ],
+  "TaillessWhipScorpion": [
+    "hasproperty long_legs",
+    "hunts insects"
+  ],
+  "DeerTick": [
+    "capable_of jumping"
+  ],
+  "CattleTick": [
+    "hasproperty localized_range"
+  ],
+  "DemodexMite": [
+    "hasproperty microscopic"
+  ],
+  "ScabiesMite": [
+    "causes itching",
+    "hasproperty parasitic"
+  ],
+  "SoilMite": [
+    "eats fungi"
+  ],
+  "CommonMite": [
+    "lives_in diverse_habitats"
+  ],
+  "CommonHarvestman": [
+    "active_in night"
+  ],
+  "DaddyLonglegs": [
+    "hasproperty localized_range"
+  ],
+  "Opiliones": [
+    "lives_in forest"
+  ],
+  "CaveHarvestman": [
+    "lives_in caves"
+  ],
+  "ForestHarvestman": [
+    "lives_in forest"
+  ],
+  "Crab": [
+    "hasproperty claws",
+    "lives_in coastal_waters"
+  ],
+  "Lobster": [
+    "hasproperty claws",
+    "lives_in seabed",
+    "eats mollusks"
+  ],
+  "Shrimp": [
+    "eats plankton",
+    "moves_by swimming"
+  ],
+  "Krill": [
+    "eats plankton",
+    "forms swarms"
+  ],
+  "Barnacle": [
+    "filters water",
+    "lives_in ocean"
+  ],
+  "BlueCrab": [
+    "lives_in estuaries",
+    "eats detritus"
+  ],
+  "HermitCrab": [
+    "eats detritus"
+  ],
+  "KingCrab": [
+    "lives_in cold_water",
+    "eats mollusks"
+  ],
+  "DungenessCrab": [
+    "lives_in pacific_coast",
+    "eats mollusks",
+    "used_for food"
+  ],
+  "AmericanLobster": [
+    "used_for food"
+  ],
+  "SpinyLobster": [
+    "hasproperty spines",
+    "lives_in coral_reef"
+  ],
+  "RockLobster": [
+    "used_for food"
+  ],
+  "NorwayLobster": [
+    "used_for food"
+  ],
+  "TigerPrawn": [
+    "used_for food"
+  ],
+  "CleanerShrimp": [
+    "lives_in coral_reef"
+  ],
+  "BrineShrimp": [
+    "eats algae"
+  ],
+  "MantisShrimp": [
+    "eats shellfish",
+    "lives_in burrows"
+  ],
+  "GhostShrimp": [
+    "lives_in burrows",
+    "filters water",
+    "lives_in estuaries"
+  ],
+  "AntarcticKrill": [
+    "lives_in southern_ocean"
+  ],
+  "NorthernKrill": [
+    "lives_in cold_water"
+  ],
+  "DeepSeaKrill": [
+    "lives_in deep_water"
+  ],
+  "KrillLarva": [
+    "hasproperty localized_range"
+  ],
+  "AcornBarnacle": [
+    "attaches to_rocks",
+    "lives_in tidepools"
+  ],
+  "SessileCrustacean": [
+    "hasproperty localized_range"
+  ],
+  "Centipede": [
+    "hasproperty venomous",
+    "hunts insects"
+  ],
+  "Millipede": [
+    "eats detritus",
+    "hasproperty nonvenomous"
+  ],
+  "Symphylan": [
+    "eats roots",
+    "hasproperty small_body"
+  ],
+  "Pauropod": [
+    "eats fungi",
+    "hasproperty tiny"
+  ],
+  "SoilMyriapod": [
+    "eats organic_matter"
+  ],
+  "OtherMyriapod": [
+    "eats detritus"
+  ],
+  "HouseCentipede": [
+    "lives_in houses",
+    "hasproperty fast"
+  ],
+  "GiantCentipede": [
+    "hasproperty large_body_size"
+  ],
+  "Scolopendra": [
+    "lives_in tropics"
+  ],
+  "CentipedeLarva": [
+    "hasproperty juvenile"
+  ],
+  "GiantAfricanMillipede": [
+    "hasproperty large_body_size"
+  ],
+  "GardenMillipede": [
+    "lives_in gardens"
+  ],
+  "FlatBackedMillipede": [
+    "hasproperty flattened_body"
+  ],
+  "MillipedeNymph": [
+    "hasproperty juvenile"
+  ],
+  "Trilobite": [
+    "lived_in paleozoic"
+  ],
+  "Phacops": [
+    "lived_in paleozoic"
+  ],
+  "Paradoxides": [
+    "hasproperty large_size",
+    "lived_in cambrian"
+  ],
+  "Calymene": [
+    "lived_in ordovician"
+  ],
+  "Olenellus": [
+    "lived_in cambrian"
+  ],
+  "Asaphus": [
+    "lived_in ordovician",
+    "hasproperty streamlined"
+  ],
+  "Gastropod": [
+    "moves_by gliding",
+    "hasproperty shell"
+  ],
+  "Bivalve": [
+    "filters water"
+  ],
+  "Cephalopod": [
+    "hasproperty intelligent"
+  ],
+  "Chiton": [
+    "eats algae"
+  ],
+  "Scaphopod": [
+    "lives_in seabed"
+  ],
+  "OtherMollusk": [
+    "eats organic_matter"
+  ],
+  "Snail": [
+    "eats plants"
+  ],
+  "Slug": [
+    "hasproperty no_shell",
+    "eats plants",
+    "lives_in moist_places"
+  ],
+  "SeaSnail": [
+    "eats algae"
+  ],
+  "Nudibranch": [
+    "hasproperty colorful",
+    "hasproperty no_shell",
+    "eats sponges"
+  ],
+  "ConeSnail": [
+    "hasproperty venomous"
+  ],
+  "GardenSnail": [
+    "lives_in gardens",
+    "eats leaves"
+  ],
+  "Oyster": [
+    "lives_in ocean"
+  ],
+  "Clam": [
+    "lives_in seabed"
+  ],
+  "Mussel": [
+    "attaches to_rocks"
+  ],
+  "Scallop": [
+    "lives_in ocean"
+  ],
+  "Cockle": [
+    "buries in_sand",
+    "lives_in seabed"
+  ],
+  "Octopus": [
+    "capable_of camouflage"
+  ],
+  "Squid": [
+    "eats fish"
+  ],
+  "Cuttlefish": [
+    "capable_of camouflage"
+  ],
+  "Nautilus": [
+    "lives_in deep_water",
+    "hasproperty ancient_lineage"
+  ],
+  "GiantSquid": [
+    "lives_in deep_water"
+  ],
+  "CommonChiton": [
+    "hasproperty species_specific_markings"
+  ],
+  "GumbootChiton": [
+    "hasproperty large_body",
+    "lives_in tidepools"
+  ],
+  "LinedChiton": [
+    "lives_in tidepools"
+  ],
+  "RockChiton": [
+    "lives_in coast"
+  ],
+  "SpinyChiton": [
+    "hasproperty spines"
+  ],
+  "ArmorMollusk": [
+    "lives_in ocean"
+  ],
+  "Dentalium": [
+    "hasproperty species_specific_markings"
+  ],
+  "TuskShell": [
+    "buries in_sand"
+  ],
+  "BurrowingMollusk": [
+    "capable_of burrowing"
+  ],
+  "SandDwellerMollusk": [
+    "buries in_sand"
+  ],
+  "Flatworm": [
+    "hasproperty flat_body",
+    "lives_in water"
+  ],
+  "Roundworm": [
+    "lives_in soil"
+  ],
+  "Earthworm": [
+    "lives_in soil",
+    "eats detritus"
+  ],
+  "Leech": [
+    "eats blood",
+    "lives_in freshwater"
+  ],
+  "Tapeworm": [
+    "hasproperty parasitic"
+  ],
+  "Planarian": [
+    "lives_in freshwater",
+    "eats small_prey"
+  ],
+  "Fluke": [
+    "hasproperty parasitic",
+    "causes disease"
+  ],
+  "CommonFlatworm": [
+    "moves_by gliding"
+  ],
+  "MarineFlatworm": [
+    "lives_in ocean",
+    "hasproperty colorful",
+    "eats small_prey"
+  ],
+  "LiverFluke": [
+    "hasproperty parasitic",
+    "causes disease"
+  ],
+  "BloodFluke": [
+    "hasproperty parasitic",
+    "causes disease"
+  ],
+  "Nematode": [
+    "hasproperty microscopic"
+  ],
+  "Hookworm": [
+    "infects intestines",
+    "eats blood"
+  ],
+  "Pinworm": [
+    "infects intestines",
+    "causes itching"
+  ],
+  "Heartworm": [
+    "hasproperty parasitic"
+  ],
+  "Ascaris": [
+    "infects intestines",
+    "hasproperty parasitic"
+  ],
+  "Nightcrawler": [
+    "active_in night"
+  ],
+  "RedWiggler": [
+    "used_for composting",
+    "hasproperty red_coloration"
+  ],
+  "SegmentedWorm": [
+    "hasproperty segments"
+  ],
+  "CompostWorm": [
+    "used_for composting",
+    "reproduces rapidly"
+  ],
+  "MedicinalLeech": [
+    "used_for medicine"
+  ],
+  "HorseLeech": [
+    "lives_in ponds",
+    "hasproperty large_body"
+  ],
+  "LandLeech": [
+    "lives_in rainforest"
+  ],
+  "GiantLeech": [
+    "hasproperty large_body",
+    "lives_in wetlands"
+  ],
+  "CommonTapeworm": [
+    "hasproperty species_specific_markings"
+  ],
+  "PorkTapeworm": [
+    "infects humans"
+  ],
+  "BeefTapeworm": [
+    "infects humans"
+  ],
+  "FishTapeworm": [
+    "infects humans"
+  ],
+  "DogTapeworm": [
+    "hasproperty localized_range"
+  ],
+  "SegmentedTapeworm": [
+    "hasproperty segments"
+  ],
+  "Coral": [
+    "hasproperty colonial"
+  ],
+  "SeaAnemone": [
+    "attaches to_rocks",
+    "eats small_prey"
+  ],
+  "Hydra": [
+    "lives_in freshwater"
+  ],
+  "OtherCnidarian": [
+    "lives_in water"
+  ],
+  "BoxJellyfish": [
+    "hasproperty highly_venomous",
+    "lives_in tropics"
+  ],
+  "LionManeJellyfish": [
+    "hasproperty large_body",
+    "hasproperty long_tentacles",
+    "lives_in cold_water"
+  ],
+  "Irukandji": [
+    "hasproperty tiny",
+    "hasproperty highly_venomous"
+  ],
+  "JellyfishBloom": [
+    "forms swarms"
+  ],
+  "StaghornCoral": [
+    "hasproperty branching",
+    "lives_in coral_reef"
+  ],
+  "BrainCoral": [
+    "lives_in coral_reef"
+  ],
+  "ElkhornCoral": [
+    "hasproperty branching",
+    "hasproperty endangered"
+  ],
+  "SoftCoral": [
+    "hasproperty flexible",
+    "filters water"
+  ],
+  "CoralPolyp": [
+    "lives_in colony"
+  ],
+  "ReefBuildingCoral": [
+    "lives_in coral_reef"
+  ],
+  "CommonSeaAnemone": [
+    "lives_in sea"
+  ],
+  "GiantGreenAnemone": [
+    "lives_in tidepools"
+  ],
+  "TubeAnemone": [
+    "hasproperty long_tentacles"
+  ],
+  "BeadedAnemone": [
+    "lives_in tidepools"
+  ],
+  "AnemoneColony": [
+    "hasproperty colonial"
+  ],
+  "CommonHydra": [
+    "hasproperty species_specific_markings"
+  ],
+  "GreenHydra": [
+    "lives_in ponds"
+  ],
+  "FreshwaterCnidarian": [
+    "reproduces asexually"
+  ],
+  "FloatingColony": [
+    "hasproperty colonial"
+  ],
+  "Siphonophore": [
+    "hasproperty colonial"
+  ],
+  "VenomousFloat": [
+    "hasproperty venomous"
+  ],
+  "SeaStar": [
+    "hasproperty tube_feet",
+    "moves_by crawling"
+  ],
+  "SeaUrchin": [
+    "hasproperty spines",
+    "eats algae"
+  ],
+  "SeaCucumber": [
+    "lives_in seabed",
+    "eats detritus",
+    "hasproperty soft_body"
+  ],
+  "BrittleStar": [
+    "moves_by crawling"
+  ],
+  "SandDollar": [
+    "hasproperty flat_body"
+  ],
+  "OtherEchinoderm": [
+    "hasproperty tube_feet"
+  ],
+  "Starfish": [
+    "eats mollusks"
+  ],
+  "SunflowerStar": [
+    "eats sea_urchins",
+    "lives_in pacific_coast"
+  ],
+  "CrownOfThorns": [
+    "hasproperty spines",
+    "lives_in coral_reef"
+  ],
+  "BrittleSeaStar": [
+    "hides in_crevices",
+    "eats detritus"
+  ],
+  "SeaStarLarva": [
+    "lives_in plankton",
+    "moves_by drifting"
+  ],
+  "CommonSeaStar": [
+    "eats mollusks",
+    "lives_in sea"
+  ],
+  "PurpleSeaUrchin": [
+    "lives_in sea"
+  ],
+  "GreenSeaUrchin": [
+    "lives_in sea"
+  ],
+  "SandUrchin": [
+    "buries in_sand"
+  ],
+  "LongSpinedUrchin": [
+    "lives_in coral_reef"
+  ],
+  "CommonSeaUrchin": [
+    "lives_in sea"
+  ],
+  "GiantSeaCucumber": [
+    "hasproperty large_body",
+    "hasproperty large_body_size"
+  ],
+  "Sandfish": [
+    "buries in_sand",
+    "used_for food"
+  ],
+  "SeaApple": [
+    "hasproperty colorful",
+    "eats plankton"
+  ],
+  "CucumberDefense": [
+    "capable_of defense"
+  ],
+  "CommonSeaCucumber": [
+    "lives_in sea"
+  ],
+  "BasketStar": [
+    "filters water"
+  ],
+  "BrittleStarLarva": [
+    "lives_in plankton",
+    "moves_by drifting"
+  ],
+  "NocturnalBrittleStar": [
+    "hides in_crevices"
+  ],
+  "ReefBrittleStar": [
+    "eats detritus"
+  ],
+  "DeepBrittleStar": [
+    "lives_in deep_water"
+  ],
+  "KeyholeSandDollar": [
+    "buries in_sand"
+  ],
+  "Echinarachnius": [
+    "buries in_sand",
+    "lives_in coast"
+  ],
+  "DwarfSandDollar": [
+    "hasproperty small_body",
+    "buries in_sand"
+  ],
+  "CommonSandDollar": [
+    "buries in_sand"
+  ],
+  "Conifer": [
+    "hasproperty evergreen"
+  ],
+  "Fern": [
+    "reproduces by_spores",
+    "lives_in shade"
+  ],
+  "Moss": [
+    "reproduces by_spores",
+    "lives_in moist_places"
+  ],
+  "Algae": [
+    "lives_in water"
+  ],
+  "FloweringTree": [
+    "hasproperty woody_stem",
+    "produces flowers"
+  ],
+  "FloweringShrub": [
+    "hasproperty woody_stem",
+    "produces flowers"
+  ],
+  "Herb": [
+    "produces flowers",
+    "used_for medicine"
+  ],
+  "Cactus": [
+    "stores water",
+    "hasproperty spines",
+    "lives_in desert"
+  ],
+  "GardenFlower": [
+    "hasproperty colorful",
+    "attracts pollinators",
+    "produces flowers"
+  ],
+  "OakTree": [
+    "lives_in forest"
+  ],
+  "CherryTree": [
+    "hasproperty ornamental"
+  ],
+  "MangoTree": [
+    "lives_in tropics"
+  ],
+  "OliveTree": [
+    "hasproperty drought_tolerant"
+  ],
+  "RoseBush": [
+    "hasproperty fragrant"
+  ],
+  "Azalea": [
+    "lives_in shade",
+    "hasproperty ornamental"
+  ],
+  "BlueberryBush": [
+    "produces berries",
+    "attracts pollinators"
+  ],
+  "LavenderShrub": [
+    "hasproperty fragrant",
+    "attracts pollinators"
+  ],
+  "Hibiscus": [
+    "attracts pollinators"
+  ],
+  "Basil": [
+    "used_for cooking",
+    "hasproperty aromatic"
+  ],
+  "Mint": [
+    "hasproperty aromatic",
+    "used_for tea"
+  ],
+  "Rosemary": [
+    "hasproperty aromatic",
+    "used_for cooking",
+    "hasproperty evergreen"
+  ],
+  "GingerPlant": [
+    "lives_in tropics"
+  ],
+  "AloeVera": [
+    "stores water"
+  ],
+  "Chamomile": [
+    "used_for tea"
+  ],
+  "Wheat": [
+    "produces grain"
+  ],
+  "RicePlant": [
+    "produces grain"
+  ],
+  "CornPlant": [
+    "used_for food"
+  ],
+  "Bamboo": [
+    "hasproperty fast_growing",
+    "used_for building"
+  ],
+  "Sugarcane": [
+    "lives_in tropics"
+  ],
+  "LawnGrass": [
+    "used_for landscaping"
+  ],
+  "SaguaroCactus": [
+    "hasproperty tall"
+  ],
+  "PricklyPear": [
+    "lives_in drylands"
+  ],
+  "BarrelCactus": [
+    "hasproperty round_shape"
+  ],
+  "ChristmasCactus": [
+    "lives_in shade",
+    "hasproperty ornamental"
+  ],
+  "GoldenBarrel": [
+    "hasproperty round_shape"
+  ],
+  "Sunflower": [
+    "hasproperty localized_range"
+  ],
+  "Tulip": [
+    "hasproperty bulb",
+    "hasproperty ornamental"
+  ],
+  "Daisy": [
+    "hasproperty hardy",
+    "blooms in_summer"
+  ],
+  "Orchid": [
+    "hasproperty epiphytic"
+  ],
+  "Lily": [
+    "hasproperty fragrant",
+    "blooms in_summer",
+    "hasproperty bulb"
+  ],
+  "Marigold": [
+    "blooms in_summer"
+  ],
+  "Pine": [
+    "hasproperty needles"
+  ],
+  "Spruce": [
+    "hasproperty needles"
+  ],
+  "Cedar": [
+    "hasproperty aromatic_wood"
+  ],
+  "Cypress": [
+    "lives_in wetlands"
+  ],
+  "JuniperPlant": [
+    "produces berries",
+    "hasproperty aromatic"
+  ],
+  "ScotsPine": [
+    "hasproperty hardy"
+  ],
+  "PonderosaPine": [
+    "lives_in mountains"
+  ],
+  "WhitePine": [
+    "used_for timber"
+  ],
+  "PinyonPine": [
+    "lives_in drylands"
+  ],
+  "PineTree": [
+    "hasproperty species_specific_markings"
+  ],
+  "NorwaySpruce": [
+    "used_for timber",
+    "hasproperty fast_growing"
+  ],
+  "BlueSpruce": [
+    "hasproperty blue_needles",
+    "hasproperty ornamental"
+  ],
+  "WhiteSpruce": [
+    "lives_in boreal_forest"
+  ],
+  "BlackSpruce": [
+    "lives_in bogs",
+    "hasproperty hardy"
+  ],
+  "BalsamFir": [
+    "hasproperty fragrant"
+  ],
+  "DouglasFir": [
+    "used_for timber",
+    "hasproperty tall"
+  ],
+  "SilverFir": [
+    "used_for ornamental"
+  ],
+  "NobleFir": [
+    "hasproperty localized_range"
+  ],
+  "FraserFir": [
+    "hasproperty fragrant"
+  ],
+  "LebanonCedar": [
+    "hasproperty long_lived"
+  ],
+  "AtlasCedar": [
+    "hasproperty blue_needles",
+    "used_for ornamental"
+  ],
+  "EasternRedCedar": [
+    "produces berries",
+    "hasproperty aromatic"
+  ],
+  "WesternRedCedar": [
+    "hasproperty red_coloration"
+  ],
+  "DeodarCedar": [
+    "lives_in mountains"
+  ],
+  "BaldCypress": [
+    "tolerates flooding"
+  ],
+  "MontereyCypress": [
+    "lives_in coast"
+  ],
+  "ItalianCypress": [
+    "used_for landscaping"
+  ],
+  "HinokiCypress": [
+    "hasproperty aromatic_wood"
+  ],
+  "SwampCypress": [
+    "tolerates flooding"
+  ],
+  "CypressTree": [
+    "hasproperty species_specific_markings"
+  ],
+  "EasternJuniper": [
+    "hasproperty hardy"
+  ],
+  "RockyMountainJuniper": [
+    "lives_in mountains",
+    "hasproperty drought_tolerant"
+  ],
+  "JuniperShrub": [
+    "used_for landscaping"
+  ],
+  "CreepingJuniper": [
+    "hasproperty drought_tolerant",
+    "used_for landscaping"
+  ],
+  "BrackenFern": [
+    "hasproperty hardy"
+  ],
+  "StaghornFern": [
+    "hasproperty epiphytic"
+  ],
+  "SwordFern": [
+    "lives_in forest"
+  ],
+  "CommonFern": [
+    "hasproperty species_specific_markings"
+  ],
+  "SphagnumMoss": [
+    "lives_in bogs"
+  ],
+  "SheetMoss": [
+    "forms mats",
+    "lives_in shade"
+  ],
+  "HaircapMoss": [
+    "lives_in forest"
+  ],
+  "CushionMoss": [
+    "tolerates cold"
+  ],
+  "StarMoss": [
+    "forms mats"
+  ],
+  "Kelp": [
+    "hasproperty fast_growing"
+  ],
+  "SeaLettuce": [
+    "used_for food"
+  ],
+  "Spirulina": [
+    "hasproperty microscopic"
+  ],
+  "Chlorella": [
+    "hasproperty microscopic",
+    "used_for research"
+  ],
+  "Diatom": [
+    "hasproperty microscopic"
+  ],
+  "Airplane": [
+    "capable_of flight"
+  ],
+  "Aluminum": [
+    "hasproperty lightweight",
+    "resists corrosion",
+    "used_for packaging"
+  ],
+  "Bag": [
+    "hasproperty flexible"
+  ],
+  "Bicycle": [
+    "hasproperty two_wheels"
+  ],
+  "Box": [
+    "used_for storage"
+  ],
+  "Bread": [
+    "hasproperty starchy",
+    "eaten_as staple"
+  ],
+  "BuiltPlace": [
+    "hasproperty man_made"
+  ],
+  "Bus": [
+    "hasproperty large_size"
+  ],
+  "Cabinet": [
+    "used_for storage"
+  ],
+  "Chair": [
+    "used_for sitting"
+  ],
+  "CoffeeBeverage": [
+    "served_at variable_temperature"
+  ],
+  "Desk": [
+    "used_for work"
+  ],
+  "EngineerProfession": [
+    "uses mathematics"
+  ],
+  "FabricMaterial": [
+    "hasproperty flexible"
+  ],
+  "Gold": [
+    "used_for jewelry",
+    "resists corrosion"
+  ],
+  "GuitarInstrument": [
+    "hasproperty strings"
+  ],
+  "HammerTool": [
+    "hasproperty handle"
+  ],
+  "Hospital": [
+    "provides healthcare"
+  ],
+  "HospitalBuilding": [
+    "provides healthcare"
+  ],
+  "Iron": [
+    "hasproperty strong",
+    "used_for construction"
+  ],
+  "Jeans": [
+    "hasproperty durable",
+    "used_for casual_wear"
+  ],
+  "KnifeTool": [
+    "used_for cutting"
+  ],
+  "Motorcycle": [
+    "hasproperty two_wheels"
+  ],
+  "OfficeBuilding": [
+    "used_for work"
+  ],
+  "Physics": [
+    "uses mathematics"
+  ],
+  "PlasticMaterial": [
+    "hasproperty lightweight"
+  ],
+  "Polyethylene": [
+    "used_for packaging",
+    "hasproperty flexible"
+  ],
+  "Polypropylene": [
+    "hasproperty durable"
+  ],
+  "RiceFood": [
+    "eaten_as staple",
+    "hasproperty starchy"
+  ],
+  "ScissorsTool": [
+    "used_for cutting"
+  ],
+  "ScrewdriverTool": [
+    "hasproperty handle"
+  ],
+  "Silver": [
+    "used_for jewelry"
+  ],
+  "Smartphone": [
+    "hasproperty touchscreen",
+    "hasproperty portable"
+  ],
+  "Sofa": [
+    "used_for sitting"
+  ],
+  "StoneMaterial": [
+    "used_for building"
+  ],
+  "TShirt": [
+    "used_for casual_wear"
+  ],
+  "Tablet": [
+    "hasproperty touchscreen",
+    "hasproperty portable"
+  ],
+  "TeaBeverage": [
+    "served_at variable_temperature",
+    "hasproperty aromatic"
+  ],
+  "ViolinInstrument": [
+    "hasproperty strings"
+  ],
+  "WoodMaterial": [
+    "used_for construction"
+  ]
+}

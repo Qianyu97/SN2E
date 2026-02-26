@@ -1,6 +1,6 @@
 # Data arguments
 PathArg= {
-    "dataDirectory" :'./data/',
+    "dataDirectory" :'./data_full/',
     "pictureDirectory" :'./source/picture/',
     "modelDirectory" :'./source/model/',
     "indexDirectory" : './source/index/'
@@ -8,7 +8,7 @@ PathArg= {
 
 # Dataloader arguments
 DataloaderArg = {
-    "batchsize"   : 64,
+    "batchsize"   : 128,
     "shuffle"     : True,
     "numworkers"  : 0,
     "droplast"    : False,

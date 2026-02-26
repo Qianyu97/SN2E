@@ -2,12 +2,13 @@
 
 SN2EArg ={
     "name"        : 'SN2E',
-    "dim"         : 100,
-    "gammaMax"    : -1,
-    "gapMax"      : 0,
+    "dim"         : 16,
+    "delta_obj"   : - 1,
+    'entail_obj'  : 0,
+    "h_obj"       : 0,
     "gapmode"     : 'entail',
     "logv_max"    : 0,
-    "logv_min"    : -10,
+    "logv_min"    : -12,
     "alpha"       : 1,
 }
         

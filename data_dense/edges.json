@@ -2,127 +2,67 @@
   [
     "Concept",
     "is_a",
-    "LivingThing"
-  ],
-  [
-    "Concept",
-    "is_a",
     "Artifact"
   ],
   [
     "Concept",
     "is_a",
-    "Place"
-  ],
-  [
-    "Concept",
-    "is_a",
-    "Material"
-  ],
-  [
-    "Concept",
-    "is_a",
-    "AbstractConcept"
-  ],
-  [
-    "Concept",
-    "is_a",
-    "Event"
-  ],
-  [
-    "LivingThing",
-    "is_a",
-    "Animal"
-  ],
-  [
-    "LivingThing",
-    "is_a",
-    "Plant"
-  ],
-  [
-    "LivingThing",
-    "is_a",
     "Fungus"
   ],
   [
-    "LivingThing",
+    "Concept",
     "is_a",
     "Microorganism"
   ],
   [
-    "LivingThing",
+    "Concept",
     "is_a",
     "Protist"
   ],
   [
-    "LivingThing",
-    "is_a",
-    "OtherLivingThing"
-  ],
-  [
-    "Animal",
-    "is_a",
-    "Vertebrate"
-  ],
-  [
-    "Animal",
-    "is_a",
-    "Arthropod"
-  ],
-  [
-    "Animal",
+    "Concept",
     "is_a",
     "Mollusk"
   ],
   [
-    "Animal",
+    "Concept",
     "is_a",
     "Worm"
   ],
   [
-    "Animal",
+    "Concept",
     "is_a",
     "Cnidarian"
   ],
   [
-    "Animal",
+    "Concept",
     "is_a",
     "Echinoderm"
   ],
   [
-    "Vertebrate",
+    "Concept",
     "is_a",
     "Mammal"
   ],
   [
-    "Vertebrate",
+    "Concept",
     "is_a",
     "Bird"
   ],
   [
-    "Vertebrate",
+    "Concept",
     "is_a",
     "Reptile"
   ],
   [
-    "Vertebrate",
+    "Concept",
     "is_a",
     "Amphibian"
   ],
   [
-    "Vertebrate",
+    "Concept",
     "is_a",
     "Fish"
-  ],
-  [
-    "Vertebrate",
-    "is_a",
-    "OtherVertebrate"
-  ],
-  [
-    "Mammal",
-    "is_a",
-    "Primate"
   ],
   [
     "Mammal",
@@ -152,16 +92,6 @@
   [
     "CarnivorousMammal",
     "is_a",
-    "Canid"
-  ],
-  [
-    "CarnivorousMammal",
-    "is_a",
-    "Felid"
-  ],
-  [
-    "CarnivorousMammal",
-    "is_a",
     "Ursid"
   ],
   [
@@ -180,62 +110,62 @@
     "Pinniped"
   ],
   [
-    "Canid",
+    "CarnivorousMammal",
     "is_a",
     "GrayWolf"
   ],
   [
-    "Canid",
+    "CarnivorousMammal",
     "is_a",
     "Coyote"
   ],
   [
-    "Canid",
+    "CarnivorousMammal",
     "is_a",
     "RedFox"
   ],
   [
-    "Canid",
+    "CarnivorousMammal",
     "is_a",
     "ArcticFox"
   ],
   [
-    "Canid",
+    "CarnivorousMammal",
     "is_a",
     "GoldenJackal"
   ],
   [
-    "Canid",
+    "CarnivorousMammal",
     "is_a",
     "DomesticDog"
   ],
   [
-    "Felid",
+    "CarnivorousMammal",
     "is_a",
     "Lion"
   ],
   [
-    "Felid",
+    "CarnivorousMammal",
     "is_a",
     "Tiger"
   ],
   [
-    "Felid",
+    "CarnivorousMammal",
     "is_a",
     "Leopard"
   ],
   [
-    "Felid",
+    "CarnivorousMammal",
     "is_a",
     "Cheetah"
   ],
   [
-    "Felid",
+    "CarnivorousMammal",
     "is_a",
     "DomesticCat"
   ],
   [
-    "Felid",
+    "CarnivorousMammal",
     "is_a",
     "SnowLeopard"
   ],
@@ -452,11 +382,6 @@
   [
     "Cervid",
     "is_a",
-    "WhiteTailedDeer"
-  ],
-  [
-    "Cervid",
-    "is_a",
     "Moose"
   ],
   [
@@ -502,11 +427,6 @@
   [
     "Giraffid",
     "is_a",
-    "ReticulatedGiraffe"
-  ],
-  [
-    "Giraffid",
-    "is_a",
     "MasaiGiraffe"
   ],
   [
@@ -533,11 +453,6 @@
     "RhinocerosFamily",
     "is_a",
     "JavanRhino"
-  ],
-  [
-    "RhinocerosFamily",
-    "is_a",
-    "Rhinoceros"
   ],
   [
     "Camelid",
@@ -662,22 +577,7 @@
   [
     "BeaverFamily",
     "is_a",
-    "Beaver"
-  ],
-  [
-    "BeaverFamily",
-    "is_a",
     "NorthAmericanBeaver"
-  ],
-  [
-    "BeaverFamily",
-    "is_a",
-    "EurasianBeaver"
-  ],
-  [
-    "BeaverFamily",
-    "is_a",
-    "BeaverLodge"
   ],
   [
     "BeaverFamily",
@@ -703,11 +603,6 @@
     "PorcupineFamily",
     "is_a",
     "TreePorcupine"
-  ],
-  [
-    "PorcupineFamily",
-    "is_a",
-    "Porcupine"
   ],
   [
     "PorcupineFamily",
@@ -972,11 +867,6 @@
   [
     "Waterfowl",
     "is_a",
-    "MallardDuck"
-  ],
-  [
-    "Waterfowl",
-    "is_a",
     "CanadaGoose"
   ],
   [
@@ -1008,11 +898,6 @@
     "Seabird",
     "is_a",
     "Penguin"
-  ],
-  [
-    "Seabird",
-    "is_a",
-    "Puffin"
   ],
   [
     "Seabird",
@@ -1202,11 +1087,6 @@
   [
     "Lizard",
     "is_a",
-    "Chameleon"
-  ],
-  [
-    "Lizard",
-    "is_a",
     "Gecko"
   ],
   [
@@ -1248,11 +1128,6 @@
     "TuataraGroup",
     "is_a",
     "IslandTuatara"
-  ],
-  [
-    "TuataraGroup",
-    "is_a",
-    "ReptileRelic"
   ],
   [
     "TuataraGroup",
@@ -1440,16 +1315,6 @@
     "TropicalCaecilian"
   ],
   [
-    "Caecilian",
-    "is_a",
-    "RingedCaecilian"
-  ],
-  [
-    "Caecilian",
-    "is_a",
-    "BlindCaecilian"
-  ],
-  [
     "Fish",
     "is_a",
     "CartilaginousFish"
@@ -1463,11 +1328,6 @@
     "Fish",
     "is_a",
     "LobeFinnedFish"
-  ],
-  [
-    "Fish",
-    "is_a",
-    "JawlessFish"
   ],
   [
     "Fish",
@@ -1565,39 +1425,29 @@
     "SouthAmericanLungfish"
   ],
   [
-    "LobeFinnedFish",
-    "is_a",
-    "LobeFinnedRelic"
-  ],
-  [
-    "JawlessFish",
+    "Fish",
     "is_a",
     "Lamprey"
   ],
   [
-    "JawlessFish",
+    "Fish",
     "is_a",
     "Hagfish"
   ],
   [
-    "JawlessFish",
+    "Fish",
     "is_a",
     "SeaLamprey"
   ],
   [
-    "JawlessFish",
+    "Fish",
     "is_a",
     "RiverLamprey"
   ],
   [
-    "JawlessFish",
+    "Fish",
     "is_a",
     "GiantHagfish"
-  ],
-  [
-    "JawlessFish",
-    "is_a",
-    "JawlessEel"
   ],
   [
     "ReefFish",
@@ -1608,11 +1458,6 @@
     "ReefFish",
     "is_a",
     "Angelfish"
-  ],
-  [
-    "ReefFish",
-    "is_a",
-    "Butterflyfish"
   ],
   [
     "ReefFish",
@@ -1660,62 +1505,57 @@
     "Tilapia"
   ],
   [
-    "Arthropod",
-    "is_a",
-    "Insect"
-  ],
-  [
-    "Arthropod",
+    "Concept",
     "is_a",
     "Arachnid"
   ],
   [
-    "Arthropod",
+    "Concept",
     "is_a",
     "Crustacean"
   ],
   [
-    "Arthropod",
+    "Concept",
     "is_a",
     "Myriapod"
   ],
   [
-    "Arthropod",
+    "Concept",
     "is_a",
     "TrilobiteGroup"
   ],
   [
-    "Arthropod",
+    "Concept",
     "is_a",
     "OtherArthropod"
   ],
   [
-    "Insect",
+    "Concept",
     "is_a",
     "Beetle"
   ],
   [
-    "Insect",
+    "Concept",
     "is_a",
     "ButterflyAndMoth"
   ],
   [
-    "Insect",
+    "Concept",
     "is_a",
     "BeeAndWasp"
   ],
   [
-    "Insect",
+    "Concept",
     "is_a",
     "Fly"
   ],
   [
-    "Insect",
+    "Concept",
     "is_a",
     "GrasshopperAndCricket"
   ],
   [
-    "Insect",
+    "Concept",
     "is_a",
     "Ant"
   ],
@@ -1775,16 +1615,6 @@
     "CabbageWhite"
   ],
   [
-    "ButterflyAndMoth",
-    "is_a",
-    "Butterfly"
-  ],
-  [
-    "BeeAndWasp",
-    "is_a",
-    "HoneyBee"
-  ],
-  [
     "BeeAndWasp",
     "is_a",
     "Bumblebee"
@@ -1842,11 +1672,6 @@
   [
     "GrasshopperAndCricket",
     "is_a",
-    "Grasshopper"
-  ],
-  [
-    "GrasshopperAndCricket",
-    "is_a",
     "Cricket"
   ],
   [
@@ -1878,16 +1703,6 @@
     "Ant",
     "is_a",
     "FireAnt"
-  ],
-  [
-    "Ant",
-    "is_a",
-    "LeafcutterAnt"
-  ],
-  [
-    "Ant",
-    "is_a",
-    "ArmyAnt"
   ],
   [
     "Ant",
@@ -1937,17 +1752,7 @@
   [
     "Spider",
     "is_a",
-    "OrbWeaver"
-  ],
-  [
-    "Spider",
-    "is_a",
     "JumpingSpider"
-  ],
-  [
-    "Spider",
-    "is_a",
-    "BlackWidow"
   ],
   [
     "Spider",
@@ -1997,37 +1802,7 @@
   [
     "Tick",
     "is_a",
-    "DogTick"
-  ],
-  [
-    "Tick",
-    "is_a",
     "CattleTick"
-  ],
-  [
-    "Tick",
-    "is_a",
-    "SoftTick"
-  ],
-  [
-    "Tick",
-    "is_a",
-    "HardTick"
-  ],
-  [
-    "Tick",
-    "is_a",
-    "TickLarva"
-  ],
-  [
-    "Mite",
-    "is_a",
-    "DustMite"
-  ],
-  [
-    "Mite",
-    "is_a",
-    "SpiderMite"
   ],
   [
     "Mite",
@@ -2075,11 +1850,6 @@
     "ForestHarvestman"
   ],
   [
-    "Harvestman",
-    "is_a",
-    "LeafLitterHarvestman"
-  ],
-  [
     "Crustacean",
     "is_a",
     "Crab"
@@ -2105,11 +1875,6 @@
     "Barnacle"
   ],
   [
-    "Crustacean",
-    "is_a",
-    "OtherCrustacean"
-  ],
-  [
     "Crab",
     "is_a",
     "BlueCrab"
@@ -2127,17 +1892,7 @@
   [
     "Crab",
     "is_a",
-    "FiddlerCrab"
-  ],
-  [
-    "Crab",
-    "is_a",
     "DungenessCrab"
-  ],
-  [
-    "Crab",
-    "is_a",
-    "CommonCrab"
   ],
   [
     "Lobster",
@@ -2157,17 +1912,7 @@
   [
     "Lobster",
     "is_a",
-    "SlipperLobster"
-  ],
-  [
-    "Lobster",
-    "is_a",
     "NorwayLobster"
-  ],
-  [
-    "Lobster",
-    "is_a",
-    "CommonLobster"
   ],
   [
     "Shrimp",
@@ -2195,11 +1940,6 @@
     "GhostShrimp"
   ],
   [
-    "Shrimp",
-    "is_a",
-    "CommonShrimp"
-  ],
-  [
     "Krill",
     "is_a",
     "AntarcticKrill"
@@ -2220,21 +1960,6 @@
     "KrillLarva"
   ],
   [
-    "Krill",
-    "is_a",
-    "SwarmingKrill"
-  ],
-  [
-    "Krill",
-    "is_a",
-    "CommonKrill"
-  ],
-  [
-    "Barnacle",
-    "is_a",
-    "GooseBarnacle"
-  ],
-  [
     "Barnacle",
     "is_a",
     "AcornBarnacle"
@@ -2242,22 +1967,7 @@
   [
     "Barnacle",
     "is_a",
-    "WhaleBarnacle"
-  ],
-  [
-    "Barnacle",
-    "is_a",
-    "ShipBarnacle"
-  ],
-  [
-    "Barnacle",
-    "is_a",
     "SessileCrustacean"
-  ],
-  [
-    "Barnacle",
-    "is_a",
-    "CommonBarnacle"
   ],
   [
     "Myriapod",
@@ -2302,16 +2012,6 @@
   [
     "Centipede",
     "is_a",
-    "SoilCentipede"
-  ],
-  [
-    "Centipede",
-    "is_a",
-    "StoneCentipede"
-  ],
-  [
-    "Centipede",
-    "is_a",
     "Scolopendra"
   ],
   [
@@ -2327,22 +2027,12 @@
   [
     "Millipede",
     "is_a",
-    "PillMillipede"
-  ],
-  [
-    "Millipede",
-    "is_a",
     "GardenMillipede"
   ],
   [
     "Millipede",
     "is_a",
     "FlatBackedMillipede"
-  ],
-  [
-    "Millipede",
-    "is_a",
-    "CommonMillipede"
   ],
   [
     "Millipede",
@@ -2465,11 +2155,6 @@
     "Cockle"
   ],
   [
-    "Bivalve",
-    "is_a",
-    "BivalveShellfish"
-  ],
-  [
     "Cephalopod",
     "is_a",
     "Octopus"
@@ -2493,11 +2178,6 @@
     "Cephalopod",
     "is_a",
     "GiantSquid"
-  ],
-  [
-    "Cephalopod",
-    "is_a",
-    "CommonCephalopod"
   ],
   [
     "Chiton",
@@ -2542,22 +2222,12 @@
   [
     "Scaphopod",
     "is_a",
-    "CommonScaphopod"
-  ],
-  [
-    "Scaphopod",
-    "is_a",
     "BurrowingMollusk"
   ],
   [
     "Scaphopod",
     "is_a",
     "SandDwellerMollusk"
-  ],
-  [
-    "Scaphopod",
-    "is_a",
-    "MicrobeEaterMollusk"
   ],
   [
     "Worm",
@@ -2583,11 +2253,6 @@
     "Worm",
     "is_a",
     "Tapeworm"
-  ],
-  [
-    "Worm",
-    "is_a",
-    "OtherWorm"
   ],
   [
     "Flatworm",
@@ -2645,16 +2310,6 @@
     "Ascaris"
   ],
   [
-    "Roundworm",
-    "is_a",
-    "CommonRoundworm"
-  ],
-  [
-    "Earthworm",
-    "is_a",
-    "CommonEarthworm"
-  ],
-  [
     "Earthworm",
     "is_a",
     "Nightcrawler"
@@ -2663,11 +2318,6 @@
     "Earthworm",
     "is_a",
     "RedWiggler"
-  ],
-  [
-    "Earthworm",
-    "is_a",
-    "SoilEngineerWorm"
   ],
   [
     "Earthworm",
@@ -2692,17 +2342,7 @@
   [
     "Leech",
     "is_a",
-    "FishLeech"
-  ],
-  [
-    "Leech",
-    "is_a",
     "LandLeech"
-  ],
-  [
-    "Leech",
-    "is_a",
-    "CommonLeech"
   ],
   [
     "Leech",
@@ -2742,11 +2382,6 @@
   [
     "Cnidarian",
     "is_a",
-    "Jellyfish"
-  ],
-  [
-    "Cnidarian",
-    "is_a",
     "Coral"
   ],
   [
@@ -2762,42 +2397,27 @@
   [
     "Cnidarian",
     "is_a",
-    "PortugueseManOWar"
+    "OtherCnidarian"
   ],
   [
     "Cnidarian",
     "is_a",
-    "OtherCnidarian"
-  ],
-  [
-    "Jellyfish",
-    "is_a",
-    "MoonJelly"
-  ],
-  [
-    "Jellyfish",
-    "is_a",
     "BoxJellyfish"
   ],
   [
-    "Jellyfish",
+    "Cnidarian",
     "is_a",
     "LionManeJellyfish"
   ],
   [
-    "Jellyfish",
+    "Cnidarian",
     "is_a",
     "Irukandji"
   ],
   [
-    "Jellyfish",
+    "Cnidarian",
     "is_a",
     "JellyfishBloom"
-  ],
-  [
-    "Jellyfish",
-    "is_a",
-    "CommonJellyfish"
   ],
   [
     "Coral",
@@ -2847,11 +2467,6 @@
   [
     "SeaAnemone",
     "is_a",
-    "ClownfishAnemone"
-  ],
-  [
-    "SeaAnemone",
-    "is_a",
     "BeadedAnemone"
   ],
   [
@@ -2872,52 +2487,22 @@
   [
     "Hydra",
     "is_a",
-    "BrownHydra"
-  ],
-  [
-    "Hydra",
-    "is_a",
-    "HydraPolyp"
-  ],
-  [
-    "Hydra",
-    "is_a",
-    "RegeneratingHydra"
-  ],
-  [
-    "Hydra",
-    "is_a",
     "FreshwaterCnidarian"
   ],
   [
-    "PortugueseManOWar",
-    "is_a",
-    "CommonManOWar"
-  ],
-  [
-    "PortugueseManOWar",
+    "Cnidarian",
     "is_a",
     "FloatingColony"
   ],
   [
-    "PortugueseManOWar",
-    "is_a",
-    "BlueBottle"
-  ],
-  [
-    "PortugueseManOWar",
+    "Cnidarian",
     "is_a",
     "Siphonophore"
   ],
   [
-    "PortugueseManOWar",
+    "Cnidarian",
     "is_a",
     "VenomousFloat"
-  ],
-  [
-    "PortugueseManOWar",
-    "is_a",
-    "OceanDrifter"
   ],
   [
     "Echinoderm",
@@ -2997,11 +2582,6 @@
   [
     "SeaUrchin",
     "is_a",
-    "UrchinGrazing"
-  ],
-  [
-    "SeaUrchin",
-    "is_a",
     "LongSpinedUrchin"
   ],
   [
@@ -3028,11 +2608,6 @@
     "SeaCucumber",
     "is_a",
     "CucumberDefense"
-  ],
-  [
-    "SeaCucumber",
-    "is_a",
-    "Holothurian"
   ],
   [
     "SeaCucumber",
@@ -3065,11 +2640,6 @@
     "DeepBrittleStar"
   ],
   [
-    "BrittleStar",
-    "is_a",
-    "CommonBrittleStar"
-  ],
-  [
     "SandDollar",
     "is_a",
     "KeyholeSandDollar"
@@ -3087,92 +2657,57 @@
   [
     "SandDollar",
     "is_a",
-    "SandDollarTest"
-  ],
-  [
-    "SandDollar",
-    "is_a",
-    "SandDollarFossil"
-  ],
-  [
-    "SandDollar",
-    "is_a",
     "CommonSandDollar"
   ],
   [
-    "Plant",
-    "is_a",
-    "FloweringPlant"
-  ],
-  [
-    "Plant",
+    "Concept",
     "is_a",
     "Conifer"
   ],
   [
-    "Plant",
+    "Concept",
     "is_a",
     "Fern"
   ],
   [
-    "Plant",
+    "Concept",
     "is_a",
     "Moss"
   ],
   [
-    "Plant",
+    "Concept",
     "is_a",
     "Algae"
   ],
   [
-    "Plant",
-    "is_a",
-    "OtherPlant"
-  ],
-  [
-    "FloweringPlant",
+    "Concept",
     "is_a",
     "FloweringTree"
   ],
   [
-    "FloweringPlant",
+    "Concept",
     "is_a",
     "FloweringShrub"
   ],
   [
-    "FloweringPlant",
+    "Concept",
     "is_a",
     "Herb"
   ],
   [
-    "FloweringPlant",
-    "is_a",
-    "Grass"
-  ],
-  [
-    "FloweringPlant",
+    "Concept",
     "is_a",
     "Cactus"
   ],
   [
-    "FloweringPlant",
+    "Concept",
     "is_a",
     "GardenFlower"
   ],
   [
     "FloweringTree",
     "is_a",
-    "AppleTree"
-  ],
-  [
-    "FloweringTree",
-    "is_a",
     "OakTree"
-  ],
-  [
-    "FloweringTree",
-    "is_a",
-    "MapleTree"
   ],
   [
     "FloweringTree",
@@ -3198,11 +2733,6 @@
     "FloweringShrub",
     "is_a",
     "Azalea"
-  ],
-  [
-    "FloweringShrub",
-    "is_a",
-    "Hydrangea"
   ],
   [
     "FloweringShrub",
@@ -3250,32 +2780,32 @@
     "Chamomile"
   ],
   [
-    "Grass",
+    "Concept",
     "is_a",
     "Wheat"
   ],
   [
-    "Grass",
+    "Concept",
     "is_a",
     "RicePlant"
   ],
   [
-    "Grass",
+    "Concept",
     "is_a",
     "CornPlant"
   ],
   [
-    "Grass",
+    "Concept",
     "is_a",
     "Bamboo"
   ],
   [
-    "Grass",
+    "Concept",
     "is_a",
     "Sugarcane"
   ],
   [
-    "Grass",
+    "Concept",
     "is_a",
     "LawnGrass"
   ],
@@ -3303,11 +2833,6 @@
     "Cactus",
     "is_a",
     "GoldenBarrel"
-  ],
-  [
-    "Cactus",
-    "is_a",
-    "CommonCactus"
   ],
   [
     "GardenFlower",
@@ -3352,11 +2877,6 @@
   [
     "Conifer",
     "is_a",
-    "Fir"
-  ],
-  [
-    "Conifer",
-    "is_a",
     "Cedar"
   ],
   [
@@ -3387,11 +2907,6 @@
   [
     "Pine",
     "is_a",
-    "LongleafPine"
-  ],
-  [
-    "Pine",
-    "is_a",
     "PinyonPine"
   ],
   [
@@ -3417,47 +2932,32 @@
   [
     "Spruce",
     "is_a",
-    "SitkaSpruce"
-  ],
-  [
-    "Spruce",
-    "is_a",
     "BlackSpruce"
   ],
   [
-    "Spruce",
-    "is_a",
-    "SpruceTree"
-  ],
-  [
-    "Fir",
+    "Conifer",
     "is_a",
     "BalsamFir"
   ],
   [
-    "Fir",
+    "Conifer",
     "is_a",
     "DouglasFir"
   ],
   [
-    "Fir",
+    "Conifer",
     "is_a",
     "SilverFir"
   ],
   [
-    "Fir",
+    "Conifer",
     "is_a",
     "NobleFir"
   ],
   [
-    "Fir",
+    "Conifer",
     "is_a",
     "FraserFir"
-  ],
-  [
-    "Fir",
-    "is_a",
-    "FirTree"
   ],
   [
     "Cedar",
@@ -3483,11 +2983,6 @@
     "Cedar",
     "is_a",
     "DeodarCedar"
-  ],
-  [
-    "Cedar",
-    "is_a",
-    "CedarTree"
   ],
   [
     "Cypress",
@@ -3522,11 +3017,6 @@
   [
     "JuniperPlant",
     "is_a",
-    "CommonJuniperPlant"
-  ],
-  [
-    "JuniperPlant",
-    "is_a",
     "EasternJuniper"
   ],
   [
@@ -3545,24 +3035,9 @@
     "CreepingJuniper"
   ],
   [
-    "JuniperPlant",
-    "is_a",
-    "CommonJuniperSpecies"
-  ],
-  [
-    "Fern",
-    "is_a",
-    "BostonFern"
-  ],
-  [
     "Fern",
     "is_a",
     "BrackenFern"
-  ],
-  [
-    "Fern",
-    "is_a",
-    "MaidenhairFern"
   ],
   [
     "Fern",
@@ -3605,11 +3080,6 @@
     "StarMoss"
   ],
   [
-    "Moss",
-    "is_a",
-    "CommonMoss"
-  ],
-  [
     "Algae",
     "is_a",
     "Kelp"
@@ -3635,149 +3105,209 @@
     "Diatom"
   ],
   [
-    "Algae",
+    "Artifact",
     "is_a",
-    "CommonAlgae"
+    "Airplane"
   ],
   [
     "Concept",
-    "used_for",
-    "classification"
+    "is_a",
+    "Aluminum"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Bag"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Bicycle"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Box"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Bread"
   ],
   [
     "Concept",
-    "hasproperty",
-    "definable"
+    "is_a",
+    "BuiltPlace"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Bus"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Cabinet"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Chair"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "CoffeeBeverage"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Desk"
   ],
   [
     "Concept",
-    "related_to",
-    "knowledge"
+    "is_a",
+    "EngineerProfession"
   ],
   [
-    "LivingThing",
-    "hasproperty",
-    "alive"
+    "Concept",
+    "is_a",
+    "FabricMaterial"
   ],
   [
-    "LivingThing",
-    "requires",
-    "nutrients"
+    "Concept",
+    "is_a",
+    "Gold"
   ],
   [
-    "LivingThing",
-    "requires",
-    "water"
+    "Artifact",
+    "is_a",
+    "GuitarInstrument"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "HammerTool"
+  ],
+  [
+    "BuiltPlace",
+    "is_a",
+    "Hospital"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "HospitalBuilding"
+  ],
+  [
+    "Concept",
+    "is_a",
+    "Iron"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Jeans"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "KnifeTool"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Motorcycle"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "OfficeBuilding"
+  ],
+  [
+    "Concept",
+    "is_a",
+    "Physics"
+  ],
+  [
+    "Concept",
+    "is_a",
+    "PlasticMaterial"
+  ],
+  [
+    "PlasticMaterial",
+    "is_a",
+    "Polyethylene"
+  ],
+  [
+    "PlasticMaterial",
+    "is_a",
+    "Polypropylene"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "RiceFood"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "ScissorsTool"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "ScrewdriverTool"
+  ],
+  [
+    "Concept",
+    "is_a",
+    "Silver"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Smartphone"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Sofa"
+  ],
+  [
+    "Concept",
+    "is_a",
+    "StoneMaterial"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "TShirt"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "Tablet"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "TeaBeverage"
+  ],
+  [
+    "Artifact",
+    "is_a",
+    "ViolinInstrument"
+  ],
+  [
+    "Concept",
+    "is_a",
+    "WoodMaterial"
   ],
   [
     "Artifact",
     "hasproperty",
     "man_made"
-  ],
-  [
-    "Artifact",
-    "used_for",
-    "purpose"
-  ],
-  [
-    "Artifact",
-    "requires",
-    "maintenance"
-  ],
-  [
-    "Place",
-    "hasproperty",
-    "locatable"
-  ],
-  [
-    "Place",
-    "located_in",
-    "space"
-  ],
-  [
-    "Place",
-    "used_for",
-    "navigation"
-  ],
-  [
-    "Material",
-    "hasproperty",
-    "tangible"
-  ],
-  [
-    "Material",
-    "composed_of",
-    "matter"
-  ],
-  [
-    "Material",
-    "used_for",
-    "manufacturing"
-  ],
-  [
-    "AbstractConcept",
-    "hasproperty",
-    "intangible"
-  ],
-  [
-    "AbstractConcept",
-    "used_for",
-    "reasoning"
-  ],
-  [
-    "AbstractConcept",
-    "related_to",
-    "ideas"
-  ],
-  [
-    "Event",
-    "occurs_in",
-    "time"
-  ],
-  [
-    "Event",
-    "hasproperty",
-    "temporal"
-  ],
-  [
-    "Event",
-    "related_to",
-    "change"
-  ],
-  [
-    "Animal",
-    "hasproperty",
-    "multicellular"
-  ],
-  [
-    "Animal",
-    "capable_of",
-    "movement"
-  ],
-  [
-    "Animal",
-    "requires",
-    "oxygen"
-  ],
-  [
-    "Plant",
-    "hasproperty",
-    "photosynthetic"
-  ],
-  [
-    "Plant",
-    "requires",
-    "sunlight"
-  ],
-  [
-    "Plant",
-    "produces",
-    "oxygen"
-  ],
-  [
-    "Fungus",
-    "hasproperty",
-    "spore_forming"
   ],
   [
     "Fungus",
@@ -3806,11 +3336,6 @@
   ],
   [
     "Protist",
-    "hasproperty",
-    "eukaryotic"
-  ],
-  [
-    "Protist",
     "lives_in",
     "water"
   ],
@@ -3820,54 +3345,9 @@
     "asexually"
   ],
   [
-    "OtherLivingThing",
-    "hasproperty",
-    "biological"
-  ],
-  [
-    "OtherLivingThing",
-    "requires",
-    "energy"
-  ],
-  [
-    "OtherLivingThing",
-    "hasproperty",
-    "adaptable"
-  ],
-  [
-    "Vertebrate",
-    "hasproperty",
-    "backbone"
-  ],
-  [
-    "Vertebrate",
-    "haspart",
-    "spinal_cord"
-  ],
-  [
-    "Arthropod",
-    "hasproperty",
-    "exoskeleton"
-  ],
-  [
-    "Arthropod",
-    "haspart",
-    "jointed_legs"
-  ],
-  [
-    "Arthropod",
-    "hasproperty",
-    "segmented_body"
-  ],
-  [
     "Mollusk",
     "hasproperty",
     "soft_body"
-  ],
-  [
-    "Mollusk",
-    "hasproperty",
-    "muscular_foot"
   ],
   [
     "Mollusk",
@@ -3885,34 +3365,9 @@
     "limbless"
   ],
   [
-    "Worm",
-    "moves_by",
-    "wriggling"
-  ],
-  [
-    "Cnidarian",
-    "hasproperty",
-    "stinging_cells"
-  ],
-  [
-    "Cnidarian",
-    "lives_in",
-    "ocean"
-  ],
-  [
     "Cnidarian",
     "hasproperty",
     "radial_symmetry"
-  ],
-  [
-    "Echinoderm",
-    "hasproperty",
-    "spiny_skin"
-  ],
-  [
-    "Echinoderm",
-    "lives_in",
-    "ocean"
   ],
   [
     "Echinoderm",
@@ -3923,21 +3378,6 @@
     "Mammal",
     "hasproperty",
     "warm_blooded"
-  ],
-  [
-    "Mammal",
-    "hasproperty",
-    "hair"
-  ],
-  [
-    "Mammal",
-    "nourished_with",
-    "milk"
-  ],
-  [
-    "Bird",
-    "hasproperty",
-    "feathered"
   ],
   [
     "Bird",
@@ -3956,11 +3396,6 @@
   ],
   [
     "Reptile",
-    "hasproperty",
-    "scales"
-  ],
-  [
-    "Reptile",
     "capable_of",
     "laying_eggs"
   ],
@@ -3968,21 +3403,6 @@
     "Amphibian",
     "hasproperty",
     "cold_blooded"
-  ],
-  [
-    "Amphibian",
-    "lives_in",
-    "water_and_land"
-  ],
-  [
-    "Amphibian",
-    "hasproperty",
-    "moist_skin"
-  ],
-  [
-    "Fish",
-    "haspart",
-    "gills"
   ],
   [
     "Fish",
@@ -3993,31 +3413,6 @@
     "Fish",
     "moves_by",
     "swimming"
-  ],
-  [
-    "OtherVertebrate",
-    "hasproperty",
-    "vertebrate"
-  ],
-  [
-    "OtherVertebrate",
-    "hasproperty",
-    "diverse_forms"
-  ],
-  [
-    "Primate",
-    "hasproperty",
-    "grasping_hands"
-  ],
-  [
-    "Primate",
-    "hasproperty",
-    "forward_facing_eyes"
-  ],
-  [
-    "Primate",
-    "capable_of",
-    "social_behavior"
   ],
   [
     "CarnivorousMammal",
@@ -4036,11 +3431,6 @@
   ],
   [
     "Ungulate",
-    "hasproperty",
-    "hooves"
-  ],
-  [
-    "Ungulate",
     "eats",
     "plants"
   ],
@@ -4048,11 +3438,6 @@
     "Ungulate",
     "capable_of",
     "running"
-  ],
-  [
-    "Rodent",
-    "hasproperty",
-    "gnawing_teeth"
   ],
   [
     "Rodent",
@@ -4071,48 +3456,13 @@
   ],
   [
     "Bat",
-    "hasproperty",
-    "echolocation"
-  ],
-  [
-    "Bat",
     "active_in",
     "night"
   ],
   [
     "MarineMammal",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "MarineMammal",
-    "moves_by",
-    "swimming"
-  ],
-  [
-    "MarineMammal",
     "breathes",
     "air"
-  ],
-  [
-    "Canid",
-    "hasproperty",
-    "long_muzzle"
-  ],
-  [
-    "Canid",
-    "capable_of",
-    "howling"
-  ],
-  [
-    "Felid",
-    "hasproperty",
-    "retractable_claws"
-  ],
-  [
-    "Felid",
-    "capable_of",
-    "stalking"
   ],
   [
     "Ursid",
@@ -4176,18 +3526,8 @@
   ],
   [
     "GrayWolf",
-    "lives_in",
-    "packs"
-  ],
-  [
-    "GrayWolf",
     "eats",
     "ungulates"
-  ],
-  [
-    "GrayWolf",
-    "hasproperty",
-    "territorial"
   ],
   [
     "Coyote",
@@ -4200,11 +3540,6 @@
     "small_mammals"
   ],
   [
-    "Coyote",
-    "capable_of",
-    "yipping"
-  ],
-  [
     "RedFox",
     "hasproperty",
     "bushy_tail"
@@ -4215,11 +3550,6 @@
     "rodents"
   ],
   [
-    "RedFox",
-    "active_in",
-    "twilight"
-  ],
-  [
     "ArcticFox",
     "lives_in",
     "tundra"
@@ -4228,16 +3558,6 @@
     "ArcticFox",
     "hasproperty",
     "thick_fur"
-  ],
-  [
-    "ArcticFox",
-    "eats",
-    "lemmings"
-  ],
-  [
-    "GoldenJackal",
-    "lives_in",
-    "scrubland"
   ],
   [
     "GoldenJackal",
@@ -4260,16 +3580,6 @@
     "barking"
   ],
   [
-    "DomesticDog",
-    "used_for",
-    "companionship"
-  ],
-  [
-    "Lion",
-    "lives_in",
-    "prides"
-  ],
-  [
     "Lion",
     "eats",
     "ungulates"
@@ -4285,39 +3595,14 @@
     "striped_coat"
   ],
   [
-    "Tiger",
-    "eats",
-    "deer"
-  ],
-  [
-    "Tiger",
-    "lives_in",
-    "forest"
-  ],
-  [
     "Leopard",
     "capable_of",
     "climbing"
   ],
   [
     "Leopard",
-    "eats",
-    "antelope"
-  ],
-  [
-    "Leopard",
     "hasproperty",
     "spotted_coat"
-  ],
-  [
-    "Cheetah",
-    "capable_of",
-    "sprinting"
-  ],
-  [
-    "Cheetah",
-    "eats",
-    "gazelles"
   ],
   [
     "Cheetah",
@@ -4328,11 +3613,6 @@
     "DomesticCat",
     "hasproperty",
     "domesticated"
-  ],
-  [
-    "DomesticCat",
-    "capable_of",
-    "purring"
   ],
   [
     "DomesticCat",
@@ -4350,16 +3630,6 @@
     "thick_fur"
   ],
   [
-    "SnowLeopard",
-    "eats",
-    "wild_goats"
-  ],
-  [
-    "BrownBear",
-    "eats",
-    "fish"
-  ],
-  [
     "BrownBear",
     "lives_in",
     "forest"
@@ -4375,34 +3645,9 @@
     "seals"
   ],
   [
-    "PolarBear",
-    "hasproperty",
-    "thick_fat"
-  ],
-  [
-    "AmericanBlackBear",
-    "eats",
-    "berries"
-  ],
-  [
-    "AmericanBlackBear",
-    "lives_in",
-    "forest"
-  ],
-  [
     "AmericanBlackBear",
     "capable_of",
     "climbing"
-  ],
-  [
-    "GiantPanda",
-    "eats",
-    "bamboo"
-  ],
-  [
-    "GiantPanda",
-    "hasproperty",
-    "black_white_fur"
   ],
   [
     "GiantPanda",
@@ -4411,18 +3656,8 @@
   ],
   [
     "SunBear",
-    "eats",
-    "insects"
-  ],
-  [
-    "SunBear",
     "lives_in",
     "rainforest"
-  ],
-  [
-    "SunBear",
-    "hasproperty",
-    "long_tongue"
   ],
   [
     "SlothBear",
@@ -4446,11 +3681,6 @@
   ],
   [
     "RiverOtter",
-    "eats",
-    "fish"
-  ],
-  [
-    "RiverOtter",
     "capable_of",
     "swimming"
   ],
@@ -4465,11 +3695,6 @@
     "shellfish"
   ],
   [
-    "SeaOtter",
-    "uses",
-    "tools"
-  ],
-  [
     "Badger",
     "lives_in",
     "burrows"
@@ -4478,11 +3703,6 @@
     "Badger",
     "eats",
     "worms"
-  ],
-  [
-    "Wolverine",
-    "hasproperty",
-    "strong_build"
   ],
   [
     "Wolverine",
@@ -4510,16 +3730,6 @@
     "domesticated"
   ],
   [
-    "Ferret",
-    "lives_in",
-    "captivity"
-  ],
-  [
-    "SpottedHyena",
-    "capable_of",
-    "laughing_call"
-  ],
-  [
     "SpottedHyena",
     "eats",
     "carrion"
@@ -4535,11 +3745,6 @@
     "carrion"
   ],
   [
-    "StripedHyena",
-    "active_in",
-    "night"
-  ],
-  [
     "BrownHyena",
     "lives_in",
     "desert"
@@ -4550,19 +3755,9 @@
     "carrion"
   ],
   [
-    "BrownHyena",
-    "hasproperty",
-    "shaggy_fur"
-  ],
-  [
     "Aardwolf",
     "eats",
     "termites"
-  ],
-  [
-    "Aardwolf",
-    "active_in",
-    "night"
   ],
   [
     "HyaenaClan",
@@ -4570,29 +3765,9 @@
     "groups"
   ],
   [
-    "HyaenaClan",
-    "capable_of",
-    "cooperation"
-  ],
-  [
-    "HyaenaClan",
-    "hasproperty",
-    "hierarchy"
-  ],
-  [
     "ScavengerHyena",
     "eats",
     "carrion"
-  ],
-  [
-    "ScavengerHyena",
-    "hasproperty",
-    "powerful_bite"
-  ],
-  [
-    "HarborSeal",
-    "eats",
-    "fish"
   ],
   [
     "HarborSeal",
@@ -4625,21 +3800,6 @@
     "colonies"
   ],
   [
-    "SeaLion",
-    "eats",
-    "fish"
-  ],
-  [
-    "Walrus",
-    "hasproperty",
-    "tusks"
-  ],
-  [
-    "Walrus",
-    "eats",
-    "clams"
-  ],
-  [
     "Walrus",
     "lives_in",
     "arctic"
@@ -4648,21 +3808,6 @@
     "FurSeal",
     "hasproperty",
     "thick_fur"
-  ],
-  [
-    "FurSeal",
-    "eats",
-    "fish"
-  ],
-  [
-    "FurSeal",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "MonkSeal",
-    "lives_in",
-    "tropical_waters"
   ],
   [
     "MonkSeal",
@@ -4680,16 +3825,6 @@
     "grasses"
   ],
   [
-    "Equid",
-    "capable_of",
-    "galloping"
-  ],
-  [
-    "Bovid",
-    "hasproperty",
-    "horns"
-  ],
-  [
     "Bovid",
     "eats",
     "grasses"
@@ -4701,18 +3836,8 @@
   ],
   [
     "Cervid",
-    "hasproperty",
-    "antlers"
-  ],
-  [
-    "Cervid",
     "eats",
     "leaves"
-  ],
-  [
-    "Cervid",
-    "lives_in",
-    "forest"
   ],
   [
     "Giraffid",
@@ -4732,22 +3857,12 @@
   [
     "RhinocerosFamily",
     "hasproperty",
-    "thick_skin"
-  ],
-  [
-    "RhinocerosFamily",
-    "hasproperty",
     "horn"
   ],
   [
     "RhinocerosFamily",
     "eats",
     "vegetation"
-  ],
-  [
-    "Camelid",
-    "hasproperty",
-    "padded_feet"
   ],
   [
     "Camelid",
@@ -4763,11 +3878,6 @@
     "Horse",
     "hasproperty",
     "domesticated"
-  ],
-  [
-    "Horse",
-    "used_for",
-    "riding"
   ],
   [
     "Donkey",
@@ -4806,11 +3916,6 @@
   ],
   [
     "PrzewalskiHorse",
-    "lives_in",
-    "steppe"
-  ],
-  [
-    "PrzewalskiHorse",
     "hasproperty",
     "endangered"
   ],
@@ -4825,29 +3930,14 @@
     "strong"
   ],
   [
-    "Mule",
-    "hasproperty",
-    "hybrid"
-  ],
-  [
     "WildAss",
     "lives_in",
     "desert"
   ],
   [
-    "WildAss",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Cow",
     "hasproperty",
     "domesticated"
-  ],
-  [
-    "Cow",
-    "lives_in",
-    "pasture"
   ],
   [
     "Goat",
@@ -4871,11 +3961,6 @@
   ],
   [
     "Bison",
-    "lives_in",
-    "plains"
-  ],
-  [
-    "Bison",
     "hasproperty",
     "large_body"
   ],
@@ -4883,11 +3968,6 @@
     "Antelope",
     "lives_in",
     "savanna"
-  ],
-  [
-    "Antelope",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Yak",
@@ -4900,16 +3980,6 @@
     "thick_fur"
   ],
   [
-    "WhiteTailedDeer",
-    "hasproperty",
-    "white_tail"
-  ],
-  [
-    "WhiteTailedDeer",
-    "hasproperty",
-    "white_coloration"
-  ],
-  [
     "Moose",
     "lives_in",
     "boreal_forest"
@@ -4920,39 +3990,14 @@
     "aquatic_plants"
   ],
   [
-    "Moose",
-    "hasproperty",
-    "large_body"
-  ],
-  [
-    "Elk",
-    "lives_in",
-    "meadows"
-  ],
-  [
     "Elk",
     "lives_in",
     "herds"
   ],
   [
-    "Elk",
-    "capable_of",
-    "bugling"
-  ],
-  [
     "Reindeer",
     "lives_in",
     "tundra"
-  ],
-  [
-    "Reindeer",
-    "eats",
-    "lichens"
-  ],
-  [
-    "RoeDeer",
-    "lives_in",
-    "woodland"
   ],
   [
     "RoeDeer",
@@ -4975,29 +4020,14 @@
     "acacia_leaves"
   ],
   [
-    "Giraffe",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Okapi",
     "lives_in",
     "rainforest"
   ],
   [
-    "Okapi",
-    "hasproperty",
-    "striped_legs"
-  ],
-  [
     "GiraffidGroup",
     "lives_in",
     "africa"
-  ],
-  [
-    "GiraffidGroup",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "SavannaGiraffe",
@@ -5008,21 +4038,6 @@
     "SavannaGiraffe",
     "hasproperty",
     "tall"
-  ],
-  [
-    "ReticulatedGiraffe",
-    "hasproperty",
-    "net_pattern"
-  ],
-  [
-    "ReticulatedGiraffe",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "MasaiGiraffe",
-    "hasproperty",
-    "irregular_spots"
   ],
   [
     "MasaiGiraffe",
@@ -5056,18 +4071,8 @@
   ],
   [
     "IndianRhino",
-    "lives_in",
-    "grasslands"
-  ],
-  [
-    "IndianRhino",
     "native_to",
     "india"
-  ],
-  [
-    "SumatranRhino",
-    "lives_in",
-    "rainforest"
   ],
   [
     "SumatranRhino",
@@ -5081,33 +4086,13 @@
   ],
   [
     "JavanRhino",
-    "lives_in",
-    "forest"
-  ],
-  [
-    "JavanRhino",
     "hasproperty",
     "endangered"
-  ],
-  [
-    "Rhinoceros",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Rhinoceros",
-    "hasproperty",
-    "species_specific_markings"
   ],
   [
     "Camel",
     "lives_in",
     "desert"
-  ],
-  [
-    "Camel",
-    "hasproperty",
-    "hump"
   ],
   [
     "Camel",
@@ -5116,43 +4101,13 @@
   ],
   [
     "Dromedary",
-    "hasproperty",
-    "one_hump"
-  ],
-  [
-    "Dromedary",
     "lives_in",
     "desert"
-  ],
-  [
-    "Dromedary",
-    "used_for",
-    "transport"
-  ],
-  [
-    "BactrianCamel",
-    "hasproperty",
-    "two_humps"
-  ],
-  [
-    "BactrianCamel",
-    "lives_in",
-    "cold_desert"
   ],
   [
     "BactrianCamel",
     "hasproperty",
     "hardy"
-  ],
-  [
-    "Llama",
-    "hasproperty",
-    "domesticated"
-  ],
-  [
-    "Llama",
-    "used_for",
-    "packing"
   ],
   [
     "Llama",
@@ -5166,23 +4121,8 @@
   ],
   [
     "Alpaca",
-    "used_for",
-    "fiber"
-  ],
-  [
-    "Alpaca",
     "lives_in",
     "mountains"
-  ],
-  [
-    "Vicuna",
-    "lives_in",
-    "andes"
-  ],
-  [
-    "Vicuna",
-    "hasproperty",
-    "fine_fiber"
   ],
   [
     "Vicuna",
@@ -5216,11 +4156,6 @@
   ],
   [
     "BeaverFamily",
-    "capable_of",
-    "building_dams"
-  ],
-  [
-    "BeaverFamily",
     "lives_in",
     "rivers"
   ],
@@ -5231,11 +4166,6 @@
   ],
   [
     "PorcupineFamily",
-    "hasproperty",
-    "quills"
-  ],
-  [
-    "PorcupineFamily",
     "eats",
     "leaves"
   ],
@@ -5243,11 +4173,6 @@
     "PorcupineFamily",
     "capable_of",
     "defense"
-  ],
-  [
-    "CavyFamily",
-    "hasproperty",
-    "stout_body"
   ],
   [
     "CavyFamily",
@@ -5270,11 +4195,6 @@
     "grasses"
   ],
   [
-    "CapybaraFamily",
-    "hasproperty",
-    "large_rodent"
-  ],
-  [
     "HouseMouse",
     "lives_in",
     "houses"
@@ -5283,11 +4203,6 @@
     "HouseMouse",
     "reproduces",
     "rapidly"
-  ],
-  [
-    "BrownRat",
-    "lives_in",
-    "sewers"
   ],
   [
     "BrownRat",
@@ -5305,16 +4220,6 @@
     "fields"
   ],
   [
-    "FieldMouse",
-    "active_in",
-    "night"
-  ],
-  [
-    "Gerbil",
-    "lives_in",
-    "desert"
-  ],
-  [
     "Gerbil",
     "capable_of",
     "digging"
@@ -5323,11 +4228,6 @@
     "Hamster",
     "stores",
     "food"
-  ],
-  [
-    "Hamster",
-    "active_in",
-    "night"
   ],
   [
     "KangarooRat",
@@ -5350,29 +4250,9 @@
     "forests"
   ],
   [
-    "GraySquirrel",
-    "hasproperty",
-    "gray_coloration"
-  ],
-  [
-    "RedSquirrel",
-    "eats",
-    "pine_seeds"
-  ],
-  [
-    "RedSquirrel",
-    "lives_in",
-    "conifer_forest"
-  ],
-  [
     "RedSquirrel",
     "stores",
     "food"
-  ],
-  [
-    "Chipmunk",
-    "hasproperty",
-    "striped_back"
   ],
   [
     "Chipmunk",
@@ -5396,11 +4276,6 @@
   ],
   [
     "FlyingSquirrel",
-    "capable_of",
-    "gliding"
-  ],
-  [
-    "FlyingSquirrel",
     "active_in",
     "night"
   ],
@@ -5416,23 +4291,8 @@
   ],
   [
     "Marmot",
-    "lives_in",
-    "mountains"
-  ],
-  [
-    "Marmot",
     "eats",
     "grasses"
-  ],
-  [
-    "Beaver",
-    "hasproperty",
-    "flat_tail"
-  ],
-  [
-    "Beaver",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "NorthAmericanBeaver",
@@ -5440,49 +4300,9 @@
     "americas"
   ],
   [
-    "NorthAmericanBeaver",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "EurasianBeaver",
-    "hasproperty",
-    "large_incisors"
-  ],
-  [
-    "EurasianBeaver",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BeaverLodge",
-    "used_for",
-    "shelter"
-  ],
-  [
-    "BeaverLodge",
-    "built_by",
-    "beavers"
-  ],
-  [
-    "BeaverLodge",
-    "located_in",
-    "water"
-  ],
-  [
-    "DamBuilderRodent",
-    "used_for",
-    "ecosystem_engineering"
-  ],
-  [
     "DamBuilderRodent",
     "hasproperty",
     "localized_range"
-  ],
-  [
-    "AquaticRodent",
-    "lives_in",
-    "water"
   ],
   [
     "AquaticRodent",
@@ -5510,11 +4330,6 @@
     "roots"
   ],
   [
-    "AfricanCrestedPorcupine",
-    "active_in",
-    "night"
-  ],
-  [
     "TreePorcupine",
     "capable_of",
     "climbing"
@@ -5525,29 +4340,9 @@
     "rainforest"
   ],
   [
-    "Porcupine",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Porcupine",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "QuilledRodent",
     "eats",
     "vegetation"
-  ],
-  [
-    "QuilledRodent",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BrushTailedPorcupine",
-    "active_in",
-    "night"
   ],
   [
     "BrushTailedPorcupine",
@@ -5560,11 +4355,6 @@
     "domesticated"
   ],
   [
-    "GuineaPig",
-    "capable_of",
-    "squeaking"
-  ],
-  [
     "PatagonianMara",
     "lives_in",
     "grasslands"
@@ -5573,11 +4363,6 @@
     "PatagonianMara",
     "hasproperty",
     "long_legs"
-  ],
-  [
-    "RockCavy",
-    "lives_in",
-    "rocky_areas"
   ],
   [
     "RockCavy",
@@ -5595,24 +4380,9 @@
     "south_america"
   ],
   [
-    "Cavy",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "DomesticCavy",
     "hasproperty",
     "domesticated"
-  ],
-  [
-    "DomesticCavy",
-    "used_for",
-    "pets"
-  ],
-  [
-    "DomesticCavy",
-    "eats",
-    "vegetables"
   ],
   [
     "WildCavy",
@@ -5620,19 +4390,9 @@
     "grasslands"
   ],
   [
-    "WildCavy",
-    "avoids",
-    "predators"
-  ],
-  [
     "Capybara",
     "moves_by",
     "swimming"
-  ],
-  [
-    "Capybara",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "GiantRodent",
@@ -5650,24 +4410,9 @@
     "swimming"
   ],
   [
-    "WaterLovingRodent",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CapybaraGroup",
     "lives_in",
     "south_america"
-  ],
-  [
-    "CapybaraGroup",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "SemiAquaticMammal",
-    "moves_by",
-    "swimming"
   ],
   [
     "SemiAquaticMammal",
@@ -5680,24 +4425,9 @@
     "groups"
   ],
   [
-    "HerbivorousRodent",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "FruitBat",
     "eats",
     "fruit"
-  ],
-  [
-    "FruitBat",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "InsectBat",
-    "eats",
-    "insects"
   ],
   [
     "InsectBat",
@@ -5731,11 +4461,6 @@
   ],
   [
     "LittleBrownBat",
-    "eats",
-    "mosquitoes"
-  ],
-  [
-    "LittleBrownBat",
     "uses",
     "echolocation"
   ],
@@ -5751,11 +4476,6 @@
   ],
   [
     "HorseshoeBat",
-    "hasproperty",
-    "nose_leaf"
-  ],
-  [
-    "HorseshoeBat",
     "lives_in",
     "caves"
   ],
@@ -5765,34 +4485,14 @@
     "streamlined"
   ],
   [
-    "Cetacean",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Sirenian",
     "eats",
     "seagrass"
   ],
   [
-    "Sirenian",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BlueWhale",
-    "hasproperty",
-    "largest_animal"
-  ],
-  [
     "BlueWhale",
     "eats",
     "krill"
-  ],
-  [
-    "HumpbackWhale",
-    "capable_of",
-    "breaching"
   ],
   [
     "HumpbackWhale",
@@ -5806,23 +4506,8 @@
   ],
   [
     "Orca",
-    "eats",
-    "fish"
-  ],
-  [
-    "Orca",
     "capable_of",
     "hunting"
-  ],
-  [
-    "Orca",
-    "lives_in",
-    "pods"
-  ],
-  [
-    "BottlenoseDolphin",
-    "capable_of",
-    "echolocation"
   ],
   [
     "BottlenoseDolphin",
@@ -5831,18 +4516,8 @@
   ],
   [
     "Narwhal",
-    "hasproperty",
-    "tusk"
-  ],
-  [
-    "Narwhal",
     "lives_in",
     "arctic"
-  ],
-  [
-    "Narwhal",
-    "eats",
-    "fish"
   ],
   [
     "SpermWhale",
@@ -5855,34 +4530,14 @@
     "squid"
   ],
   [
-    "SpermWhale",
-    "hasproperty",
-    "large_head"
-  ],
-  [
     "Manatee",
     "lives_in",
     "coastal_waters"
   ],
   [
-    "Manatee",
-    "hasproperty",
-    "gentle"
-  ],
-  [
     "Dugong",
     "hasproperty",
     "endangered"
-  ],
-  [
-    "Dugong",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "WestIndianManatee",
-    "lives_in",
-    "warm_water"
   ],
   [
     "WestIndianManatee",
@@ -5903,11 +4558,6 @@
     "AmazonianManatee",
     "lives_in",
     "freshwater"
-  ],
-  [
-    "AfricanManatee",
-    "lives_in",
-    "rivers"
   ],
   [
     "AfricanManatee",
@@ -5936,23 +4586,8 @@
   ],
   [
     "Raptor",
-    "hasproperty",
-    "sharp_talons"
-  ],
-  [
-    "Raptor",
     "eats",
     "meat"
-  ],
-  [
-    "Songbird",
-    "capable_of",
-    "singing"
-  ],
-  [
-    "Songbird",
-    "hasproperty",
-    "perching_feet"
   ],
   [
     "Songbird",
@@ -5966,23 +4601,8 @@
   ],
   [
     "Waterfowl",
-    "hasproperty",
-    "webbed_feet"
-  ],
-  [
-    "Waterfowl",
     "capable_of",
     "swimming"
-  ],
-  [
-    "Seabird",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "Seabird",
-    "capable_of",
-    "long_flights"
   ],
   [
     "Seabird",
@@ -5996,23 +4616,8 @@
   ],
   [
     "Parrot",
-    "hasproperty",
-    "curved_beak"
-  ],
-  [
-    "Parrot",
     "eats",
     "seeds"
-  ],
-  [
-    "FlightlessBird",
-    "hasproperty",
-    "reduced_flight"
-  ],
-  [
-    "FlightlessBird",
-    "moves_by",
-    "running"
   ],
   [
     "FlightlessBird",
@@ -6021,18 +4626,8 @@
   ],
   [
     "BaldEagle",
-    "hasproperty",
-    "white_head"
-  ],
-  [
-    "BaldEagle",
     "eats",
     "fish"
-  ],
-  [
-    "BaldEagle",
-    "builds",
-    "nests"
   ],
   [
     "GoldenEagle",
@@ -6041,18 +4636,8 @@
   ],
   [
     "GoldenEagle",
-    "eats",
-    "rabbits"
-  ],
-  [
-    "GoldenEagle",
     "capable_of",
     "soaring"
-  ],
-  [
-    "PeregrineFalcon",
-    "capable_of",
-    "high_speed_dive"
   ],
   [
     "PeregrineFalcon",
@@ -6066,23 +4651,8 @@
   ],
   [
     "BarnOwl",
-    "active_in",
-    "night"
-  ],
-  [
-    "BarnOwl",
     "eats",
     "rodents"
-  ],
-  [
-    "BarnOwl",
-    "hasproperty",
-    "silent_flight"
-  ],
-  [
-    "RedTailedHawk",
-    "lives_in",
-    "open_country"
   ],
   [
     "RedTailedHawk",
@@ -6093,11 +4663,6 @@
     "RedTailedHawk",
     "capable_of",
     "soaring"
-  ],
-  [
-    "Osprey",
-    "eats",
-    "fish"
   ],
   [
     "Osprey",
@@ -6112,17 +4677,7 @@
   [
     "Canary",
     "hasproperty",
-    "yellow"
-  ],
-  [
-    "Canary",
-    "hasproperty",
     "small_body"
-  ],
-  [
-    "Robin",
-    "hasproperty",
-    "red_breast"
   ],
   [
     "Robin",
@@ -6141,11 +4696,6 @@
   ],
   [
     "Sparrow",
-    "lives_in",
-    "cities"
-  ],
-  [
-    "Sparrow",
     "hasproperty",
     "small_body"
   ],
@@ -6153,16 +4703,6 @@
     "Nightingale",
     "active_in",
     "night"
-  ],
-  [
-    "Nightingale",
-    "lives_in",
-    "woodlands"
-  ],
-  [
-    "BlueJay",
-    "hasproperty",
-    "blue_feathers"
   ],
   [
     "BlueJay",
@@ -6181,38 +4721,13 @@
   ],
   [
     "Finch",
-    "hasproperty",
-    "conical_beak"
-  ],
-  [
-    "Finch",
     "lives_in",
     "flocks"
-  ],
-  [
-    "MallardDuck",
-    "hasproperty",
-    "green_head"
-  ],
-  [
-    "MallardDuck",
-    "capable_of",
-    "flying"
   ],
   [
     "CanadaGoose",
     "migrates",
     "seasonally"
-  ],
-  [
-    "CanadaGoose",
-    "capable_of",
-    "honking"
-  ],
-  [
-    "MuteSwan",
-    "hasproperty",
-    "white_plumage"
   ],
   [
     "MuteSwan",
@@ -6223,11 +4738,6 @@
     "WoodDuck",
     "lives_in",
     "forests"
-  ],
-  [
-    "WoodDuck",
-    "nests_in",
-    "cavities"
   ],
   [
     "SnowGoose",
@@ -6246,11 +4756,6 @@
   ],
   [
     "TealDuck",
-    "hasproperty",
-    "small_duck"
-  ],
-  [
-    "TealDuck",
     "eats",
     "aquatic_plants"
   ],
@@ -6258,11 +4763,6 @@
     "Albatross",
     "hasproperty",
     "large_wingspan"
-  ],
-  [
-    "Albatross",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Penguin",
@@ -6280,16 +4780,6 @@
     "southern_ocean"
   ],
   [
-    "Puffin",
-    "hasproperty",
-    "colorful_beak"
-  ],
-  [
-    "Puffin",
-    "nests_in",
-    "burrows"
-  ],
-  [
     "Gull",
     "capable_of",
     "scavenging"
@@ -6301,11 +4791,6 @@
   ],
   [
     "Pelican",
-    "hasproperty",
-    "throat_pouch"
-  ],
-  [
-    "Pelican",
     "dives_to",
     "catch_prey"
   ],
@@ -6313,16 +4798,6 @@
     "Cormorant",
     "dives_to",
     "catch_prey"
-  ],
-  [
-    "Cormorant",
-    "dries",
-    "wings"
-  ],
-  [
-    "Macaw",
-    "hasproperty",
-    "colorful_plumage"
   ],
   [
     "Macaw",
@@ -6335,24 +4810,9 @@
     "crest"
   ],
   [
-    "Cockatoo",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "AfricanGreyParrot",
-    "capable_of",
-    "speech"
-  ],
-  [
     "AfricanGreyParrot",
     "hasproperty",
     "intelligent"
-  ],
-  [
-    "Budgerigar",
-    "hasproperty",
-    "small_parrot"
   ],
   [
     "Budgerigar",
@@ -6371,28 +4831,13 @@
   ],
   [
     "Lovebird",
-    "lives_in",
-    "pairs"
-  ],
-  [
-    "Lovebird",
     "hasproperty",
     "colorful"
   ],
   [
     "Ostrich",
-    "hasproperty",
-    "largest_bird"
-  ],
-  [
-    "Ostrich",
     "lives_in",
     "savanna"
-  ],
-  [
-    "Emu",
-    "lives_in",
-    "australia"
   ],
   [
     "Emu",
@@ -6406,18 +4851,8 @@
   ],
   [
     "Kiwi",
-    "hasproperty",
-    "long_beak"
-  ],
-  [
-    "Kiwi",
     "lives_in",
     "new_zealand"
-  ],
-  [
-    "Cassowary",
-    "hasproperty",
-    "helmet_casque"
   ],
   [
     "Cassowary",
@@ -6428,11 +4863,6 @@
     "Cassowary",
     "capable_of",
     "defense"
-  ],
-  [
-    "Rhea",
-    "lives_in",
-    "grasslands"
   ],
   [
     "Rhea",
@@ -6471,11 +4901,6 @@
   ],
   [
     "Crocodilian",
-    "hasproperty",
-    "powerful_jaws"
-  ],
-  [
-    "Crocodilian",
     "eats",
     "meat"
   ],
@@ -6485,19 +4910,9 @@
     "crawling"
   ],
   [
-    "Lizard",
-    "eats",
-    "insects"
-  ],
-  [
     "Snake",
     "hasproperty",
     "limbless"
-  ],
-  [
-    "Snake",
-    "moves_by",
-    "slithering"
   ],
   [
     "Snake",
@@ -6510,29 +4925,9 @@
     "ancient_lineage"
   ],
   [
-    "TuataraGroup",
-    "lives_in",
-    "islands"
-  ],
-  [
-    "TuataraGroup",
-    "active_in",
-    "night"
-  ],
-  [
     "OtherReptile",
     "lays",
     "eggs"
-  ],
-  [
-    "OtherReptile",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "SeaTurtle",
-    "lives_in",
-    "ocean"
   ],
   [
     "SeaTurtle",
@@ -6551,23 +4946,8 @@
   ],
   [
     "GreenSeaTurtle",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "GreenSeaTurtle",
     "hasproperty",
     "endangered"
-  ],
-  [
-    "LeatherbackTurtle",
-    "eats",
-    "jellyfish"
-  ],
-  [
-    "LeatherbackTurtle",
-    "lives_in",
-    "ocean"
   ],
   [
     "LeatherbackTurtle",
@@ -6580,29 +4960,9 @@
     "forest"
   ],
   [
-    "BoxTurtle",
-    "hasproperty",
-    "hinged_shell"
-  ],
-  [
-    "BoxTurtle",
-    "eats",
-    "insects"
-  ],
-  [
     "SnappingTurtle",
     "hasproperty",
     "strong_jaws"
-  ],
-  [
-    "SnappingTurtle",
-    "lives_in",
-    "freshwater"
-  ],
-  [
-    "SnappingTurtle",
-    "eats",
-    "fish"
   ],
   [
     "Tortoise",
@@ -6621,21 +4981,6 @@
   ],
   [
     "NileCrocodile",
-    "eats",
-    "fish"
-  ],
-  [
-    "NileCrocodile",
-    "hasproperty",
-    "aggressive"
-  ],
-  [
-    "AmericanAlligator",
-    "lives_in",
-    "swamps"
-  ],
-  [
-    "AmericanAlligator",
     "eats",
     "fish"
   ],
@@ -6661,18 +5006,8 @@
   ],
   [
     "Caiman",
-    "eats",
-    "fish"
-  ],
-  [
-    "Caiman",
     "lives_in",
     "south_america"
-  ],
-  [
-    "Gharial",
-    "hasproperty",
-    "long_snout"
   ],
   [
     "Gharial",
@@ -6683,11 +5018,6 @@
     "Crocodile",
     "lives_in",
     "wetlands"
-  ],
-  [
-    "Crocodile",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Iguana",
@@ -6706,18 +5036,8 @@
   ],
   [
     "KomodoDragon",
-    "hasproperty",
-    "large_lizard"
-  ],
-  [
-    "KomodoDragon",
     "eats",
     "carrion"
-  ],
-  [
-    "KomodoDragon",
-    "hasproperty",
-    "venomous_bite"
   ],
   [
     "MonitorLizard",
@@ -6736,38 +5056,13 @@
   ],
   [
     "Skink",
-    "hasproperty",
-    "smooth_scales"
-  ],
-  [
-    "Skink",
     "lives_in",
     "grasslands"
-  ],
-  [
-    "Chameleon",
-    "changes",
-    "color"
-  ],
-  [
-    "Chameleon",
-    "hasproperty",
-    "grasping_tail"
-  ],
-  [
-    "Gecko",
-    "climbs",
-    "walls"
   ],
   [
     "Gecko",
     "active_in",
     "night"
-  ],
-  [
-    "Cobra",
-    "hasproperty",
-    "hood"
   ],
   [
     "Cobra",
@@ -6790,16 +5085,6 @@
     "mammals"
   ],
   [
-    "Python",
-    "lives_in",
-    "rainforest"
-  ],
-  [
-    "Rattlesnake",
-    "hasproperty",
-    "rattle"
-  ],
-  [
     "Rattlesnake",
     "hasproperty",
     "venomous"
@@ -6811,18 +5096,8 @@
   ],
   [
     "GarterSnake",
-    "eats",
-    "frogs"
-  ],
-  [
-    "GarterSnake",
     "lives_in",
     "grasslands"
-  ],
-  [
-    "GarterSnake",
-    "hasproperty",
-    "harmless"
   ],
   [
     "BoaConstrictor",
@@ -6841,23 +5116,8 @@
   ],
   [
     "SeaSnake",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "SeaSnake",
     "hasproperty",
     "venomous"
-  ],
-  [
-    "SeaSnake",
-    "eats",
-    "fish"
-  ],
-  [
-    "Tuatara",
-    "hasproperty",
-    "third_eye"
   ],
   [
     "Tuatara",
@@ -6868,21 +5128,6 @@
     "IslandTuatara",
     "lays",
     "eggs"
-  ],
-  [
-    "IslandTuatara",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "ReptileRelic",
-    "hasproperty",
-    "slow_growth"
-  ],
-  [
-    "ReptileRelic",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "ColdClimateReptile",
@@ -6900,19 +5145,9 @@
     "burrows"
   ],
   [
-    "NocturnalReptile",
-    "eats",
-    "insects"
-  ],
-  [
     "Sphenodon",
     "lays",
     "eggs"
-  ],
-  [
-    "Sphenodon",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Frog",
@@ -6926,18 +5161,8 @@
   ],
   [
     "Toad",
-    "hasproperty",
-    "dry_skin"
-  ],
-  [
-    "Toad",
     "lives_in",
     "gardens"
-  ],
-  [
-    "Toad",
-    "eats",
-    "insects"
   ],
   [
     "Salamander",
@@ -6986,11 +5211,6 @@
   ],
   [
     "OtherAmphibian",
-    "hasproperty",
-    "amphibious"
-  ],
-  [
-    "OtherAmphibian",
     "breathes",
     "through_skin"
   ],
@@ -7006,11 +5226,6 @@
   ],
   [
     "TreeFrog",
-    "hasproperty",
-    "sticky_toes"
-  ],
-  [
-    "TreeFrog",
     "eats",
     "insects"
   ],
@@ -7020,34 +5235,9 @@
     "ponds"
   ],
   [
-    "Bullfrog",
-    "eats",
-    "insects"
-  ],
-  [
-    "Bullfrog",
-    "capable_of",
-    "loud_call"
-  ],
-  [
     "PoisonDartFrog",
     "hasproperty",
     "toxic_skin"
-  ],
-  [
-    "PoisonDartFrog",
-    "hasproperty",
-    "bright_colors"
-  ],
-  [
-    "PoisonDartFrog",
-    "lives_in",
-    "rainforest"
-  ],
-  [
-    "GlassFrog",
-    "hasproperty",
-    "transparent_skin"
   ],
   [
     "GlassFrog",
@@ -7061,18 +5251,8 @@
   ],
   [
     "AfricanClawedFrog",
-    "lives_in",
-    "water"
-  ],
-  [
-    "AfricanClawedFrog",
     "hasproperty",
     "claws"
-  ],
-  [
-    "AfricanClawedFrog",
-    "eats",
-    "insects"
   ],
   [
     "FrogTadpole",
@@ -7083,16 +5263,6 @@
     "FrogTadpole",
     "breathes",
     "through_gills"
-  ],
-  [
-    "FrogTadpole",
-    "metamorphoses",
-    "into_frog"
-  ],
-  [
-    "AmericanToad",
-    "hasproperty",
-    "warty_skin"
   ],
   [
     "AmericanToad",
@@ -7108,11 +5278,6 @@
     "CaneToad",
     "lives_in",
     "tropics"
-  ],
-  [
-    "EuropeanToad",
-    "lives_in",
-    "forest"
   ],
   [
     "EuropeanToad",
@@ -7136,11 +5301,6 @@
   ],
   [
     "NatterjackToad",
-    "lives_in",
-    "sand_dunes"
-  ],
-  [
-    "NatterjackToad",
     "capable_of",
     "running"
   ],
@@ -7153,11 +5313,6 @@
     "Toadlet",
     "lives_in",
     "moist_places"
-  ],
-  [
-    "Axolotl",
-    "hasproperty",
-    "neoteny"
   ],
   [
     "Axolotl",
@@ -7175,24 +5330,9 @@
     "burrows"
   ],
   [
-    "TigerSalamander",
-    "hasproperty",
-    "spotted"
-  ],
-  [
-    "FireSalamander",
-    "hasproperty",
-    "warning_colors"
-  ],
-  [
     "FireSalamander",
     "hasproperty",
     "toxic_skin"
-  ],
-  [
-    "FireSalamander",
-    "lives_in",
-    "forest"
   ],
   [
     "GiantSalamander",
@@ -7200,24 +5340,9 @@
     "rivers"
   ],
   [
-    "GiantSalamander",
-    "hasproperty",
-    "large_body"
-  ],
-  [
-    "GiantSalamander",
-    "eats",
-    "fish"
-  ],
-  [
     "Plethodontid",
     "breathes",
     "through_skin"
-  ],
-  [
-    "Plethodontid",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "SalamanderLarva",
@@ -7230,19 +5355,9 @@
     "through_gills"
   ],
   [
-    "SalamanderLarva",
-    "metamorphoses",
-    "into_salamander"
-  ],
-  [
     "SmoothNewt",
     "eats",
     "insects"
-  ],
-  [
-    "SmoothNewt",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "RoughSkinnedNewt",
@@ -7250,24 +5365,9 @@
     "toxic_skin"
   ],
   [
-    "RoughSkinnedNewt",
-    "lives_in",
-    "forest"
-  ],
-  [
     "JapaneseFireBellyNewt",
     "hasproperty",
     "bright_belly"
-  ],
-  [
-    "JapaneseFireBellyNewt",
-    "lives_in",
-    "streams"
-  ],
-  [
-    "JapaneseFireBellyNewt",
-    "eats",
-    "insects"
   ],
   [
     "CrestedNewt",
@@ -7275,24 +5375,9 @@
     "crest"
   ],
   [
-    "CrestedNewt",
-    "hasproperty",
-    "protected"
-  ],
-  [
-    "NewtEft",
-    "lives_in",
-    "land"
-  ],
-  [
     "NewtEft",
     "hasproperty",
     "juvenile"
-  ],
-  [
-    "NewtEft",
-    "eats",
-    "insects"
   ],
   [
     "AquaticNewt",
@@ -7303,16 +5388,6 @@
     "AquaticNewt",
     "moves_by",
     "swimming"
-  ],
-  [
-    "AquaticNewt",
-    "eats",
-    "insects"
-  ],
-  [
-    "CommonCaecilian",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "CommonCaecilian",
@@ -7330,16 +5405,6 @@
     "swimming"
   ],
   [
-    "AquaticCaecilian",
-    "eats",
-    "fish"
-  ],
-  [
-    "BurrowingCaecilian",
-    "moves_by",
-    "burrowing"
-  ],
-  [
     "BurrowingCaecilian",
     "eats",
     "insects"
@@ -7350,49 +5415,9 @@
     "tropics"
   ],
   [
-    "TropicalCaecilian",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "RingedCaecilian",
-    "hasproperty",
-    "ringed_body"
-  ],
-  [
-    "RingedCaecilian",
-    "hasproperty",
-    "ringed_pattern"
-  ],
-  [
-    "BlindCaecilian",
-    "hasproperty",
-    "reduced_eyes"
-  ],
-  [
-    "BlindCaecilian",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CartilaginousFish",
-    "hasproperty",
-    "cartilage_skeleton"
-  ],
-  [
-    "CartilaginousFish",
-    "hasproperty",
-    "gills"
-  ],
-  [
     "CartilaginousFish",
     "eats",
     "prey"
-  ],
-  [
-    "RayFinnedFish",
-    "hasproperty",
-    "ray_fins"
   ],
   [
     "RayFinnedFish",
@@ -7402,22 +5427,7 @@
   [
     "LobeFinnedFish",
     "hasproperty",
-    "fleshy_fins"
-  ],
-  [
-    "LobeFinnedFish",
-    "hasproperty",
     "ancient_lineage"
-  ],
-  [
-    "JawlessFish",
-    "hasproperty",
-    "jawless"
-  ],
-  [
-    "JawlessFish",
-    "hasproperty",
-    "eel_like"
   ],
   [
     "ReefFish",
@@ -7455,24 +5465,9 @@
     "sharp_teeth"
   ],
   [
-    "GreatWhiteShark",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "HammerheadShark",
-    "hasproperty",
-    "wide_head"
-  ],
-  [
     "HammerheadShark",
     "eats",
     "fish"
-  ],
-  [
-    "HammerheadShark",
-    "lives_in",
-    "ocean"
   ],
   [
     "TigerShark",
@@ -7500,24 +5495,9 @@
     "gliding"
   ],
   [
-    "MantaRay",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "Stingray",
-    "hasproperty",
-    "venomous_spine"
-  ],
-  [
     "Stingray",
     "lives_in",
     "seabed"
-  ],
-  [
-    "Stingray",
-    "eats",
-    "crustaceans"
   ],
   [
     "SkateFish",
@@ -7536,26 +5516,6 @@
   ],
   [
     "Salmon",
-    "migrates",
-    "upstream"
-  ],
-  [
-    "Salmon",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "Salmon",
-    "spawns",
-    "in_rivers"
-  ],
-  [
-    "Tuna",
-    "hasproperty",
-    "fast_swimmer"
-  ],
-  [
-    "Tuna",
     "lives_in",
     "ocean"
   ],
@@ -7563,11 +5523,6 @@
     "Tuna",
     "eats",
     "fish"
-  ],
-  [
-    "Clownfish",
-    "lives_in",
-    "anemones"
   ],
   [
     "Clownfish",
@@ -7590,34 +5545,14 @@
     "freshwater"
   ],
   [
-    "Goldfish",
-    "eats",
-    "flakes"
-  ],
-  [
-    "Herring",
-    "lives_in",
-    "schools"
-  ],
-  [
     "Herring",
     "eats",
     "plankton"
   ],
   [
-    "Herring",
-    "lives_in",
-    "ocean"
-  ],
-  [
     "Cod",
     "lives_in",
     "cold_water"
-  ],
-  [
-    "Cod",
-    "eats",
-    "fish"
   ],
   [
     "Cod",
@@ -7628,11 +5563,6 @@
     "Coelacanth",
     "lives_in",
     "deep_water"
-  ],
-  [
-    "Coelacanth",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Lungfish",
@@ -7685,26 +5615,6 @@
     "air"
   ],
   [
-    "SouthAmericanLungfish",
-    "lives_in",
-    "freshwater"
-  ],
-  [
-    "LobeFinnedRelic",
-    "hasproperty",
-    "rare"
-  ],
-  [
-    "LobeFinnedRelic",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Lamprey",
-    "hasproperty",
-    "suction_mouth"
-  ],
-  [
     "Lamprey",
     "eats",
     "blood"
@@ -7731,18 +5641,8 @@
   ],
   [
     "SeaLamprey",
-    "eats",
-    "fish"
-  ],
-  [
-    "SeaLamprey",
     "hasproperty",
     "parasitic"
-  ],
-  [
-    "SeaLamprey",
-    "lives_in",
-    "ocean"
   ],
   [
     "RiverLamprey",
@@ -7770,49 +5670,14 @@
     "carrion"
   ],
   [
-    "JawlessEel",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "JawlessEel",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "Parrotfish",
     "eats",
     "algae"
   ],
   [
-    "Parrotfish",
-    "hasproperty",
-    "beak_like_teeth"
-  ],
-  [
     "Angelfish",
     "eats",
     "sponges"
-  ],
-  [
-    "Angelfish",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Butterflyfish",
-    "eats",
-    "coral_polyps"
-  ],
-  [
-    "Butterflyfish",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Surgeonfish",
-    "hasproperty",
-    "sharp_spine"
   ],
   [
     "Surgeonfish",
@@ -7831,28 +5696,13 @@
   ],
   [
     "Damselfish",
-    "guards",
-    "eggs"
-  ],
-  [
-    "Damselfish",
     "eats",
     "plankton"
   ],
   [
     "Trout",
-    "lives_in",
-    "cold_rivers"
-  ],
-  [
-    "Trout",
     "eats",
     "insects"
-  ],
-  [
-    "Carp",
-    "eats",
-    "plants"
   ],
   [
     "Carp",
@@ -7875,39 +5725,14 @@
     "rivers"
   ],
   [
-    "Catfish",
-    "eats",
-    "insects"
-  ],
-  [
-    "Pike",
-    "eats",
-    "fish"
-  ],
-  [
     "Pike",
     "lives_in",
     "lakes"
   ],
   [
-    "Pike",
-    "capable_of",
-    "ambush"
-  ],
-  [
-    "Bass",
-    "eats",
-    "fish"
-  ],
-  [
     "Bass",
     "lives_in",
     "lakes"
-  ],
-  [
-    "Bass",
-    "used_for",
-    "fishing"
   ],
   [
     "Tilapia",
@@ -7915,44 +5740,14 @@
     "algae"
   ],
   [
-    "Tilapia",
-    "used_for",
-    "aquaculture"
-  ],
-  [
-    "Insect",
-    "hasproperty",
-    "six_legs"
-  ],
-  [
-    "Insect",
-    "hasproperty",
-    "antennae"
-  ],
-  [
-    "Arachnid",
-    "hasproperty",
-    "eight_legs"
-  ],
-  [
     "Arachnid",
     "eats",
     "insects"
   ],
   [
     "Crustacean",
-    "lives_in",
-    "water"
-  ],
-  [
-    "Crustacean",
     "hasproperty",
     "jointed_legs"
-  ],
-  [
-    "Myriapod",
-    "hasproperty",
-    "many_legs"
   ],
   [
     "Myriapod",
@@ -7965,24 +5760,9 @@
     "extinct"
   ],
   [
-    "TrilobiteGroup",
-    "lives_in",
-    "ancient_seas"
-  ],
-  [
     "OtherArthropod",
     "hasproperty",
     "jointed_legs"
-  ],
-  [
-    "OtherArthropod",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Beetle",
-    "hasproperty",
-    "hard_wings"
   ],
   [
     "Beetle",
@@ -7996,18 +5776,8 @@
   ],
   [
     "ButterflyAndMoth",
-    "hasproperty",
-    "scaled_wings"
-  ],
-  [
-    "ButterflyAndMoth",
     "drinks",
     "nectar"
-  ],
-  [
-    "ButterflyAndMoth",
-    "capable_of",
-    "metamorphosis"
   ],
   [
     "BeeAndWasp",
@@ -8016,18 +5786,8 @@
   ],
   [
     "BeeAndWasp",
-    "collects",
-    "pollen"
-  ],
-  [
-    "BeeAndWasp",
     "capable_of",
     "flight"
-  ],
-  [
-    "Fly",
-    "hasproperty",
-    "one_pair_wings"
   ],
   [
     "Fly",
@@ -8050,19 +5810,9 @@
     "grasses"
   ],
   [
-    "GrasshopperAndCricket",
-    "makes",
-    "chirping_sound"
-  ],
-  [
     "Ant",
     "lives_in",
     "colonies"
-  ],
-  [
-    "Ant",
-    "hasproperty",
-    "social_insect"
   ],
   [
     "Ant",
@@ -8075,39 +5825,9 @@
     "aphids"
   ],
   [
-    "Ladybug",
-    "hasproperty",
-    "red_spots"
-  ],
-  [
-    "Ladybug",
-    "used_for",
-    "pest_control"
-  ],
-  [
-    "StagBeetle",
-    "hasproperty",
-    "large_mandibles"
-  ],
-  [
     "StagBeetle",
     "eats",
     "sap"
-  ],
-  [
-    "StagBeetle",
-    "lives_in",
-    "forest"
-  ],
-  [
-    "DungBeetle",
-    "eats",
-    "dung"
-  ],
-  [
-    "DungBeetle",
-    "rolls",
-    "balls"
   ],
   [
     "DungBeetle",
@@ -8116,28 +5836,13 @@
   ],
   [
     "Firefly",
-    "produces",
-    "light"
-  ],
-  [
-    "Firefly",
     "active_in",
     "night"
-  ],
-  [
-    "Firefly",
-    "eats",
-    "insects"
   ],
   [
     "Weevil",
     "eats",
     "grains"
-  ],
-  [
-    "Weevil",
-    "hasproperty",
-    "snout"
   ],
   [
     "Weevil",
@@ -8165,16 +5870,6 @@
     "seasonally"
   ],
   [
-    "MonarchButterfly",
-    "hasproperty",
-    "orange_black"
-  ],
-  [
-    "SwallowtailButterfly",
-    "hasproperty",
-    "tail_like_wings"
-  ],
-  [
     "SwallowtailButterfly",
     "lives_in",
     "gardens"
@@ -8185,59 +5880,14 @@
     "night"
   ],
   [
-    "LunaMoth",
-    "hasproperty",
-    "green_wings"
-  ],
-  [
-    "SilkwormMoth",
-    "produces",
-    "silk"
-  ],
-  [
     "SilkwormMoth",
     "hasproperty",
     "domesticated"
   ],
   [
-    "SilkwormMoth",
-    "eats",
-    "mulberry_leaves"
-  ],
-  [
-    "CabbageWhite",
-    "eats",
-    "cabbage"
-  ],
-  [
     "CabbageWhite",
     "lives_in",
     "fields"
-  ],
-  [
-    "Butterfly",
-    "hasproperty",
-    "colorful_wings"
-  ],
-  [
-    "Butterfly",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "HoneyBee",
-    "produces",
-    "honey"
-  ],
-  [
-    "HoneyBee",
-    "lives_in",
-    "hive"
-  ],
-  [
-    "Bumblebee",
-    "hasproperty",
-    "fuzzy"
   ],
   [
     "Bumblebee",
@@ -8250,24 +5900,9 @@
     "wood"
   ],
   [
-    "CarpenterBee",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Yellowjacket",
     "eats",
     "insects"
-  ],
-  [
-    "Yellowjacket",
-    "lives_in",
-    "nest"
-  ],
-  [
-    "PaperWasp",
-    "builds",
-    "paper_nest"
   ],
   [
     "PaperWasp",
@@ -8286,11 +5921,6 @@
   ],
   [
     "Housefly",
-    "spreads",
-    "germs"
-  ],
-  [
-    "Housefly",
     "lives_in",
     "houses"
   ],
@@ -8303,11 +5933,6 @@
     "Mosquito",
     "spreads",
     "disease"
-  ],
-  [
-    "Mosquito",
-    "breeds",
-    "in_water"
   ],
   [
     "FruitFly",
@@ -8331,18 +5956,8 @@
   ],
   [
     "Dragonfly",
-    "capable_of",
-    "fast_flight"
-  ],
-  [
-    "Dragonfly",
     "lives_in",
     "wetlands"
-  ],
-  [
-    "Hoverfly",
-    "mimics",
-    "bees"
   ],
   [
     "Hoverfly",
@@ -8370,21 +5985,6 @@
     "africa"
   ],
   [
-    "Grasshopper",
-    "hasproperty",
-    "strong_legs"
-  ],
-  [
-    "Grasshopper",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Cricket",
-    "active_in",
-    "night"
-  ],
-  [
     "Cricket",
     "eats",
     "plants"
@@ -8405,24 +6005,9 @@
     "swarms"
   ],
   [
-    "Locust",
-    "eats",
-    "crops"
-  ],
-  [
-    "Locust",
-    "moves_by",
-    "flying"
-  ],
-  [
     "MoleCricket",
     "lives_in",
     "soil"
-  ],
-  [
-    "MoleCricket",
-    "digs",
-    "tunnels"
   ],
   [
     "MoleCricket",
@@ -8431,18 +6016,8 @@
   ],
   [
     "Cicada",
-    "makes",
-    "loud_sound"
-  ],
-  [
-    "Cicada",
     "eats",
     "sap"
-  ],
-  [
-    "Cicada",
-    "emerges",
-    "periodically"
   ],
   [
     "CarpenterAnt",
@@ -8450,39 +6025,9 @@
     "wood"
   ],
   [
-    "CarpenterAnt",
-    "eats",
-    "insects"
-  ],
-  [
     "FireAnt",
     "capable_of",
     "stinging"
-  ],
-  [
-    "FireAnt",
-    "forms",
-    "mounds"
-  ],
-  [
-    "LeafcutterAnt",
-    "cuts",
-    "leaves"
-  ],
-  [
-    "LeafcutterAnt",
-    "farms",
-    "fungus"
-  ],
-  [
-    "ArmyAnt",
-    "hunts",
-    "in_swarms"
-  ],
-  [
-    "ArmyAnt",
-    "moves_by",
-    "marching"
   ],
   [
     "QueenAnt",
@@ -8495,31 +6040,11 @@
     "colony"
   ],
   [
-    "QueenAnt",
-    "hasproperty",
-    "reproductive"
-  ],
-  [
-    "WorkerAnt",
-    "gathers",
-    "food"
-  ],
-  [
     "WorkerAnt",
     "lives_in",
     "colony"
   ],
   [
-    "WorkerAnt",
-    "hasproperty",
-    "sterile"
-  ],
-  [
-    "Spider",
-    "spins",
-    "webs"
-  ],
-  [
     "Spider",
     "hasproperty",
     "venomous"
@@ -8527,17 +6052,7 @@
   [
     "Scorpion",
     "hasproperty",
-    "stinger"
-  ],
-  [
-    "Scorpion",
-    "hasproperty",
     "venomous"
-  ],
-  [
-    "Scorpion",
-    "active_in",
-    "night"
   ],
   [
     "Tick",
@@ -8587,11 +6102,6 @@
   [
     "OtherArachnid",
     "hasproperty",
-    "localized_range"
-  ],
-  [
-    "OtherArachnid",
-    "hasproperty",
     "species_specific_markings"
   ],
   [
@@ -8610,16 +6120,6 @@
     "burrows"
   ],
   [
-    "OrbWeaver",
-    "builds",
-    "circular_web"
-  ],
-  [
-    "OrbWeaver",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "JumpingSpider",
     "capable_of",
     "jumping"
@@ -8635,24 +6135,9 @@
     "keen_vision"
   ],
   [
-    "BlackWidow",
-    "hasproperty",
-    "red_mark"
-  ],
-  [
-    "BlackWidow",
-    "hasproperty",
-    "black_coloration"
-  ],
-  [
     "WolfSpider",
     "hunts",
     "prey"
-  ],
-  [
-    "WolfSpider",
-    "carries",
-    "eggs"
   ],
   [
     "WolfSpider",
@@ -8665,16 +6150,6 @@
     "houses"
   ],
   [
-    "HouseSpider",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "EmperorScorpion",
-    "hasproperty",
-    "large_body"
-  ],
-  [
     "EmperorScorpion",
     "lives_in",
     "rainforest"
@@ -8685,19 +6160,9 @@
     "desert"
   ],
   [
-    "BarkScorpion",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "DesertScorpion",
     "lives_in",
     "desert"
-  ],
-  [
-    "DesertScorpion",
-    "burrows",
-    "in_sand"
   ],
   [
     "ForestScorpion",
@@ -8705,19 +6170,9 @@
     "forest"
   ],
   [
-    "ForestScorpion",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CommonScorpion",
     "hunts",
     "insects"
-  ],
-  [
-    "CommonScorpion",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "TaillessWhipScorpion",
@@ -8731,113 +6186,18 @@
   ],
   [
     "DeerTick",
-    "lives_in",
-    "forest"
-  ],
-  [
-    "DeerTick",
     "capable_of",
     "jumping"
   ],
   [
-    "DogTick",
-    "lives_on",
-    "dogs"
-  ],
-  [
-    "DogTick",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CattleTick",
-    "lives_on",
-    "livestock"
-  ],
-  [
     "CattleTick",
     "hasproperty",
     "localized_range"
-  ],
-  [
-    "SoftTick",
-    "feeds",
-    "briefly"
-  ],
-  [
-    "SoftTick",
-    "lives_in",
-    "nests"
-  ],
-  [
-    "HardTick",
-    "feeds",
-    "long"
-  ],
-  [
-    "HardTick",
-    "hasproperty",
-    "hard_shield"
-  ],
-  [
-    "TickLarva",
-    "hasproperty",
-    "small"
-  ],
-  [
-    "TickLarva",
-    "seeks",
-    "hosts"
-  ],
-  [
-    "DustMite",
-    "lives_in",
-    "bedding"
-  ],
-  [
-    "DustMite",
-    "eats",
-    "skin_cells"
-  ],
-  [
-    "DustMite",
-    "causes",
-    "allergies"
-  ],
-  [
-    "SpiderMite",
-    "eats",
-    "plant_sap"
-  ],
-  [
-    "SpiderMite",
-    "lives_on",
-    "leaves"
-  ],
-  [
-    "SpiderMite",
-    "spins",
-    "silk"
-  ],
-  [
-    "DemodexMite",
-    "lives_on",
-    "skin"
-  ],
-  [
-    "DemodexMite",
-    "eats",
-    "sebum"
   ],
   [
     "DemodexMite",
     "hasproperty",
     "microscopic"
-  ],
-  [
-    "ScabiesMite",
-    "burrows",
-    "in_skin"
   ],
   [
     "ScabiesMite",
@@ -8855,34 +6215,14 @@
     "fungi"
   ],
   [
-    "SoilMite",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CommonMite",
     "lives_in",
     "diverse_habitats"
   ],
   [
-    "CommonMite",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CommonHarvestman",
     "active_in",
     "night"
-  ],
-  [
-    "CommonHarvestman",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "DaddyLonglegs",
-    "hasproperty",
-    "fragile_body"
   ],
   [
     "DaddyLonglegs",
@@ -8893,11 +6233,6 @@
     "Opiliones",
     "lives_in",
     "forest"
-  ],
-  [
-    "Opiliones",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "CaveHarvestman",
@@ -8905,39 +6240,14 @@
     "caves"
   ],
   [
-    "CaveHarvestman",
-    "active_in",
-    "night"
-  ],
-  [
     "ForestHarvestman",
     "lives_in",
     "forest"
   ],
   [
-    "ForestHarvestman",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "LeafLitterHarvestman",
-    "lives_in",
-    "leaf_litter"
-  ],
-  [
-    "LeafLitterHarvestman",
-    "hasproperty",
-    "camouflaged"
-  ],
-  [
     "Crab",
     "hasproperty",
     "claws"
-  ],
-  [
-    "Crab",
-    "walks",
-    "sideways"
   ],
   [
     "Crab",
@@ -8976,18 +6286,8 @@
   ],
   [
     "Krill",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "Krill",
     "forms",
     "swarms"
-  ],
-  [
-    "Barnacle",
-    "attaches",
-    "to_surfaces"
   ],
   [
     "Barnacle",
@@ -9000,39 +6300,14 @@
     "ocean"
   ],
   [
-    "OtherCrustacean",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "OtherCrustacean",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "BlueCrab",
     "lives_in",
     "estuaries"
   ],
   [
     "BlueCrab",
-    "hasproperty",
-    "blue_claws"
-  ],
-  [
-    "BlueCrab",
     "eats",
     "detritus"
-  ],
-  [
-    "HermitCrab",
-    "lives_in",
-    "shells"
-  ],
-  [
-    "HermitCrab",
-    "moves_to",
-    "new_shell"
   ],
   [
     "HermitCrab",
@@ -9046,28 +6321,8 @@
   ],
   [
     "KingCrab",
-    "hasproperty",
-    "large_body"
-  ],
-  [
-    "KingCrab",
     "eats",
     "mollusks"
-  ],
-  [
-    "FiddlerCrab",
-    "hasproperty",
-    "large_claw"
-  ],
-  [
-    "FiddlerCrab",
-    "lives_in",
-    "mudflats"
-  ],
-  [
-    "FiddlerCrab",
-    "waves",
-    "claw"
   ],
   [
     "DungenessCrab",
@@ -9083,21 +6338,6 @@
     "DungenessCrab",
     "used_for",
     "food"
-  ],
-  [
-    "CommonCrab",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonCrab",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "AmericanLobster",
-    "lives_in",
-    "atlantic"
   ],
   [
     "AmericanLobster",
@@ -9120,54 +6360,14 @@
     "food"
   ],
   [
-    "RockLobster",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "SlipperLobster",
-    "hasproperty",
-    "flat_antennae"
-  ],
-  [
-    "SlipperLobster",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "NorwayLobster",
     "used_for",
     "food"
   ],
   [
-    "NorwayLobster",
-    "hasproperty",
-    "slender_claws"
-  ],
-  [
-    "CommonLobster",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonLobster",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "TigerPrawn",
     "used_for",
     "food"
-  ],
-  [
-    "TigerPrawn",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "CleanerShrimp",
-    "cleans",
-    "fish"
   ],
   [
     "CleanerShrimp",
@@ -9175,29 +6375,9 @@
     "coral_reef"
   ],
   [
-    "CleanerShrimp",
-    "eats",
-    "parasites"
-  ],
-  [
-    "BrineShrimp",
-    "lives_in",
-    "salty_lakes"
-  ],
-  [
     "BrineShrimp",
     "eats",
     "algae"
-  ],
-  [
-    "BrineShrimp",
-    "used_for",
-    "aquarium_food"
-  ],
-  [
-    "MantisShrimp",
-    "hasproperty",
-    "powerful_strike"
   ],
   [
     "MantisShrimp",
@@ -9225,24 +6405,9 @@
     "estuaries"
   ],
   [
-    "CommonShrimp",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonShrimp",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "AntarcticKrill",
     "lives_in",
     "southern_ocean"
-  ],
-  [
-    "AntarcticKrill",
-    "eats",
-    "phytoplankton"
   ],
   [
     "NorthernKrill",
@@ -9250,57 +6415,12 @@
     "cold_water"
   ],
   [
-    "NorthernKrill",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "DeepSeaKrill",
     "lives_in",
     "deep_water"
   ],
   [
-    "DeepSeaKrill",
-    "migrates",
-    "vertically"
-  ],
-  [
     "KrillLarva",
-    "develops",
-    "in_stages"
-  ],
-  [
-    "KrillLarva",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "SwarmingKrill",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "SwarmingKrill",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "CommonKrill",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonKrill",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "GooseBarnacle",
-    "attaches",
-    "to_floats"
-  ],
-  [
-    "GooseBarnacle",
     "hasproperty",
     "localized_range"
   ],
@@ -9315,44 +6435,9 @@
     "tidepools"
   ],
   [
-    "WhaleBarnacle",
-    "attaches",
-    "to_whales"
-  ],
-  [
-    "WhaleBarnacle",
-    "capable_of",
-    "deep_diving"
-  ],
-  [
-    "ShipBarnacle",
-    "attaches",
-    "to_boats"
-  ],
-  [
-    "ShipBarnacle",
-    "causes",
-    "fouling"
-  ],
-  [
-    "SessileCrustacean",
-    "hasproperty",
-    "stationary"
-  ],
-  [
     "SessileCrustacean",
     "hasproperty",
     "localized_range"
-  ],
-  [
-    "CommonBarnacle",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonBarnacle",
-    "hasproperty",
-    "species_specific_markings"
   ],
   [
     "Centipede",
@@ -9368,11 +6453,6 @@
     "Millipede",
     "eats",
     "detritus"
-  ],
-  [
-    "Millipede",
-    "hasproperty",
-    "many_segments"
   ],
   [
     "Millipede",
@@ -9405,19 +6485,9 @@
     "organic_matter"
   ],
   [
-    "SoilMyriapod",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "OtherMyriapod",
     "eats",
     "detritus"
-  ],
-  [
-    "OtherMyriapod",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "HouseCentipede",
@@ -9432,32 +6502,7 @@
   [
     "GiantCentipede",
     "hasproperty",
-    "large_body"
-  ],
-  [
-    "GiantCentipede",
-    "hasproperty",
     "large_body_size"
-  ],
-  [
-    "SoilCentipede",
-    "hunts",
-    "worms"
-  ],
-  [
-    "SoilCentipede",
-    "hasproperty",
-    "blind"
-  ],
-  [
-    "StoneCentipede",
-    "lives_under",
-    "stones"
-  ],
-  [
-    "StoneCentipede",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Scolopendra",
@@ -9465,24 +6510,9 @@
     "tropics"
   ],
   [
-    "Scolopendra",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CentipedeLarva",
     "hasproperty",
     "juvenile"
-  ],
-  [
-    "CentipedeLarva",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "GiantAfricanMillipede",
-    "hasproperty",
-    "large_body"
   ],
   [
     "GiantAfricanMillipede",
@@ -9490,24 +6520,9 @@
     "large_body_size"
   ],
   [
-    "PillMillipede",
-    "rolls",
-    "into_ball"
-  ],
-  [
-    "PillMillipede",
-    "hasproperty",
-    "armored"
-  ],
-  [
     "GardenMillipede",
     "lives_in",
     "gardens"
-  ],
-  [
-    "GardenMillipede",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "FlatBackedMillipede",
@@ -9515,44 +6530,14 @@
     "flattened_body"
   ],
   [
-    "FlatBackedMillipede",
-    "lives_in",
-    "forest"
-  ],
-  [
-    "CommonMillipede",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonMillipede",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "MillipedeNymph",
     "hasproperty",
     "juvenile"
   ],
   [
-    "MillipedeNymph",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Trilobite",
     "lived_in",
     "paleozoic"
-  ],
-  [
-    "Trilobite",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Phacops",
-    "hasproperty",
-    "large_eyes"
   ],
   [
     "Phacops",
@@ -9575,19 +6560,9 @@
     "ordovician"
   ],
   [
-    "Calymene",
-    "can_roll",
-    "into_ball"
-  ],
-  [
     "Olenellus",
     "lived_in",
     "cambrian"
-  ],
-  [
-    "Olenellus",
-    "hasproperty",
-    "early_trilobite"
   ],
   [
     "Asaphus",
@@ -9611,38 +6586,13 @@
   ],
   [
     "Bivalve",
-    "hasproperty",
-    "two_shells"
-  ],
-  [
-    "Bivalve",
     "filters",
     "water"
   ],
   [
     "Cephalopod",
     "hasproperty",
-    "tentacles"
-  ],
-  [
-    "Cephalopod",
-    "hasproperty",
     "intelligent"
-  ],
-  [
-    "Cephalopod",
-    "moves_by",
-    "jetting"
-  ],
-  [
-    "Chiton",
-    "hasproperty",
-    "plated_shell"
-  ],
-  [
-    "Chiton",
-    "clings_to",
-    "rocks"
   ],
   [
     "Chiton",
@@ -9655,34 +6605,14 @@
     "seabed"
   ],
   [
-    "Scaphopod",
-    "hasproperty",
-    "tusk_shell"
-  ],
-  [
-    "Scaphopod",
-    "eats",
-    "microorganisms"
-  ],
-  [
     "OtherMollusk",
     "eats",
     "organic_matter"
   ],
   [
-    "OtherMollusk",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Snail",
     "eats",
     "plants"
-  ],
-  [
-    "Snail",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "Slug",
@@ -9698,11 +6628,6 @@
     "Slug",
     "lives_in",
     "moist_places"
-  ],
-  [
-    "SeaSnail",
-    "lives_in",
-    "ocean"
   ],
   [
     "SeaSnail",
@@ -9730,16 +6655,6 @@
     "venomous"
   ],
   [
-    "ConeSnail",
-    "eats",
-    "fish"
-  ],
-  [
-    "ConeSnail",
-    "hasproperty",
-    "conical_shell"
-  ],
-  [
     "GardenSnail",
     "lives_in",
     "gardens"
@@ -9751,18 +6666,8 @@
   ],
   [
     "Oyster",
-    "produces",
-    "pearls"
-  ],
-  [
-    "Oyster",
     "lives_in",
     "ocean"
-  ],
-  [
-    "Clam",
-    "buries",
-    "in_sand"
   ],
   [
     "Clam",
@@ -9775,16 +6680,6 @@
     "to_rocks"
   ],
   [
-    "Mussel",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "Scallop",
-    "moves_by",
-    "clapping"
-  ],
-  [
     "Scallop",
     "lives_in",
     "ocean"
@@ -9800,29 +6695,9 @@
     "seabed"
   ],
   [
-    "BivalveShellfish",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BivalveShellfish",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "Octopus",
-    "hasproperty",
-    "eight_arms"
-  ],
-  [
     "Octopus",
     "capable_of",
     "camouflage"
-  ],
-  [
-    "Squid",
-    "hasproperty",
-    "ten_arms"
   ],
   [
     "Squid",
@@ -9833,16 +6708,6 @@
     "Cuttlefish",
     "capable_of",
     "camouflage"
-  ],
-  [
-    "Cuttlefish",
-    "hasproperty",
-    "ink"
-  ],
-  [
-    "Nautilus",
-    "hasproperty",
-    "chambered_shell"
   ],
   [
     "Nautilus",
@@ -9860,31 +6725,6 @@
     "deep_water"
   ],
   [
-    "GiantSquid",
-    "hasproperty",
-    "large_body"
-  ],
-  [
-    "GiantSquid",
-    "eats",
-    "fish"
-  ],
-  [
-    "CommonCephalopod",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonCephalopod",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "CommonChiton",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CommonChiton",
     "hasproperty",
     "species_specific_markings"
@@ -9898,11 +6738,6 @@
     "GumbootChiton",
     "lives_in",
     "tidepools"
-  ],
-  [
-    "LinedChiton",
-    "hasproperty",
-    "striped"
   ],
   [
     "LinedChiton",
@@ -9915,19 +6750,9 @@
     "coast"
   ],
   [
-    "RockChiton",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "SpinyChiton",
     "hasproperty",
     "spines"
-  ],
-  [
-    "SpinyChiton",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "ArmorMollusk",
@@ -9935,42 +6760,12 @@
     "ocean"
   ],
   [
-    "ArmorMollusk",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Dentalium",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Dentalium",
     "hasproperty",
     "species_specific_markings"
   ],
   [
     "TuskShell",
-    "buries",
-    "in_sand"
-  ],
-  [
-    "TuskShell",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonScaphopod",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonScaphopod",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "BurrowingMollusk",
     "buries",
     "in_sand"
   ],
@@ -9985,21 +6780,6 @@
     "in_sand"
   ],
   [
-    "SandDwellerMollusk",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "MicrobeEaterMollusk",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "MicrobeEaterMollusk",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "Flatworm",
     "hasproperty",
     "flat_body"
@@ -10010,24 +6790,9 @@
     "water"
   ],
   [
-    "Flatworm",
-    "hasproperty",
-    "simple_organs"
-  ],
-  [
-    "Roundworm",
-    "hasproperty",
-    "cylindrical_body"
-  ],
-  [
     "Roundworm",
     "lives_in",
     "soil"
-  ],
-  [
-    "Roundworm",
-    "hasproperty",
-    "unsegmented"
   ],
   [
     "Earthworm",
@@ -10040,11 +6805,6 @@
     "detritus"
   ],
   [
-    "Earthworm",
-    "improves",
-    "soil"
-  ],
-  [
     "Leech",
     "eats",
     "blood"
@@ -10055,39 +6815,9 @@
     "freshwater"
   ],
   [
-    "Leech",
-    "hasproperty",
-    "parasitic"
-  ],
-  [
-    "Tapeworm",
-    "lives_in",
-    "intestines"
-  ],
-  [
-    "Tapeworm",
-    "absorbs",
-    "nutrients"
-  ],
-  [
     "Tapeworm",
     "hasproperty",
     "parasitic"
-  ],
-  [
-    "OtherWorm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "OtherWorm",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "Planarian",
-    "regenerates",
-    "body"
   ],
   [
     "Planarian",
@@ -10106,11 +6836,6 @@
   ],
   [
     "Fluke",
-    "lives_in",
-    "hosts"
-  ],
-  [
-    "Fluke",
     "causes",
     "disease"
   ],
@@ -10118,11 +6843,6 @@
     "CommonFlatworm",
     "moves_by",
     "gliding"
-  ],
-  [
-    "CommonFlatworm",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "MarineFlatworm",
@@ -10141,11 +6861,6 @@
   ],
   [
     "LiverFluke",
-    "infects",
-    "liver"
-  ],
-  [
-    "LiverFluke",
     "hasproperty",
     "parasitic"
   ],
@@ -10156,11 +6871,6 @@
   ],
   [
     "BloodFluke",
-    "lives_in",
-    "blood"
-  ],
-  [
-    "BloodFluke",
     "hasproperty",
     "parasitic"
   ],
@@ -10168,11 +6878,6 @@
     "BloodFluke",
     "causes",
     "disease"
-  ],
-  [
-    "Nematode",
-    "eats",
-    "bacteria"
   ],
   [
     "Nematode",
@@ -10190,11 +6895,6 @@
     "blood"
   ],
   [
-    "Hookworm",
-    "causes",
-    "anemia"
-  ],
-  [
     "Pinworm",
     "infects",
     "intestines"
@@ -10205,21 +6905,6 @@
     "itching"
   ],
   [
-    "Pinworm",
-    "hasproperty",
-    "parasitic"
-  ],
-  [
-    "Heartworm",
-    "infects",
-    "heart"
-  ],
-  [
-    "Heartworm",
-    "spreads",
-    "by_mosquitoes"
-  ],
-  [
     "Heartworm",
     "hasproperty",
     "parasitic"
@@ -10231,43 +6916,13 @@
   ],
   [
     "Ascaris",
-    "eats",
-    "nutrients"
-  ],
-  [
-    "Ascaris",
     "hasproperty",
     "parasitic"
-  ],
-  [
-    "CommonRoundworm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonRoundworm",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "CommonEarthworm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonEarthworm",
-    "hasproperty",
-    "species_specific_markings"
   ],
   [
     "Nightcrawler",
     "active_in",
     "night"
-  ],
-  [
-    "Nightcrawler",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "RedWiggler",
@@ -10280,24 +6935,9 @@
     "red_coloration"
   ],
   [
-    "SoilEngineerWorm",
-    "creates",
-    "burrows"
-  ],
-  [
-    "SoilEngineerWorm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "SegmentedWorm",
     "hasproperty",
     "segments"
-  ],
-  [
-    "SegmentedWorm",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "CompostWorm",
@@ -10315,16 +6955,6 @@
     "medicine"
   ],
   [
-    "MedicinalLeech",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "HorseLeech",
-    "eats",
-    "invertebrates"
-  ],
-  [
     "HorseLeech",
     "lives_in",
     "ponds"
@@ -10335,34 +6965,9 @@
     "large_body"
   ],
   [
-    "FishLeech",
-    "attaches",
-    "to_fish"
-  ],
-  [
-    "FishLeech",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "LandLeech",
     "lives_in",
     "rainforest"
-  ],
-  [
-    "LandLeech",
-    "moves_by",
-    "inching"
-  ],
-  [
-    "CommonLeech",
-    "hasproperty",
-    "sucker"
-  ],
-  [
-    "CommonLeech",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "GiantLeech",
@@ -10377,11 +6982,6 @@
   [
     "CommonTapeworm",
     "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonTapeworm",
-    "hasproperty",
     "species_specific_markings"
   ],
   [
@@ -10390,34 +6990,14 @@
     "humans"
   ],
   [
-    "PorkTapeworm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "BeefTapeworm",
     "infects",
     "humans"
   ],
   [
-    "BeefTapeworm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "FishTapeworm",
     "infects",
     "humans"
-  ],
-  [
-    "FishTapeworm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "DogTapeworm",
-    "infects",
-    "dogs"
   ],
   [
     "DogTapeworm",
@@ -10428,26 +7008,6 @@
     "SegmentedTapeworm",
     "hasproperty",
     "segments"
-  ],
-  [
-    "SegmentedTapeworm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Jellyfish",
-    "moves_by",
-    "pulsing"
-  ],
-  [
-    "Jellyfish",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Coral",
-    "builds",
-    "reefs"
   ],
   [
     "Coral",
@@ -10470,39 +7030,9 @@
     "freshwater"
   ],
   [
-    "Hydra",
-    "reproduces",
-    "by_budding"
-  ],
-  [
-    "PortugueseManOWar",
-    "floats",
-    "on_surface"
-  ],
-  [
-    "PortugueseManOWar",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "OtherCnidarian",
     "lives_in",
     "water"
-  ],
-  [
-    "OtherCnidarian",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "MoonJelly",
-    "hasproperty",
-    "translucent"
-  ],
-  [
-    "MoonJelly",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "BoxJellyfish",
@@ -10545,21 +7075,6 @@
     "swarms"
   ],
   [
-    "JellyfishBloom",
-    "affects",
-    "fishing"
-  ],
-  [
-    "CommonJellyfish",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonJellyfish",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "StaghornCoral",
     "hasproperty",
     "branching"
@@ -10568,11 +7083,6 @@
     "StaghornCoral",
     "lives_in",
     "coral_reef"
-  ],
-  [
-    "BrainCoral",
-    "hasproperty",
-    "grooved_surface"
   ],
   [
     "BrainCoral",
@@ -10601,18 +7111,8 @@
   ],
   [
     "CoralPolyp",
-    "hasproperty",
-    "tiny_animal"
-  ],
-  [
-    "CoralPolyp",
     "lives_in",
     "colony"
-  ],
-  [
-    "ReefBuildingCoral",
-    "contains",
-    "zooxanthellae"
   ],
   [
     "ReefBuildingCoral",
@@ -10625,24 +7125,9 @@
     "sea"
   ],
   [
-    "CommonSeaAnemone",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "GiantGreenAnemone",
-    "hasproperty",
-    "green"
-  ],
-  [
     "GiantGreenAnemone",
     "lives_in",
     "tidepools"
-  ],
-  [
-    "TubeAnemone",
-    "lives_in",
-    "sand"
   ],
   [
     "TubeAnemone",
@@ -10650,21 +7135,6 @@
     "long_tentacles"
   ],
   [
-    "ClownfishAnemone",
-    "hosts",
-    "clownfish"
-  ],
-  [
-    "ClownfishAnemone",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BeadedAnemone",
-    "hasproperty",
-    "bead_like"
-  ],
-  [
     "BeadedAnemone",
     "lives_in",
     "tidepools"
@@ -10675,24 +7145,9 @@
     "colonial"
   ],
   [
-    "AnemoneColony",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonHydra",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CommonHydra",
     "hasproperty",
     "species_specific_markings"
-  ],
-  [
-    "GreenHydra",
-    "contains",
-    "algae"
   ],
   [
     "GreenHydra",
@@ -10700,104 +7155,24 @@
     "ponds"
   ],
   [
-    "BrownHydra",
-    "eats",
-    "tiny_prey"
-  ],
-  [
-    "BrownHydra",
-    "hasproperty",
-    "brown_coloration"
-  ],
-  [
-    "HydraPolyp",
-    "attaches",
-    "to_plants"
-  ],
-  [
-    "HydraPolyp",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "RegeneratingHydra",
-    "regenerates",
-    "tissue"
-  ],
-  [
-    "RegeneratingHydra",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "FreshwaterCnidarian",
     "reproduces",
     "asexually"
   ],
   [
-    "FreshwaterCnidarian",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonManOWar",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonManOWar",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "FloatingColony",
     "hasproperty",
     "colonial"
   ],
   [
-    "FloatingColony",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BlueBottle",
-    "hasproperty",
-    "blue_coloration"
-  ],
-  [
-    "BlueBottle",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "Siphonophore",
     "hasproperty",
     "colonial"
-  ],
-  [
-    "Siphonophore",
-    "floats",
-    "in_ocean"
   ],
   [
     "VenomousFloat",
     "hasproperty",
     "venomous"
-  ],
-  [
-    "VenomousFloat",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "OceanDrifter",
-    "moves_by",
-    "currents"
-  ],
-  [
-    "OceanDrifter",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "SeaStar",
@@ -10836,11 +7211,6 @@
   ],
   [
     "BrittleStar",
-    "hasproperty",
-    "slender_arms"
-  ],
-  [
-    "BrittleStar",
     "moves_by",
     "crawling"
   ],
@@ -10850,44 +7220,14 @@
     "flat_body"
   ],
   [
-    "SandDollar",
-    "lives_in",
-    "sandy_seabed"
-  ],
-  [
-    "SandDollar",
-    "eats",
-    "detritus"
-  ],
-  [
     "OtherEchinoderm",
     "hasproperty",
     "tube_feet"
   ],
   [
-    "OtherEchinoderm",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Starfish",
-    "hasproperty",
-    "five_arms"
-  ],
-  [
-    "Starfish",
-    "regenerates",
-    "arms"
-  ],
-  [
     "Starfish",
     "eats",
     "mollusks"
-  ],
-  [
-    "SunflowerStar",
-    "hasproperty",
-    "many_arms"
   ],
   [
     "SunflowerStar",
@@ -10898,11 +7238,6 @@
     "SunflowerStar",
     "lives_in",
     "pacific_coast"
-  ],
-  [
-    "CrownOfThorns",
-    "eats",
-    "coral"
   ],
   [
     "CrownOfThorns",
@@ -10931,11 +7266,6 @@
   ],
   [
     "SeaStarLarva",
-    "develops",
-    "into_seastar"
-  ],
-  [
-    "SeaStarLarva",
     "moves_by",
     "drifting"
   ],
@@ -10952,17 +7282,7 @@
   [
     "PurpleSeaUrchin",
     "lives_in",
-    "kelp_forest"
-  ],
-  [
-    "PurpleSeaUrchin",
-    "lives_in",
     "sea"
-  ],
-  [
-    "GreenSeaUrchin",
-    "hasproperty",
-    "green_coloration"
   ],
   [
     "GreenSeaUrchin",
@@ -10975,26 +7295,6 @@
     "in_sand"
   ],
   [
-    "SandUrchin",
-    "eats",
-    "detritus"
-  ],
-  [
-    "UrchinGrazing",
-    "affects",
-    "kelp"
-  ],
-  [
-    "UrchinGrazing",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "LongSpinedUrchin",
-    "hasproperty",
-    "long_spines"
-  ],
-  [
     "LongSpinedUrchin",
     "lives_in",
     "coral_reef"
@@ -11003,11 +7303,6 @@
     "CommonSeaUrchin",
     "lives_in",
     "sea"
-  ],
-  [
-    "CommonSeaUrchin",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "GiantSeaCucumber",
@@ -11041,38 +7336,13 @@
   ],
   [
     "CucumberDefense",
-    "expels",
-    "organs"
-  ],
-  [
-    "CucumberDefense",
     "capable_of",
     "defense"
-  ],
-  [
-    "Holothurian",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "Holothurian",
-    "hasproperty",
-    "species_specific_markings"
   ],
   [
     "CommonSeaCucumber",
     "lives_in",
     "sea"
-  ],
-  [
-    "CommonSeaCucumber",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "BasketStar",
-    "hasproperty",
-    "branched_arms"
   ],
   [
     "BasketStar",
@@ -11086,33 +7356,13 @@
   ],
   [
     "BrittleStarLarva",
-    "develops",
-    "into_brittlestar"
-  ],
-  [
-    "BrittleStarLarva",
     "moves_by",
     "drifting"
   ],
   [
     "NocturnalBrittleStar",
-    "active_in",
-    "night"
-  ],
-  [
-    "NocturnalBrittleStar",
     "hides",
     "in_crevices"
-  ],
-  [
-    "NocturnalBrittleStar",
-    "eats",
-    "detritus"
-  ],
-  [
-    "ReefBrittleStar",
-    "lives_in",
-    "coral_reef"
   ],
   [
     "ReefBrittleStar",
@@ -11123,26 +7373,6 @@
     "DeepBrittleStar",
     "lives_in",
     "deep_water"
-  ],
-  [
-    "DeepBrittleStar",
-    "eats",
-    "detritus"
-  ],
-  [
-    "CommonBrittleStar",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonBrittleStar",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "KeyholeSandDollar",
-    "hasproperty",
-    "keyhole"
   ],
   [
     "KeyholeSandDollar",
@@ -11170,59 +7400,9 @@
     "in_sand"
   ],
   [
-    "SandDollarTest",
-    "hasproperty",
-    "hard_skeleton"
-  ],
-  [
-    "SandDollarTest",
-    "used_for",
-    "decoration"
-  ],
-  [
-    "SandDollarFossil",
-    "hasproperty",
-    "fossilized"
-  ],
-  [
-    "SandDollarFossil",
-    "used_for",
-    "collection"
-  ],
-  [
-    "SandDollarFossil",
-    "hasproperty",
-    "ancient"
-  ],
-  [
     "CommonSandDollar",
     "buries",
     "in_sand"
-  ],
-  [
-    "CommonSandDollar",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "FloweringPlant",
-    "hasproperty",
-    "flowering"
-  ],
-  [
-    "FloweringPlant",
-    "produces",
-    "seeds"
-  ],
-  [
-    "Conifer",
-    "hasproperty",
-    "needle_leaves"
-  ],
-  [
-    "Conifer",
-    "produces",
-    "cones"
   ],
   [
     "Conifer",
@@ -11233,11 +7413,6 @@
     "Fern",
     "reproduces",
     "by_spores"
-  ],
-  [
-    "Fern",
-    "hasproperty",
-    "fronds"
   ],
   [
     "Fern",
@@ -11255,31 +7430,11 @@
     "moist_places"
   ],
   [
-    "Moss",
-    "hasproperty",
-    "nonvascular"
-  ],
-  [
     "Algae",
     "lives_in",
     "water"
   ],
   [
-    "Algae",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "OtherPlant",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "OtherPlant",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "FloweringTree",
     "hasproperty",
     "woody_stem"
@@ -11290,29 +7445,14 @@
     "flowers"
   ],
   [
-    "FloweringTree",
-    "produces",
-    "fruit"
-  ],
-  [
     "FloweringShrub",
     "hasproperty",
     "woody_stem"
   ],
   [
     "FloweringShrub",
-    "hasproperty",
-    "multiple_stems"
-  ],
-  [
-    "FloweringShrub",
     "produces",
     "flowers"
-  ],
-  [
-    "Herb",
-    "hasproperty",
-    "soft_stem"
   ],
   [
     "Herb",
@@ -11323,21 +7463,6 @@
     "Herb",
     "used_for",
     "medicine"
-  ],
-  [
-    "Grass",
-    "hasproperty",
-    "narrow_leaves"
-  ],
-  [
-    "Grass",
-    "grows",
-    "in_fields"
-  ],
-  [
-    "Grass",
-    "used_for",
-    "grazing"
   ],
   [
     "Cactus",
@@ -11370,44 +7495,9 @@
     "flowers"
   ],
   [
-    "AppleTree",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "AppleTree",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "OakTree",
-    "hasproperty",
-    "strong_wood"
-  ],
-  [
-    "OakTree",
-    "produces",
-    "acorns"
-  ],
-  [
     "OakTree",
     "lives_in",
     "forest"
-  ],
-  [
-    "MapleTree",
-    "produces",
-    "sap"
-  ],
-  [
-    "MapleTree",
-    "hasproperty",
-    "broad_leaves"
-  ],
-  [
-    "MapleTree",
-    "turns_color",
-    "in_fall"
   ],
   [
     "CherryTree",
@@ -11415,39 +7505,14 @@
     "ornamental"
   ],
   [
-    "CherryTree",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "MangoTree",
     "lives_in",
     "tropics"
   ],
   [
-    "MangoTree",
-    "requires",
-    "warmth"
-  ],
-  [
-    "OliveTree",
-    "produces",
-    "olives"
-  ],
-  [
-    "OliveTree",
-    "lives_in",
-    "mediterranean"
-  ],
-  [
     "OliveTree",
     "hasproperty",
     "drought_tolerant"
-  ],
-  [
-    "RoseBush",
-    "hasproperty",
-    "thorns"
   ],
   [
     "RoseBush",
@@ -11465,24 +7530,9 @@
     "ornamental"
   ],
   [
-    "Hydrangea",
-    "changes_color",
-    "by_soil_ph"
-  ],
-  [
-    "Hydrangea",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "BlueberryBush",
     "produces",
     "berries"
-  ],
-  [
-    "BlueberryBush",
-    "requires",
-    "acidic_soil"
   ],
   [
     "BlueberryBush",
@@ -11496,23 +7546,8 @@
   ],
   [
     "LavenderShrub",
-    "used_for",
-    "aromatherapy"
-  ],
-  [
-    "LavenderShrub",
     "attracts",
     "pollinators"
-  ],
-  [
-    "Hibiscus",
-    "produces",
-    "large_flowers"
-  ],
-  [
-    "Hibiscus",
-    "lives_in",
-    "warm_climate"
   ],
   [
     "Hibiscus",
@@ -11530,19 +7565,9 @@
     "aromatic"
   ],
   [
-    "Basil",
-    "grows",
-    "in_garden"
-  ],
-  [
     "Mint",
     "hasproperty",
     "aromatic"
-  ],
-  [
-    "Mint",
-    "spreads",
-    "rapidly"
   ],
   [
     "Mint",
@@ -11566,16 +7591,6 @@
   ],
   [
     "GingerPlant",
-    "produces",
-    "rhizome"
-  ],
-  [
-    "GingerPlant",
-    "used_for",
-    "spice"
-  ],
-  [
-    "GingerPlant",
     "lives_in",
     "tropics"
   ],
@@ -11585,49 +7600,19 @@
     "water"
   ],
   [
-    "AloeVera",
-    "used_for",
-    "skin_care"
-  ],
-  [
-    "AloeVera",
-    "hasproperty",
-    "succulent"
-  ],
-  [
     "Chamomile",
     "used_for",
     "tea"
   ],
   [
-    "Chamomile",
-    "hasproperty",
-    "calming"
-  ],
-  [
     "Wheat",
     "produces",
     "grain"
   ],
   [
-    "Wheat",
-    "used_for",
-    "bread"
-  ],
-  [
-    "RicePlant",
-    "grows",
-    "in_paddies"
-  ],
-  [
     "RicePlant",
     "produces",
     "grain"
-  ],
-  [
-    "CornPlant",
-    "produces",
-    "kernels"
   ],
   [
     "CornPlant",
@@ -11645,16 +7630,6 @@
     "building"
   ],
   [
-    "Bamboo",
-    "hasproperty",
-    "woody_grass"
-  ],
-  [
-    "Sugarcane",
-    "produces",
-    "sugar"
-  ],
-  [
     "Sugarcane",
     "lives_in",
     "tropics"
@@ -11665,29 +7640,9 @@
     "landscaping"
   ],
   [
-    "LawnGrass",
-    "grows",
-    "in_lawns"
-  ],
-  [
-    "LawnGrass",
-    "requires",
-    "mowing"
-  ],
-  [
     "SaguaroCactus",
     "hasproperty",
     "tall"
-  ],
-  [
-    "SaguaroCactus",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "PricklyPear",
-    "produces",
-    "edible_pads"
   ],
   [
     "PricklyPear",
@@ -11698,16 +7653,6 @@
     "BarrelCactus",
     "hasproperty",
     "round_shape"
-  ],
-  [
-    "BarrelCactus",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "ChristmasCactus",
-    "blooms",
-    "in_winter"
   ],
   [
     "ChristmasCactus",
@@ -11725,34 +7670,9 @@
     "round_shape"
   ],
   [
-    "GoldenBarrel",
-    "hasproperty",
-    "golden_coloration"
-  ],
-  [
-    "CommonCactus",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonCactus",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "Sunflower",
-    "tracks",
-    "sun"
-  ],
-  [
     "Sunflower",
     "hasproperty",
     "localized_range"
-  ],
-  [
-    "Tulip",
-    "blooms",
-    "in_spring"
   ],
   [
     "Tulip",
@@ -11773,16 +7693,6 @@
     "Daisy",
     "blooms",
     "in_summer"
-  ],
-  [
-    "Orchid",
-    "hasproperty",
-    "exotic_flowers"
-  ],
-  [
-    "Orchid",
-    "requires",
-    "humidity"
   ],
   [
     "Orchid",
@@ -11806,11 +7716,6 @@
   ],
   [
     "Marigold",
-    "repels",
-    "pests"
-  ],
-  [
-    "Marigold",
     "blooms",
     "in_summer"
   ],
@@ -11820,29 +7725,9 @@
     "needles"
   ],
   [
-    "Pine",
-    "hasproperty",
-    "resinous"
-  ],
-  [
     "Spruce",
     "hasproperty",
     "needles"
-  ],
-  [
-    "Spruce",
-    "hasproperty",
-    "conical_shape"
-  ],
-  [
-    "Fir",
-    "hasproperty",
-    "soft_needles"
-  ],
-  [
-    "Fir",
-    "used_for",
-    "christmas_tree"
   ],
   [
     "Cedar",
@@ -11850,19 +7735,9 @@
     "aromatic_wood"
   ],
   [
-    "Cedar",
-    "hasproperty",
-    "rot_resistant"
-  ],
-  [
     "Cypress",
     "lives_in",
     "wetlands"
-  ],
-  [
-    "Cypress",
-    "hasproperty",
-    "durable_wood"
   ],
   [
     "JuniperPlant",
@@ -11876,18 +7751,8 @@
   ],
   [
     "ScotsPine",
-    "lives_in",
-    "temperate"
-  ],
-  [
-    "ScotsPine",
     "hasproperty",
     "hardy"
-  ],
-  [
-    "PonderosaPine",
-    "hasproperty",
-    "thick_bark"
   ],
   [
     "PonderosaPine",
@@ -11896,38 +7761,13 @@
   ],
   [
     "WhitePine",
-    "hasproperty",
-    "long_needles"
-  ],
-  [
-    "WhitePine",
     "used_for",
     "timber"
-  ],
-  [
-    "LongleafPine",
-    "lives_in",
-    "southeast_us"
-  ],
-  [
-    "LongleafPine",
-    "resists",
-    "fire"
-  ],
-  [
-    "PinyonPine",
-    "produces",
-    "edible_nuts"
   ],
   [
     "PinyonPine",
     "lives_in",
     "drylands"
-  ],
-  [
-    "PineTree",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "PineTree",
@@ -11960,21 +7800,6 @@
     "boreal_forest"
   ],
   [
-    "WhiteSpruce",
-    "used_for",
-    "paper"
-  ],
-  [
-    "SitkaSpruce",
-    "lives_in",
-    "coastal"
-  ],
-  [
-    "SitkaSpruce",
-    "used_for",
-    "lumber"
-  ],
-  [
     "BlackSpruce",
     "lives_in",
     "bogs"
@@ -11985,24 +7810,9 @@
     "hardy"
   ],
   [
-    "SpruceTree",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "SpruceTree",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "BalsamFir",
     "hasproperty",
     "fragrant"
-  ],
-  [
-    "BalsamFir",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "DouglasFir",
@@ -12016,18 +7826,8 @@
   ],
   [
     "SilverFir",
-    "hasproperty",
-    "silvery_needles"
-  ],
-  [
-    "SilverFir",
     "used_for",
     "ornamental"
-  ],
-  [
-    "NobleFir",
-    "hasproperty",
-    "sturdy_branches"
   ],
   [
     "NobleFir",
@@ -12040,29 +7840,9 @@
     "fragrant"
   ],
   [
-    "FraserFir",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "FirTree",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "FirTree",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "LebanonCedar",
     "hasproperty",
     "long_lived"
-  ],
-  [
-    "LebanonCedar",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "AtlasCedar",
@@ -12086,11 +7866,6 @@
   ],
   [
     "WesternRedCedar",
-    "used_for",
-    "shingles"
-  ],
-  [
-    "WesternRedCedar",
     "hasproperty",
     "red_coloration"
   ],
@@ -12100,44 +7875,14 @@
     "mountains"
   ],
   [
-    "DeodarCedar",
-    "hasproperty",
-    "drooping_branches"
-  ],
-  [
-    "CedarTree",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CedarTree",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
     "BaldCypress",
     "tolerates",
     "flooding"
   ],
   [
-    "BaldCypress",
-    "hasproperty",
-    "buttressed_trunk"
-  ],
-  [
     "MontereyCypress",
     "lives_in",
     "coast"
-  ],
-  [
-    "MontereyCypress",
-    "hasproperty",
-    "wind_resistant"
-  ],
-  [
-    "ItalianCypress",
-    "hasproperty",
-    "columnar_shape"
   ],
   [
     "ItalianCypress",
@@ -12150,24 +7895,9 @@
     "aromatic_wood"
   ],
   [
-    "HinokiCypress",
-    "used_for",
-    "temples"
-  ],
-  [
     "SwampCypress",
     "tolerates",
     "flooding"
-  ],
-  [
-    "SwampCypress",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CypressTree",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "CypressTree",
@@ -12175,24 +7905,9 @@
     "species_specific_markings"
   ],
   [
-    "CommonJuniperPlant",
-    "used_for",
-    "gin"
-  ],
-  [
-    "CommonJuniperPlant",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "EasternJuniper",
     "hasproperty",
     "hardy"
-  ],
-  [
-    "EasternJuniper",
-    "hasproperty",
-    "localized_range"
   ],
   [
     "RockyMountainJuniper",
@@ -12210,16 +7925,6 @@
     "landscaping"
   ],
   [
-    "JuniperShrub",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CreepingJuniper",
-    "hasproperty",
-    "groundcover"
-  ],
-  [
     "CreepingJuniper",
     "hasproperty",
     "drought_tolerant"
@@ -12230,44 +7935,9 @@
     "landscaping"
   ],
   [
-    "CommonJuniperSpecies",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonJuniperSpecies",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "BostonFern",
-    "used_for",
-    "houseplant"
-  ],
-  [
-    "BostonFern",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "BrackenFern",
     "hasproperty",
     "hardy"
-  ],
-  [
-    "BrackenFern",
-    "lives_in",
-    "forest"
-  ],
-  [
-    "MaidenhairFern",
-    "requires",
-    "moisture"
-  ],
-  [
-    "MaidenhairFern",
-    "hasproperty",
-    "delicate_fronds"
   ],
   [
     "StaghornFern",
@@ -12275,39 +7945,14 @@
     "epiphytic"
   ],
   [
-    "StaghornFern",
-    "grows_on",
-    "trees"
-  ],
-  [
     "SwordFern",
     "lives_in",
     "forest"
   ],
   [
-    "SwordFern",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonFern",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
     "CommonFern",
     "hasproperty",
     "species_specific_markings"
-  ],
-  [
-    "SphagnumMoss",
-    "holds",
-    "water"
-  ],
-  [
-    "SphagnumMoss",
-    "forms",
-    "peat"
   ],
   [
     "SphagnumMoss",
@@ -12325,29 +7970,9 @@
     "shade"
   ],
   [
-    "SheetMoss",
-    "used_for",
-    "terrariums"
-  ],
-  [
-    "HaircapMoss",
-    "hasproperty",
-    "tall_moss"
-  ],
-  [
     "HaircapMoss",
     "lives_in",
     "forest"
-  ],
-  [
-    "CushionMoss",
-    "forms",
-    "cushions"
-  ],
-  [
-    "CushionMoss",
-    "lives_on",
-    "rocks"
   ],
   [
     "CushionMoss",
@@ -12360,44 +7985,9 @@
     "mats"
   ],
   [
-    "StarMoss",
-    "lives_in",
-    "lawns"
-  ],
-  [
-    "StarMoss",
-    "tolerates",
-    "drought"
-  ],
-  [
-    "CommonMoss",
-    "hasproperty",
-    "localized_range"
-  ],
-  [
-    "CommonMoss",
-    "hasproperty",
-    "species_specific_markings"
-  ],
-  [
-    "Kelp",
-    "lives_in",
-    "ocean"
-  ],
-  [
-    "Kelp",
-    "forms",
-    "forests"
-  ],
-  [
     "Kelp",
     "hasproperty",
     "fast_growing"
-  ],
-  [
-    "SeaLettuce",
-    "lives_in",
-    "ocean"
   ],
   [
     "SeaLettuce",
@@ -12408,11 +7998,6 @@
     "Spirulina",
     "hasproperty",
     "microscopic"
-  ],
-  [
-    "Spirulina",
-    "used_for",
-    "supplements"
   ],
   [
     "Chlorella",
@@ -12427,21 +8012,261 @@
   [
     "Diatom",
     "hasproperty",
-    "silica_shell"
-  ],
-  [
-    "Diatom",
-    "hasproperty",
     "microscopic"
   ],
   [
-    "CommonAlgae",
-    "hasproperty",
-    "localized_range"
+    "Airplane",
+    "capable_of",
+    "flight"
   ],
   [
-    "CommonAlgae",
+    "Aluminum",
     "hasproperty",
-    "species_specific_markings"
+    "lightweight"
+  ],
+  [
+    "Aluminum",
+    "resists",
+    "corrosion"
+  ],
+  [
+    "Aluminum",
+    "used_for",
+    "packaging"
+  ],
+  [
+    "Bag",
+    "hasproperty",
+    "flexible"
+  ],
+  [
+    "Bicycle",
+    "hasproperty",
+    "two_wheels"
+  ],
+  [
+    "Box",
+    "used_for",
+    "storage"
+  ],
+  [
+    "Bread",
+    "hasproperty",
+    "starchy"
+  ],
+  [
+    "Bread",
+    "eaten_as",
+    "staple"
+  ],
+  [
+    "BuiltPlace",
+    "hasproperty",
+    "man_made"
+  ],
+  [
+    "Bus",
+    "hasproperty",
+    "large_size"
+  ],
+  [
+    "Cabinet",
+    "used_for",
+    "storage"
+  ],
+  [
+    "Chair",
+    "used_for",
+    "sitting"
+  ],
+  [
+    "CoffeeBeverage",
+    "served_at",
+    "variable_temperature"
+  ],
+  [
+    "Desk",
+    "used_for",
+    "work"
+  ],
+  [
+    "EngineerProfession",
+    "uses",
+    "mathematics"
+  ],
+  [
+    "FabricMaterial",
+    "hasproperty",
+    "flexible"
+  ],
+  [
+    "Gold",
+    "used_for",
+    "jewelry"
+  ],
+  [
+    "Gold",
+    "resists",
+    "corrosion"
+  ],
+  [
+    "GuitarInstrument",
+    "hasproperty",
+    "strings"
+  ],
+  [
+    "HammerTool",
+    "hasproperty",
+    "handle"
+  ],
+  [
+    "Hospital",
+    "provides",
+    "healthcare"
+  ],
+  [
+    "HospitalBuilding",
+    "provides",
+    "healthcare"
+  ],
+  [
+    "Iron",
+    "hasproperty",
+    "strong"
+  ],
+  [
+    "Iron",
+    "used_for",
+    "construction"
+  ],
+  [
+    "Jeans",
+    "hasproperty",
+    "durable"
+  ],
+  [
+    "Jeans",
+    "used_for",
+    "casual_wear"
+  ],
+  [
+    "KnifeTool",
+    "used_for",
+    "cutting"
+  ],
+  [
+    "Motorcycle",
+    "hasproperty",
+    "two_wheels"
+  ],
+  [
+    "OfficeBuilding",
+    "used_for",
+    "work"
+  ],
+  [
+    "Physics",
+    "uses",
+    "mathematics"
+  ],
+  [
+    "PlasticMaterial",
+    "hasproperty",
+    "lightweight"
+  ],
+  [
+    "Polyethylene",
+    "used_for",
+    "packaging"
+  ],
+  [
+    "Polyethylene",
+    "hasproperty",
+    "flexible"
+  ],
+  [
+    "Polypropylene",
+    "hasproperty",
+    "durable"
+  ],
+  [
+    "RiceFood",
+    "eaten_as",
+    "staple"
+  ],
+  [
+    "RiceFood",
+    "hasproperty",
+    "starchy"
+  ],
+  [
+    "ScissorsTool",
+    "used_for",
+    "cutting"
+  ],
+  [
+    "ScrewdriverTool",
+    "hasproperty",
+    "handle"
+  ],
+  [
+    "Silver",
+    "used_for",
+    "jewelry"
+  ],
+  [
+    "Smartphone",
+    "hasproperty",
+    "touchscreen"
+  ],
+  [
+    "Smartphone",
+    "hasproperty",
+    "portable"
+  ],
+  [
+    "Sofa",
+    "used_for",
+    "sitting"
+  ],
+  [
+    "StoneMaterial",
+    "used_for",
+    "building"
+  ],
+  [
+    "TShirt",
+    "used_for",
+    "casual_wear"
+  ],
+  [
+    "Tablet",
+    "hasproperty",
+    "touchscreen"
+  ],
+  [
+    "Tablet",
+    "hasproperty",
+    "portable"
+  ],
+  [
+    "TeaBeverage",
+    "served_at",
+    "variable_temperature"
+  ],
+  [
+    "TeaBeverage",
+    "hasproperty",
+    "aromatic"
+  ],
+  [
+    "ViolinInstrument",
+    "hasproperty",
+    "strings"
+  ],
+  [
+    "WoodMaterial",
+    "used_for",
+    "construction"
   ]
 ]

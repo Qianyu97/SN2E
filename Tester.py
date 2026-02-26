@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 from models import initModule
 from evaluate import Evaluater
 from gaussianDrawer import GaussianDrawer
@@ -77,11 +78,20 @@ if __name__ == "__main__":
         )
     evaluater = Evaluater(finaldata, myIndex, model)
     drawer      = GaussianDrawer(finaldata, myIndex, model, PathArg["pictureDirectory"])
-    print(f"The f1score is {evaluater.evaluateF1score()}")
-    print(f"The auc score is {evaluater.evaluateAUC()}")
+    drawer.drawsomeSamples()
+    f1score_intrinsic, best_threshold_intrinsic, pr_auc_intrinsic, roc_auc_intrinsic = evaluater.evaluateF1score(threshold=0, evalmode='intrinsic')
+    f1score_inherited, best_threshold_inherited, pr_auc_inherited, roc_auc_inherited = evaluater.evaluateF1score(threshold=0, evalmode='inherited')
+    f1score_node, best_threshold_node, pr_auc_node, roc_auc_node = evaluater.evaluateF1score(threshold=0, evalmode='node')
+    print(f"The f1score for attributes (intrinsic) is {f1score_intrinsic:.3f}, its threshold is {best_threshold_intrinsic}")
+    print(f"The PR-AUC for attributes (intrinsic) is {pr_auc_intrinsic:.3f}, the ROC-AUC is {roc_auc_intrinsic:.3f}")
+    print(f"The f1score for attributes (inherited) is {f1score_inherited:.3f}, its threshold is {best_threshold_inherited}")
+    print(f"The PR-AUC for attributes (inherited) is {pr_auc_inherited:.3f}, the ROC-AUC is {roc_auc_inherited:.3f}")
+    print(f"The f1score for nodes is {f1score_node:.3f}, its threshold is {best_threshold_node}")
+    print(f"The PR-AUC for nodes is {pr_auc_node:.3f}, the ROC-AUC is {roc_auc_node:.3f}")
     #print(evaluater.checkgap('Cat', ['Feline', 'Mammal']))
     #print(evaluater.checkgap('Cat', ['has_id Bird'], 'attr'))
     #print(evaluater.checkgap('Cat', ['has_id Bee'], 'attr'))
+    #finaldata.print_tree()
     a = 0
-    #mdrawer.drawSamples()
+    #
 

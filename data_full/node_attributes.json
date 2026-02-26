@@ -75,8 +75,7 @@
   ],
   "Mollusk": [
     "hasproperty soft_body",
-    "hasproperty muscular_foot",
-    "lives_in water"
+    "hasproperty muscular_foot"
   ],
   "Worm": [
     "hasproperty elongated_body",
@@ -85,12 +84,10 @@
   ],
   "Cnidarian": [
     "hasproperty stinging_cells",
-    "lives_in ocean",
     "hasproperty radial_symmetry"
   ],
   "Echinoderm": [
     "hasproperty spiny_skin",
-    "lives_in ocean",
     "hasproperty radial_symmetry"
   ],
   "Mammal": [
@@ -115,7 +112,6 @@
   ],
   "Fish": [
     "haspart gills",
-    "lives_in water",
     "moves_by swimming"
   ],
   "OtherVertebrate": [
@@ -144,11 +140,9 @@
   ],
   "Bat": [
     "capable_of flight",
-    "hasproperty echolocation",
-    "active_in night"
+    "hasproperty echolocation"
   ],
   "MarineMammal": [
-    "lives_in ocean",
     "moves_by swimming",
     "breathes air"
   ],
@@ -161,7 +155,6 @@
     "capable_of stalking"
   ],
   "Ursid": [
-    "hasproperty large_body",
     "capable_of hibernation",
     "eats omnivorous_diet"
   ],
@@ -186,7 +179,6 @@
     "hasproperty territorial"
   ],
   "Coyote": [
-    "lives_in grasslands",
     "eats small_mammals",
     "capable_of yipping"
   ],
@@ -217,8 +209,7 @@
   ],
   "Tiger": [
     "hasproperty striped_coat",
-    "eats deer",
-    "lives_in forest"
+    "eats deer"
   ],
   "Leopard": [
     "capable_of climbing",
@@ -241,8 +232,7 @@
     "eats wild_goats"
   ],
   "BrownBear": [
-    "eats fish",
-    "lives_in forest"
+    "eats fish"
   ],
   "PolarBear": [
     "lives_in arctic",
@@ -251,7 +241,6 @@
   ],
   "AmericanBlackBear": [
     "eats berries",
-    "lives_in forest",
     "capable_of climbing"
   ],
   "GiantPanda": [
@@ -260,22 +249,18 @@
     "lives_in mountains"
   ],
   "SunBear": [
-    "eats insects",
     "lives_in rainforest",
     "hasproperty long_tongue"
   ],
   "SlothBear": [
     "eats termites",
-    "lives_in grasslands",
     "capable_of digging"
   ],
   "RiverOtter": [
     "lives_in rivers",
-    "eats fish",
     "capable_of swimming"
   ],
   "SeaOtter": [
-    "lives_in ocean",
     "eats shellfish",
     "uses tools"
   ],
@@ -302,8 +287,7 @@
   ],
   "StripedHyena": [
     "lives_in drylands",
-    "eats carrion",
-    "active_in night"
+    "eats carrion"
   ],
   "BrownHyena": [
     "lives_in desert",
@@ -311,8 +295,7 @@
     "hasproperty shaggy_fur"
   ],
   "Aardwolf": [
-    "eats termites",
-    "active_in night"
+    "eats termites"
   ],
   "HyaenaClan": [
     "lives_in groups",
@@ -324,18 +307,15 @@
     "hasproperty powerful_bite"
   ],
   "HarborSeal": [
-    "eats fish",
     "hasproperty whiskers"
   ],
   "ElephantSeal": [
-    "hasproperty large_body",
     "dives_to deep_water",
     "eats squid"
   ],
   "SeaLion": [
     "capable_of barking",
-    "lives_in colonies",
-    "eats fish"
+    "lives_in colonies"
   ],
   "Walrus": [
     "hasproperty tusks",
@@ -344,12 +324,10 @@
   ],
   "FurSeal": [
     "hasproperty thick_fur",
-    "eats fish",
-    "lives_in ocean"
+    "eats fish"
   ],
   "MonkSeal": [
     "lives_in tropical_waters",
-    "eats fish",
     "hasproperty endangered"
   ],
   "Equid": [
@@ -363,8 +341,7 @@
   ],
   "Cervid": [
     "hasproperty antlers",
-    "eats leaves",
-    "lives_in forest"
+    "eats leaves"
   ],
   "Giraffid": [
     "hasproperty long_neck",
@@ -406,8 +383,7 @@
     "hasproperty hybrid"
   ],
   "WildAss": [
-    "lives_in desert",
-    "hasproperty localized_range"
+    "lives_in desert"
   ],
   "Cow": [
     "hasproperty domesticated",
@@ -426,8 +402,7 @@
     "hasproperty large_body"
   ],
   "Antelope": [
-    "lives_in savanna",
-    "hasproperty localized_range"
+    "lives_in savanna"
   ],
   "Yak": [
     "lives_in mountains",
@@ -439,8 +414,7 @@
   ],
   "Moose": [
     "lives_in boreal_forest",
-    "eats aquatic_plants",
-    "hasproperty large_body"
+    "eats aquatic_plants"
   ],
   "Elk": [
     "lives_in meadows",
@@ -460,28 +434,24 @@
     "capable_of jumping"
   ],
   "Giraffe": [
-    "eats acacia_leaves",
-    "hasproperty localized_range"
+    "eats acacia_leaves"
   ],
   "Okapi": [
     "lives_in rainforest",
     "hasproperty striped_legs"
   ],
   "GiraffidGroup": [
-    "lives_in africa",
-    "hasproperty localized_range"
+    "lives_in africa"
   ],
   "SavannaGiraffe": [
     "eats acacia_leaves",
     "hasproperty tall"
   ],
   "ReticulatedGiraffe": [
-    "hasproperty net_pattern",
-    "hasproperty localized_range"
+    "hasproperty net_pattern"
   ],
   "MasaiGiraffe": [
-    "hasproperty irregular_spots",
-    "hasproperty localized_range"
+    "hasproperty irregular_spots"
   ],
   "WhiteRhino": [
     "lives_in savanna",
@@ -504,10 +474,6 @@
   "JavanRhino": [
     "lives_in forest",
     "hasproperty endangered"
-  ],
-  "Rhinoceros": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
   ],
   "Camel": [
     "lives_in desert",
@@ -586,11 +552,9 @@
     "capable_of digging"
   ],
   "Hamster": [
-    "stores food",
-    "active_in night"
+    "stores food"
   ],
   "KangarooRat": [
-    "lives_in desert",
     "requires little_water",
     "capable_of jumping"
   ],
@@ -614,25 +578,20 @@
   ],
   "FlyingSquirrel": [
     "capable_of gliding",
-    "active_in night",
     "lives_in trees"
   ],
   "Marmot": [
     "capable_of hibernation",
-    "lives_in mountains",
     "eats grasses"
   ],
   "Beaver": [
-    "hasproperty flat_tail",
-    "hasproperty localized_range"
+    "hasproperty flat_tail"
   ],
   "NorthAmericanBeaver": [
-    "native_to americas",
-    "hasproperty localized_range"
+    "native_to americas"
   ],
   "EurasianBeaver": [
-    "hasproperty large_incisors",
-    "hasproperty localized_range"
+    "hasproperty large_incisors"
   ],
   "BeaverLodge": [
     "used_for shelter",
@@ -640,13 +599,11 @@
     "located_in water"
   ],
   "DamBuilderRodent": [
-    "used_for ecosystem_engineering",
-    "hasproperty localized_range"
+    "used_for ecosystem_engineering"
   ],
   "AquaticRodent": [
     "lives_in water",
-    "eats plants",
-    "moves_by swimming"
+    "eats plants"
   ],
   "NorthAmericanPorcupine": [
     "eats bark",
@@ -660,13 +617,8 @@
     "capable_of climbing",
     "lives_in rainforest"
   ],
-  "Porcupine": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "QuilledRodent": [
-    "eats vegetation",
-    "hasproperty localized_range"
+    "eats vegetation"
   ],
   "BrushTailedPorcupine": [
     "active_in night",
@@ -686,8 +638,7 @@
     "eats leaves"
   ],
   "Cavy": [
-    "lives_in south_america",
-    "hasproperty localized_range"
+    "lives_in south_america"
   ],
   "DomesticCavy": [
     "hasproperty domesticated",
@@ -699,32 +650,27 @@
     "avoids predators"
   ],
   "Capybara": [
-    "moves_by swimming",
-    "hasproperty localized_range"
+    "moves_by swimming"
   ],
   "GiantRodent": [
     "eats plants",
     "lives_in groups"
   ],
   "WaterLovingRodent": [
-    "moves_by swimming",
-    "hasproperty localized_range"
+    "moves_by swimming"
   ],
   "CapybaraGroup": [
-    "lives_in south_america",
-    "hasproperty localized_range"
+    "lives_in south_america"
   ],
   "SemiAquaticMammal": [
     "moves_by swimming",
     "breathes air"
   ],
   "HerbivorousRodent": [
-    "lives_in groups",
-    "hasproperty localized_range"
+    "lives_in groups"
   ],
   "FruitBat": [
-    "eats fruit",
-    "hasproperty localized_range"
+    "eats fruit"
   ],
   "InsectBat": [
     "eats insects",
@@ -750,12 +696,10 @@
     "lives_in caves"
   ],
   "Cetacean": [
-    "hasproperty streamlined",
-    "hasproperty localized_range"
+    "hasproperty streamlined"
   ],
   "Sirenian": [
-    "eats seagrass",
-    "hasproperty localized_range"
+    "eats seagrass"
   ],
   "BlueWhale": [
     "hasproperty largest_animal",
@@ -767,7 +711,6 @@
     "migrates seasonally"
   ],
   "Orca": [
-    "eats fish",
     "capable_of hunting",
     "lives_in pods"
   ],
@@ -777,8 +720,7 @@
   ],
   "Narwhal": [
     "hasproperty tusk",
-    "lives_in arctic",
-    "eats fish"
+    "lives_in arctic"
   ],
   "SpermWhale": [
     "dives_to deep_water",
@@ -790,8 +732,7 @@
     "hasproperty gentle"
   ],
   "Dugong": [
-    "hasproperty endangered",
-    "hasproperty localized_range"
+    "hasproperty endangered"
   ],
   "WestIndianManatee": [
     "lives_in warm_water",
@@ -803,7 +744,6 @@
     "lives_in freshwater"
   ],
   "AfricanManatee": [
-    "lives_in rivers",
     "eats plants",
     "lives_in africa"
   ],
@@ -818,8 +758,7 @@
   ],
   "Songbird": [
     "capable_of singing",
-    "hasproperty perching_feet",
-    "eats insects"
+    "hasproperty perching_feet"
   ],
   "Waterfowl": [
     "lives_in wetlands",
@@ -827,7 +766,6 @@
     "capable_of swimming"
   ],
   "Seabird": [
-    "lives_in ocean",
     "capable_of long_flights",
     "eats fish"
   ],
@@ -843,7 +781,6 @@
   ],
   "BaldEagle": [
     "hasproperty white_head",
-    "eats fish",
     "builds nests"
   ],
   "GoldenEagle": [
@@ -857,7 +794,6 @@
     "hasproperty fast"
   ],
   "BarnOwl": [
-    "active_in night",
     "eats rodents",
     "hasproperty silent_flight"
   ],
@@ -867,7 +803,6 @@
     "capable_of soaring"
   ],
   "Osprey": [
-    "eats fish",
     "dives_to catch_prey",
     "lives_in coastal_waters"
   ],
@@ -925,12 +860,10 @@
     "eats aquatic_plants"
   ],
   "Albatross": [
-    "hasproperty large_wingspan",
-    "hasproperty localized_range"
+    "hasproperty large_wingspan"
   ],
   "Penguin": [
     "hasproperty flightless",
-    "moves_by swimming",
     "lives_in southern_ocean"
   ],
   "Puffin": [
@@ -954,8 +887,7 @@
     "eats nuts"
   ],
   "Cockatoo": [
-    "hasproperty crest",
-    "hasproperty localized_range"
+    "hasproperty crest"
   ],
   "AfricanGreyParrot": [
     "capable_of speech",
@@ -982,13 +914,11 @@
     "hasproperty long_legs"
   ],
   "Kiwi": [
-    "active_in night",
     "hasproperty long_beak",
     "lives_in new_zealand"
   ],
   "Cassowary": [
     "hasproperty helmet_casque",
-    "lives_in rainforest",
     "capable_of defense"
   ],
   "Rhea": [
@@ -1020,15 +950,12 @@
   ],
   "TuataraGroup": [
     "hasproperty ancient_lineage",
-    "lives_in islands",
-    "active_in night"
+    "lives_in islands"
   ],
   "OtherReptile": [
-    "lays eggs",
-    "hasproperty localized_range"
+    "lays eggs"
   ],
   "SeaTurtle": [
-    "lives_in ocean",
     "hasproperty flippers",
     "lays eggs"
   ],
@@ -1039,18 +966,14 @@
   ],
   "LeatherbackTurtle": [
     "eats jellyfish",
-    "lives_in ocean",
     "dives_to deep_water"
   ],
   "BoxTurtle": [
-    "lives_in forest",
-    "hasproperty hinged_shell",
-    "eats insects"
+    "hasproperty hinged_shell"
   ],
   "SnappingTurtle": [
     "hasproperty strong_jaws",
-    "lives_in freshwater",
-    "eats fish"
+    "lives_in freshwater"
   ],
   "Tortoise": [
     "lives_in drylands",
@@ -1063,16 +986,13 @@
   ],
   "AmericanAlligator": [
     "lives_in swamps",
-    "eats fish",
     "basks in_sun"
   ],
   "SaltwaterCrocodile": [
     "lives_in estuaries",
-    "hasproperty large_body",
     "eats mammals"
   ],
   "Caiman": [
-    "eats fish",
     "lives_in south_america"
   ],
   "Gharial": [
@@ -1080,8 +1000,7 @@
     "eats fish"
   ],
   "Crocodile": [
-    "lives_in wetlands",
-    "hasproperty localized_range"
+    "lives_in wetlands"
   ],
   "Iguana": [
     "eats leaves",
@@ -1117,8 +1036,7 @@
   ],
   "Python": [
     "kills_by constriction",
-    "eats mammals",
-    "lives_in rainforest"
+    "eats mammals"
   ],
   "Rattlesnake": [
     "hasproperty rattle",
@@ -1136,7 +1054,6 @@
     "lives_in rainforest"
   ],
   "SeaSnake": [
-    "lives_in ocean",
     "hasproperty venomous",
     "eats fish"
   ],
@@ -1149,8 +1066,7 @@
     "hasproperty localized_range"
   ],
   "ReptileRelic": [
-    "hasproperty slow_growth",
-    "hasproperty localized_range"
+    "hasproperty slow_growth"
   ],
   "ColdClimateReptile": [
     "tolerates cold",
@@ -1161,8 +1077,7 @@
     "eats insects"
   ],
   "Sphenodon": [
-    "lays eggs",
-    "hasproperty localized_range"
+    "lays eggs"
   ],
   "Frog": [
     "lives_in wetlands",
@@ -1170,13 +1085,11 @@
   ],
   "Toad": [
     "hasproperty dry_skin",
-    "lives_in gardens",
-    "eats insects"
+    "lives_in gardens"
   ],
   "Salamander": [
     "hasproperty tail",
-    "lives_in moist_places",
-    "eats insects"
+    "lives_in moist_places"
   ],
   "Newt": [
     "lives_in ponds",
@@ -1195,12 +1108,10 @@
   ],
   "TreeFrog": [
     "lives_in trees",
-    "hasproperty sticky_toes",
-    "eats insects"
+    "hasproperty sticky_toes"
   ],
   "Bullfrog": [
     "lives_in ponds",
-    "eats insects",
     "capable_of loud_call"
   ],
   "PoisonDartFrog": [
@@ -1210,13 +1121,11 @@
   ],
   "GlassFrog": [
     "hasproperty transparent_skin",
-    "lives_in rainforest",
     "lays eggs"
   ],
   "AfricanClawedFrog": [
     "lives_in water",
-    "hasproperty claws",
-    "eats insects"
+    "hasproperty claws"
   ],
   "FrogTadpole": [
     "lives_in water",
@@ -1259,26 +1168,21 @@
   ],
   "FireSalamander": [
     "hasproperty warning_colors",
-    "hasproperty toxic_skin",
-    "lives_in forest"
+    "hasproperty toxic_skin"
   ],
   "GiantSalamander": [
     "lives_in rivers",
-    "hasproperty large_body",
-    "eats fish"
+    "hasproperty large_body"
   ],
   "Plethodontid": [
-    "breathes through_skin",
-    "hasproperty localized_range"
+    "breathes through_skin"
   ],
   "SalamanderLarva": [
-    "lives_in water",
     "breathes through_gills",
     "metamorphoses into_salamander"
   ],
   "SmoothNewt": [
-    "eats insects",
-    "hasproperty localized_range"
+    "eats insects"
   ],
   "RoughSkinnedNewt": [
     "hasproperty toxic_skin",
@@ -1286,8 +1190,7 @@
   ],
   "JapaneseFireBellyNewt": [
     "hasproperty bright_belly",
-    "lives_in streams",
-    "eats insects"
+    "lives_in streams"
   ],
   "CrestedNewt": [
     "hasproperty crest",
@@ -1295,38 +1198,29 @@
   ],
   "NewtEft": [
     "lives_in land",
-    "hasproperty juvenile",
-    "eats insects"
+    "hasproperty juvenile"
   ],
   "AquaticNewt": [
     "lives_in water",
-    "moves_by swimming",
-    "eats insects"
-  ],
-  "CommonCaecilian": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "moves_by swimming"
   ],
   "AquaticCaecilian": [
     "lives_in rivers",
-    "moves_by swimming",
-    "eats fish"
+    "moves_by swimming"
   ],
   "BurrowingCaecilian": [
     "moves_by burrowing",
     "eats insects"
   ],
   "TropicalCaecilian": [
-    "lives_in tropics",
-    "hasproperty localized_range"
+    "lives_in tropics"
   ],
   "RingedCaecilian": [
     "hasproperty ringed_body",
     "hasproperty ringed_pattern"
   ],
   "BlindCaecilian": [
-    "hasproperty reduced_eyes",
-    "hasproperty localized_range"
+    "hasproperty reduced_eyes"
   ],
   "CartilaginousFish": [
     "hasproperty cartilage_skeleton",
@@ -1356,23 +1250,18 @@
   ],
   "GreatWhiteShark": [
     "eats seals",
-    "hasproperty sharp_teeth",
-    "lives_in ocean"
+    "hasproperty sharp_teeth"
   ],
   "HammerheadShark": [
     "hasproperty wide_head",
-    "eats fish",
-    "lives_in ocean"
+    "eats fish"
   ],
   "TigerShark": [
-    "eats fish",
-    "capable_of scavenging",
-    "lives_in ocean"
+    "capable_of scavenging"
   ],
   "MantaRay": [
     "eats plankton",
-    "moves_by gliding",
-    "lives_in ocean"
+    "moves_by gliding"
   ],
   "Stingray": [
     "hasproperty venomous_spine",
@@ -1386,13 +1275,10 @@
   ],
   "Salmon": [
     "migrates upstream",
-    "lives_in ocean",
     "spawns in_rivers"
   ],
   "Tuna": [
-    "hasproperty fast_swimmer",
-    "lives_in ocean",
-    "eats fish"
+    "hasproperty fast_swimmer"
   ],
   "Clownfish": [
     "lives_in anemones",
@@ -1406,21 +1292,17 @@
   ],
   "Herring": [
     "lives_in schools",
-    "eats plankton",
-    "lives_in ocean"
+    "eats plankton"
   ],
   "Cod": [
     "lives_in cold_water",
-    "eats fish",
-    "lives_in ocean"
+    "eats fish"
   ],
   "Coelacanth": [
-    "lives_in deep_water",
-    "hasproperty localized_range"
+    "lives_in deep_water"
   ],
   "Lungfish": [
     "breathes air",
-    "lives_in freshwater",
     "survives drought"
   ],
   "AustralianLungfish": [
@@ -1438,8 +1320,7 @@
     "lives_in freshwater"
   ],
   "LobeFinnedRelic": [
-    "hasproperty rare",
-    "hasproperty localized_range"
+    "hasproperty rare"
   ],
   "Lamprey": [
     "hasproperty suction_mouth",
@@ -1452,9 +1333,7 @@
     "lives_in deep_water"
   ],
   "SeaLamprey": [
-    "eats fish",
-    "hasproperty parasitic",
-    "lives_in ocean"
+    "hasproperty parasitic"
   ],
   "RiverLamprey": [
     "lives_in freshwater",
@@ -1466,7 +1345,6 @@
     "eats carrion"
   ],
   "JawlessEel": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "Parrotfish": [
@@ -1474,12 +1352,10 @@
     "hasproperty beak_like_teeth"
   ],
   "Angelfish": [
-    "eats sponges",
-    "hasproperty localized_range"
+    "eats sponges"
   ],
   "Butterflyfish": [
-    "eats coral_polyps",
-    "hasproperty localized_range"
+    "eats coral_polyps"
   ],
   "Surgeonfish": [
     "hasproperty sharp_spine",
@@ -1504,16 +1380,13 @@
   ],
   "Catfish": [
     "hasproperty whiskers",
-    "lives_in rivers",
-    "eats insects"
+    "lives_in rivers"
   ],
   "Pike": [
-    "eats fish",
     "lives_in lakes",
     "capable_of ambush"
   ],
   "Bass": [
-    "eats fish",
     "lives_in lakes",
     "used_for fishing"
   ],
@@ -1542,12 +1415,10 @@
     "lives_in ancient_seas"
   ],
   "OtherArthropod": [
-    "hasproperty jointed_legs",
-    "hasproperty localized_range"
+    "hasproperty jointed_legs"
   ],
   "Beetle": [
     "hasproperty hard_wings",
-    "eats plants",
     "capable_of flight"
   ],
   "ButterflyAndMoth": [
@@ -1582,8 +1453,7 @@
   ],
   "StagBeetle": [
     "hasproperty large_mandibles",
-    "eats sap",
-    "lives_in forest"
+    "eats sap"
   ],
   "DungBeetle": [
     "eats dung",
@@ -1592,8 +1462,7 @@
   ],
   "Firefly": [
     "produces light",
-    "active_in night",
-    "eats insects"
+    "active_in night"
   ],
   "Weevil": [
     "eats grains",
@@ -1614,12 +1483,10 @@
     "lives_in gardens"
   ],
   "LunaMoth": [
-    "active_in night",
     "hasproperty green_wings"
   ],
   "SilkwormMoth": [
     "produces silk",
-    "hasproperty domesticated",
     "eats mulberry_leaves"
   ],
   "CabbageWhite": [
@@ -1639,11 +1506,9 @@
     "drinks nectar"
   ],
   "CarpenterBee": [
-    "nests_in wood",
-    "hasproperty localized_range"
+    "nests_in wood"
   ],
   "Yellowjacket": [
-    "eats insects",
     "lives_in nest"
   ],
   "PaperWasp": [
@@ -1684,8 +1549,7 @@
     "lives_in africa"
   ],
   "Grasshopper": [
-    "hasproperty strong_legs",
-    "hasproperty localized_range"
+    "hasproperty strong_legs"
   ],
   "Cricket": [
     "active_in night",
@@ -1742,12 +1606,10 @@
   ],
   "Scorpion": [
     "hasproperty stinger",
-    "hasproperty venomous",
-    "active_in night"
+    "hasproperty venomous"
   ],
   "Tick": [
     "eats blood",
-    "hasproperty parasitic",
     "spreads disease"
   ],
   "Mite": [
@@ -1761,7 +1623,6 @@
     "hasproperty nonvenomous"
   ],
   "OtherArachnid": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "Tarantula": [
@@ -1770,8 +1631,7 @@
     "lives_in burrows"
   ],
   "OrbWeaver": [
-    "builds circular_web",
-    "hasproperty localized_range"
+    "builds circular_web"
   ],
   "JumpingSpider": [
     "capable_of jumping",
@@ -1788,28 +1648,24 @@
     "lives_in grasslands"
   ],
   "HouseSpider": [
-    "lives_in houses",
-    "hasproperty localized_range"
+    "lives_in houses"
   ],
   "EmperorScorpion": [
     "hasproperty large_body",
     "lives_in rainforest"
   ],
   "BarkScorpion": [
-    "lives_in desert",
-    "hasproperty localized_range"
+    "lives_in desert"
   ],
   "DesertScorpion": [
     "lives_in desert",
     "burrows in_sand"
   ],
   "ForestScorpion": [
-    "lives_in forest",
-    "hasproperty localized_range"
+    "lives_in forest"
   ],
   "CommonScorpion": [
-    "hunts insects",
-    "hasproperty localized_range"
+    "hunts insects"
   ],
   "TaillessWhipScorpion": [
     "hasproperty long_legs",
@@ -1820,12 +1676,10 @@
     "capable_of jumping"
   ],
   "DogTick": [
-    "lives_on dogs",
-    "hasproperty localized_range"
+    "lives_on dogs"
   ],
   "CattleTick": [
-    "lives_on livestock",
-    "hasproperty localized_range"
+    "lives_on livestock"
   ],
   "SoftTick": [
     "feeds briefly",
@@ -1864,27 +1718,21 @@
     "hasproperty localized_range"
   ],
   "CommonMite": [
-    "lives_in diverse_habitats",
-    "hasproperty localized_range"
+    "lives_in diverse_habitats"
   ],
   "CommonHarvestman": [
-    "active_in night",
-    "hasproperty localized_range"
+    "active_in night"
   ],
   "DaddyLonglegs": [
-    "hasproperty fragile_body",
-    "hasproperty localized_range"
+    "hasproperty fragile_body"
   ],
   "Opiliones": [
-    "lives_in forest",
     "hasproperty localized_range"
   ],
   "CaveHarvestman": [
-    "lives_in caves",
-    "active_in night"
+    "lives_in caves"
   ],
   "ForestHarvestman": [
-    "lives_in forest",
     "hasproperty localized_range"
   ],
   "LeafLitterHarvestman": [
@@ -1907,31 +1755,22 @@
   ],
   "Krill": [
     "eats plankton",
-    "lives_in ocean",
     "forms swarms"
   ],
   "Barnacle": [
     "attaches to_surfaces",
-    "filters water",
-    "lives_in ocean"
-  ],
-  "OtherCrustacean": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "filters water"
   ],
   "BlueCrab": [
     "lives_in estuaries",
-    "hasproperty blue_claws",
-    "eats detritus"
+    "hasproperty blue_claws"
   ],
   "HermitCrab": [
     "lives_in shells",
-    "moves_to new_shell",
-    "eats detritus"
+    "moves_to new_shell"
   ],
   "KingCrab": [
     "lives_in cold_water",
-    "hasproperty large_body",
     "eats mollusks"
   ],
   "FiddlerCrab": [
@@ -1945,7 +1784,6 @@
     "used_for food"
   ],
   "CommonCrab": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "AmericanLobster": [
@@ -1957,20 +1795,14 @@
     "lives_in coral_reef"
   ],
   "RockLobster": [
-    "used_for food",
-    "hasproperty localized_range"
+    "used_for food"
   ],
   "SlipperLobster": [
-    "hasproperty flat_antennae",
-    "hasproperty localized_range"
+    "hasproperty flat_antennae"
   ],
   "NorwayLobster": [
     "used_for food",
     "hasproperty slender_claws"
-  ],
-  "CommonLobster": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
   ],
   "TigerPrawn": [
     "used_for food",
@@ -1978,7 +1810,6 @@
   ],
   "CleanerShrimp": [
     "cleans fish",
-    "lives_in coral_reef",
     "eats parasites"
   ],
   "BrineShrimp": [
@@ -1996,37 +1827,22 @@
     "filters water",
     "lives_in estuaries"
   ],
-  "CommonShrimp": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "AntarcticKrill": [
     "lives_in southern_ocean",
     "eats phytoplankton"
   ],
   "NorthernKrill": [
-    "lives_in cold_water",
-    "hasproperty localized_range"
+    "lives_in cold_water"
   ],
   "DeepSeaKrill": [
     "lives_in deep_water",
     "migrates vertically"
   ],
   "KrillLarva": [
-    "develops in_stages",
-    "hasproperty localized_range"
-  ],
-  "SwarmingKrill": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
-  "CommonKrill": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "develops in_stages"
   ],
   "GooseBarnacle": [
-    "attaches to_floats",
-    "hasproperty localized_range"
+    "attaches to_floats"
   ],
   "AcornBarnacle": [
     "attaches to_rocks",
@@ -2041,19 +1857,13 @@
     "causes fouling"
   ],
   "SessileCrustacean": [
-    "hasproperty stationary",
-    "hasproperty localized_range"
-  ],
-  "CommonBarnacle": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "hasproperty stationary"
   ],
   "Centipede": [
     "hasproperty venomous",
     "hunts insects"
   ],
   "Millipede": [
-    "eats detritus",
     "hasproperty many_segments",
     "hasproperty nonvenomous"
   ],
@@ -2066,12 +1876,10 @@
     "hasproperty tiny"
   ],
   "SoilMyriapod": [
-    "eats organic_matter",
-    "hasproperty localized_range"
+    "eats organic_matter"
   ],
   "OtherMyriapod": [
-    "eats detritus",
-    "hasproperty localized_range"
+    "eats detritus"
   ],
   "HouseCentipede": [
     "lives_in houses",
@@ -2086,16 +1894,13 @@
     "hasproperty blind"
   ],
   "StoneCentipede": [
-    "lives_under stones",
-    "hasproperty localized_range"
+    "lives_under stones"
   ],
   "Scolopendra": [
-    "lives_in tropics",
-    "hasproperty localized_range"
+    "lives_in tropics"
   ],
   "CentipedeLarva": [
-    "hasproperty juvenile",
-    "hasproperty localized_range"
+    "hasproperty juvenile"
   ],
   "GiantAfricanMillipede": [
     "hasproperty large_body",
@@ -2106,24 +1911,16 @@
     "hasproperty armored"
   ],
   "GardenMillipede": [
-    "lives_in gardens",
-    "hasproperty localized_range"
+    "lives_in gardens"
   ],
   "FlatBackedMillipede": [
-    "hasproperty flattened_body",
-    "lives_in forest"
-  ],
-  "CommonMillipede": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "hasproperty flattened_body"
   ],
   "MillipedeNymph": [
-    "hasproperty juvenile",
-    "hasproperty localized_range"
+    "hasproperty juvenile"
   ],
   "Trilobite": [
-    "lived_in paleozoic",
-    "hasproperty localized_range"
+    "lived_in paleozoic"
   ],
   "Phacops": [
     "hasproperty large_eyes",
@@ -2169,12 +1966,10 @@
     "eats microorganisms"
   ],
   "OtherMollusk": [
-    "eats organic_matter",
-    "hasproperty localized_range"
+    "eats organic_matter"
   ],
   "Snail": [
-    "eats plants",
-    "hasproperty localized_range"
+    "eats plants"
   ],
   "Slug": [
     "hasproperty no_shell",
@@ -2192,7 +1987,6 @@
   ],
   "ConeSnail": [
     "hasproperty venomous",
-    "eats fish",
     "hasproperty conical_shell"
   ],
   "GardenSnail": [
@@ -2219,10 +2013,6 @@
     "buries in_sand",
     "lives_in seabed"
   ],
-  "BivalveShellfish": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "Octopus": [
     "hasproperty eight_arms",
     "capable_of camouflage"
@@ -2242,16 +2032,7 @@
   ],
   "GiantSquid": [
     "lives_in deep_water",
-    "hasproperty large_body",
-    "eats fish"
-  ],
-  "CommonCephalopod": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
-  "CommonChiton": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "hasproperty large_body"
   ],
   "GumbootChiton": [
     "hasproperty large_body",
@@ -2262,27 +2043,21 @@
     "lives_in tidepools"
   ],
   "RockChiton": [
-    "lives_in coast",
-    "hasproperty localized_range"
+    "lives_in coast"
   ],
   "SpinyChiton": [
-    "hasproperty spines",
-    "hasproperty localized_range"
+    "hasproperty spines"
   ],
   "ArmorMollusk": [
-    "lives_in ocean",
-    "hasproperty localized_range"
+    "lives_in ocean"
   ],
   "Dentalium": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "TuskShell": [
-    "buries in_sand",
-    "hasproperty localized_range"
+    "buries in_sand"
   ],
   "CommonScaphopod": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "BurrowingMollusk": [
@@ -2290,11 +2065,9 @@
     "capable_of burrowing"
   ],
   "SandDwellerMollusk": [
-    "buries in_sand",
-    "hasproperty localized_range"
+    "buries in_sand"
   ],
   "MicrobeEaterMollusk": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "Flatworm": [
@@ -2314,21 +2087,15 @@
   ],
   "Leech": [
     "eats blood",
-    "lives_in freshwater",
-    "hasproperty parasitic"
+    "lives_in freshwater"
   ],
   "Tapeworm": [
     "lives_in intestines",
     "absorbs nutrients",
     "hasproperty parasitic"
   ],
-  "OtherWorm": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "Planarian": [
     "regenerates body",
-    "lives_in freshwater",
     "eats small_prey"
   ],
   "Fluke": [
@@ -2337,8 +2104,7 @@
     "causes disease"
   ],
   "CommonFlatworm": [
-    "moves_by gliding",
-    "hasproperty localized_range"
+    "moves_by gliding"
   ],
   "MarineFlatworm": [
     "lives_in ocean",
@@ -2379,86 +2145,61 @@
     "eats nutrients",
     "hasproperty parasitic"
   ],
-  "CommonRoundworm": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
-  "CommonEarthworm": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "Nightcrawler": [
-    "active_in night",
-    "hasproperty localized_range"
+    "active_in night"
   ],
   "RedWiggler": [
     "used_for composting",
     "hasproperty red_coloration"
   ],
   "SoilEngineerWorm": [
-    "creates burrows",
-    "hasproperty localized_range"
+    "creates burrows"
   ],
   "SegmentedWorm": [
-    "hasproperty segments",
-    "hasproperty localized_range"
+    "hasproperty segments"
   ],
   "CompostWorm": [
     "used_for composting",
     "reproduces rapidly"
   ],
   "MedicinalLeech": [
-    "used_for medicine",
-    "hasproperty localized_range"
+    "used_for medicine"
   ],
   "HorseLeech": [
     "eats invertebrates",
-    "lives_in ponds",
-    "hasproperty large_body"
+    "lives_in ponds"
   ],
   "FishLeech": [
-    "attaches to_fish",
-    "hasproperty localized_range"
+    "attaches to_fish"
   ],
   "LandLeech": [
     "lives_in rainforest",
     "moves_by inching"
   ],
   "CommonLeech": [
-    "hasproperty sucker",
-    "hasproperty localized_range"
+    "hasproperty sucker"
   ],
   "GiantLeech": [
     "hasproperty large_body",
     "lives_in wetlands"
   ],
-  "CommonTapeworm": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "PorkTapeworm": [
-    "infects humans",
-    "hasproperty localized_range"
+    "infects humans"
   ],
   "BeefTapeworm": [
-    "infects humans",
-    "hasproperty localized_range"
+    "infects humans"
   ],
   "FishTapeworm": [
-    "infects humans",
-    "hasproperty localized_range"
+    "infects humans"
   ],
   "DogTapeworm": [
-    "infects dogs",
-    "hasproperty localized_range"
+    "infects dogs"
   ],
   "SegmentedTapeworm": [
-    "hasproperty segments",
-    "hasproperty localized_range"
+    "hasproperty segments"
   ],
   "Jellyfish": [
-    "moves_by pulsing",
-    "hasproperty localized_range"
+    "moves_by pulsing"
   ],
   "Coral": [
     "builds reefs",
@@ -2473,23 +2214,20 @@
     "reproduces by_budding"
   ],
   "PortugueseManOWar": [
-    "floats on_surface",
-    "hasproperty localized_range"
+    "floats on_surface"
   ],
   "OtherCnidarian": [
     "lives_in water",
     "hasproperty localized_range"
   ],
   "MoonJelly": [
-    "hasproperty translucent",
-    "hasproperty localized_range"
+    "hasproperty translucent"
   ],
   "BoxJellyfish": [
     "hasproperty highly_venomous",
     "lives_in tropics"
   ],
   "LionManeJellyfish": [
-    "hasproperty large_body",
     "hasproperty long_tentacles",
     "lives_in cold_water"
   ],
@@ -2502,7 +2240,6 @@
     "affects fishing"
   ],
   "CommonJellyfish": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "StaghornCoral": [
@@ -2530,8 +2267,7 @@
     "lives_in coral_reef"
   ],
   "CommonSeaAnemone": [
-    "lives_in sea",
-    "hasproperty localized_range"
+    "lives_in sea"
   ],
   "GiantGreenAnemone": [
     "hasproperty green",
@@ -2542,8 +2278,7 @@
     "hasproperty long_tentacles"
   ],
   "ClownfishAnemone": [
-    "hosts clownfish",
-    "hasproperty localized_range"
+    "hosts clownfish"
   ],
   "BeadedAnemone": [
     "hasproperty bead_like",
@@ -2552,10 +2287,6 @@
   "AnemoneColony": [
     "hasproperty colonial",
     "hasproperty localized_range"
-  ],
-  "CommonHydra": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
   ],
   "GreenHydra": [
     "contains algae",
@@ -2566,40 +2297,30 @@
     "hasproperty brown_coloration"
   ],
   "HydraPolyp": [
-    "attaches to_plants",
-    "hasproperty localized_range"
+    "attaches to_plants"
   ],
   "RegeneratingHydra": [
-    "regenerates tissue",
-    "hasproperty localized_range"
+    "regenerates tissue"
   ],
   "FreshwaterCnidarian": [
     "reproduces asexually",
     "hasproperty localized_range"
   ],
-  "CommonManOWar": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "FloatingColony": [
-    "hasproperty colonial",
-    "hasproperty localized_range"
+    "hasproperty colonial"
   ],
   "BlueBottle": [
-    "hasproperty blue_coloration",
-    "hasproperty localized_range"
+    "hasproperty blue_coloration"
   ],
   "Siphonophore": [
     "hasproperty colonial",
     "floats in_ocean"
   ],
   "VenomousFloat": [
-    "hasproperty venomous",
-    "hasproperty localized_range"
+    "hasproperty venomous"
   ],
   "OceanDrifter": [
-    "moves_by currents",
-    "hasproperty localized_range"
+    "moves_by currents"
   ],
   "SeaStar": [
     "hasproperty tube_feet",
@@ -2611,7 +2332,6 @@
   ],
   "SeaCucumber": [
     "lives_in seabed",
-    "eats detritus",
     "hasproperty soft_body"
   ],
   "BrittleStar": [
@@ -2624,8 +2344,7 @@
     "eats detritus"
   ],
   "OtherEchinoderm": [
-    "hasproperty tube_feet",
-    "hasproperty localized_range"
+    "hasproperty tube_feet"
   ],
   "Starfish": [
     "hasproperty five_arms",
@@ -2668,23 +2387,20 @@
     "eats detritus"
   ],
   "UrchinGrazing": [
-    "affects kelp",
-    "hasproperty localized_range"
+    "affects kelp"
   ],
   "LongSpinedUrchin": [
     "hasproperty long_spines",
     "lives_in coral_reef"
   ],
   "CommonSeaUrchin": [
-    "lives_in sea",
-    "hasproperty localized_range"
+    "lives_in sea"
   ],
   "GiantSeaCucumber": [
     "hasproperty large_body",
     "hasproperty large_body_size"
   ],
   "Sandfish": [
-    "buries in_sand",
     "used_for food"
   ],
   "SeaApple": [
@@ -2695,13 +2411,8 @@
     "expels organs",
     "capable_of defense"
   ],
-  "Holothurian": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "CommonSeaCucumber": [
-    "lives_in sea",
-    "hasproperty localized_range"
+    "lives_in sea"
   ],
   "BasketStar": [
     "hasproperty branched_arms",
@@ -2713,7 +2424,6 @@
     "moves_by drifting"
   ],
   "NocturnalBrittleStar": [
-    "active_in night",
     "hides in_crevices",
     "eats detritus"
   ],
@@ -2725,16 +2435,11 @@
     "lives_in deep_water",
     "eats detritus"
   ],
-  "CommonBrittleStar": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "KeyholeSandDollar": [
     "hasproperty keyhole",
     "buries in_sand"
   ],
   "Echinarachnius": [
-    "buries in_sand",
     "lives_in coast"
   ],
   "DwarfSandDollar": [
@@ -2751,8 +2456,7 @@
     "hasproperty ancient"
   ],
   "CommonSandDollar": [
-    "buries in_sand",
-    "hasproperty localized_range"
+    "buries in_sand"
   ],
   "FloweringPlant": [
     "hasproperty flowering",
@@ -2774,12 +2478,7 @@
     "hasproperty nonvascular"
   ],
   "Algae": [
-    "lives_in water",
-    "hasproperty localized_range"
-  ],
-  "OtherPlant": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "lives_in water"
   ],
   "FloweringTree": [
     "hasproperty woody_stem",
@@ -2811,14 +2510,9 @@
     "attracts pollinators",
     "produces flowers"
   ],
-  "AppleTree": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "OakTree": [
     "hasproperty strong_wood",
-    "produces acorns",
-    "lives_in forest"
+    "produces acorns"
   ],
   "MapleTree": [
     "produces sap",
@@ -2826,8 +2520,7 @@
     "turns_color in_fall"
   ],
   "CherryTree": [
-    "hasproperty ornamental",
-    "hasproperty localized_range"
+    "hasproperty ornamental"
   ],
   "MangoTree": [
     "lives_in tropics",
@@ -2847,8 +2540,7 @@
     "hasproperty ornamental"
   ],
   "Hydrangea": [
-    "changes_color by_soil_ph",
-    "hasproperty localized_range"
+    "changes_color by_soil_ph"
   ],
   "BlueberryBush": [
     "produces berries",
@@ -2921,16 +2613,14 @@
     "requires mowing"
   ],
   "SaguaroCactus": [
-    "hasproperty tall",
-    "hasproperty localized_range"
+    "hasproperty tall"
   ],
   "PricklyPear": [
     "produces edible_pads",
     "lives_in drylands"
   ],
   "BarrelCactus": [
-    "hasproperty round_shape",
-    "hasproperty localized_range"
+    "hasproperty round_shape"
   ],
   "ChristmasCactus": [
     "blooms in_winter",
@@ -2941,13 +2631,8 @@
     "hasproperty round_shape",
     "hasproperty golden_coloration"
   ],
-  "CommonCactus": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "Sunflower": [
-    "tracks sun",
-    "hasproperty localized_range"
+    "tracks sun"
   ],
   "Tulip": [
     "blooms in_spring",
@@ -3016,10 +2701,6 @@
     "produces edible_nuts",
     "lives_in drylands"
   ],
-  "PineTree": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "NorwaySpruce": [
     "used_for timber",
     "hasproperty fast_growing"
@@ -3040,13 +2721,8 @@
     "lives_in bogs",
     "hasproperty hardy"
   ],
-  "SpruceTree": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "BalsamFir": [
-    "hasproperty fragrant",
-    "hasproperty localized_range"
+    "hasproperty fragrant"
   ],
   "DouglasFir": [
     "used_for timber",
@@ -3057,20 +2733,16 @@
     "used_for ornamental"
   ],
   "NobleFir": [
-    "hasproperty sturdy_branches",
-    "hasproperty localized_range"
+    "hasproperty sturdy_branches"
   ],
   "FraserFir": [
-    "hasproperty fragrant",
-    "hasproperty localized_range"
+    "hasproperty fragrant"
   ],
   "FirTree": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "LebanonCedar": [
-    "hasproperty long_lived",
-    "hasproperty localized_range"
+    "hasproperty long_lived"
   ],
   "AtlasCedar": [
     "hasproperty blue_needles",
@@ -3087,10 +2759,6 @@
   "DeodarCedar": [
     "lives_in mountains",
     "hasproperty drooping_branches"
-  ],
-  "CedarTree": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
   ],
   "BaldCypress": [
     "tolerates flooding",
@@ -3109,20 +2777,13 @@
     "used_for temples"
   ],
   "SwampCypress": [
-    "tolerates flooding",
-    "hasproperty localized_range"
-  ],
-  "CypressTree": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "tolerates flooding"
   ],
   "CommonJuniperPlant": [
-    "used_for gin",
-    "hasproperty localized_range"
+    "used_for gin"
   ],
   "EasternJuniper": [
-    "hasproperty hardy",
-    "hasproperty localized_range"
+    "hasproperty hardy"
   ],
   "RockyMountainJuniper": [
     "lives_in mountains",
@@ -3138,12 +2799,10 @@
     "used_for landscaping"
   ],
   "CommonJuniperSpecies": [
-    "hasproperty localized_range",
     "hasproperty species_specific_markings"
   ],
   "BostonFern": [
-    "used_for houseplant",
-    "hasproperty localized_range"
+    "used_for houseplant"
   ],
   "BrackenFern": [
     "hasproperty hardy",
@@ -3158,12 +2817,7 @@
     "grows_on trees"
   ],
   "SwordFern": [
-    "lives_in forest",
-    "hasproperty localized_range"
-  ],
-  "CommonFern": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+    "lives_in forest"
   ],
   "SphagnumMoss": [
     "holds water",
@@ -3189,12 +2843,7 @@
     "lives_in lawns",
     "tolerates drought"
   ],
-  "CommonMoss": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
-  ],
   "Kelp": [
-    "lives_in ocean",
     "forms forests",
     "hasproperty fast_growing"
   ],
@@ -3214,8 +2863,867 @@
     "hasproperty silica_shell",
     "hasproperty microscopic"
   ],
-  "CommonAlgae": [
-    "hasproperty localized_range",
-    "hasproperty species_specific_markings"
+  "Air": [
+    "mixture_of gases",
+    "required_for breathing",
+    "fills atmosphere"
+  ],
+  "AirConditioner": [
+    "cools indoor_air",
+    "uses refrigerant",
+    "hasproperty thermostat_control"
+  ],
+  "Airplane": [
+    "capable_of flight",
+    "hasproperty fixed_wings",
+    "requires runway"
+  ],
+  "Airport": [
+    "used_for air_travel",
+    "hasproperty runways",
+    "hasproperty terminals"
+  ],
+  "Aluminum": [
+    "hasproperty lightweight",
+    "resists corrosion",
+    "used_for packaging"
+  ],
+  "Anger": [
+    "can_trigger aggression",
+    "hasproperty high_arousal",
+    "often_response_to threat_or_injustice"
+  ],
+  "ApartmentBuilding": [
+    "contains multiple_units",
+    "hasproperty shared_entrance",
+    "hasproperty multi_story_possible"
+  ],
+  "AppleFruit": [
+    "hasproperty sweet_or_tart_flavor",
+    "hasproperty edible_skin",
+    "grows_on tree"
+  ],
+  "ArtifactClass": [
+    "hasproperty manufactured",
+    "hasproperty designed_for_use"
+  ],
+  "Artwork": [
+    "created_for aesthetic_value",
+    "hasproperty expressive"
+  ],
+  "Bag": [
+    "hasproperty flexible",
+    "used_for carrying_items",
+    "hasproperty handles_or_straps"
+  ],
+  "BambooWood": [
+    "hasproperty fast_growing_source",
+    "used_for flooring",
+    "hasproperty fibrous"
+  ],
+  "BananaFruit": [
+    "hasproperty soft_flesh",
+    "hasproperty peel",
+    "rich_in potassium"
+  ],
+  "Beach": [
+    "located_on coast",
+    "hasproperty sand_or_pebbles",
+    "used_for recreation"
+  ],
+  "Bed": [
+    "used_for sleeping",
+    "hasproperty mattress",
+    "hasproperty frame"
+  ],
+  "Bicycle": [
+    "hasproperty two_wheels",
+    "powered_by pedaling",
+    "hasproperty lightweight_frame"
+  ],
+  "Biology": [
+    "studies living_organisms",
+    "uses observation",
+    "includes ecology"
+  ],
+  "Birthday": [
+    "marks age_increase",
+    "hasproperty celebrated",
+    "occurs annually"
+  ],
+  "Boat": [
+    "floats_on water",
+    "hasproperty hull",
+    "used_for boating"
+  ],
+  "Bottle": [
+    "hasproperty narrow_neck",
+    "used_for holding_liquid",
+    "hasproperty sealable"
+  ],
+  "Box": [
+    "used_for storage",
+    "hasproperty rigid_sides",
+    "hasproperty lid_possible"
+  ],
+  "Bread": [
+    "baked_from flour",
+    "hasproperty starchy",
+    "eaten_as staple"
+  ],
+  "Bridge": [
+    "spans obstacle",
+    "connects two_sides",
+    "hasproperty structural_support"
+  ],
+  "Building": [
+    "hasproperty provides_shelter",
+    "hasproperty fixed_location"
+  ],
+  "BuiltPlace": [
+    "hasproperty man_made",
+    "used_for human_activity"
+  ],
+  "Bus": [
+    "hasproperty carries_many_passengers",
+    "operates_on routes",
+    "hasproperty large_size"
+  ],
+  "Cabinet": [
+    "used_for storage",
+    "hasproperty doors",
+    "hasproperty shelves"
+  ],
+  "Camera": [
+    "captures images",
+    "hasproperty lens",
+    "stores photos"
+  ],
+  "Car": [
+    "hasproperty four_wheels",
+    "requires fuel_or_electric_power",
+    "hasproperty enclosed_cabin"
+  ],
+  "CarbonDioxideGas": [
+    "produced_by respiration",
+    "used_in photosynthesis",
+    "gas_in atmosphere"
+  ],
+  "Chair": [
+    "used_for sitting",
+    "hasproperty backrest",
+    "hasproperty legs"
+  ],
+  "ChefProfession": [
+    "prepares food",
+    "manages kitchen",
+    "creates recipes"
+  ],
+  "Chemistry": [
+    "studies substances",
+    "studies reactions",
+    "uses laboratory"
+  ],
+  "City": [
+    "hasproperty urban_area",
+    "hasproperty population",
+    "hasproperty infrastructure"
+  ],
+  "Clothing": [
+    "worn_by human",
+    "hasproperty textile_based"
+  ],
+  "CoffeeBeverage": [
+    "hasproperty caffeinated",
+    "brewed_from beans",
+    "served_at variable_temperature"
+  ],
+  "CommunicationConcept": [
+    "used_for exchanging_information",
+    "involves sender_and_receiver"
+  ],
+  "Concert": [
+    "live music_performance",
+    "hasproperty audience",
+    "held_at venue"
+  ],
+  "Conference": [
+    "gathers professionals",
+    "hasproperty talks",
+    "used_for networking"
+  ],
+  "Container": [
+    "used_for holding_items",
+    "hasproperty has_interior_volume"
+  ],
+  "Continent": [
+    "hasproperty large_landmass",
+    "contains countries",
+    "used_in geography"
+  ],
+  "Conversation": [
+    "involves dialogue",
+    "uses language",
+    "exchange_of ideas"
+  ],
+  "Copper": [
+    "hasproperty high_conductivity",
+    "used_for wiring",
+    "hasproperty reddish_color"
+  ],
+  "Country": [
+    "hasproperty sovereign_state",
+    "hasproperty borders",
+    "hasproperty government"
+  ],
+  "Cup": [
+    "used_for drinking",
+    "hasproperty open_top",
+    "hasproperty handle_possible"
+  ],
+  "Desert": [
+    "hasproperty low_rainfall",
+    "hasproperty arid",
+    "hasproperty sparse_vegetation"
+  ],
+  "Desk": [
+    "used_for work",
+    "hasproperty drawers_possible",
+    "supports computer_or_paper"
+  ],
+  "DesktopComputer": [
+    "hasproperty stationary_computer",
+    "requires external_power",
+    "hasproperty separate_monitor_possible"
+  ],
+  "Device": [
+    "hasproperty has_components",
+    "used_for performing_function"
+  ],
+  "DoctorProfession": [
+    "diagnoses illness",
+    "treats patients",
+    "requires medical_training"
+  ],
+  "DrumInstrument": [
+    "produces rhythm",
+    "hit_with sticks_or_hands",
+    "hasproperty drumhead"
+  ],
+  "Earthquake": [
+    "caused_by tectonic_motion",
+    "produces shaking",
+    "can_cause damage"
+  ],
+  "EmailMessage": [
+    "sent_over internet",
+    "hasproperty subject_line",
+    "can_include attachments"
+  ],
+  "Emotion": [
+    "experienced_by humans",
+    "can_influence behavior"
+  ],
+  "EngineerProfession": [
+    "designs systems",
+    "solves technical_problems",
+    "uses mathematics"
+  ],
+  "FabricMaterial": [
+    "hasproperty flexible",
+    "used_for textiles"
+  ],
+  "Fear": [
+    "triggers avoidance",
+    "hasproperty protective",
+    "often_response_to danger"
+  ],
+  "Festival": [
+    "public celebration",
+    "hasproperty activities",
+    "hasproperty recurring"
+  ],
+  "Flood": [
+    "water_overflows land",
+    "can_damage property",
+    "caused_by heavy_rain_or_river_overflow"
+  ],
+  "FluteInstrument": [
+    "produces_sound_by airflow",
+    "hasproperty finger_holes_or_keys",
+    "played_by blowing"
+  ],
+  "FoodProduct": [
+    "hasproperty edible",
+    "prepared_by cooking_or_processing"
+  ],
+  "Forest": [
+    "hasproperty many_trees",
+    "supports biodiversity",
+    "hasproperty canopy"
+  ],
+  "Fraction": [
+    "represents ratio",
+    "hasproperty numerator_denominator",
+    "can_be simplified"
+  ],
+  "Furniture": [
+    "used_for sitting_or_storage",
+    "hasproperty indoor_use"
+  ],
+  "GasMaterial": [
+    "fills container",
+    "hasproperty compressible"
+  ],
+  "GeographicPlace": [
+    "hasproperty has_location",
+    "hasproperty mappable"
+  ],
+  "GlassMaterial": [
+    "hasproperty transparent",
+    "hasproperty brittle"
+  ],
+  "Gold": [
+    "hasproperty precious",
+    "used_for jewelry",
+    "resists corrosion"
+  ],
+  "Graduation": [
+    "marks completion_of study",
+    "hasproperty ceremony",
+    "receives diploma"
+  ],
+  "Granite": [
+    "hasproperty very_hard",
+    "used_for countertops",
+    "hasproperty speckled"
+  ],
+  "GuitarInstrument": [
+    "hasproperty strings",
+    "played_by strumming_or_plucking",
+    "hasproperty fretboard"
+  ],
+  "HammerTool": [
+    "used_for driving_nails",
+    "hasproperty heavy_head",
+    "hasproperty handle"
+  ],
+  "Happiness": [
+    "hasproperty positive_affect",
+    "can_increase motivation",
+    "expressed_by smiling"
+  ],
+  "Helicopter": [
+    "capable_of vertical_takeoff",
+    "hasproperty rotor_blades",
+    "capable_of hovering"
+  ],
+  "Hospital": [
+    "provides healthcare",
+    "hasproperty emergency_services",
+    "hasproperty medical_staff"
+  ],
+  "HospitalBuilding": [
+    "provides healthcare",
+    "hasproperty patient_rooms",
+    "hasproperty medical_equipment"
+  ],
+  "House": [
+    "used_for living",
+    "hasproperty rooms",
+    "hasproperty roof"
+  ],
+  "Hurricane": [
+    "hasproperty strong_winds",
+    "forms_over warm_ocean",
+    "brings heavy_rain"
+  ],
+  "Integer": [
+    "can_be negative_or_positive",
+    "hasproperty discrete"
+  ],
+  "Iron": [
+    "hasproperty strong",
+    "hasproperty rust_prone",
+    "used_for construction"
+  ],
+  "Island": [
+    "surrounded_by water",
+    "hasproperty landmass",
+    "can_be inhabited"
+  ],
+  "Jacket": [
+    "worn_as outer_layer",
+    "provides warmth",
+    "hasproperty zipper_or_buttons"
+  ],
+  "Jeans": [
+    "made_of denim",
+    "hasproperty durable",
+    "used_for casual_wear"
+  ],
+  "JobInterview": [
+    "evaluates candidate",
+    "involves questions",
+    "part_of hiring"
+  ],
+  "KnifeTool": [
+    "hasproperty sharp_blade",
+    "used_for cutting",
+    "requires careful_handling"
+  ],
+  "Lake": [
+    "hasproperty standing_water",
+    "hasproperty freshwater_common",
+    "hasproperty basin"
+  ],
+  "Laptop": [
+    "hasproperty portable_computer",
+    "hasproperty built_in_keyboard",
+    "powered_by battery"
+  ],
+  "LibraryBuilding": [
+    "stores books",
+    "provides reading_space",
+    "hasproperty quiet_environment"
+  ],
+  "Limestone": [
+    "hasproperty sedimentary",
+    "hasproperty erosion_prone"
+  ],
+  "LiquidMaterial": [
+    "hasproperty flows",
+    "takes_shape_of container"
+  ],
+  "Marble": [
+    "used_for sculpture",
+    "hasproperty polished_surface",
+    "hasproperty veining"
+  ],
+  "MeasuringTape": [
+    "used_for measuring_length",
+    "hasproperty retractable_blade",
+    "marked_with units"
+  ],
+  "Metal": [
+    "hasproperty conductive",
+    "hasproperty metallic_luster"
+  ],
+  "Microwave": [
+    "used_for rapid_heating",
+    "uses microwaves",
+    "hasproperty timer_controls"
+  ],
+  "Milk": [
+    "produced_by mammals",
+    "hasproperty nutritious",
+    "used_for dairy_products"
+  ],
+  "Motorcycle": [
+    "hasproperty two_wheels",
+    "requires balance_control",
+    "hasproperty exposed_frame"
+  ],
+  "Mountain": [
+    "hasproperty high_elevation",
+    "hasproperty rugged_terrain",
+    "part_of landform"
+  ],
+  "MusicalInstrument": [
+    "used_for producing_music",
+    "hasproperty produces_sound"
+  ],
+  "NaturalEvent": [
+    "caused_by natural_processes",
+    "can_affect environment"
+  ],
+  "NaturalPlace": [
+    "exists_in nature",
+    "hasproperty geographic_extent"
+  ],
+  "Neighborhood": [
+    "part_of city",
+    "hasproperty local_identity",
+    "hasproperty residential_area"
+  ],
+  "NumberConcept": [
+    "used_in counting",
+    "used_in calculation"
+  ],
+  "OakWood": [
+    "hasproperty hardwood",
+    "used_for furniture",
+    "hasproperty grain_pattern"
+  ],
+  "Ocean": [
+    "hasproperty saltwater",
+    "covers large_area",
+    "hasproperty tides"
+  ],
+  "OfficeBuilding": [
+    "used_for work",
+    "hasproperty offices",
+    "hasproperty meeting_rooms"
+  ],
+  "Oil": [
+    "hasproperty viscous",
+    "used_for cooking_or_fuel",
+    "does_not mix_with water"
+  ],
+  "OxygenGas": [
+    "supports combustion",
+    "required_for respiration",
+    "part_of air"
+  ],
+  "PVC": [
+    "used_for pipes",
+    "hasproperty rigid_or_flexible",
+    "hasproperty chemical_resistant"
+  ],
+  "Painting": [
+    "created_with paint",
+    "hasproperty visual_art",
+    "often_on canvas"
+  ],
+  "Pants": [
+    "worn_on legs",
+    "hasproperty waistband",
+    "hasproperty pockets_possible"
+  ],
+  "PaperMaterial": [
+    "hasproperty thin_sheet",
+    "used_for writing_or_packaging"
+  ],
+  "Park": [
+    "designated_for recreation",
+    "hasproperty green_space",
+    "open_to public"
+  ],
+  "PastaFood": [
+    "made_from wheat_flour",
+    "boiled_in water",
+    "served_with sauce"
+  ],
+  "PersonalEvent": [
+    "experienced_by person",
+    "hasproperty life_related"
+  ],
+  "PhoneCall": [
+    "uses voice_audio",
+    "requires connection",
+    "real_time communication"
+  ],
+  "Photograph": [
+    "captured_by camera",
+    "records light_image",
+    "stored_as print_or_digital"
+  ],
+  "Physics": [
+    "studies matter_and_energy",
+    "uses experiments",
+    "uses mathematics"
+  ],
+  "PianoInstrument": [
+    "hasproperty keyboard",
+    "produces_sound_by strings_or_samples",
+    "used_for music_performance"
+  ],
+  "PineWood": [
+    "hasproperty softwood",
+    "hasproperty light_color"
+  ],
+  "Pizza": [
+    "hasproperty baked",
+    "hasproperty topped_with ingredients",
+    "served_as meal"
+  ],
+  "PlasticMaterial": [
+    "hasproperty polymer_based",
+    "hasproperty lightweight"
+  ],
+  "PliersTool": [
+    "used_for gripping",
+    "hasproperty pivot_joint",
+    "hasproperty serrated_jaws"
+  ],
+  "Polyethylene": [
+    "used_for packaging",
+    "hasproperty flexible"
+  ],
+  "Polypropylene": [
+    "used_for containers",
+    "hasproperty heat_resistant",
+    "hasproperty durable"
+  ],
+  "Printer": [
+    "produces printed_pages",
+    "uses ink_or_toner",
+    "connects_to computer"
+  ],
+  "Profession": [
+    "performed_by worker",
+    "requires skills"
+  ],
+  "ProgrammerProfession": [
+    "writes code",
+    "debugs software",
+    "builds applications"
+  ],
+  "RealNumber": [
+    "can_have decimals",
+    "used_in measurement",
+    "ordered_on number_line"
+  ],
+  "Refrigerator": [
+    "used_for cooling_food",
+    "hasproperty insulated_compartment",
+    "uses compressor"
+  ],
+  "RestaurantBuilding": [
+    "serves meals",
+    "hasproperty dining_area",
+    "hasproperty kitchen"
+  ],
+  "RiceFood": [
+    "hasproperty cooked_grain",
+    "eaten_as staple",
+    "hasproperty starchy"
+  ],
+  "River": [
+    "hasproperty flowing_water",
+    "empties_into sea_or_lake",
+    "supports ecosystems"
+  ],
+  "Road": [
+    "used_for transportation",
+    "connects locations",
+    "hasproperty pavement_or_surface"
+  ],
+  "Router": [
+    "routes network_traffic",
+    "provides wifi",
+    "hasproperty network_ports"
+  ],
+  "Sadness": [
+    "hasproperty negative_affect",
+    "can_reduce energy",
+    "expressed_by tears"
+  ],
+  "SaladFood": [
+    "made_of vegetables",
+    "served_at cold_temperature",
+    "hasproperty fresh"
+  ],
+  "School": [
+    "provides education",
+    "hasproperty students",
+    "hasproperty teachers"
+  ],
+  "SchoolBuilding": [
+    "used_for education",
+    "hasproperty classrooms",
+    "hasproperty students_attend"
+  ],
+  "ScienceConcept": [
+    "used_for understanding_nature",
+    "based_on evidence"
+  ],
+  "ScissorsTool": [
+    "used_for cutting",
+    "hasproperty two_blades",
+    "hasproperty finger_loops"
+  ],
+  "Scooter": [
+    "hasproperty small_wheels",
+    "used_for short_trips",
+    "hasproperty compact_design"
+  ],
+  "ScrewdriverTool": [
+    "used_for turning_screws",
+    "hasproperty shaped_tip",
+    "hasproperty handle"
+  ],
+  "Sculpture": [
+    "hasproperty three_dimensional",
+    "made_of stone_or_metal",
+    "created_by carving_or_molding"
+  ],
+  "Ship": [
+    "hasproperty large_hull",
+    "capable_of ocean_travel",
+    "hasproperty crew_operated"
+  ],
+  "Shirt": [
+    "worn_on torso",
+    "hasproperty sleeves_possible",
+    "hasproperty fabric"
+  ],
+  "Shoes": [
+    "worn_on feet",
+    "hasproperty sole",
+    "protects feet"
+  ],
+  "Silver": [
+    "used_for jewelry",
+    "hasproperty reflective"
+  ],
+  "Smartphone": [
+    "hasproperty touchscreen",
+    "capable_of cellular_communication",
+    "hasproperty portable"
+  ],
+  "Smartwatch": [
+    "worn_on wrist",
+    "tracks activity",
+    "pairs_with smartphone"
+  ],
+  "SocialEvent": [
+    "involves participants",
+    "hasproperty organized"
+  ],
+  "Sofa": [
+    "used_for sitting",
+    "hasproperty cushions",
+    "seats multiple_people"
+  ],
+  "SolidMaterial": [
+    "hasproperty definite_shape",
+    "hasproperty compressible_low"
+  ],
+  "SoupFood": [
+    "hasproperty liquid_base",
+    "served_at warm_temperature",
+    "contains ingredients"
+  ],
+  "StateProvince": [
+    "hasproperty administrative_region",
+    "part_of country",
+    "hasproperty local_government"
+  ],
+  "Steel": [
+    "alloy_of iron",
+    "hasproperty high_strength",
+    "used_for buildings"
+  ],
+  "StoneMaterial": [
+    "hasproperty hard",
+    "used_for building"
+  ],
+  "Store": [
+    "sells goods",
+    "hasproperty inventory",
+    "serves customers"
+  ],
+  "Submarine": [
+    "capable_of underwater_travel",
+    "hasproperty pressurized_hull",
+    "uses ballast_system"
+  ],
+  "Surprise": [
+    "triggered_by unexpected_event",
+    "short_lived emotion",
+    "affects attention"
+  ],
+  "TShirt": [
+    "hasproperty short_sleeves",
+    "used_for casual_wear",
+    "hasproperty knit_fabric"
+  ],
+  "Table": [
+    "hasproperty flat_surface",
+    "used_for eating_or_work",
+    "hasproperty legs_or_support"
+  ],
+  "Tablet": [
+    "hasproperty touchscreen",
+    "hasproperty portable",
+    "capable_of running_apps"
+  ],
+  "TeaBeverage": [
+    "brewed_from leaves",
+    "served_at variable_temperature",
+    "hasproperty aromatic"
+  ],
+  "TeacherProfession": [
+    "teaches students",
+    "prepares lessons",
+    "assesses learning"
+  ],
+  "Television": [
+    "displays video",
+    "hasproperty large_screen",
+    "receives broadcast_or_stream"
+  ],
+  "Tool": [
+    "used_for doing_task",
+    "hasproperty assists_user"
+  ],
+  "Town": [
+    "hasproperty smaller_than_city",
+    "hasproperty community",
+    "located_in region"
+  ],
+  "Train": [
+    "runs_on rails",
+    "hasproperty multiple_cars",
+    "used_for mass_transit_or_freight"
+  ],
+  "TrainStation": [
+    "used_for rail_travel",
+    "hasproperty platforms",
+    "hasproperty schedules"
+  ],
+  "Truck": [
+    "hasproperty cargo_bed_or_box",
+    "hasproperty heavy_duty",
+    "requires fuel"
+  ],
+  "VacuumCleaner": [
+    "removes dust",
+    "uses suction",
+    "hasproperty collection_bin"
+  ],
+  "Vehicle": [
+    "hasproperty used_for transportation",
+    "moves_in environment"
+  ],
+  "Village": [
+    "hasproperty small_settlement",
+    "hasproperty rural",
+    "hasproperty local_community"
+  ],
+  "ViolinInstrument": [
+    "played_with bow",
+    "hasproperty strings",
+    "produces high_pitched_sound"
+  ],
+  "WashingMachine": [
+    "washes clothes",
+    "uses water_and_detergent",
+    "hasproperty spinning_drum"
+  ],
+  "Water": [
+    "hasproperty essential_for life",
+    "freezes_at 0C",
+    "boils_at 100C"
+  ],
+  "Wedding": [
+    "celebrates marriage",
+    "involves ceremony",
+    "hasproperty guests"
+  ],
+  "Wildfire": [
+    "burns vegetation",
+    "spreads quickly",
+    "can_be_caused_by drought"
+  ],
+  "WoodMaterial": [
+    "hasproperty fibrous_structure",
+    "used_for construction"
+  ],
+  "WrenchTool": [
+    "used_for tightening_bolts",
+    "hasproperty adjustable_or_fixed_jaw",
+    "applies torque"
   ]
 }

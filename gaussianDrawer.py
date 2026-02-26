@@ -30,6 +30,8 @@ class GaussianDrawer():
         children = concept.children
         father = concept.father
         if len(attrset) > 0:
+            if len(attrset) == 0:
+                a = 0
             self.drawConcepts(
                 nodename = [concept.name] + [father.name], 
                 attrname = [i.name for i in attrset], 

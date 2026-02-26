@@ -16,8 +16,8 @@ class SN2E(Module):
         self.modelName  = modelArg["name"]
         self.dim        = modelArg["dim"]
         self.device     = modelArg["device"]
-        self.gammaMax   = modelArg["gammaMax"]
-        self.gapMax     = modelArg["gapMax"]
+        self.delta_obj  = modelArg["delta_obj"]
+        self.h_obj      = modelArg["h_obj"]
         self.logv_max   = modelArg["logv_max"]
         self.logv_min   = modelArg["logv_min"]
         self.alpha      = modelArg["alpha"]
@@ -47,6 +47,7 @@ class SN2E(Module):
     def initEmbedding(self, varInitMode = 'const'):
         nn.init.uniform_(self.attrMeanEmbedding.weight, -1, 1)
         nn.init.uniform_(self.attrLogvEmbedding.weight, -5, 0)
+        #nn.init.constant_(self.attrLogvEmbedding.weight, 0)
         self.attrMeanEmbedding.weight.data[-1] = self.defaultMean
         self.attrLogvEmbedding.weight.data[-1] = self.defaultLogv
     
@@ -65,6 +66,8 @@ class SN2E(Module):
         varInv: (torch.tensor)[batchNum, indexNum, dim]
         '''
         index = self.variable(index)
+        if index.shape[0] != 0:
+            assert index.max() < self.attrMeanEmbedding.num_embeddings, f'index {index.max()} out of range for attr embedding with shape {self.attrMeanEmbedding.weight.shape}'
         if index.shape[0] == 0:
             mean, inva = self.attrMeanEmbedding.weight[index], self.attrInvaEmbedding[index]
         else:
@@ -74,6 +77,7 @@ class SN2E(Module):
 
     def lookupNodeEmbedding(self, index)-> Embedding:
         index = self.variable(index)
+        assert index.max() < self.nodeMeanEmbedding.shape[0], f'index {index.max()} out of range for node embedding with shape {self.nodeMeanEmbedding.shape}'
         mean, inva = self.nodeMeanEmbedding[index], self.nodeInvaEmbedding[index]
         return mean, inva
 
@@ -128,6 +132,15 @@ class SN2E(Module):
         v_s, v_t = inva_s.reciprocal(), inva_t.reciprocal()
         return ( - inva_t.log() - (v_s + v_t).log() + 0.593147 - (mean_s - mean_t).pow(2).div(v_s + v_t)).sum(-1)
     
+    def scoreEntail(self, indexD, indexF, type2='node')->torch.Tensor:
+        assert type2 in ['node', 'attr']
+        embedding1 = self.lookupNodeEmbedding(indexD)
+        if type2 == 'attr':
+            embedding2 = self.lookupAttrEmbedding(indexF)
+        else:
+            embedding2 = self.lookupNodeEmbedding(indexF)
+        return self.calcNeg(embedding1, embedding2)
+    
     def calcKL(self, e_s:Embedding, e_t:Embedding)->torch.Tensor:
         mean_s, inva_s = e_s
         mean_t, inva_t = e_t
@@ -167,8 +180,8 @@ class SN2E(Module):
         self.updateUpperMap(index0)
         gamma   = self.scorePos(indexA, indexF)
         gap     = self.scoreNeg(index0, indexN)  
-        posloss = - torch.where(gamma<self.gammaMax, gamma, 0).sum() 
-        negloss = torch.where(gap>self.gapMax, gap, 0).sum()
+        posloss = - torch.where(gamma<self.delta_obj, gamma, 0).sum() 
+        negloss = torch.where(gap>self.h_obj, gap, 0).sum()
         loss    = posloss + self.alpha * negloss
         showgap = gap[gap<10000]
         return loss, gamma.sum().item(), showgap.sum().item(), gamma.min().item(), showgap.max().item()
@@ -228,10 +241,14 @@ class SN2E(Module):
         for idx, val in enumerate(list):
             self.uppermapList[val] = idx
         
-    def evaluate(self, inputSamples)->torch.Tensor:
+    def evaluate(self, inputSamples, type2='node')->torch.Tensor:
+        assert type2 in ['node', 'attr']
         index1, index2 = inputSamples
         embedding1 = self.lookupNodeEmbedding(index1)
-        embedding2 = self.lookupAttrEmbedding(index2)
+        if type2 == 'attr':
+            embedding2 = self.lookupAttrEmbedding(index2)
+        else:
+            embedding2 = self.lookupNodeEmbedding(index2)
         return self.calcNeg(embedding1, embedding2)
     
     def checkEntail(self, index0, indexN, typeN):

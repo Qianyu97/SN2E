@@ -1,45 +1,48 @@
 import numpy as np
 import torch
+
+from torch import Tensor
 from random import sample
 
 import finaldata
-from utils.unit import NodeUnit, AttrUnit, Indexer_SN2E
+from utils.unit import NodeUnit, AttrUnit, BaseUnit, Indexer_SN2E
 from utils import evalTool, drawerTool
 from models import initModule
 from models.SN2E import SN2E
 from finaldata import FinalData
 
 import pandas as pd
-
-def constructGroundTruth(finaldata:FinalData)->torch.Tensor:
-    node_num = len(finaldata.nodeList)
-    attr_num = len(finaldata.attrList)
-    homoDict = finaldata.homoDict
-    groundtruth_matrix = torch.zeros([node_num, attr_num], dtype = bool)  
-    for concept in homoDict.keys():
-        attributes_index = [attribute.index for attribute in homoDict[concept]] 
-        groundtruth_matrix[concept.index, attributes_index] = True
+def geneGroundTruth(num_source, num_target, groundtruth:dict[NodeUnit, list[BaseUnit]] = None)->Tensor:
+    groundtruth_matrix = torch.zeros([num_source, num_target], dtype = bool)  
+    for one_source in groundtruth.keys():
+        targets_index = [one_target.index for one_target in groundtruth[one_source]] 
+        groundtruth_matrix[one_source.index, targets_index] = True
     return groundtruth_matrix
 
-def evaluateF1score(finaldata:FinalData, model:SN2E, threshold:int|list[int] = 0, mode = 'entail'):
-    source_num = len(finaldata.nodeList)
-    target_num = len(finaldata.attrList)
-    groundtruth = constructGroundTruth(finaldata).to(model.device)
-    sourceData_idx = list(range(source_num))
-    targetData_idx = list(range(target_num))
-    with torch.no_grad():
-        evalValues = model.evaluate((sourceData_idx, targetData_idx))
-    predictions = evalValues > threshold
-    F1score, precision, recall = evalTool.calcF1score(predictions, groundtruth)
-    return F1score
+def geneMasking(num_source, num_target, attrDict:dict[NodeUnit, list[BaseUnit]], homoDict:dict[NodeUnit, list[BaseUnit]])->Tensor:
+    masking_matrix = torch.ones([num_source, num_target], dtype = bool)  
+    for one_source in homoDict.keys():
+        masking = set(homoDict[one_source]) - set(attrDict[one_source])
+        masking_matrix[one_source.index, [one_target.index for one_target in masking]] = False
+    return masking_matrix     
 
-def evaluateAUC_SN2E(finaldata:FinalData, model:SN2E):
-    model.eval()
-    groundtruth = constructGroundTruth(finaldata).to(model.device)
-    sourceData_idx = list(range(len(finaldata.nodeList)))
-    targetData_idx = list(range(len(finaldata.attrList)))
+def evaluateF1score(
+        source_idx:list[int], target_idx:list[int], 
+        groundtruth:Tensor, model:SN2E, 
+        threshold:list[int], type_target='attr')->Tensor:
     with torch.no_grad():
-        evalValues = model.evaluate((sourceData_idx, targetData_idx))
+        evalValues = model.evaluate((source_idx, target_idx), type2=type_target)
+    threshold_tensor = torch.tensor(threshold, device=evalValues.device).view(-1, 1, 1)
+    predictions = evalValues.unsqueeze(0) > threshold_tensor
+    F1score, precision, recall = evalTool.calcF1score(predictions, groundtruth)
+    best_F1score, best_threshold_index = F1score.max(dim=-1)
+    best_threshold = threshold_tensor[best_threshold_index]
+    return best_F1score.item(), best_threshold.item()
+
+def evaluateAUC(source_idx:list[int], target_idx:list[int], groundtruth:Tensor, model:SN2E, type_target='node'):
+    model.eval()
+    with torch.no_grad():
+        evalValues = model.evaluate((source_idx, target_idx), type2=type_target)
     auc_score = drawerTool.plot_roc(
         groundtruth.view(-1), 
         evalValues.view(-1), 
@@ -62,39 +65,68 @@ class Evaluater():
         GTRank = rank[groundtruth_flat]
         return GTRank.mean().item()
     
-    def evaluateF1score(self, threshold:int|list[int] = 0, mode = 'entail'):
-        F1score = evaluateF1score(self.finaldata, self.model, threshold, mode)
-        return F1score.item()
+    def evaluateF1score(self, threshold:int|list[int], evalmode = 'intrinsic'):
+        assert evalmode in ['inherited', 'intrinsic', 'node'], "evalmode should be either 'inherited' or 'intrinsic' or 'node'"
+        if type(threshold) == int:
+            threshold = [threshold]
+        threshold_tensor = torch.tensor(threshold, device=self.model.device).view(-1, 1)
+        source = self.finaldata.nodeList
+        target = self.finaldata.nodeList if evalmode == 'node' else self.finaldata.attrList
+        num_source, num_target = len(source), len(target)
+        source_idx, target_idx = list(range(num_source)), list(range(num_target))
+        with torch.no_grad():
+            if evalmode == 'intrinsic':
+                masking = geneMasking(num_source, num_target, self.finaldata.attrDict, self.finaldata.homoDict)
+                groundtruth = geneGroundTruth(num_source, num_target, self.finaldata.attrDict)[masking]
+                evalValues:torch.Tensor = self.model.evaluate((source_idx, target_idx), type2='attr')[masking]
+            elif evalmode == 'inherited':
+                groundtruth = geneGroundTruth(num_source, num_target, self.finaldata.homoDict).view(-1)
+                evalValues:torch.Tensor = self.model.evaluate((source_idx, target_idx), type2='attr').view(-1)
+            elif evalmode == 'node':
+                groundtruth = geneGroundTruth(num_source, num_target, self.finaldata.anceDict).view(-1)
+                evalValues:torch.Tensor = self.model.evaluate((source_idx, target_idx), type2='node').view(-1)
+        predictions = evalValues.unsqueeze(0) > threshold_tensor
+        F1score, precision, recall = evalTool.calcF1score(predictions, groundtruth)
+        best_F1score, best_threshold_index = F1score.max(dim=-1)
+        best_threshold = threshold_tensor[best_threshold_index]
+        pr_auc  = drawerTool.plot_pr_auc(groundtruth, evalValues, title="KGE Model Precision-Recall Curve", draw=False)
+        roc_auc = drawerTool.plot_roc(groundtruth, evalValues, title="KGE Model ROC Curve", draw=False)
+        return best_F1score.item(), best_threshold.item(), pr_auc, roc_auc 
     
-    def evaluateAUC(self):
-        auc_score = evaluateAUC_SN2E(self.finaldata, self.model)
-        return auc_score.tolist()
+    def evaluateF1score_node(self, threshold:int|list[int] = 0):
+        if type(threshold) == int:
+            threshold = [threshold]
+        source = self.finaldata.nodeList
+        target = self.finaldata.nodeList
+        num_source, num_target = len(source), len(target)
+        source_idx, target_idx = list(range(num_source)), list(range(num_target))
+        groundtruth = geneGroundTruth(num_source, num_target, self.finaldata.anceDict)
+        best_F1score, best_threshold = evaluateF1score(source_idx, target_idx, groundtruth, self.model, threshold, type_target='node')
+        return best_F1score.item(), best_threshold.item()
 
     def checkgamma(self, name0:str):
         concept0 = self.finaldata.lookupConcept(name0)
-        conceptA = concept0.attributes
-        conceptF = concept0.father
-        indexA   = [i.index for i in conceptA]
-        indexF   = conceptF.index
+        indexA   = [i.index for i in concept0.attributes]
+        indexF   = concept0.father.index
         with torch.no_grad():
             gamma = self.model.scorePos(indexA, indexF, train_mode=False)
         return gamma.item()
     
-    def checkEntail(self, name0:str, nameN:list[str], typeN = 'node'):
+    def checkentail(self, name0:str, nameN:list[str], typeN = 'node'):
         index0 = self.indexer.str2num(name0)
         indexN = self.indexer.str2num(nameN)
         with torch.no_grad():
             gap = self.model.checkEntail(index0, indexN, typeN = typeN)
         return gap.tolist()
     
-    def checkGap(self, name0:str, nameN:list[str], typeN = 'node'):
+    def checkgap(self, name0:str, nameN:list[str], typeN = 'node'):
         index0 = self.indexer.str2num(name0)
         indexN = self.indexer.str2num(nameN)
         with torch.no_grad():
             gap = self.model.checkGap(index0, indexN, typeN = typeN)
         return gap.tolist()
 
-    def findWorstGamma(self, gamma:torch.Tensor = None):
+    def findWorstGamma(self, gamma:Tensor = None):
         if gamma == None:
             pass
         attrDF = self.finaldata.attrDF
@@ -109,9 +141,22 @@ class Evaluater():
         namestring  = '{}, {}, {}, {}, {} have the worst gamma, which are '.format(*showname)
         valuestring = '{:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f} '.format(*showvalue)
         print(namestring + valuestring)
+    
+    def findWorstEntail(self):
+        upperDF = self.finaldata.upperDF
+        concept_idx = list(range(len(self.finaldata.nodeList)))
+        upperDF_idx = torch.tensor(list(range(len(self.finaldata.nodeList)))).view(1, -1)
+        with torch.no_grad():
+            entail = self.model.scoreEntail(np.asarray(concept_idx), upperDF_idx, type2='node')
+        worstentail, indices_flat = torch.topk(entail.view(-1), k)
+        showname   = self.indexer.num2str((indexes).tolist()[:5], dtype='node')
+        showvalue  = worstentail.tolist()[:5]
+        namestring  = '{}, {}, {}, {}, {} have the worst entail, which are '.format(*showname)
+        valuestring = '{:.2f}, {:.2f}, {:.2f}, {:.2f}, {:.2f} '.format(*showvalue)
+        print(namestring + valuestring)
 
     #TODO
-    def findWorstNegt(self, negtensor:torch.Tensor, indexN:torch.Tensor, k = 5):
+    def findWorstNegt(self, negtensor:Tensor, indexN:Tensor, k = 5):
         '''
         find k worst negtive loss and print them
         
@@ -177,12 +222,20 @@ if __name__ == "__main__":
         gpunum=TestArg["gpunum"]
         )
     evaluater = Evaluater(finaldata, myIndex, model)
-    f1score = evaluater.evaluateF1score(threshold=0)
-    auc_score = evaluater.evaluateAUC()
+    f1score_intrinsic, best_threshold_intrinsic, pr_auc_intrinsic, roc_auc_intrinsic = evaluater.evaluateF1score(threshold=np.linspace(-5, 5, 21), evalmode='intrinsic')
+    f1score_inherited, best_threshold_inherited, pr_auc_inherited, roc_auc_inherited = evaluater.evaluateF1score(threshold=np.linspace(-5, 5, 21), evalmode='inherited')
+    f1score_node, best_threshold_node, pr_auc_node, roc_auc_node = evaluater.evaluateF1score(threshold=np.linspace(-5, 5, 21), evalmode='node')
+    print(f"The f1score for attributes (intrinsic) is {f1score_intrinsic:.3f}, its threshold is {best_threshold_intrinsic}")
+    print(f"The PR-AUC for attributes (intrinsic) is {pr_auc_intrinsic:.3f}, the ROC-AUC is {roc_auc_intrinsic:.3f}")
+    print(f"The f1score for attributes (inherited) is {f1score_inherited:.3f}, its threshold is {best_threshold_inherited}")
+    print(f"The PR-AUC for attributes (inherited) is {pr_auc_inherited:.3f}, the ROC-AUC is {roc_auc_inherited:.3f}")
+    print(f"The f1score for nodes is {f1score_node:.3f}, its threshold is {best_threshold_node}")
+    print(f"The PR-AUC for nodes is {pr_auc_node:.3f}, the ROC-AUC is {roc_auc_node:.3f}")
     evaluater.findWorstGamma()
-    d = evaluater.checkgamma('Cat')
-    b = evaluater.checkgap('Cat', ['Dog', 'Fish'], typeN='node')
-    c = evaluater.checkgap('Dog', ['has_id Bird', 'has_id Bee'], typeN='attr')
+    finaldata.print_tree()
+    #d = evaluater.checkgamma('Cat')
+    #b = evaluater.checkgap('Cat', ['Dog', 'Fish'], typeN='node')
+    #c = evaluater.checkgap('Dog', ['has_id Bird', 'has_id Bee'], typeN='attr')
     a=0
 
 
