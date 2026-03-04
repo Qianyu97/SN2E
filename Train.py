@@ -45,43 +45,6 @@ class Trainer():
         self.optimizer, self.scheduler  = initModule.initOptimizer(self.model, **trainArg)
         self.dataset = dataset
     
-    def train_one_batch(self, batchdata):
-        loss, loss_pos, loss_neg, delta_max, gap_min = self.model(batchdata)
-        loss.backward(retain_graph=True)
-        self.optimizer.step()
-        self.optimizer.zero_grad()
-        self.model.batchEndWork()
-        return loss_pos, loss_neg, delta_max, gap_min
-
-    def run(self):
-        pass
-
-    def run_deprecated(self):
-        print('Info -- : start model training')
-        EPOCHS = self.epochs
-        EPOCHS_ITER = tqdm(range(EPOCHS))
-        bestHR = float("inf")
-        for epoch in EPOCHS_ITER:
-            worstdelta, worstgap = 0, float("-inf")
-            loss_pos_sum, loss_neg_sum = 0, 0
-            self.model.epochStartWork()
-            for now_depth, depth_range in self.model.depthRangeRecord.items():
-                start_idx, end_idx = depth_range
-                self.dataLoader.sampler.indices = list(range(start_idx, end_idx))
-                for batchdata in self.dataLoader:
-                    loss_pos, loss_neg, delta_max, gap_min = self.train_one_batch(batchdata)
-                    loss_pos_sum += loss_pos
-                    loss_neg_sum += loss_neg
-                    worstdelta  = min(delta_max, worstdelta)
-                    worstgap    = max(gap_min, worstgap)
-            aveloss_pos = loss_pos_sum / self.model.node_num
-            aveloss_neg = loss_neg_sum / self.model.node_num/self.trainArg.negtsample_num
-            EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, negtive loss : %.2f, worst delta: %.2f, worst gap: %.2f" \
-                                % (epoch, aveloss_pos, aveloss_neg, worstdelta, worstgap))
-        print('Info : finish model training')
-        a = 0
-        
-
 def displayArgs(DataloaderArg:dict, TrainArg:dict, ModelArg:dict, DataArg:dict):
     print('Current training arguments:')
     for key, value in DataArg.items():
@@ -95,8 +58,7 @@ def displayArgs(DataloaderArg:dict, TrainArg:dict, ModelArg:dict, DataArg:dict):
     print()
 
 def main():
-    from config import PathArg, DataloaderArg, TrainArg
-    from config_model import SN2EArg
+    from config import PathArg, DataloaderArg, TrainArg, SN2EArg
     import numpy as np
     doEvalHyperParams = True
     evalHP_name = 'logv_min'
@@ -147,20 +109,22 @@ def main():
             record_neg = []
             model.epochStartWork()
             model.batchStartWork()
+            #positive-learning process
             for now_depth, depth_range in model.depthRangeRecord.items():
                 range_st, range_ed = depth_range
                 index0 = dataset.nodeList_idx[range_st:range_ed]
                 indexA = dataset.attrArray[range_st:range_ed]
                 indexF = dataset.upperArray[range_st:range_ed]
                 delta  = model.scorePos(indexA, indexF)
-                entail = model.scoreEntail(index0, indexF, type2='node')
+                entail = model.scoreEntailProb(index0, indexF, type2='node')
                 record_delta.append(delta)
                 record_entail.append(entail)
             deltaTensor = torch.cat(record_delta)
             deltaTensor_detached = deltaTensor.detach()
             entailTensor = torch.cat(record_entail)
             entailTensor_detached = entailTensor.detach()
-            
+
+            #Negative-learning process
             for batchdata in dataloader:
                 index0 , indexN = batchdata
                 negtDist = model.scoreNeg(index0, indexN)
@@ -168,6 +132,7 @@ def main():
             negTensor = torch.cat(record_neg)
             negTensor_detached = negTensor.detach()
 
+            #sum all loss and backpropogation
             loss_pos = torch.where(deltaTensor  < ModelArg["delta_obj"] , deltaTensor  , deltaTensor_detached   ).sum().neg()
             loss_ent = torch.where(entailTensor < ModelArg["entail_obj"], entailTensor , entailTensor_detached  ).sum().neg()
             loss_neg = torch.where(negTensor    > ModelArg["h_obj"]     , negTensor    , negTensor_detached     ).sum()
@@ -179,6 +144,8 @@ def main():
                 EPOCHS_ITER.set_description("Epoch %d | postive loss : %.2f, entail loss : %.2f, negtive loss : %.2f," \
                                     % (epoch, deltaTensor_detached.mean().item(), entailTensor_detached.mean().item(), negTensor_detached.mean().item()))
         evaluater = Evaluater(finaldata, myIndex, model)
+
+        #Evaluate after training
         f1score_intrinsic, best_threshold_intrinsic, pr_auc_intrinsic, roc_auc_intrinsic = evaluater.evaluateF1score(threshold=np.linspace(-5, 5, 21), evalmode='intrinsic')
         f1score_inherited, best_threshold_inherited, pr_auc_inherited, roc_auc_inherited = evaluater.evaluateF1score(threshold=np.linspace(-5, 5, 21), evalmode='inherited')
         f1score_node, best_threshold_node, pr_auc_node, roc_auc_node = evaluater.evaluateF1score(threshold=np.linspace(-5, 5, 21), evalmode='node')

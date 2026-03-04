@@ -93,11 +93,11 @@ def gaussians_ellipse(
     '''
     def PCA_Gaussians(embedding:Embedding, target_dim=2)->Embedding:
         'embedding: [num0, dim]'
-        means, invariances = embedding
+        means, invrriances = embedding
         means = means.unsqueeze(-2)
-        variances = torch.diag_embed(invariances.reciprocal())
+        variances = torch.diag_embed(invrriances.reciprocal())
         MeanAve     = means.mean(dim=0)
-        a           = (means - MeanAve)#/invariances.reciprocal().sum(-2)#*(embedding.v.sum(-2).sqrt().unsqueeze(-1))
+        a           = (means - MeanAve)#/invrriances.reciprocal().sum(-2)#*(embedding.v.sum(-2).sqrt().unsqueeze(-1))
         variancePCA = ((a.transpose(1, 2) @ a)).mean(0)
         evals, evecs = torch.linalg.eigh(variancePCA)
         eTopkIndex  = evals.real.argsort(descending=True)[ : target_dim]

@@ -57,8 +57,7 @@ class Tester():
         
 
 if __name__ == "__main__":
-    from config import PathArg, TestArg
-    from config_model import SN2EArg
+    from config import PathArg, TestArg, SN2EArg
     from utils.unit import Indexer_SN2E
     ModelArg = SN2EArg
     finaldata = FinalData(

@@ -147,7 +147,7 @@ class Evaluater():
         concept_idx = list(range(len(self.finaldata.nodeList)))
         upperDF_idx = torch.tensor(list(range(len(self.finaldata.nodeList)))).view(1, -1)
         with torch.no_grad():
-            entail = self.model.scoreEntail(np.asarray(concept_idx), upperDF_idx, type2='node')
+            entail = self.model.scoreEntailProb(np.asarray(concept_idx), upperDF_idx, type2='node')
         worstentail, indices_flat = torch.topk(entail.view(-1), k)
         showname   = self.indexer.num2str((indexes).tolist()[:5], dtype='node')
         showvalue  = worstentail.tolist()[:5]

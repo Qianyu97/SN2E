@@ -7,13 +7,13 @@ type Embedding = tuple[torch.Tensor, torch.Tensor]
 class EmbeddingOperator():
     @staticmethod
     def cat(embeddingList:list[Embedding]) -> Embedding:
-        meanList, invaList = [], []
+        meanList, invrList = [], []
         for e in embeddingList:
-            mean, invariance = e
+            mean, invrriance = e
             meanList.append(mean)
-            invaList.append(invariance)
+            invrList.append(invrriance)
         newMean = torch.cat(meanList, dim=-2)
-        newVar  = torch.cat(invaList, dim=-2)
+        newVar  = torch.cat(invrList, dim=-2)
         return newMean, newVar
 
 #nodene concept unit

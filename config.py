@@ -14,7 +14,18 @@ DataloaderArg = {
     "droplast"    : False,
     "len_attr"    : 0,
     }
-        
+
+SN2EArg ={
+    "name"        : 'SN2E',
+    "dim"         : 16,
+    "delta_obj"   : - 1,
+    'entail_obj'  : 0,
+    "h_obj"       : 0,
+    "gapmode"     : 'entail',
+    "logv_max"    : 0,
+    "logv_min"    : -12,
+    "alpha"       : 1,
+}
     
 # Training arguments
 TrainArg = {

@@ -87,8 +87,7 @@ class GaussianDrawer():
 
 if __name__ == "__main__":
     from models import initModule
-    from config import PathArg, TestArg
-    from config_model import SN2EArg
+    from config import PathArg, TestArg, SN2EArg
     DatapathArg = PathArg 
     TestArg  = TestArg
     ModelArg = SN2EArg
